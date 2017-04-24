@@ -1,0 +1,132 @@
+@CHARSET "UTF-8";
+.news{
+	margin-left: 100px;
+	border: 1px solid #408080;
+	border-radius: 2px;
+	padding: 10px;
+}
+
+.news1{
+	margin-right: 100px;
+	border: 1px solid #408080;
+	border-radius: 2px;
+	padding: 10px;
+}
+
+.one{
+	float:left;
+	width:200px;
+	height:80px;
+}
+
+.two{
+	float:left;
+	width:150px;
+	height:350px;
+}
+
+.four{
+	float:left;
+	width:400px;
+	
+}
+
+.divfix{
+	position:fixed;
+	right:100px;
+	top:170px;
+}
+
+.three{
+	float:left;
+	padding:25px 5px 15px 10px;
+}
+
+.content{
+	clear:both;
+	/*
+	width:650px;
+	*/
+}
+
+/*
+.p1{
+
+	height:100px;
+	min-height:100px;
+	height:auto!important;
+	text-indent: 1em;
+	border: #c0c0c0 solid thin;
+	
+}
+*/
+.p1{
+	height:auto!important;
+	height:100px;
+	min-height:100px;
+}
+
+.p1:hover{
+	cursor:hand;
+	background:#ddddd7;
+}
+.p2{
+	color: #ff0000;
+	font-size:20px;
+	font-weight:900;
+}
+.policy_right
+{
+	position:relative;
+	left:20px;
+	width:150px;
+}
+.policy_btn {
+  border-top: 1px solid #398cbf;
+   background: #348dc9;
+   background: -webkit-gradient(linear, left top, left bottom, from(#2a7ab0), to(#348dc9));
+   background: -webkit-linear-gradient(top, #2a7ab0, #348dc9);
+   background: -moz-linear-gradient(top, #2a7ab0, #348dc9);
+   background: -ms-linear-gradient(top, #2a7ab0, #348dc9);
+   background: -o-linear-gradient(top, #2a7ab0, #348dc9);
+   padding: 14.5px 29px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 21px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+.policy_btn:hover {
+   border-top-color: #114f78;
+   background: #114f78;
+   color: #f7f4f7; 
+   }
+   
+.policy_btn:onMouseUp{
+   border-top-color: #114f78;
+   background: #000000;
+   color: #000000; 
+   }
+.popover {
+	max-width: 800px;
+}
+
+.btn-sp {
+	background: #5bc0de;
+}
+.div_overflow {
+	overflow:hidden;
+}
+.div_margin {
+	margin-left:25%;
+}
+.div_marginright {
+	margin-right:25%;
+}
