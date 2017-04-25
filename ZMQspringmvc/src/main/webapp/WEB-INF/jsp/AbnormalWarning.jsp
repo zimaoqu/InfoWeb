@@ -1,5 +1,6 @@
 <%@ page import="com.scorpion.pojo.negativenewsWithBLOBs" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.text.DecimalFormat" %>
 <%@ page import="com.scorpion.pojo.currentnewsWithBLOBs" %>
 <%@ page import="com.scorpion.pojo.companyinformation" %><%--
   Created by IntelliJ IDEA.
@@ -50,12 +51,13 @@
     List<negativenewsWithBLOBs> queryNegNews = (List<negativenewsWithBLOBs>) request.getAttribute("queryNegNews");
     List<currentnewsWithBLOBs> queryCurNews = (List<currentnewsWithBLOBs>) request.getAttribute("queryCurNews");
     List<companyinformation> queryComInfo = (List<companyinformation>) request.getAttribute("queryComInfo");
+    DecimalFormat df = new DecimalFormat("######0.000");
 %>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-left: auto;margin-right: auto">
     <br/>
     <%@include file="title.jsp" %>
     <br/>
-    <div style="margin-left: 50px">
+    <div style="margin-left: 250px">
         <div id="main" style="width: 900px; height: 600px; float: left; display: inline">
             <span id="spanFirstt">第一页</span> <span id="spanPret">上一页</span> <span
                 id="spanNextt">下一页</span> <span id="spanLastt">最后一页</span> 第<span
@@ -88,11 +90,11 @@
                     </td>
                     <td style="width: 320px"><a href="<%=_url%>" target="_blank"><%=_title%>
                     </a></td>
-                    <td><%=_date%>
+                    <td style="width: 91px;height: 34px"><%=_date%>
                     </td>
                     <td><%=_relcompany%>
                     </td>
-                    <td><%=_oreitationvalue%>
+                    <td><%=df.format(_oreitationvalue)%>
                     </td>
                     <td><input type="submit" value="发送"/></td>
                     <td><input type="button" value="未读"/></td>
