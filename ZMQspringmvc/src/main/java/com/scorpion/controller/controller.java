@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -232,6 +231,14 @@ public class controller {
      */
     @RequestMapping("showAbnormalWarning")
     public ModelAndView showAbnormalWarning(ModelMap modelMap){
+        String[] columnName = {"序号", "预警标题", "发布时间", "相关企业", "指数", "通知", "状态"};
+        List<negativenewsWithBLOBs> queryNegNews = searchService.queryNegativenews();
+        List<currentnewsWithBLOBs> queryCurNews = searchService.queryCurrentnews();
+        List<companyinformation> queryComInfo = searchService.querycompanyinfo();
+        modelMap.put("columnName",columnName);
+        modelMap.put("queryNegNews",queryNegNews);
+        modelMap.put("queryCurNews",queryCurNews);
+        modelMap.put("queryComInfo",queryComInfo);
         return new ModelAndView("AbnormalWarning",modelMap);
     }
 

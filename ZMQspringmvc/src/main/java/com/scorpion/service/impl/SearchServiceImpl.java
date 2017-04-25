@@ -7,8 +7,6 @@ import com.scorpion.util.data.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +28,12 @@ public class SearchServiceImpl implements SearchService {
     private NewsOfOtherZmqMapper newsOfOtherZmqMapper;
     @Autowired
     private PolicyMapper policyMapper;
+    @Autowired
+    private negativenewsMapper negativenewsMapper;
+    @Autowired
+    private currentnewsMapper currentnewsMapper;
+    @Autowired
+    private companyinformationMapper companyinformationMapper;
     /*
     The size of a page.
      */
@@ -260,7 +264,7 @@ public class SearchServiceImpl implements SearchService {
      */
     @Override
     public Page<PolicyWithBLOBs> queryMatchPolicyNews(int page, String startDate, String endDate, String cat) {
-        Map map = new HashMap<>();
+        Map map = new HashMap();
         int start = (page - 1) * pageSize;
         map.put("cat", cat);
         map.put("startDate", startDate);
@@ -271,5 +275,28 @@ public class SearchServiceImpl implements SearchService {
         List<PolicyWithBLOBs> dateList = policyMapper.selectMatchPolicyNews(map);
         Page<PolicyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
+    }
+
+    /**
+     * Negativenews
+     * @return
+     */
+    @Override
+    public List<negativenewsWithBLOBs> queryNegativenews() {
+        return negativenewsMapper.queryNegativenews();
+    }
+
+    /**
+     * CurrentNews
+     * @return
+     */
+    @Override
+    public List<currentnewsWithBLOBs> queryCurrentnews() {
+        return currentnewsMapper.queryCurrentnews();
+    }
+
+    @Override
+    public List<companyinformation> querycompanyinfo() {
+        return companyinformationMapper.queryComInfo();
     }
 }

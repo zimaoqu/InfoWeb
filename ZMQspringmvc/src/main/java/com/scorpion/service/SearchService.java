@@ -4,6 +4,7 @@ import com.scorpion.pojo.*;
 import com.scorpion.util.data.Page;
 
 import java.text.ParseException;
+import java.util.List;
 
 /**
  * Created by Scorpion on 2017/4/19.
@@ -66,4 +67,17 @@ public interface SearchService {
     条件匹配政策新闻
      */
     public Page<PolicyWithBLOBs> queryMatchPolicyNews(int page, String startDate, String endDate, String key);
+
+    /*
+    queryNegativenews
+     */
+    public List<negativenewsWithBLOBs> queryNegativenews();
+    /*
+    queryCurrentnews
+     */
+    public List<currentnewsWithBLOBs> queryCurrentnews();
+    /*
+    queryCompanyinformation
+     */
+    public List<companyinformation> querycompanyinfo();
 }

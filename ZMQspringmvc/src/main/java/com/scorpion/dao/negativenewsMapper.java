@@ -118,4 +118,10 @@ public interface negativenewsMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(negativenews record);
+
+    /**
+     * query Negativenews
+     * @return
+     */
+    List<negativenewsWithBLOBs> queryNegativenews();
 }

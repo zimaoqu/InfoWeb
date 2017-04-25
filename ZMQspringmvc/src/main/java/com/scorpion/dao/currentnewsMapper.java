@@ -118,4 +118,10 @@ public interface currentnewsMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(currentnews record);
+
+    /**
+     * query currentnews
+     * @return
+     */
+    List<currentnewsWithBLOBs> queryCurrentnews();
 }

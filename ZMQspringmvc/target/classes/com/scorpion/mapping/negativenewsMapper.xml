@@ -8,7 +8,7 @@
     -->
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="source" property="source" jdbcType="VARCHAR" />
-    <result column="date" property="date" jdbcType="DATE" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
     <result column="oreitationvalue" property="oreitationvalue" jdbcType="REAL" />
     <result column="ispush" property="ispush" jdbcType="INTEGER" />
     <result column="isread" property="isread" jdbcType="INTEGER" />
@@ -104,6 +104,9 @@
     -->
     title, url, keywords, html, relcompany
   </sql>
+  <select id="queryNegativenews" resultMap="ResultMapWithBLOBs">
+    select * from negativenews where date > 2016-12-31 order by date desc
+  </select>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.scorpion.pojo.negativenewsExample" >
     <!--
       WARNING - @mbggenerated
