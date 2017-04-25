@@ -29,6 +29,9 @@
         <result column="keywords" property="keywords" jdbcType="LONGVARCHAR"/>
         <result column="Relcompany" property="relcompany" jdbcType="LONGVARCHAR"/>
     </resultMap>
+    <resultMap id="oreitationvalueList" type="com.scorpion.pojo.NewsOfCompany">
+        <result column="oreitation" property="oreitation" jdbcType="INTEGER"/>
+    </resultMap>
     <sql id="Example_Where_Clause">
         <!--
           WARNING - @mbggenerated
@@ -120,8 +123,20 @@
     <select id="countAllNews" resultType="java.lang.Integer">
         SELECT count(*) from tb_content
     </select>
-    <select id="countMatchNews"  parameterType="Map" resultType="java.lang.Integer">
+    <select id="countMatchNews" parameterType="Map" resultType="java.lang.Integer">
         SELECT count(*) from tb_content where name like CONCAT('%',#{name},'%' ) and DATE BETWEEN #{startDate} and #{endDate}
+    </select>
+    <select id="getQuartervalue" parameterType="Map" resultType="java.lang.Double">
+        SELECT oreitationvalue from tb_content where name = #{companyName} and DATE BETWEEN #{date1} and #{date2}
+    </select>
+    <select id="getPosnum" parameterType="Map" resultType="java.lang.Integer">
+        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation>=0 and DATE BETWEEN #{date1} and #{date2}
+    </select>
+    <select id="getNegnum" parameterType="Map" resultType="java.lang.Integer">
+        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=-1 and DATE BETWEEN #{date1} and #{date2}
+    </select>
+    <select id="getComList"  resultType="java.lang.String">
+        SELECT DISTINCT name from tb_content
     </select>
     <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs"
             parameterType="com.scorpion.pojo.NewsOfCompanyExample">

@@ -299,4 +299,64 @@ public class SearchServiceImpl implements SearchService {
     public List<companyinformation> querycompanyinfo() {
         return companyinformationMapper.queryComInfo();
     }
+
+    /**
+     * 获取oreitationvalue
+     * @param companyName
+     * @param date1
+     * @param date2
+     * @return
+     */
+    @Override
+    public List<Double> getQuartervalue(String companyName, String date1, String date2) {
+        Map map = new HashMap();
+        map.put("companyName",companyName);
+        map.put("date1",date1);
+        map.put("date2",date2);
+//        System.out.println(date1);
+//        System.out.println(date2);
+//        System.out.println(newsOfCompanyMapper.getQuartervalue(map).size());
+        return newsOfCompanyMapper.getQuartervalue(map);
+    }
+
+    /**
+     * 正面新闻量
+     * @param companyName
+     * @param date1
+     * @param date2
+     * @return
+     */
+    @Override
+    public int getPosnum(String companyName, String date1, String date2) {
+        Map map = new HashMap();
+        map.put("companyName",companyName);
+        map.put("date1",date1);
+        map.put("date2",date2);
+        return newsOfCompanyMapper.getPosnum(map);
+    }
+
+    /**
+     * 负面新闻量
+     * @param companyName
+     * @param date1
+     * @param date2
+     * @return
+     */
+    @Override
+    public int getNegnum(String companyName, String date1, String date2) {
+        Map map = new HashMap();
+        map.put("companyName",companyName);
+        map.put("date1",date1);
+        map.put("date2",date2);
+        return newsOfCompanyMapper.getNegnum(map);
+    }
+
+    /**
+     * 所有公司名字
+     * @return
+     */
+    @Override
+    public List<String> getComList() {
+        return newsOfCompanyMapper.getComList();
+    }
 }

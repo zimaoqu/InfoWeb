@@ -140,4 +140,29 @@ public interface NewsOfCompanyMapper {
      * 获取匹配新闻的条数
      */
     int countMatchNews(Map map);
+
+    /**
+     * 根据companyname、时间条件来获取健康值
+     * @param map
+     * @return
+     */
+    List<Double> getQuartervalue(Map map);
+
+    /**
+     * 正面新闻量
+     * @return
+     */
+    int getPosnum(Map map);
+
+    /**
+     * 负面新闻量
+     * @return
+     */
+    int getNegnum(Map map);
+
+    /**
+     * 所有公司名字
+     * @return
+     */
+    List<String> getComList();
 }

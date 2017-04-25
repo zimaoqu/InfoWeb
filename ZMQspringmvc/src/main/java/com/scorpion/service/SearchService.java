@@ -59,10 +59,12 @@ public interface SearchService {
     分类获取政策新闻
      */
     public Page<PolicyWithBLOBs> queryPolicyNewsByCat(int page, String category);
+
     /*
     获取所有政策新闻
      */
     public Page<PolicyWithBLOBs> queryPolicyNews(int page);
+
     /*
     条件匹配政策新闻
      */
@@ -72,12 +74,26 @@ public interface SearchService {
     queryNegativenews
      */
     public List<negativenewsWithBLOBs> queryNegativenews();
+
     /*
     queryCurrentnews
      */
     public List<currentnewsWithBLOBs> queryCurrentnews();
+
     /*
     queryCompanyinformation
      */
     public List<companyinformation> querycompanyinfo();
+
+    /*
+    获取健康值的
+     */
+    List<Double> getQuartervalue(String companyName, String date1, String date2);
+
+    /*
+    正负新闻量以及所有公司名字
+     */
+    int getPosnum(String companyName, String date1, String date2);
+    int getNegnum(String companyName, String date1, String date2);
+    List<String> getComList();
 }

@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.List;
 
 
@@ -226,20 +229,77 @@ public class controller {
 
     /**
      * 返回企业预警页面
+     *
      * @param modelMap
      * @return
      */
     @RequestMapping("showAbnormalWarning")
-    public ModelAndView showAbnormalWarning(ModelMap modelMap){
+    public ModelAndView showAbnormalWarning(ModelMap modelMap) {
         String[] columnName = {"序号", "预警标题", "发布时间", "相关企业", "指数", "通知", "状态"};
         List<negativenewsWithBLOBs> queryNegNews = searchService.queryNegativenews();
         List<currentnewsWithBLOBs> queryCurNews = searchService.queryCurrentnews();
         List<companyinformation> queryComInfo = searchService.querycompanyinfo();
-        modelMap.put("columnName",columnName);
-        modelMap.put("queryNegNews",queryNegNews);
-        modelMap.put("queryCurNews",queryCurNews);
-        modelMap.put("queryComInfo",queryComInfo);
-        return new ModelAndView("AbnormalWarning",modelMap);
+        modelMap.put("columnName", columnName);
+        modelMap.put("queryNegNews", queryNegNews);
+        modelMap.put("queryCurNews", queryCurNews);
+        modelMap.put("queryComInfo", queryComInfo);
+        return new ModelAndView("AbnormalWarning", modelMap);
+    }
+
+    /**
+     * 企业健康态势
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping("showComHealthTendency")
+    public ModelAndView showComHealthTendency(ModelMap modelMap, HttpServletRequest request) {
+        System.out.println(request.getParameter("com"));
+        System.out.println(request.getParameter("by"));
+        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "上海三星半导体有限公司";
+        String timeGap = (request.getParameter("by") != null) ? request.getParameter("by") : "month";
+        int[] posnum = new int[100];
+        int[] negnum = new int[100];
+        DecimalFormat df = new DecimalFormat("#.##");
+        double[] healthvalue = new double[100];
+        String selectdiscomsstr = "";
+        int igap = 0;
+        if (timeGap.equals("quarter")) {
+            igap = 3;
+        } else if (timeGap.equals("month")) {
+            igap = 1;
+        }
+        int counti = 0;
+        for (int year = 2014; year <= 2016; year++) {
+            for (int i = 1; i <= 11; i = i + igap) {
+                String date1 = Integer.toString(year) + "-" + Integer.toString(i) + "-" + "1";
+                String date2 = Integer.toString(year) + "-" + Integer.toString(i + igap) + "-" + "1";
+                double sum = 0.0;
+                List<Double> quartervalue = searchService.getQuartervalue(companyName, date1, date2);
+                for (int j = 0; j < quartervalue.size(); j++) {
+                    if (quartervalue.get(j) != null)
+                        sum += quartervalue.get(j);
+                }
+                healthvalue[counti] = Double.parseDouble(df.format(sum));
+                posnum[counti] = searchService.getPosnum(companyName, date1, date2);
+                negnum[counti] = searchService.getNegnum(companyName, date1, date2);
+                counti++;
+            }
+        }
+        //企业选择下拉列表
+        List<String> companyList = searchService.getComList();
+        for (int i = 0; i < companyList.size(); i++) {
+            selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
+        }
+        System.out.println(timeGap);
+        modelMap.put("maincompany", companyName);
+        modelMap.put("mainby", timeGap);
+        modelMap.put("healthvalue", healthvalue);
+        modelMap.put("maincompany", companyName);
+        modelMap.put("posnum", posnum);
+        modelMap.put("negnum", negnum);
+        modelMap.put("selectdiscomsstr", selectdiscomsstr);
+        return new ModelAndView("ComHealthTendency", modelMap);
     }
 
     /**
@@ -491,7 +551,7 @@ public class controller {
      */
     @ResponseBody
     @RequestMapping("queryPolicyNews")
-    public void queryPolicyNews(HttpServletResponse response,String page) throws IOException {
+    public void queryPolicyNews(HttpServletResponse response, String page) throws IOException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
@@ -507,6 +567,7 @@ public class controller {
 
     /**
      * 根据条件来匹配政策新闻
+     *
      * @param response
      * @param page
      * @param startDate
