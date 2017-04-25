@@ -53,6 +53,7 @@
     List<companyinformation> queryComInfo = (List<companyinformation>) request.getAttribute("queryComInfo");
     DecimalFormat df = new DecimalFormat("######0.000");
 %>
+
 <div class="container-fluid" style="margin-left: auto;margin-right: auto">
     <br/>
     <%@include file="title.jsp" %>
@@ -74,7 +75,7 @@
                         }
                     %>
                 </tr>
-                <tbody id="tablesw">
+                <tbody id="tablelsw">
                 <%
                     for (int i = 0; i < queryNegNews.size(); i++) {
                         negativenewsWithBLOBs negNews = queryNegNews.get(i);
@@ -110,8 +111,9 @@
                 id="spanPageNum"></span>页/共<span id="spanTotalPage"></span>页
         </div>
 
-        <div id="main2" style="width: 400px; height: 600px;float: left; display: inline">
+        <div id="main2" style="width: 400px; height: 600px;float: left; display: inline;margin-left: 10px;">
             <span id="clock"></span>
+            <script src="${pageContext.request.contextPath}/resources/js/Clock.js"></script>
             <script type="text/javascript">
                 var clock = new Clock();
                 clock.display(document.getElementById("clock"));
@@ -179,7 +181,7 @@
 </body>
 <script src="${pageContext.request.contextPath}/resources/js/paging.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/buttonClick.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/Clock.js"></script>
+
 <script type="text/javascript">
     window.onload = function () {
         IniButtonEvent();

@@ -26,6 +26,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/resources/js/echarts-wordcloud.min.js"></script>
+
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <title>中国自由贸易试验区大数据管理与分析平台</title>
 </head>
