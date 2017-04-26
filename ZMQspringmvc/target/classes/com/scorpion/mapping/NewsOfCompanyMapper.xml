@@ -130,12 +130,39 @@
         SELECT oreitationvalue from tb_content where name = #{companyName} and DATE BETWEEN #{date1} and #{date2}
     </select>
     <select id="getPosnum" parameterType="Map" resultType="java.lang.Integer">
-        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation>=0 and DATE BETWEEN #{date1} and #{date2}
+        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=1 and DATE BETWEEN #{date1} and #{date2}
+    </select>
+    <select id="getNeunum" parameterType="Map" resultType="java.lang.Integer">
+        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=0 and DATE BETWEEN #{date1} and #{date2}
     </select>
     <select id="getNegnum" parameterType="Map" resultType="java.lang.Integer">
         SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=-1 and DATE BETWEEN #{date1} and #{date2}
     </select>
-    <select id="getComList"  resultType="java.lang.String">
+
+    <select id="getAllTimePosnum" parameterType="String" resultType="java.lang.Integer">
+        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=1
+    </select>
+    <select id="getAllTimeNeunum" parameterType="String" resultType="java.lang.Integer">
+        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=0
+    </select>
+    <select id="getAllTimeNegnum" parameterType="String" resultType="java.lang.Integer">
+        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=-1
+    </select>
+
+
+    <select id="getPosnews" parameterType="String" resultMap="ResultMapWithBLOBs">
+        SELECT * from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=1 order by date DESC
+    </select>
+    <select id="getNeunews" parameterType="String" resultMap="ResultMapWithBLOBs">
+        SELECT * from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=0 order by date DESC
+    </select>
+    <select id="getNegnews" parameterType="String" resultMap="ResultMapWithBLOBs">
+        SELECT * from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=-1 order by date DESC
+    </select>
+    <select id="getCompanyName" parameterType="String" resultType="java.lang.String">
+        SELECT name from tb_content where name like CONCAT('%',#{companyName},'%' ) limit 1,1
+    </select>
+    <select id="getComList" resultType="java.lang.String">
         SELECT DISTINCT name from tb_content
     </select>
     <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs"

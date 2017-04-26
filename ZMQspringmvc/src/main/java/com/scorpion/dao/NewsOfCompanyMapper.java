@@ -149,16 +149,70 @@ public interface NewsOfCompanyMapper {
     List<Double> getQuartervalue(Map map);
 
     /**
-     * 正面新闻量
+     * 正面新闻量(时间限制)
      * @return
      */
     int getPosnum(Map map);
 
     /**
-     * 负面新闻量
+     * 负面新闻量(时间限制)
      * @return
      */
     int getNegnum(Map map);
+
+    /**
+     * 中立新闻量(时间限制)
+     * @param map
+     * @return
+     */
+    int getNeunum(Map map);
+
+
+    /**
+     * 正面新闻量(All Time)
+     * @return
+     */
+    int getAllTimePosnum(Map map);
+
+    /**
+     * 负面新闻量(All Time)
+     * @return
+     */
+    int getAllTimeNegnum(Map map);
+
+    /**
+     * 中立新闻量(All Time)
+     * @return
+     */
+    int getAllTimeNeunum(Map map);
+
+
+
+    /**
+     * 获取某个公司的正面新闻
+     * @param map
+     * @return
+     */
+    List<NewsOfCompanyWithBLOBs> getPosnews(Map map);
+    /**
+     * 获取某个公司的中立新闻
+     * @param map
+     * @return
+     */
+    List<NewsOfCompanyWithBLOBs> getNeunews(Map map);
+    /**
+     * 获取某个公司的负面新闻
+     * @param map
+     * @return
+     */
+    List<NewsOfCompanyWithBLOBs> getNegnews(Map map);
+
+    /**
+     * 获取公司的准确名字
+      * @param map
+     * @return
+     */
+    String getCompanyName(Map map);
 
     /**
      * 所有公司名字

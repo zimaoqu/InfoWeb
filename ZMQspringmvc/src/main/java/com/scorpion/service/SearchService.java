@@ -91,9 +91,21 @@ public interface SearchService {
     List<Double> getQuartervalue(String companyName, String date1, String date2);
 
     /*
-    正负新闻量以及所有公司名字
+    某个时间段正负新闻量以及所有公司名字
      */
     int getPosnum(String companyName, String date1, String date2);
     int getNegnum(String companyName, String date1, String date2);
     List<String> getComList();
+
+
+    /*(企业舆情评价用到的)
+    根据公司的名字来获取正面、中立、负面新闻的篇数(所有时间段),正面、中立、负面新闻
+     */
+    int getAllTimePosnums(String companyName);
+    int getAllTimeNeunums(String companyName);
+    int getAllTimeNegnums(String companyName);
+    List<NewsOfCompanyWithBLOBs> getPosnews(String companyName);
+    List<NewsOfCompanyWithBLOBs> getNeunews(String companyName);
+    List<NewsOfCompanyWithBLOBs> getNegnews(String companyName);
+    String getCompanyName(String name);
 }

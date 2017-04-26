@@ -254,8 +254,6 @@ public class controller {
      */
     @RequestMapping("showComHealthTendency")
     public ModelAndView showComHealthTendency(ModelMap modelMap, HttpServletRequest request) {
-        System.out.println(request.getParameter("com"));
-        System.out.println(request.getParameter("by"));
         String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "上海三星半导体有限公司";
         String timeGap = (request.getParameter("by") != null) ? request.getParameter("by") : "month";
         int[] posnum = new int[100];
@@ -300,6 +298,54 @@ public class controller {
         modelMap.put("negnum", negnum);
         modelMap.put("selectdiscomsstr", selectdiscomsstr);
         return new ModelAndView("ComHealthTendency", modelMap);
+    }
+
+    /**
+     * 企业舆情评价
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping("showComPublicOpinionEvaluation")
+    public ModelAndView showComPublicOpinionEvaluation(ModelMap modelMap, HttpServletRequest request) {
+        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "捷豹路虎";
+        String[] othercoms = {"玛莎拉蒂", "三星", "神华中海航运", "益海嘉里"};
+        int[] poslist = new int[4];
+        int[] neulist = new int[4];
+        int[] neglist = new int[4];
+        String selectdiscomsstr = "";
+        for (int i = 0; i < 4; i++) {
+            poslist[i] = searchService.getAllTimePosnums(othercoms[i]);
+            neulist[i] = searchService.getAllTimeNeunums(othercoms[i]);
+            neglist[i] = searchService.getAllTimeNegnums(othercoms[i]);
+        }
+        int posNum = searchService.getAllTimePosnums(companyName);
+        int neuNum = searchService.getAllTimeNeunums(companyName);
+        int negNum = searchService.getAllTimeNegnums(companyName);
+        String completename = searchService.getCompanyName(companyName);
+        String output = completename + "新闻倾向性分析情况";
+        List<NewsOfCompanyWithBLOBs> posNews = searchService.getPosnews(companyName);
+        List<NewsOfCompanyWithBLOBs> neuNews = searchService.getNeunews(companyName);
+        List<NewsOfCompanyWithBLOBs> negNews = searchService.getNegnews(companyName);
+        //企业选择下拉列表
+        List<String> companyList = searchService.getComList();
+        for (int i = 0; i < companyList.size(); i++) {
+            selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
+        }
+        modelMap.put("maincom",companyName);
+        modelMap.put("posNum",posNum);
+        modelMap.put("neuNum",neuNum);
+        modelMap.put("negNum",negNum);
+        modelMap.put("posNews",posNews);
+        modelMap.put("neuNews",neuNews);
+        modelMap.put("negNews",negNews);
+        modelMap.put("output",output);
+        modelMap.put("othercoms",othercoms);
+        modelMap.put("poslist",poslist);
+        modelMap.put("neulist",neulist);
+        modelMap.put("neglist",neglist);
+        modelMap.put("selectdiscomsstr",selectdiscomsstr);
+        return new ModelAndView("ComPublicOpinionEvaluation", modelMap);
     }
 
     /**

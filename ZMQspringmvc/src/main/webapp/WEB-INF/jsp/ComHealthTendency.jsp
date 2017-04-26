@@ -19,6 +19,7 @@
         width: 900px;
         height: 600px;
         border: 1px solid #000;
+    }
 </style>
 
 <body>

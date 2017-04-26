@@ -53,7 +53,6 @@ public class SearchServiceImpl implements SearchService {
         map.put("start", start);
         map.put("size", pageSize);
         List<NewsOfCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectAllNews(map);
-
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
@@ -220,6 +219,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 根据类别获取政策新闻
+     *
      * @param page
      * @param category
      * @return
@@ -228,7 +228,7 @@ public class SearchServiceImpl implements SearchService {
     public Page<PolicyWithBLOBs> queryPolicyNewsByCat(int page, String category) {
         Map map = new HashMap<>();
         int start = (page - 1) * pageSize;
-        map.put("cat",category);
+        map.put("cat", category);
         map.put("start", start);
         map.put("size", pageSize);
         int countOfNews = policyMapper.countPolicyByCat(map);
@@ -239,6 +239,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取所有政策新闻
+     *
      * @param page
      * @param
      * @return
@@ -257,6 +258,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 条件获取政策新闻
+     *
      * @param page
      * @param startDate
      * @param endDate
@@ -279,6 +281,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * Negativenews
+     *
      * @return
      */
     @Override
@@ -288,6 +291,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * CurrentNews
+     *
      * @return
      */
     @Override
@@ -302,6 +306,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取oreitationvalue
+     *
      * @param companyName
      * @param date1
      * @param date2
@@ -310,9 +315,9 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public List<Double> getQuartervalue(String companyName, String date1, String date2) {
         Map map = new HashMap();
-        map.put("companyName",companyName);
-        map.put("date1",date1);
-        map.put("date2",date2);
+        map.put("companyName", companyName);
+        map.put("date1", date1);
+        map.put("date2", date2);
 //        System.out.println(date1);
 //        System.out.println(date2);
 //        System.out.println(newsOfCompanyMapper.getQuartervalue(map).size());
@@ -321,6 +326,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 正面新闻量
+     *
      * @param companyName
      * @param date1
      * @param date2
@@ -329,14 +335,15 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public int getPosnum(String companyName, String date1, String date2) {
         Map map = new HashMap();
-        map.put("companyName",companyName);
-        map.put("date1",date1);
-        map.put("date2",date2);
+        map.put("companyName", companyName);
+        map.put("date1", date1);
+        map.put("date2", date2);
         return newsOfCompanyMapper.getPosnum(map);
     }
 
     /**
      * 负面新闻量
+     *
      * @param companyName
      * @param date1
      * @param date2
@@ -345,18 +352,109 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public int getNegnum(String companyName, String date1, String date2) {
         Map map = new HashMap();
-        map.put("companyName",companyName);
-        map.put("date1",date1);
-        map.put("date2",date2);
+        map.put("companyName", companyName);
+        map.put("date1", date1);
+        map.put("date2", date2);
         return newsOfCompanyMapper.getNegnum(map);
     }
 
     /**
      * 所有公司名字
+     *
      * @return
      */
     @Override
     public List<String> getComList() {
         return newsOfCompanyMapper.getComList();
+    }
+
+    /**
+     * 根据公司名字获取所有时间段的正面新闻量
+     *
+     * @param companyName
+     * @return
+     */
+    @Override
+    public int getAllTimePosnums(String companyName) {
+        Map map = new HashMap();
+        map.put("companyName", companyName);
+        return newsOfCompanyMapper.getAllTimePosnum(map);
+    }
+
+    /**
+     * 根据公司名字获取所有时间段的中立新闻量
+     *
+     * @param companyName
+     * @return
+     */
+    @Override
+    public int getAllTimeNeunums(String companyName) {
+        Map map = new HashMap();
+        map.put("companyName", companyName);
+        return newsOfCompanyMapper.getAllTimeNeunum(map);
+    }
+
+    /**
+     * 根据公司名字获取所有时间段的负面新闻量
+     *
+     * @param companyName
+     * @return
+     */
+    @Override
+    public int getAllTimeNegnums(String companyName) {
+        Map map = new HashMap();
+        map.put("companyName", companyName);
+        return newsOfCompanyMapper.getAllTimeNegnum(map);
+    }
+
+    /**
+     * 根据公司名字来获取正面新闻
+     *
+     * @param companyName
+     * @return
+     */
+    @Override
+    public List<NewsOfCompanyWithBLOBs> getPosnews(String companyName) {
+        Map map = new HashMap();
+        map.put("companyName", companyName);
+        return newsOfCompanyMapper.getPosnews(map);
+    }
+
+    /**
+     * 根据公司名字来获取中立新闻
+     *
+     * @param companyName
+     * @return
+     */
+    @Override
+    public List<NewsOfCompanyWithBLOBs> getNeunews(String companyName) {
+        Map map = new HashMap();
+        map.put("companyName", companyName);
+        return newsOfCompanyMapper.getNeunews(map);
+    }
+
+    /**
+     * 根据公司名字来获取负面新闻
+     *
+     * @param companyName
+     * @return
+     */
+    @Override
+    public List<NewsOfCompanyWithBLOBs> getNegnews(String companyName) {
+        Map map = new HashMap();
+        map.put("companyName", companyName);
+        return newsOfCompanyMapper.getNegnews(map);
+    }
+
+    /**
+     * 获取公司完整的名字
+     * @param name
+     * @return
+     */
+    @Override
+    public String getCompanyName(String name) {
+        Map map = new HashMap();
+        map.put("companyName", name);
+        return newsOfCompanyMapper.getCompanyName(map);
     }
 }
