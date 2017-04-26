@@ -108,4 +108,10 @@ public interface SearchService {
     List<NewsOfCompanyWithBLOBs> getNeunews(String companyName);
     List<NewsOfCompanyWithBLOBs> getNegnews(String companyName);
     String getCompanyName(String name);
+
+    /*
+    (企业声誉分析用到的)
+     */
+    double getCurreputation(String companyName);
+    List<String> getDemoComList();
 }

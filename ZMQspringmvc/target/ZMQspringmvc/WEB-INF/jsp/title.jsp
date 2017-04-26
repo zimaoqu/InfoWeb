@@ -66,7 +66,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showComPublicOpinionEvaluation">企业舆情评价</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComHealthTendency">企业健康态势</a></li>
-                        <li><a href="<%=request.getContextPath()%>/GetDemo3">企业声誉分析</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showComReputationAnalysis">企业声誉分析</a></li>
                     </ul></li>
 
                 <li><a href="${pageContext.request.contextPath}/zmq/showEventRelationship">企业事件分析</a></li>

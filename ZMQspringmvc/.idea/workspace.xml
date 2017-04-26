@@ -20,8 +20,8 @@
       <file leaf-file-name="controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1034">
-              <caret line="347" column="59" lean-forward="false" selection-start-line="347" selection-start-column="33" selection-end-line="347" selection-end-column="59" />
+            <state relative-caret-position="304">
+              <caret line="369" column="109" lean-forward="false" selection-start-line="369" selection-start-column="109" selection-end-line="369" selection-end-column="109" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -29,14 +29,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComPublicOpinionEvaluation.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComPublicOpinionEvaluation.jsp">
+      <file leaf-file-name="ComReputationAnalysis.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComReputationAnalysis.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="89" column="23" lean-forward="true" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+            <state relative-caret-position="478">
+              <caret line="237" column="34" lean-forward="true" selection-start-line="237" selection-start-column="34" selection-end-line="237" selection-end-column="34" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#td#1;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1493194183353" expanded="true" signature="3373:3474" ph="..." />
               </folding>
             </state>
           </provider>
@@ -45,48 +45,19 @@
       <file leaf-file-name="title.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="66" column="106" lean-forward="false" selection-start-line="66" selection-start-column="76" selection-end-line="66" selection-end-column="106" />
+            <state relative-caret-position="242">
+              <caret line="68" column="101" lean-forward="false" selection-start-line="68" selection-start-column="76" selection-end-line="68" selection-end-column="101" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsOfCompanyMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfCompanyMapper.xml">
+      <file leaf-file-name="democompanyMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/democompanyMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1214">
-              <caret line="162" column="93" lean-forward="false" selection-start-line="162" selection-start-column="93" selection-end-line="162" selection-end-column="93" />
-              <folding>
-                <marker date="1493189130176" expanded="true" signature="6101:6167" ph="SELECT * fro... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="6273:6425" ph="SELECT * fro... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="6510:6541" ph="SELECT count... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="6648:6765" ph="SELECT count... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="6872:6938" ph="SELECT oreit... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="6872:6977" ph="SELECT oreit... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="7079:7174" ph="SELECT count... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="7079:7214" ph="SELECT count... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="7316:7451" ph="SELECT count... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="7553:7689" ph="SELECT count... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="7802:7898" ph="SELECT count... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="8010:8106" ph="SELECT count... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="8218:8315" ph="SELECT count... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="8423:8531" ph="SELECT * fro... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="8637:8745" ph="SELECT * fro... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="8851:8960" ph="SELECT * fro... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="9069:9154" ph="SELECT name tb_content" />
-                <marker date="1493189130176" expanded="true" signature="9236:9272" ph="SELECT DISTI... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="10865:11035" ph="select , fro... " />
-                <marker date="1493189130176" expanded="true" signature="11275:11339" ph="delete from " />
-                <marker date="1493189130176" expanded="true" signature="11597:11619" ph="delete from " />
-                <marker date="1493189130176" expanded="true" signature="11975:12708" ph="insert into tb_content... " />
-                <marker date="1493189130176" expanded="true" signature="16397:16428" ph="select count... tb_content" />
-                <marker date="1493189130176" expanded="true" signature="19188:20078" ph="update tb_co... " />
-                <marker date="1493189130176" expanded="true" signature="20416:20908" ph="update tb_co... " />
-                <marker date="1493189130176" expanded="true" signature="21295:23091" ph="update tb_co... " />
-                <marker date="1493189130176" expanded="true" signature="23363:24146" ph="update tb_co... " />
-                <marker date="1493189130176" expanded="true" signature="24400:24834" ph="update tb_co... " />
-              </folding>
+            <state relative-caret-position="522">
+              <caret line="73" column="30" lean-forward="false" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,8 +65,8 @@
       <file leaf-file-name="SearchService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="109" column="39" lean-forward="false" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+            <state relative-caret-position="478">
+              <caret line="115" column="24" lean-forward="false" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -104,13 +75,30 @@
       <file leaf-file-name="SearchServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="436" column="20" lean-forward="true" selection-start-line="436" selection-start-column="20" selection-end-line="436" selection-end-column="20" />
+            <state relative-caret-position="544">
+              <caret line="476" column="45" lean-forward="false" selection-start-line="476" selection-start-column="45" selection-end-line="476" selection-end-column="45" />
               <folding>
                 <element signature="docComment;method#queryMatchNews#0;class#SearchServiceImpl#0" expanded="false" />
                 <element signature="method#queryMatchNews#0;class#SearchServiceImpl#0" expanded="false" />
-                <element signature="e#11140#11141#0" expanded="true" />
-                <element signature="e#11195#11196#0" expanded="true" />
+                <element signature="e#13710#13711#0" expanded="true" />
+                <element signature="e#13763#13764#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="democompanyMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/democompanyMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="472">
+              <caret line="88" column="32" lean-forward="false" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
+              <folding>
+                <marker date="1493195586023" expanded="true" signature="3449:3522" ph="SELECT curre... democompany" />
+                <marker date="1493195586023" expanded="true" signature="3596:3641" ph="SELECT DISTI... democompany" />
+                <marker date="1493195586023" expanded="true" signature="4426:4449" ph="delete from " />
+                <marker date="1493195586023" expanded="true" signature="4759:4889" ph="insert into democompany... " />
+                <marker date="1493195586023" expanded="true" signature="5874:5906" ph="select count... democompany" />
+                <marker date="1493195586023" expanded="true" signature="6795:6936" ph="update democ... " />
               </folding>
             </state>
           </provider>
@@ -123,9 +111,9 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -152,10 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SHZmqHealthTendency.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SHZmqPublicOpinionEvaluation.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqCompare.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ThirdPartyDate.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ThirdPartyData.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/PotentialRelationship.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
@@ -186,7 +170,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/negativenewsMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/currentnews.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/currentnewsMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/companyinformation.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/companyinfomation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/negativenewsMapper.xml" />
@@ -195,14 +178,19 @@
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/companyinformationMapper.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/paging.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalWarning.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfCompanyMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfCompanyMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComHealthTendency.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComPublicOpinionEvaluation.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/CompanyInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComReputationAnalysis.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/democompanyMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/democompanyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" />
       </list>
     </option>
   </component>
@@ -1219,15 +1207,15 @@
       <workItem from="1492735063288" duration="40176000" />
       <workItem from="1492824366611" duration="50121000" />
       <workItem from="1492994098065" duration="63473000" />
-      <workItem from="1493169130372" duration="13313000" />
+      <workItem from="1493169130372" duration="19464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206108000" />
+    <option name="totallyTimeSpent" value="212259000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1252,7 +1240,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27824268" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18619247" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1283,81 +1271,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfOtherZmqMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="118" column="11" lean-forward="true" selection-start-line="107" selection-start-column="2" selection-end-line="118" selection-end-column="11" />
-          <folding>
-            <marker date="1492865272530" expanded="true" signature="4630:4697" ph="SELECT * fro... zimaoqunews" />
-            <marker date="1492865272530" expanded="true" signature="4805:4958" ph="SELECT * fro... zimaoqunews" />
-            <marker date="1492865272530" expanded="true" signature="5043:5075" ph="SELECT count... zimaoqunews" />
-            <marker date="1492865272530" expanded="true" signature="5183:5301" ph="SELECT count... zimaoqunews" />
-            <marker date="1492865272530" expanded="true" signature="6738:6932" ph="select , fro... " />
-            <marker date="1492865272530" expanded="true" signature="7167:7268" ph="delete from " />
-            <marker date="1492865272530" expanded="true" signature="7504:7527" ph="delete from " />
-            <marker date="1492865272530" expanded="true" signature="7849:8397" ph="insert into zimaoqunews... " />
-            <marker date="1492865272530" expanded="true" signature="10811:10843" ph="select count... zimaoqunews" />
-            <marker date="1492865272530" expanded="true" signature="12779:13422" ph="update zimao... " />
-            <marker date="1492865272530" expanded="true" signature="13725:13982" ph="update zimao... " />
-            <marker date="1492865272530" expanded="true" signature="14335:15406" ph="update zimao... " />
-            <marker date="1492865272530" expanded="true" signature="15656:16221" ph="update zimao... " />
-            <marker date="1492865272530" expanded="true" signature="16453:16681" ph="update zimao... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/Policy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="51" column="30" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="51" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyWithBLOBs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2046">
-          <caret line="99" column="6" lean-forward="true" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
-          <folding>
-            <element signature="e#2750#2751#0" expanded="false" />
-            <element signature="e#2776#2777#0" expanded="false" />
-            <element signature="e#2828#2829#0" expanded="false" />
-            <element signature="e#2858#2859#0" expanded="false" />
-            <element signature="e#2903#2904#0" expanded="false" />
-            <element signature="e#2930#2931#0" expanded="false" />
-            <element signature="e#2984#2985#0" expanded="false" />
-            <element signature="e#3016#3017#0" expanded="false" />
-            <element signature="e#3062#3063#0" expanded="false" />
-            <element signature="e#3090#3091#0" expanded="false" />
-            <element signature="e#3146#3147#0" expanded="false" />
-            <element signature="e#3180#3181#0" expanded="false" />
-            <element signature="e#3229#3230#0" expanded="false" />
-            <element signature="e#3260#3261#0" expanded="false" />
-            <element signature="e#3322#3323#0" expanded="false" />
-            <element signature="e#3362#3363#0" expanded="false" />
-            <element signature="e#3413#3414#0" expanded="false" />
-            <element signature="e#3446#3447#0" expanded="false" />
-            <element signature="e#3512#3513#0" expanded="false" />
-            <element signature="e#3556#3557#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/MatchOtherZmq.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="84" column="25" lean-forward="false" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/MatchOtherZmqResult.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="79" column="38" lean-forward="true" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/CompanyNews.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1188">
@@ -1599,14 +1512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/companyinformationExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-308">
@@ -1695,49 +1600,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComHealthTendency.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/democompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="77" lean-forward="false" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfCompanyMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="210" column="16" lean-forward="false" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="16" />
+        <state relative-caret-position="238">
+          <caret line="148" column="42" lean-forward="true" selection-start-line="143" selection-start-column="4" selection-end-line="148" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="109" column="39" lean-forward="false" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+        <state relative-caret-position="242">
+          <caret line="68" column="101" lean-forward="false" selection-start-line="68" selection-start-column="76" selection-end-line="68" selection-end-column="101" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/CompanyInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="436" column="20" lean-forward="true" selection-start-line="436" selection-start-column="20" selection-end-line="436" selection-end-column="20" />
+        <state relative-caret-position="110">
+          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
-            <element signature="docComment;method#queryMatchNews#0;class#SearchServiceImpl#0" expanded="false" />
-            <element signature="method#queryMatchNews#0;class#SearchServiceImpl#0" expanded="false" />
-            <element signature="e#11140#11141#0" expanded="true" />
-            <element signature="e#11195#11196#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="347" column="59" lean-forward="false" selection-start-line="347" selection-start-column="33" selection-end-line="347" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#173#174#0" expanded="true" />
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#309#310#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfCompanyMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1214">
-          <caret line="162" column="93" lean-forward="false" selection-start-line="162" selection-start-column="93" selection-end-line="162" selection-end-column="93" />
+        <state relative-caret-position="220">
+          <caret line="166" column="13" lean-forward="true" selection-start-line="164" selection-start-column="4" selection-end-line="166" selection-end-column="13" />
           <folding>
             <marker date="1493189130176" expanded="true" signature="6101:6167" ph="SELECT * fro... tb_content" />
             <marker date="1493189130176" expanded="true" signature="6273:6425" ph="SELECT * fro... tb_content" />
@@ -1771,29 +1698,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComHealthTendency.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/democompanyMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="522">
+          <caret line="73" column="30" lean-forward="false" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="66" column="106" lean-forward="false" selection-start-line="66" selection-start-column="76" selection-end-line="66" selection-end-column="106" />
+        <state relative-caret-position="478">
+          <caret line="115" column="24" lean-forward="false" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="476" column="45" lean-forward="false" selection-start-line="476" selection-start-column="45" selection-end-line="476" selection-end-column="45" />
+          <folding>
+            <element signature="docComment;method#queryMatchNews#0;class#SearchServiceImpl#0" expanded="false" />
+            <element signature="method#queryMatchNews#0;class#SearchServiceImpl#0" expanded="false" />
+            <element signature="e#13710#13711#0" expanded="true" />
+            <element signature="e#13763#13764#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/democompanyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="88" column="32" lean-forward="false" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
+          <folding>
+            <marker date="1493195586023" expanded="true" signature="3449:3522" ph="SELECT curre... democompany" />
+            <marker date="1493195586023" expanded="true" signature="3596:3641" ph="SELECT DISTI... democompany" />
+            <marker date="1493195586023" expanded="true" signature="4426:4449" ph="delete from " />
+            <marker date="1493195586023" expanded="true" signature="4759:4889" ph="insert into democompany... " />
+            <marker date="1493195586023" expanded="true" signature="5874:5906" ph="select count... democompany" />
+            <marker date="1493195586023" expanded="true" signature="6795:6936" ph="update democ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="369" column="109" lean-forward="false" selection-start-line="369" selection-start-column="109" selection-end-line="369" selection-end-column="109" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComPublicOpinionEvaluation.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="89" column="23" lean-forward="true" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+        <state relative-caret-position="330">
+          <caret line="30" column="9" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComReputationAnalysis.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="237" column="34" lean-forward="true" selection-start-line="237" selection-start-column="34" selection-end-line="237" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#td#1;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1493194183353" expanded="true" signature="3373:3474" ph="..." />
           </folding>
         </state>
       </provider>

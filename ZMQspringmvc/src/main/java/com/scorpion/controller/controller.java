@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -332,20 +333,51 @@ public class controller {
         for (int i = 0; i < companyList.size(); i++) {
             selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
         }
-        modelMap.put("maincom",companyName);
-        modelMap.put("posNum",posNum);
-        modelMap.put("neuNum",neuNum);
-        modelMap.put("negNum",negNum);
-        modelMap.put("posNews",posNews);
-        modelMap.put("neuNews",neuNews);
-        modelMap.put("negNews",negNews);
-        modelMap.put("output",output);
-        modelMap.put("othercoms",othercoms);
-        modelMap.put("poslist",poslist);
-        modelMap.put("neulist",neulist);
-        modelMap.put("neglist",neglist);
-        modelMap.put("selectdiscomsstr",selectdiscomsstr);
+        modelMap.put("maincom", companyName);
+        modelMap.put("posNum", posNum);
+        modelMap.put("neuNum", neuNum);
+        modelMap.put("negNum", negNum);
+        modelMap.put("posNews", posNews);
+        modelMap.put("neuNews", neuNews);
+        modelMap.put("negNews", negNews);
+        modelMap.put("output", output);
+        modelMap.put("othercoms", othercoms);
+        modelMap.put("poslist", poslist);
+        modelMap.put("neulist", neulist);
+        modelMap.put("neglist", neglist);
+        modelMap.put("selectdiscomsstr", selectdiscomsstr);
         return new ModelAndView("ComPublicOpinionEvaluation", modelMap);
+    }
+
+    /**
+     * 企业声誉分析
+     * @param modelMap
+     * @return
+     */
+    @RequestMapping("showComReputationAnalysis")
+    public ModelAndView showComReputationAnalysis(ModelMap modelMap) {
+        List<CompanyInfo> comInfo = new ArrayList();
+        List<String> companyList = searchService.getComList();
+        for (String companyName : companyList) {
+            double sumreputation=0.0;
+            double sumhealth=0.0;
+            CompanyInfo c = new CompanyInfo();
+            c.setName(companyName);
+            List<String> demolist = searchService.getDemoComList();
+            if(demolist.contains(companyName)){
+                sumreputation = searchService.getCurreputation(companyName);
+            }
+            List<Double> quartervalue = searchService.getQuartervalue(companyName, "2016-11-1", "2016-12-1");
+            for (int j = 0; j < quartervalue.size(); j++) {
+                if (quartervalue.get(j) != null)
+                    sumhealth += quartervalue.get(j);
+            }
+            c.setReputation(sumreputation);
+            c.setHealth(sumhealth);
+            comInfo.add(c);
+        }
+        modelMap.put("comInfo",comInfo);
+        return new ModelAndView("ComReputationAnalysis", modelMap);
     }
 
     /**
@@ -638,3 +670,5 @@ public class controller {
         out.print(json);
     }
 }
+
+

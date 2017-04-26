@@ -34,6 +34,8 @@ public class SearchServiceImpl implements SearchService {
     private currentnewsMapper currentnewsMapper;
     @Autowired
     private companyinformationMapper companyinformationMapper;
+    @Autowired
+    private democompanyMapper democompanyMapper;
     /*
     The size of a page.
      */
@@ -456,5 +458,22 @@ public class SearchServiceImpl implements SearchService {
         Map map = new HashMap();
         map.put("companyName", name);
         return newsOfCompanyMapper.getCompanyName(map);
+    }
+
+    /**
+     * get Curreputation
+     * @param companyName
+     * @return
+     */
+    @Override
+    public double getCurreputation(String companyName) {
+        Map map = new HashMap();
+        map.put("companyName", companyName);
+        return democompanyMapper.getCurreputation(map);
+    }
+
+    @Override
+    public List<String> getDemoComList() {
+        return democompanyMapper.getComList();
     }
 }
