@@ -1,9 +1,12 @@
 package com.scorpion.dao;
 
+import com.scorpion.pojo.SourceOfNews;
 import com.scorpion.pojo.currentnews;
 import com.scorpion.pojo.currentnewsExample;
 import com.scorpion.pojo.currentnewsWithBLOBs;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface currentnewsMapper {
@@ -124,4 +127,32 @@ public interface currentnewsMapper {
      * @return
      */
     List<currentnewsWithBLOBs> queryCurrentnews();
+
+    /**
+     * 获取热词
+     * @return
+     */
+    List<String> getKeywords(Map map);
+
+    /**
+     * 新闻来源统计
+     * @param map
+     * @return
+     */
+    List<SourceOfNews> getCountSource(Map map);
+
+    /**
+     * 获取热点新闻
+     * @param map
+     * @return
+     */
+    List<currentnewsWithBLOBs> getHotNews(Map map);
+
+    /**
+     * 获取敏感新闻
+     * @param map
+     * @return
+     */
+    List<currentnewsWithBLOBs> getSensiveNews(Map map);
+
 }

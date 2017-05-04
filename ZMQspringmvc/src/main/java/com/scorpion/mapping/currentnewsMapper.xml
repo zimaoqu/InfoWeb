@@ -24,6 +24,10 @@
     <result column="html" property="html" jdbcType="LONGVARCHAR" />
     <result column="relcompany" property="relcompany" jdbcType="LONGVARCHAR" />
   </resultMap>
+  <resultMap id="SourceOfNews" type="com.scorpion.pojo.SourceOfNews">
+    <result column="source" property="source" jdbcType="LONGVARCHAR"/>
+    <result column="num" property="num" javaType="INTEGER"/>
+  </resultMap>
   <sql id="Example_Where_Clause" >
     <!--
       WARNING - @mbggenerated
@@ -106,6 +110,22 @@
   </sql>
   <select id="queryCurrentnews" resultMap="ResultMapWithBLOBs">
     select * from currentnews order by date desc
+  </select>
+
+  <select id="getKeywords" parameterType="String" resultType="java.lang.String">
+    SELECT keywords from currentnews where relcompany like CONCAT('%',#{relComName},'%' )
+  </select>
+  
+  <select id="getCountSource" parameterType="String" resultMap="SourceOfNews">
+    select source, count(*) as num from currentnews where relcompany like CONCAT('%',#{relComName},'%' ) GROUP BY source ORDER BY num desc
+  </select>
+
+  <select id="getHotNews" parameterType="String" resultMap="ResultMapWithBLOBs">
+    select * from currentnews where relcompany like CONCAT('%',#{relComName},'%' ) and oreitationvalue &gt; 0.2 order by date desc
+  </select>
+
+  <select id="getSensiveNews" parameterType="String" resultMap="ResultMapWithBLOBs">
+    select * from currentnews where relcompany like CONCAT('%',#{relComName},'%' ) and oreitationvalue &lt; -0.1 order by date desc
   </select>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.scorpion.pojo.currentnewsExample" >
     <!--
