@@ -290,7 +290,6 @@ public class controller {
         for (int i = 0; i < companyList.size(); i++) {
             selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
         }
-        System.out.println(timeGap);
         modelMap.put("maincompany", companyName);
         modelMap.put("mainby", timeGap);
         modelMap.put("healthvalue", healthvalue);
@@ -468,8 +467,6 @@ public class controller {
     public void matchCompanyNews(HttpServletResponse response, String page, String startDate, String endDate, String key) throws IOException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        System.out.println(startDate);
-        System.out.println(endDate);
         int pageNo = page == null ? 1 : Integer.parseInt(page);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchNews(pageNo, startDate, endDate, key);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
