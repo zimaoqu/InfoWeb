@@ -15,7 +15,8 @@
     <link href="${pageContext.request.contextPath}/resources/css/News.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/jquery-ui.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="${pageContext.request.contextPath}/resources/css/daterangepicker.min.css" rel="stylesheet">
     <%--<script src="${pageContext.request.contextPath}/resources/js/jquery-1.9.1.min.js"> </script>--%>
     <script src="${pageContext.request.contextPath}/resources/js/jquery-2.2.0.js"></script>
 
@@ -30,7 +31,42 @@
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <title>中国自由贸易试验区大数据管理与分析平台</title>
 </head>
+<style type="text/css">
+    #wrapper {
+        width: 800px;
+        margin: 0 auto;
+        color: #333;
+        font-family: Tahoma, Verdana, sans-serif;
+        line-height: 1.5;
+        font-size: 14px;
+    }
 
+    .demo {
+        margin: 30px 0;
+    }
+
+    .date-picker-wrapper .month-wrapper table .day.lalala {
+        background-color: orange;
+    }
+
+    .options {
+        display: none;
+        border-left: 6px solid #8ae;
+        padding: 10px;
+        font-size: 12px;
+        line-height: 1.4;
+        background-color: #eee;
+        border-radius: 4px;
+    }
+
+    .date-picker-wrapper.date-range-picker19 .day.first-date-selected {
+        background-color: red !important;
+    }
+
+    .date-picker-wrapper.date-range-picker19 .day.last-date-selected {
+        background-color: orange !important;
+    }
+</style>
 <body>
 
 <div class="row-fluid">

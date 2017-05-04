@@ -18,7 +18,8 @@ $(function () {
             doc.bindFunc();
         }
     };
-
+    console.log(startDate);
+    console.log(endDate);
     doc.init();
     queryData(1, startDate, endDate, key);
 });
@@ -47,6 +48,7 @@ function queryData(page, startDate, endDate, key) {
         data: {page: page, startDate: startDate, endDate: endDate, key: key},
         async: true,
         success: function (data) {
+            console.log(data);
             //$("#key").val(key);
             doc.dync.key = key;
             doc.dync.startDate = startDate;
