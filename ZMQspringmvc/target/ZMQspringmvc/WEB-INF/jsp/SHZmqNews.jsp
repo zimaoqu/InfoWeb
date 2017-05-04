@@ -30,46 +30,20 @@
     <div class="col-xs-8 span8">
         <div class="news">
             <form action="${pageContext.request.contextPath}/zmq/showMatchSHZmqResult">
-                <div class="one">
-                    初始日期：
-                    <div class="input-group date form_date col-md-16" data-date=""
-                         data-date-format="yyyy-mm-dd" data-link-field="dtp_input2"
-                         data-link-format="yyyy-mm-dd">
+                <div id="wrapper">
+                    <div class="demo">
+                        <span id="two-inputs">
+                            <div class="one">
+                                <input id="date-range200" size="20" class="form-control" name="startDate" placeholder="起始时间" value="${startDate}">
+                            </div>
+                            <div class="one">
+                                <input id="date-range201" size="20" class="form-control" name="endDate" placeholder="截止时间" value="${endDate}">
+                            </div>
+                        </span>
 
-                        <input id="startDate" class="form-control" size="16" type="text" name="startDate" value="">
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
                     </div>
+
                 </div>
-                <div class="one">
-                    终止日期：
-                    <div class="input-group date form_date col-md-16" data-date=""
-                         data-date-format="yyyy-mm-dd" data-link-field="dtp_input2"
-                         data-link-format="yyyy-mm-dd">
-                        <input id = "endDate" class="form-control" size="16" type="text" name="endDate" value="">
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                    </div>
-                </div>
-                <script type="text/javascript">
-                    $('.form_date').datetimepicker({
-                        weekStart: 1,
-                        todayBtn: 1,
-                        autoclose: 1,
-                        todayHighlight: 1,
-                        startView: 2,
-                        minView: 2,
-                        forceParse: 0
-                    });
-                </script>
-                <%--<div class="three">--%>
-                <%--<p>--%>
-                <%--<input type="submit" value="GO"/>--%>
-                <%--</p>--%>
-                <%--</div>--%>
-                <br/>
                 <input type="submit" value="搜索" class="btn btn-default"/>
             </form>
             <br/>
@@ -87,10 +61,14 @@
 </body>
 <script type="text/javascript">
     var ctx = "http://localhost:8080";
-    var startDate = $("#startDate").val();
-    var endDate = $("#endDate").val();
+    var startDate = $("input[name='startDate']").val();
+    var endDate = $("input[name='endDate']").val();
 </script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-2.2.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery.daterangepicker.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/demo.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/pagination.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/plugins/livesearch/jquery.livesearch.js"
         type="text/javascript"></script>
