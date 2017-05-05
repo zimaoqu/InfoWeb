@@ -118,6 +118,10 @@
   </dependencies>
   <build>
     <finalName>ZMQspringmvc</finalName>
+<<<<<<< HEAD
+=======
+    <pluginManagement>
+>>>>>>> c05355fbfbb0e385faf017182ea9d683f9e543ea
     <plugins>
       <plugin>
         <groupId>org.mybatis.generator</groupId>
@@ -145,6 +149,10 @@
         </dependencies>
       </plugin>
     </plugins>
+<<<<<<< HEAD
+=======
+    </pluginManagement>
+>>>>>>> c05355fbfbb0e385faf017182ea9d683f9e543ea
     <resources>
       <!--编译之后包含xml-->
       <resource>
@@ -155,5 +163,9 @@
         <filtering>true</filtering>
       </resource>
     </resources>
+<<<<<<< HEAD
+=======
+    <defaultGoal>compile</defaultGoal>
+>>>>>>> c05355fbfbb0e385faf017182ea9d683f9e543ea
   </build>
 </project>

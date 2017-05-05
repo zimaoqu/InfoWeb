@@ -35,6 +35,7 @@ function pager(page, totalPages, totalRecords) {
 
 var worddata = new Array();
 var namelist=[];
+
 function queryData(page) {
     $.ajax({
         cache: false,
@@ -72,6 +73,7 @@ function queryData(page) {
             $("#result").html(html);
             //保持两个div高度一致
             document.getElementById("right").style.height = document.getElementById("left").offsetHeight + "px";
+
             winHistory();
             pager(page, data.totalPages, data.totalRecords);
         },

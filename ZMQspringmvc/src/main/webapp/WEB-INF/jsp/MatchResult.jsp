@@ -27,6 +27,7 @@
 </div>
 <div class="row-fluid">
     <div id="left" class="col-xs-8 span8">
+
         <div class="news">
             <form action="${pageContext.request.contextPath}/zmq/showMatchResult">
                 <div id="wrapper">
@@ -71,9 +72,11 @@
         </div>
         <%--<div class="news">--%>
     </div>
+
     <div id="right" class="col-xs-3 span3 divfix">
         <div class="wordcloud" style="width: 400px;height: 300px;"></div>
     </div>
+
 
 </div>
 </body>

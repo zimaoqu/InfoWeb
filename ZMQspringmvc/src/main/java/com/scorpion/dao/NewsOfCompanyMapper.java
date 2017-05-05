@@ -225,4 +225,5 @@ public interface NewsOfCompanyMapper {
      * @return
      */
     List<String> getComKeywords(Map map);
+
 }

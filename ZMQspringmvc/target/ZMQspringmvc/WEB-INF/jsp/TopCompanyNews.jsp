@@ -27,6 +27,7 @@
 
 </div>
 <div class="row-fluid">
+
     <div id="left" class="col-xs-8 span8">
         <div class="news">
             <form action="${pageContext.request.contextPath}/zmq/showTopMatchResult">
@@ -62,9 +63,11 @@
         </div>
         <%--<div class="news">--%>
     </div>
+
     <div id="right" class="col-xs-3 span3 divfix">
         <div class="wordcloud" style="width: 400px;height: 300px;"></div>
     </div>
+
 </div>
 </body>
 <script type="text/javascript">
@@ -72,7 +75,6 @@
     var startDate = $("#startDate").val();
     var endDate = $("#endDate").val();
 </script>
-
 <script src="${pageContext.request.contextPath}/resources/js/jquery-2.2.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js" type="text/javascript"></script>

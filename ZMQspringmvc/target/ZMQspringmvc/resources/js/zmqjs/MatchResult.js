@@ -38,8 +38,10 @@ function pager(page, totalPages, totalRecords) {
     }, true);
 }
 
+
 var worddata = new Array();
 var namelist=[];
+
 function queryData(page, startDate, endDate, key) {
     $.ajax({
         cache: false,
@@ -92,7 +94,6 @@ function queryData(page, startDate, endDate, key) {
         }
     });
 }
-
 function drawpic(obj) {
     var id = obj.id;
     var comname = namelist[id];

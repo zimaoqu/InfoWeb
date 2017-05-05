@@ -7,7 +7,9 @@ import com.scorpion.util.data.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.*;
+
 
 /**
  * Created by Scorpion on 2017/4/19.
@@ -53,6 +55,7 @@ public class SearchServiceImpl implements SearchService {
         map.put("start", start);
         map.put("size", pageSize);
         List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectAllNews(map);
+
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
@@ -77,6 +80,7 @@ public class SearchServiceImpl implements SearchService {
         map.put("size", pageSize);
         int countOfNews = newsOfTopCompanyMapper.countMatchNews(map);
         List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectMatchNews(map);
+
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
@@ -448,6 +452,10 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取公司完整的名字
+     * <<<<<<< HEAD
+     * <p>
+     * =======
+     * >>>>>>> c05355fbfbb0e385faf017182ea9d683f9e543ea
      *
      * @param name
      * @return
@@ -461,6 +469,10 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * get Curreputation
+     * <<<<<<< HEAD
+     * <p>
+     * =======
+     * >>>>>>> c05355fbfbb0e385faf017182ea9d683f9e543ea
      *
      * @param companyName
      * @return
@@ -478,6 +490,7 @@ public class SearchServiceImpl implements SearchService {
     }
 
     /**
+     * <<<<<<< HEAD
      * 获取普通新闻对应的关键字
      *
      * @param page
@@ -491,8 +504,8 @@ public class SearchServiceImpl implements SearchService {
         map.put("start", start);
         map.put("size", pageSize);
         List<NewsOfCompanyWithBLOBs> dateList = newsOfCompanyMapper.selectAllNews(map);
-        for(NewsOfCompanyWithBLOBs news:dateList){
-            if(!news.getKeywords().isEmpty())
+        for (NewsOfCompanyWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
                 keyList.add(processKeywords(news.getKeywords()));
         }
         return keyList;
@@ -500,6 +513,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取普通新闻对应的关键字(时间等匹配条件)
+     *
      * @param page
      * @param startDate
      * @param endDate
@@ -517,8 +531,8 @@ public class SearchServiceImpl implements SearchService {
         map.put("start", start);
         map.put("size", pageSize);
         List<NewsOfCompanyWithBLOBs> dateList = newsOfCompanyMapper.selectMatchNews(map);
-        for(NewsOfCompanyWithBLOBs news:dateList){
-            if(!news.getKeywords().isEmpty())
+        for (NewsOfCompanyWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
                 keyList.add(processKeywords(news.getKeywords()));
         }
         return keyList;
@@ -538,8 +552,8 @@ public class SearchServiceImpl implements SearchService {
         map.put("start", start);
         map.put("size", pageSize);
         List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectAllNews(map);
-        for(NewsOfTopCompanyWithBLOBs news:dateList){
-            if(!news.getKeywords().isEmpty())
+        for (NewsOfTopCompanyWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
                 TopkeyList.add(processKeywords(news.getKeywords()));
         }
         return TopkeyList;
@@ -547,6 +561,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取Top新闻对应的关键字(时间等匹配条件)
+     *
      * @param page
      * @param startDate
      * @param endDate
@@ -564,14 +579,12 @@ public class SearchServiceImpl implements SearchService {
         map.put("start", start);
         map.put("size", pageSize);
         List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectMatchNews(map);
-        for(NewsOfTopCompanyWithBLOBs news:dateList){
-            if(!news.getKeywords().isEmpty())
+        for (NewsOfTopCompanyWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
                 TopkeyList.add(processKeywords(news.getKeywords()));
         }
         return TopkeyList;
     }
-
-
 
 
     /**
@@ -589,5 +602,109 @@ public class SearchServiceImpl implements SearchService {
             keywordMap.put(tmp1[0], tmp1[1]);
         }
         return keywordMap;
+    }
+
+    /**
+     * 获取关键词生成热词云
+     * @param companyName
+     * @return
+     */
+
+    @Override
+    public HashMap<String, Integer> getKeywords(String companyName) {
+        HashMap<String, Integer> wordcloud = new HashMap<String, Integer>();
+        Map map = new HashMap();
+        map.put("relComName", companyName.trim());
+        List<String> key = currentnewsMapper.getKeywords(map);
+        for (String k : key) {
+            ArrayList<String> kwl = splitStr(k);
+            for (int i = 0; i < kwl.size(); i++) {
+                String word = kwl.get(i);
+                if (wordcloud.containsKey(word)) {
+                    Integer num = wordcloud.get(word);
+                    num++;
+                    wordcloud.put(word, num);
+                } else {
+                    wordcloud.put(word, 1);
+                }
+            }
+        }
+        return wordcloud;
+    }
+
+    /**
+     * 统计新闻来源
+     *
+     * @param companyName
+     * @return
+     */
+    @Override
+    public HashMap<String, Integer> getCountSource(String companyName) {
+        HashMap<String, Integer> source = new HashMap<String, Integer>();
+        Map map = new HashMap();
+        map.put("relComName", companyName.trim());
+        List<SourceOfNews> sourceres = currentnewsMapper.getCountSource(map);
+        int count = 0;
+        for (SourceOfNews n : sourceres) {
+            String sourcename = n.getSource().trim();
+            String sourcenum = Integer.toString(n.getNum());
+            if (!sourcename.equals("其他")) {
+                source.put(sourcename, Integer.valueOf(sourcenum));
+                count++;
+            }
+            if (count >= 9) {
+                break;
+            }
+        }
+        return source;
+    }
+
+    /**
+     * 获取热点新闻
+     *
+     * @param companyName
+     * @return
+     */
+    @Override
+    public List<currentnewsWithBLOBs> getHotNews(String companyName) {
+        Map map = new HashMap();
+        map.put("relComName", companyName.trim());
+        List<currentnewsWithBLOBs> hotnews = currentnewsMapper.getHotNews(map);
+        return hotnews;
+    }
+
+    /**
+     * 获取敏感新闻
+     *
+     * @param companyName
+     * @return
+     */
+    @Override
+    public List<currentnewsWithBLOBs> getSensiveNews(String companyName) {
+        System.out.println("getCountSourceInService:" + companyName);
+        Map map = new HashMap();
+        map.put("relComName", companyName.trim());
+        List<currentnewsWithBLOBs> sensivenews = currentnewsMapper.getSensiveNews(map);
+        return sensivenews;
+    }
+
+    /**
+     * keywords字段处理
+     *
+     * @param str
+     * @return
+     */
+    @Override
+    public ArrayList<String> splitStr(String str) {
+        //str="产品/4;召回/3;进行/2;监督/3;";
+        ArrayList<String> res = new ArrayList<String>();
+        if (str != null) {
+            String[] temp = str.split(";");
+            for (int i = 0; i < temp.length; i++) {
+                String[] temp1 = temp[i].split("/");
+                res.add(temp1[0]);//仅保留关键词，不要词频
+            }
+        }
+        return res;
     }
 }

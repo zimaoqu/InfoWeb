@@ -125,11 +125,14 @@ public interface NewsOfTopCompanyMapper {
      * 获取所有公司的新闻
      * @return
      */
+
     List<NewsOfTopCompanyWithBLOBs> selectAllNews(Map map);
+
     /**
      * 获取匹配结果的公司的新闻
      * @return
      */
+
     List<NewsOfTopCompanyWithBLOBs> selectMatchNews(Map map);
 
     /**

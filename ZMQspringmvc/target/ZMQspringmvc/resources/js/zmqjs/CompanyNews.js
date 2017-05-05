@@ -35,6 +35,7 @@ function pager(page, totalPages, totalRecords) {
 
 var worddata = new Array();
 var namelist=[];
+
 function queryData(page) {
     $.ajax({
         cache: false,
@@ -47,6 +48,7 @@ function queryData(page) {
             console.log($("#result").html())
             var html = "";
             var html2 = "";
+
             $("#records").text(data.totalRecords);
             if (!data.totalRecords) {
                 $("#result").html("");
@@ -86,7 +88,6 @@ function queryData(page) {
         }
     });
 }
-
 function drawpic(obj) {
     var id = obj.id;
     var comname = namelist[id];
@@ -126,7 +127,6 @@ function drawpic(obj) {
         myChart.setOption(option);
     });
 }
-
 
 function changeHtml(html) {
     html = html.replace(/&lt;/gi, "<");

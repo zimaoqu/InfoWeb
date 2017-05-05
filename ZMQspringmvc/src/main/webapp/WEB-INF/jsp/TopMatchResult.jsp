@@ -17,7 +17,8 @@
     <script src="${pageContext.request.contextPath}/resources/js/pagination.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/resources/plugins/livesearch/jquery.livesearch.js"
             type="text/javascript"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/zmqjs/TopMatchResult.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/zmqjs/TopMatchResult.js"
+            type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/resources/plugins/template/template.js"
             type="text/javascript"></script>
 
@@ -34,16 +35,19 @@
 </div>
 <div class="row-fluid">
     <div id="left" class="col-xs-8 span8">
+
         <div class="news">
             <form action="${pageContext.request.contextPath}/zmq/showTopMatchResult">
                 <div id="wrapper">
                     <div class="demo">
                         <span id="two-inputs">
                             <div class="one">
-                                <input id="date-range200" size="20" class="form-control" name="startDate" placeholder="起始时间" value="${startDate}">
+                                <input id="date-range200" size="20" class="form-control" name="startDate"
+                                       placeholder="起始时间" value="${startDate}">
                             </div>
                             <div class="one">
-                                <input id="date-range201" size="20" class="form-control" name="endDate" placeholder="截止时间" value="${endDate}">
+                                <input id="date-range201" size="20" class="form-control" name="endDate"
+                                       placeholder="截止时间" value="${endDate}">
                             </div>
                         </span>
 
@@ -76,6 +80,7 @@
         </div>
         <%--<div class="news">--%>
     </div>
+
     <div id="right" class="col-xs-3 span3 divfix">
         <div class="wordcloud" style="width: 400px;height: 300px;"></div>
     </div>
@@ -87,6 +92,7 @@
     var startDate = $("input[name='startDate']").val();
     var endDate = $("input[name='endDate']").val();
 </script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.daterangepicker.min.js"></script>

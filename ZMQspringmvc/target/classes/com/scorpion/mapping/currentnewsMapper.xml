@@ -112,20 +112,23 @@
     select * from currentnews order by date desc
   </select>
 
-  <select id="getKeywords" parameterType="String" resultType="java.lang.String">
+
+
+  <select id="getKeywords" parameterType="Map" resultType="java.lang.String">
     SELECT keywords from currentnews where relcompany like CONCAT('%',#{relComName},'%' )
   </select>
   
-  <select id="getCountSource" parameterType="String" resultMap="SourceOfNews">
+  <select id="getCountSource" parameterType="Map" resultMap="SourceOfNews">
     select source, count(*) as num from currentnews where relcompany like CONCAT('%',#{relComName},'%' ) GROUP BY source ORDER BY num desc
   </select>
 
-  <select id="getHotNews" parameterType="String" resultMap="ResultMapWithBLOBs">
-    select * from currentnews where relcompany like CONCAT('%',#{relComName},'%' ) and oreitationvalue &gt; 0.2 order by date desc
+  <select id="getHotNews" parameterType="Map" resultMap="ResultMapWithBLOBs">
+    select * from currentnews where relcompany like CONCAT('%',#{relComName},'%' ) and oreitationvalue &gt; 0.2 order by date desc limit 10
   </select>
 
-  <select id="getSensiveNews" parameterType="String" resultMap="ResultMapWithBLOBs">
-    select * from currentnews where relcompany like CONCAT('%',#{relComName},'%' ) and oreitationvalue &lt; -0.1 order by date desc
+  <select id="getSensiveNews" parameterType="Map" resultMap="ResultMapWithBLOBs">
+    select * from currentnews where relcompany like CONCAT('%',#{relComName},'%' ) and oreitationvalue &lt; -0.1 order by oreitationvalue asc limit 10
+
   </select>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.scorpion.pojo.currentnewsExample" >
     <!--
