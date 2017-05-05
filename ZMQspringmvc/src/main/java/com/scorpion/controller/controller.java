@@ -19,8 +19,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 
 
 /**
@@ -309,6 +312,7 @@ public class controller {
      */
     @RequestMapping("showComPublicOpinionEvaluation")
     public ModelAndView showComPublicOpinionEvaluation(ModelMap modelMap, HttpServletRequest request) {
+
         String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "上海三星半导体有限公司";
         
         String selectdiscomsstr = "";
@@ -345,47 +349,7 @@ public class controller {
         modelMap.put("selectdiscomsstr", selectdiscomsstr);
         return new ModelAndView("ComPublicOpinionEvaluation", modelMap);
     }
-    /*@RequestMapping("showComPublicOpinionEvaluation")
-    public ModelAndView showComPublicOpinionEvaluation(ModelMap modelMap, HttpServletRequest request) {
-        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "捷豹路虎";
-        String[] othercoms = {"玛莎拉蒂", "三星", "神华中海航运", "益海嘉里"};
-        int[] poslist = new int[4];
-        int[] neulist = new int[4];
-        int[] neglist = new int[4];
-        String selectdiscomsstr = "";
-        for (int i = 0; i < 4; i++) {
-            poslist[i] = searchService.getAllTimePosnums(othercoms[i]);
-            neulist[i] = searchService.getAllTimeNeunums(othercoms[i]);
-            neglist[i] = searchService.getAllTimeNegnums(othercoms[i]);
-        }
-        int posNum = searchService.getAllTimePosnums(companyName);
-        int neuNum = searchService.getAllTimeNeunums(companyName);
-        int negNum = searchService.getAllTimeNegnums(companyName);
-        String completename = searchService.getCompanyName(companyName);
-        String output = completename + "新闻倾向性分析情况";
-        List<NewsOfCompanyWithBLOBs> posNews = searchService.getPosnews(companyName);
-        List<NewsOfCompanyWithBLOBs> neuNews = searchService.getNeunews(companyName);
-        List<NewsOfCompanyWithBLOBs> negNews = searchService.getNegnews(companyName);
-        //企业选择下拉列表
-        List<String> companyList = searchService.getComList();
-        for (int i = 0; i < companyList.size(); i++) {
-            selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
-        }
-        modelMap.put("maincom", companyName);
-        modelMap.put("posNum", posNum);
-        modelMap.put("neuNum", neuNum);
-        modelMap.put("negNum", negNum);
-        modelMap.put("posNews", posNews);
-        modelMap.put("neuNews", neuNews);
-        modelMap.put("negNews", negNews);
-        modelMap.put("output", output);
-        modelMap.put("othercoms", othercoms);
-        modelMap.put("poslist", poslist);
-        modelMap.put("neulist", neulist);
-        modelMap.put("neglist", neglist);
-        modelMap.put("selectdiscomsstr", selectdiscomsstr);
-        return new ModelAndView("ComPublicOpinionEvaluation", modelMap);
-    }*/
+
 
     /**
      * 企业声誉分析
@@ -431,6 +395,7 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
+        List keywords = searchService.getTopComKeywords(pageNo);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryAllTopNews(pageNo);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
@@ -438,6 +403,7 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("keywords",keywords);
         out.print(json);
     }
 
@@ -457,7 +423,9 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
-        System.out.println(key);
+        if(key==null)
+            key="";
+        List keywords = searchService.getMatchTopComKeywords(pageNo, startDate, endDate, key);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchTopNews(pageNo, startDate, endDate, key);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
@@ -465,6 +433,8 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+
+        json.put("keywords",keywords);
         out.print(json);
     }
 
@@ -481,6 +451,8 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
+        List keywords = searchService.getComKeywords(pageNo);
+
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryAllNews(pageNo);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
@@ -488,6 +460,8 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("keywords",keywords);
+
         out.print(json);
     }
 
@@ -507,6 +481,9 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
+        if(key==null)
+            key="";
+        List keywords = searchService.getMatchComKeywords(pageNo, startDate, endDate, key);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchNews(pageNo, startDate, endDate, key);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
@@ -514,6 +491,9 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+
+        json.put("keywords",keywords);
+
         out.print(json);
     }
 
@@ -705,8 +685,7 @@ public class controller {
         json.put("totalPages", resultPage.getTotalPages());
         out.print(json);
     }
-    
-    
+
 }
 
 

@@ -112,6 +112,8 @@
     select * from currentnews order by date desc
   </select>
 
+
+
   <select id="getKeywords" parameterType="Map" resultType="java.lang.String">
     SELECT keywords from currentnews where relcompany like CONCAT('%',#{relComName},'%' )
   </select>
@@ -126,6 +128,7 @@
 
   <select id="getSensiveNews" parameterType="Map" resultMap="ResultMapWithBLOBs">
     select * from currentnews where relcompany like CONCAT('%',#{relComName},'%' ) and oreitationvalue &lt; -0.1 order by oreitationvalue asc limit 10
+
   </select>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.scorpion.pojo.currentnewsExample" >
     <!--

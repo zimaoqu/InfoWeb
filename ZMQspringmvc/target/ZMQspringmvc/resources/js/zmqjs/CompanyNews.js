@@ -33,6 +33,8 @@ function pager(page, totalPages, totalRecords) {
     }, true);
 }
 
+var worddata = new Array();
+var namelist=[];
 
 function queryData(page) {
     $.ajax({
@@ -45,6 +47,8 @@ function queryData(page) {
         success: function (data) {
             console.log($("#result").html())
             var html = "";
+            var html2 = "";
+
             $("#records").text(data.totalRecords);
             if (!data.totalRecords) {
                 $("#result").html("");
@@ -52,23 +56,75 @@ function queryData(page) {
                 pager(page, data.totalPages, data.totalRecords);
                 return;
             }
+
+
             for (var i = 0; i < data.resultList.length; i++) {
-                html += '<h3><b><font size="4">' + data.resultList[i].title
-                    + '</font></b></h3><p>' + data.resultList[i].date
-                    + '</p><p>' + data.resultList[i].description + '</p><p><a class="btn btn-default" href='
+                html += '<div id="' + i + '" onmouseover="drawpic(this)"><h3><b ><font size="4">' + data.resultList[i].title
+                    + '</font></b></h3>' + data.resultList[i].date
+                    + '</p><p>' + data.resultList[i].description + '</p><a class="btn btn-default" href='
                     + data.resultList[i].url + ' target="_blank">原文»</a>&nbsp;<font color="blue">'
-                    + data.resultList[i].name + '</font>';
+                    + data.resultList[i].name + '</font></div>';
+                namelist[i]=data.resultList[i].name;
+                var keywordData = [];
+                for (var key in data.keywords[i]) {
+                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
+                    keywordData.push({
+                        name: key,
+                        value: data.keywords[i][key]
+                    })
+                }
+                worddata.push(keywordData);
             }
-            // html = template("rslt", data);
-            // html = changeHtml(html);
-            //document.getElementById("result").innerHTML = html;
             $("#result").html(html);
+
+            //保持两个div高度一致
+            document.getElementById("right").style.height = document.getElementById("left").offsetHeight + "px";
+
             winHistory();
             pager(page, data.totalPages, data.totalRecords);
         },
         erroor: function () {
             alert("啦啦啦o(^▽^)o出错啦");
         }
+    });
+}
+function drawpic(obj) {
+    var id = obj.id;
+    var comname = namelist[id];
+    $(".wordcloud").each(function () {
+        var myChart = echarts.init(this);
+        option = {
+            title: {
+                text: comname+"关键词词云图"
+            },
+            tooltip: {},
+            series: [{
+                type: 'wordCloud',
+                gridSize: 20,
+                sizeRange: [12, 50],
+                rotationRange: [0, 0],
+                shape: 'circle',
+                textStyle: {
+                    normal: {
+                        color: function () {
+                            return 'rgb(' + [
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160)
+                                ].join(',') + ')';
+                        }
+                    },
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                data: worddata[id]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
     });
 }
 

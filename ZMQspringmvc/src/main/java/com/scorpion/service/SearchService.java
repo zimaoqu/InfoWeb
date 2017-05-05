@@ -111,18 +111,37 @@ public interface SearchService {
     List<NewsOfCompanyWithBLOBs> getNeunews(String companyName);
     List<NewsOfCompanyWithBLOBs> getNegnews(String companyName);
     String getCompanyName(String name);
-    
+
     HashMap<String,Integer> getKeywords(String companyName);
     HashMap<String,Integer> getCountSource(String companyName);
     List<currentnewsWithBLOBs> getHotNews(String companyName);
     List<currentnewsWithBLOBs> getSensiveNews(String companyName);
 
+    //字符串处理
+    public ArrayList<String> splitStr(String str);
     /*
     (企业声誉分析用到的)
      */
     double getCurreputation(String companyName);
     List<String> getDemoComList();
-    
-    //字符串处理
-    public ArrayList<String> splitStr(String str);
+
+
+    /*
+    获取新闻关键词（普通companynews）
+     */
+    public List getComKeywords(int page);
+    /*
+    获取时间匹配新闻关键词（普通companynews）
+     */
+    public List getMatchComKeywords(int page, String startDate, String endDate, String key);
+
+    /*
+    获取新闻关键词（Top companynews）
+     */
+    public List getTopComKeywords(int page);
+    /*
+    获取时间匹配新闻关键词（Top companynews）
+     */
+    public List getMatchTopComKeywords(int page, String startDate, String endDate, String key);
+
 }

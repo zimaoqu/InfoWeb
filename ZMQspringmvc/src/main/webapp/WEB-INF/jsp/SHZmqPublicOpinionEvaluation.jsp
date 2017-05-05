@@ -14,6 +14,21 @@
 </head>
 
 <style>
+<<<<<<< HEAD
+    .echart_container {
+        width: 660px;
+        height: 600px;
+        float: left;
+        display: inline
+    }
+
+
+    .divcss {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1400px;
+    }
+=======
 .piccontainer {
 	width: 400px;
 	height: 300px;
@@ -21,6 +36,7 @@
 .container{
 	width: 1320px;
 }
+>>>>>>> c05355fbfbb0e385faf017182ea9d683f9e543ea
 </style>
 
 <body>

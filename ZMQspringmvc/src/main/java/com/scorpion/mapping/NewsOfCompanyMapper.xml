@@ -165,6 +165,12 @@
     <select id="getComList" resultType="java.lang.String">
         SELECT DISTINCT name from tb_content
     </select>
+
+
+    <select id="getComKeywords" parameterType="Map" resultType="java.lang.String">
+        SELECT keywords from tb_content ORDER BY date DESC limit #{start},#{size}
+    </select>
+
     <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs"
             parameterType="com.scorpion.pojo.NewsOfCompanyExample">
         <!--

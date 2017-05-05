@@ -219,4 +219,11 @@ public interface NewsOfCompanyMapper {
      * @return
      */
     List<String> getComList();
+
+    /**
+     * 获取新闻的关键词
+     * @return
+     */
+    List<String> getComKeywords(Map map);
+
 }
