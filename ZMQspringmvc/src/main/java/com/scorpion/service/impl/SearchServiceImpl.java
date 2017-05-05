@@ -7,9 +7,7 @@ import com.scorpion.util.data.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Scorpion on 2017/4/19.
@@ -54,7 +52,7 @@ public class SearchServiceImpl implements SearchService {
         int start = (page - 1) * pageSize;
         map.put("start", start);
         map.put("size", pageSize);
-        List<NewsOfCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectAllNews(map);
+        List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectAllNews(map);
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
@@ -78,7 +76,7 @@ public class SearchServiceImpl implements SearchService {
         map.put("start", start);
         map.put("size", pageSize);
         int countOfNews = newsOfTopCompanyMapper.countMatchNews(map);
-        List<NewsOfCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectMatchNews(map);
+        List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectMatchNews(map);
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
@@ -450,6 +448,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取公司完整的名字
+     *
      * @param name
      * @return
      */
@@ -462,6 +461,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * get Curreputation
+     *
      * @param companyName
      * @return
      */
@@ -475,5 +475,119 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public List<String> getDemoComList() {
         return democompanyMapper.getComList();
+    }
+
+    /**
+     * 获取普通新闻对应的关键字
+     *
+     * @param page
+     * @return
+     */
+    @Override
+    public List getComKeywords(int page) {
+        Map map = new HashMap<>();
+        List keyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfCompanyWithBLOBs> dateList = newsOfCompanyMapper.selectAllNews(map);
+        for(NewsOfCompanyWithBLOBs news:dateList){
+            if(!news.getKeywords().isEmpty())
+                keyList.add(processKeywords(news.getKeywords()));
+        }
+        return keyList;
+    }
+
+    /**
+     * 获取普通新闻对应的关键字(时间等匹配条件)
+     * @param page
+     * @param startDate
+     * @param endDate
+     * @param key
+     * @return
+     */
+    @Override
+    public List getMatchComKeywords(int page, String startDate, String endDate, String key) {
+        Map map = new HashMap<>();
+        List keyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("name", key);
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfCompanyWithBLOBs> dateList = newsOfCompanyMapper.selectMatchNews(map);
+        for(NewsOfCompanyWithBLOBs news:dateList){
+            if(!news.getKeywords().isEmpty())
+                keyList.add(processKeywords(news.getKeywords()));
+        }
+        return keyList;
+    }
+
+    /**
+     * 获取Top新闻对应的关键字
+     *
+     * @param page
+     * @return
+     */
+    @Override
+    public List getTopComKeywords(int page) {
+        Map map = new HashMap<>();
+        List TopkeyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectAllNews(map);
+        for(NewsOfTopCompanyWithBLOBs news:dateList){
+            if(!news.getKeywords().isEmpty())
+                TopkeyList.add(processKeywords(news.getKeywords()));
+        }
+        return TopkeyList;
+    }
+
+    /**
+     * 获取Top新闻对应的关键字(时间等匹配条件)
+     * @param page
+     * @param startDate
+     * @param endDate
+     * @param key
+     * @return
+     */
+    @Override
+    public List getMatchTopComKeywords(int page, String startDate, String endDate, String key) {
+        Map map = new HashMap<>();
+        List TopkeyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("name", key);
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectMatchNews(map);
+        for(NewsOfTopCompanyWithBLOBs news:dateList){
+            if(!news.getKeywords().isEmpty())
+                TopkeyList.add(processKeywords(news.getKeywords()));
+        }
+        return TopkeyList;
+    }
+
+
+
+
+    /**
+     * 处理keywords函数  分割之类的
+     *
+     * @param keywords
+     * @return
+     */
+    static Map processKeywords(String keywords) {
+        Map keywordMap = new HashMap<String, Integer>();
+
+        String[] tmp = keywords.split(";");
+        for (int i = 0; i < tmp.length; i++) {
+            String[] tmp1 = tmp[i].split("/");
+            keywordMap.put(tmp1[0], tmp1[1]);
+        }
+        return keywordMap;
     }
 }

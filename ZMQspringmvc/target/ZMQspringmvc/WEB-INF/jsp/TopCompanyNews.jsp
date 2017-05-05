@@ -27,7 +27,7 @@
 
 </div>
 <div class="row-fluid">
-    <div class="col-xs-8 span8">
+    <div id="left" class="col-xs-8 span8">
         <div class="news">
             <form action="${pageContext.request.contextPath}/zmq/showTopMatchResult">
                 <div id="wrapper">
@@ -62,7 +62,9 @@
         </div>
         <%--<div class="news">--%>
     </div>
-
+    <div id="right" class="col-xs-3 span3 divfix">
+        <div class="wordcloud" style="width: 400px;height: 300px;"></div>
+    </div>
 </div>
 </body>
 <script type="text/javascript">
@@ -70,40 +72,7 @@
     var startDate = $("#startDate").val();
     var endDate = $("#endDate").val();
 </script>
-<%--<script id="rslt" type="text/html">--%>
 
-    <%--{{each resultList as hit i}}--%>
-    <%--<h3>--%>
-        <%--<b><font size="4">{{hit.title}}--%>
-        <%--</font></b>--%>
-    <%--</h3>--%>
-    <%--<p>--%>
-        <%--{{hit.date}}--%>
-    <%--</p>--%>
-    <%--<p>--%>
-        <%--{{hit.description}}--%>
-    <%--</p>--%>
-    <%--<p>--%>
-        <%--<a class="btn btn-default" href={{hit.url}} target="_blank">原文»</a>--%>
-        <%--&nbsp;<font color="blue">{{hit.name}}</font>--%>
-    <%--</p>--%>
-    <%--&lt;%&ndash;<div>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<div id="title">&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<h3 class="t">&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<li class="r_li"><a href="{{hit.url}}" target="_blank">{{hit.title}}</a></li>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;</h3>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<div id="showurl">&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<span class="showurl">{{hit.url}}</span>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<div class="abstract"><span>{{hit.description}}</span>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<div class="abstract">&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<span id="date">{{hit.date}}</span>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-    <%--{{/each}}--%>
-<%--</script>--%>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-2.2.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js" type="text/javascript"></script>

@@ -5,6 +5,7 @@ import com.scorpion.util.data.Page;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Scorpion on 2017/4/19.
@@ -114,4 +115,22 @@ public interface SearchService {
      */
     double getCurreputation(String companyName);
     List<String> getDemoComList();
+
+    /*
+    获取新闻关键词（普通companynews）
+     */
+    public List getComKeywords(int page);
+    /*
+    获取时间匹配新闻关键词（普通companynews）
+     */
+    public List getMatchComKeywords(int page, String startDate, String endDate, String key);
+
+    /*
+    获取新闻关键词（Top companynews）
+     */
+    public List getTopComKeywords(int page);
+    /*
+    获取时间匹配新闻关键词（Top companynews）
+     */
+    public List getMatchTopComKeywords(int page, String startDate, String endDate, String key);
 }

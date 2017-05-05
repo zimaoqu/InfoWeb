@@ -20,6 +20,7 @@ import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -392,6 +393,7 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
+        List keywords = searchService.getTopComKeywords(pageNo);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryAllTopNews(pageNo);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
@@ -399,6 +401,7 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("keywords",keywords);
         out.print(json);
     }
 
@@ -418,7 +421,9 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
-        System.out.println(key);
+        if(key==null)
+            key="";
+        List keywords = searchService.getMatchTopComKeywords(pageNo, startDate, endDate, key);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchTopNews(pageNo, startDate, endDate, key);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
@@ -426,6 +431,7 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("keywords",keywords);
         out.print(json);
     }
 
@@ -442,6 +448,7 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
+        List keywords = searchService.getComKeywords(pageNo);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryAllNews(pageNo);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
@@ -449,6 +456,7 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("keywords",keywords);
         out.print(json);
     }
 
@@ -468,6 +476,9 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
+        if(key==null)
+            key="";
+        List keywords = searchService.getMatchComKeywords(pageNo, startDate, endDate, key);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchNews(pageNo, startDate, endDate, key);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
@@ -475,6 +486,7 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("keywords",keywords);
         out.print(json);
     }
 

@@ -18,6 +18,7 @@
     <title>中国自由贸易试验区大数据管理与分析平台</title>
 
 </head>
+
 <body>
 <div class="container-fluid">
     <br/>
@@ -26,17 +27,19 @@
 
 </div>
 <div class="row-fluid">
-    <div class="col-xs-8 span8">
+    <div id="left" class="col-xs-8 span8">
         <div class="news">
             <form action="${pageContext.request.contextPath}/zmq/showMatchResult">
                 <div id="wrapper">
                     <div class="demo">
                         <span id="two-inputs">
                             <div class="one">
-                                <input id="date-range200" size="20" class="form-control" name="startDate" placeholder="起始时间" value="${startDate}">
+                                <input id="date-range200" size="20" class="form-control" name="startDate"
+                                       placeholder="起始时间" value="${startDate}">
                             </div>
                             <div class="one">
-                                <input id="date-range201" size="20" class="form-control" name="endDate" placeholder="截止时间" value="${endDate}">
+                                <input id="date-range201" size="20" class="form-control" name="endDate"
+                                       placeholder="截止时间" value="${endDate}">
                             </div>
                         </span>
 
@@ -44,8 +47,8 @@
 
                 </div>
                 <div class="one" style="margin-left: 50px">
-                        <input id="key" name="key" type="text" placeholder="企业名称"
-                               class="form-control" value="${key}"/> <span class="input-group-btn">
+                    <input id="key" name="key" type="text" placeholder="企业名称"
+                           class="form-control" value="${key}"/> <span class="input-group-btn">
 								<!-- <button class="btn btn-default" type="button">搜索</button> -->
 							</span>
                 </div>
@@ -58,10 +61,14 @@
             </div>
             <div id="page" class="pagination">
             </div>
+
         </div>
         <%--<div class="news">--%>
-    </div>
 
+    </div>
+    <div id="right" class="col-xs-3 span3 divfix">
+        <div class="wordcloud" style="width: 400px;height: 300px;"></div>
+    </div>
 </div>
 </body>
 <script type="text/javascript">

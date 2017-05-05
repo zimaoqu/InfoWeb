@@ -33,7 +33,7 @@
 
 </div>
 <div class="row-fluid">
-    <div class="col-xs-8 span8">
+    <div id="left" class="col-xs-8 span8">
         <div class="news">
             <form action="${pageContext.request.contextPath}/zmq/showTopMatchResult">
                 <div id="wrapper">
@@ -76,7 +76,9 @@
         </div>
         <%--<div class="news">--%>
     </div>
-
+    <div id="right" class="col-xs-3 span3 divfix">
+        <div class="wordcloud" style="width: 400px;height: 300px;"></div>
+    </div>
 </div>
 </body>
 <script type="text/javascript">
@@ -84,25 +86,6 @@
     var key = $("#key").val();
     var startDate = $("input[name='startDate']").val();
     var endDate = $("input[name='endDate']").val();
-</script>
-<script id="rslt" type="text/html">
-
-    {{each resultList as hit i}}
-    <h3>
-        <b><font size="4">{{hit.title}}
-        </font></b>
-    </h3>
-    <p>
-        {{hit.date}}
-    </p>
-    <p>
-        {{hit.description}}
-    </p>
-    <p>
-        <a class="btn btn-default" href={{hit.url}} target="_blank">原文»</a>
-        &nbsp;<font color="blue">{{hit.name}}</font>
-    </p>
-    {{/each}}
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js" type="text/javascript"></script>
