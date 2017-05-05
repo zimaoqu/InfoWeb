@@ -14,19 +14,13 @@
 </head>
 
 <style>
-    .echart_container {
-        width: 660px;
-        height: 600px;
-        float: left;
-        display: inline
-    }
-
-
-    .divcss {
-        margin-left: auto;
-        margin-right: auto;
-        width: 1400px;
-    }
+.piccontainer {
+	width: 400px;
+	height: 300px;
+}
+.container{
+	width: 1320px;
+}
 </style>
 
 <body>

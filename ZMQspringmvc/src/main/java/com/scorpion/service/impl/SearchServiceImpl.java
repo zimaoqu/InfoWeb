@@ -7,6 +7,7 @@ import com.scorpion.util.data.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -476,4 +477,104 @@ public class SearchServiceImpl implements SearchService {
     public List<String> getDemoComList() {
         return democompanyMapper.getComList();
     }
+
+    /**
+     * 获取热词，生成词云
+     * @param companyName
+     * @return
+     */
+	@Override
+	public HashMap<String,Integer> getKeywords(String companyName) {
+		HashMap<String,Integer> wordcloud=new HashMap<String,Integer>();
+		Map map=new HashMap();
+		map.put("relComName", companyName.trim());
+		List<String> key=currentnewsMapper.getKeywords(map);
+		for(String k:key){
+			ArrayList<String> kwl=splitStr(k);
+			for(int i=0;i<kwl.size();i++){
+				String word=kwl.get(i);
+				if(wordcloud.containsKey(word)){
+					Integer num=wordcloud.get(word);
+					num++;
+					wordcloud.put(word, num);
+				}
+				else{
+					wordcloud.put(word,1);
+				}
+			}
+		}
+		return wordcloud;
+	}
+
+    /**
+     * 统计新闻来源
+     * @param companyName
+     * @return
+     */
+	@Override
+	public HashMap<String,Integer> getCountSource(String companyName) {
+		HashMap<String,Integer> source=new HashMap<String,Integer>();
+		Map map=new HashMap();
+		map.put("relComName", companyName.trim());
+		List<SourceOfNews> sourceres=currentnewsMapper.getCountSource(map);
+		int count=0;
+		for(SourceOfNews n:sourceres){
+			String sourcename=n.getSource().trim();
+			String sourcenum=Integer.toString(n.getNum());
+			if(!sourcename.equals("其他")){
+				source.put(sourcename,Integer.valueOf(sourcenum));
+				count++;
+			}
+			if(count>=9){
+				break;
+			}
+		}
+		return source;
+	}
+
+    /**
+     * 获取热点新闻
+     * @param companyName
+     * @return
+     */
+	@Override
+	public List<currentnewsWithBLOBs> getHotNews(String companyName) {
+		Map map=new HashMap();
+		map.put("relComName", companyName.trim());
+		List<currentnewsWithBLOBs> hotnews = currentnewsMapper.getHotNews(map);
+		return hotnews;
+	}
+
+    /**
+     * 获取敏感新闻
+     * @param companyName
+     * @return
+     */
+	@Override
+	public List<currentnewsWithBLOBs> getSensiveNews(String companyName) {
+		System.out.println("getCountSourceInService:"+companyName);
+		Map map=new HashMap();
+		map.put("relComName", companyName.trim());
+		List<currentnewsWithBLOBs> sensivenews = currentnewsMapper.getSensiveNews(map);
+		return sensivenews;
+	}
+
+    /**
+     * keywords字段处理
+     * @param str
+     * @return
+     */
+	@Override
+	public ArrayList<String> splitStr(String str) {
+		//str="产品/4;召回/3;进行/2;监督/3;";
+		ArrayList<String> res=new ArrayList<String>();
+		if(str!=null){
+			String[] temp=str.split(";");
+			for(int i=0;i<temp.length;i++){
+				String[] temp1=temp[i].split("/");
+				res.add(temp1[0]);//仅保留关键词，不要词频
+			}
+		}
+		return res;
+	}
 }

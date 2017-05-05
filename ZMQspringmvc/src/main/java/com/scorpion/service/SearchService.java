@@ -4,7 +4,10 @@ import com.scorpion.pojo.*;
 import com.scorpion.util.data.Page;
 
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Scorpion on 2017/4/19.
@@ -108,10 +111,18 @@ public interface SearchService {
     List<NewsOfCompanyWithBLOBs> getNeunews(String companyName);
     List<NewsOfCompanyWithBLOBs> getNegnews(String companyName);
     String getCompanyName(String name);
+    
+    HashMap<String,Integer> getKeywords(String companyName);
+    HashMap<String,Integer> getCountSource(String companyName);
+    List<currentnewsWithBLOBs> getHotNews(String companyName);
+    List<currentnewsWithBLOBs> getSensiveNews(String companyName);
 
     /*
     (企业声誉分析用到的)
      */
     double getCurreputation(String companyName);
     List<String> getDemoComList();
+    
+    //字符串处理
+    public ArrayList<String> splitStr(String str);
 }

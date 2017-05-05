@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -308,6 +309,44 @@ public class controller {
      */
     @RequestMapping("showComPublicOpinionEvaluation")
     public ModelAndView showComPublicOpinionEvaluation(ModelMap modelMap, HttpServletRequest request) {
+        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "上海三星半导体有限公司";
+        
+        String selectdiscomsstr = "";
+        String completename = searchService.getCompanyName(companyName);
+		HashMap<String,Integer> wordcloud=new HashMap<String,Integer>();
+		HashMap<String,Integer> source=new HashMap<String,Integer>();
+		List<currentnewsWithBLOBs> hotnews=new ArrayList<currentnewsWithBLOBs>();
+		List<currentnewsWithBLOBs> sensivenews=new ArrayList<currentnewsWithBLOBs>();
+		
+		//热词提取
+		wordcloud=searchService.getKeywords(companyName);
+		
+		//新闻来源统计
+		source=searchService.getCountSource(companyName);
+		
+		//热点新闻获取
+		hotnews=searchService.getHotNews(companyName);
+		
+		//敏感新闻获取
+		sensivenews=searchService.getSensiveNews(companyName);
+		
+        //企业选择下拉列表
+        List<String> companyList = searchService.getComList();
+        selectdiscomsstr="<option>"+companyName+"</option>";
+        for (int i = 0; i < companyList.size(); i++) {
+            selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
+        }
+        
+        modelMap.put("wordcloud", wordcloud);
+        modelMap.put("source", source);
+        modelMap.put("hotnews", hotnews);
+        modelMap.put("sensivenews", sensivenews);
+        modelMap.put("maincom", companyName);
+        modelMap.put("selectdiscomsstr", selectdiscomsstr);
+        return new ModelAndView("ComPublicOpinionEvaluation", modelMap);
+    }
+    /*@RequestMapping("showComPublicOpinionEvaluation")
+    public ModelAndView showComPublicOpinionEvaluation(ModelMap modelMap, HttpServletRequest request) {
         String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "捷豹路虎";
         String[] othercoms = {"玛莎拉蒂", "三星", "神华中海航运", "益海嘉里"};
         int[] poslist = new int[4];
@@ -346,7 +385,7 @@ public class controller {
         modelMap.put("neglist", neglist);
         modelMap.put("selectdiscomsstr", selectdiscomsstr);
         return new ModelAndView("ComPublicOpinionEvaluation", modelMap);
-    }
+    }*/
 
     /**
      * 企业声誉分析
@@ -666,6 +705,8 @@ public class controller {
         json.put("totalPages", resultPage.getTotalPages());
         out.print(json);
     }
+    
+    
 }
 
 
