@@ -57,7 +57,7 @@ function queryData(page) {
                 return;
             }
 
-
+            worddata = new Array();
             for (var i = 0; i < data.resultList.length; i++) {
                 html += '<div id="' + i + '" onmouseover="drawpic(this)"><h3><b ><font size="4">' + data.resultList[i].title
                     + '</font></b></h3>' + data.resultList[i].date
@@ -73,8 +73,11 @@ function queryData(page) {
                         value: data.keywords[i][key]
                     })
                 }
+                console.log(keywordData)
                 worddata.push(keywordData);
             }
+            console.log(121);
+            console.log(worddata);
             $("#result").html(html);
 
             //保持两个div高度一致

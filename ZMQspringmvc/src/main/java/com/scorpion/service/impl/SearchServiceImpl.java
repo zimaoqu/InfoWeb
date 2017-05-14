@@ -681,7 +681,6 @@ public class SearchServiceImpl implements SearchService {
      */
     @Override
     public List<currentnewsWithBLOBs> getSensiveNews(String companyName) {
-        System.out.println("getCountSourceInService:" + companyName);
         Map map = new HashMap();
         map.put("relComName", companyName.trim());
         List<currentnewsWithBLOBs> sensivenews = currentnewsMapper.getSensiveNews(map);

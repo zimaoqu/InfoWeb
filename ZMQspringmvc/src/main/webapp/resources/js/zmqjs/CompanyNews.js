@@ -57,7 +57,7 @@ function queryData(page) {
                 return;
             }
 
-
+            worddata = new Array();
             for (var i = 0; i < data.resultList.length; i++) {
                 html += '<div id="' + i + '" onmouseover="drawpic(this)"><h3><b ><font size="4">' + data.resultList[i].title
                     + '</font></b></h3>' + data.resultList[i].date
@@ -67,14 +67,16 @@ function queryData(page) {
                 namelist[i]=data.resultList[i].name;
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
-                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
+                    //console.log("key：" + key + ",value：" + data.keywords[i][key]);
                     keywordData.push({
                         name: key,
                         value: data.keywords[i][key]
                     })
                 }
+                console.log(keywordData)
                 worddata.push(keywordData);
             }
+
             $("#result").html(html);
 
             //保持两个div高度一致

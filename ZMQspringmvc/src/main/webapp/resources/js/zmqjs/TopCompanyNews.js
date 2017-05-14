@@ -53,6 +53,7 @@ function queryData(page) {
                 pager(page, data.totalPages, data.totalRecords);
                 return;
             }
+            worddata = new Array();
             for (var i = 0; i < data.resultList.length; i++) {
                 html += '<div id="' + i + '" onmouseover="drawpic(this)"><h3><b ><font size="4">' + data.resultList[i].title
                     + '</font></b></h3>' + data.resultList[i].date
