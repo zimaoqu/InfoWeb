@@ -73,7 +73,7 @@ function queryData(page) {
                         value: data.keywords[i][key]
                     })
                 }
-                console.log(keywordData)
+                //console.log(keywordData)
                 worddata.push(keywordData);
             }
 

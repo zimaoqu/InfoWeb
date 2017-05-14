@@ -67,7 +67,7 @@ function queryData(page) {
                 namelist[i]=data.resultList[i].name;
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
-                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
+                    //console.log("key：" + key + ",value：" + data.keywords[i][key]);
                     keywordData.push({
                         name: key,
                         value: data.keywords[i][key]
@@ -76,8 +76,7 @@ function queryData(page) {
                 console.log(keywordData)
                 worddata.push(keywordData);
             }
-            console.log(121);
-            console.log(worddata);
+
             $("#result").html(html);
 
             //保持两个div高度一致

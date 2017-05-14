@@ -53,6 +53,7 @@ function queryData(page) {
                 pager(page, data.totalPages, data.totalRecords);
                 return;
             }
+            worddata = new Array();
             for (var i = 0; i < data.resultList.length; i++) {
                 html += '<div id="' + i + '" onmouseover="drawpic(this)"><h3><b ><font size="4">' + data.resultList[i].title
                     + '</font></b></h3>' + data.resultList[i].date
@@ -62,7 +63,8 @@ function queryData(page) {
                 namelist[i]=data.resultList[i].name;
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
-                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
+                    if(i==1)
+                        console.log("id"+i+",key：" + key + ",value：" + data.keywords[i][key]);
                     keywordData.push({
                         name: key,
                         value: data.keywords[i][key]
@@ -70,6 +72,7 @@ function queryData(page) {
                 }
                 worddata.push(keywordData);
             }
+            console.log(123);
             $("#result").html(html);
             //保持两个div高度一致
             document.getElementById("right").style.height = document.getElementById("left").offsetHeight + "px";
