@@ -74,7 +74,7 @@ function queryData(page, startDate, endDate, key) {
                 namelist[i]=data.resultList[i].name;
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
-                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
+                    //console.log("key：" + key + ",value：" + data.keywords[i][key]);
                     keywordData.push({
                         name: key,
                         value: data.keywords[i][key]

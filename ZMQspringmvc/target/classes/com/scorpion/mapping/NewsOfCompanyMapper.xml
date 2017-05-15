@@ -127,16 +127,16 @@
         SELECT count(*) from tb_content where name like CONCAT('%',#{name},'%' ) and DATE BETWEEN #{startDate} and #{endDate}
     </select>
     <select id="getQuartervalue" parameterType="Map" resultType="java.lang.Double">
-        SELECT oreitationvalue from tb_content where name = #{companyName} and DATE BETWEEN #{date1} and #{date2}
+        SELECT oreitationvalue from taishinews where name = #{companyName} and DATE BETWEEN #{date1} and #{date2}
     </select>
     <select id="getPosnum" parameterType="Map" resultType="java.lang.Integer">
-        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=1 and DATE BETWEEN #{date1} and #{date2}
+        SELECT count(*) from taishinews where name like CONCAT('%',#{companyName},'%' ) and oreitationvalue > 0 and DATE BETWEEN #{date1} and #{date2}
     </select>
     <select id="getNeunum" parameterType="Map" resultType="java.lang.Integer">
-        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=0 and DATE BETWEEN #{date1} and #{date2}
+        SELECT count(*) from taishinews where name like CONCAT('%',#{companyName},'%' ) and oreitationvalue=0 and DATE BETWEEN #{date1} and #{date2}
     </select>
     <select id="getNegnum" parameterType="Map" resultType="java.lang.Integer">
-        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=-1 and DATE BETWEEN #{date1} and #{date2}
+        SELECT count(*) from taishinews where name like CONCAT('%',#{companyName},'%' ) and oreitationvalue &lt; 0 and DATE BETWEEN #{date1} and #{date2}
     </select>
 
     <select id="getAllTimePosnum" parameterType="String" resultType="java.lang.Integer">
