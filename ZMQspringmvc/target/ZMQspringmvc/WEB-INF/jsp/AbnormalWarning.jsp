@@ -58,7 +58,7 @@
     <br/>
     <%@include file="title.jsp" %>
     <br/>
-    <div style="margin-left: 50px">
+    <div style="margin-left: 250px">
         <div id="main" style="width: 900px; height: 600px; float: left; display: inline">
             <span id="spanFirstt">第一页</span> <span id="spanPret">上一页</span> <span
                 id="spanNextt">下一页</span> <span id="spanLastt">最后一页</span> 第<span
@@ -111,7 +111,7 @@
                 id="spanPageNum"></span>页/共<span id="spanTotalPage"></span>页
         </div>
 
-        <div id="main2" style="position:absolute; width: 400px; height: 600px; margin-left:880px;">
+        <div id="main2" style="width: 400px; height: 600px;float: left; display: inline;margin-left: 10px;">
             <span id="clock"></span>
             <script src="${pageContext.request.contextPath}/resources/js/Clock.js"></script>
             <script type="text/javascript">
@@ -133,7 +133,7 @@
             </marquee>
         </div>
 
-        <div id="main3" style="position:absolute; width: 400px; height: 600px; margin-left:880px; margin-top:560px">
+        <div id="main3" style="position:absolute; width: 400px; height: 600px; margin-left:910px; margin-top:560px">
             <b>企业情况</b><br><br>
             <table class="gridtable">
                 <tr>

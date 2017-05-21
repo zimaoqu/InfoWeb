@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 /**
@@ -57,25 +55,7 @@ public class SearchServiceImpl implements SearchService {
         map.put("start", start);
         map.put("size", pageSize);
         List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectAllNews(map);
-        //处理html，含有公司名字变蓝
-        for (NewsOfTopCompanyWithBLOBs news : dateList) {
-            String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
-            Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
-            String res_abs = cut.cut_sentence(html, name);
-            if (res_abs == null) {
-                news.setDescription(news.getDescription());
-            } else {
-                processStr p = new processStr();
-                ArrayList<String> kstr = new ArrayList<String>();
-                kstr = p.splitStr(name);
-                //多加了个匹配词raw_cor_name也标蓝
-                kstr.add(name);
-                res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
-            }
 
-        }
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
@@ -100,25 +80,7 @@ public class SearchServiceImpl implements SearchService {
         map.put("size", pageSize);
         int countOfNews = newsOfTopCompanyMapper.countMatchNews(map);
         List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectMatchNews(map);
-        //处理html，含有公司名字变蓝
-        for (NewsOfTopCompanyWithBLOBs news : dateList) {
-            String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
-            Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
-            String res_abs = cut.cut_sentence(html, name);
-            if (res_abs == null) {
-                news.setDescription(news.getDescription());
-            } else {
-                processStr p = new processStr();
-                ArrayList<String> kstr = new ArrayList<String>();
-                kstr = p.splitStr(name);
-                //多加了个匹配词raw_cor_name也标蓝
-                kstr.add(name);
-                res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
-            }
 
-        }
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
@@ -137,25 +99,6 @@ public class SearchServiceImpl implements SearchService {
         map.put("start", start);
         map.put("size", pageSize);
         List<NewsOfCompanyWithBLOBs> dateList = newsOfCompanyMapper.selectAllNews(map);
-        //处理html，含有公司名字变蓝
-        for (NewsOfCompanyWithBLOBs news : dateList) {
-            String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
-            Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
-            String res_abs = cut.cut_sentence(html, name);
-            if (res_abs == null) {
-                news.setDescription(news.getDescription());
-            } else {
-                processStr p = new processStr();
-                ArrayList<String> kstr = new ArrayList<String>();
-                kstr = p.splitStr(name);
-                //多加了个匹配词raw_cor_name也标蓝
-                kstr.add(name);
-                res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
-            }
-
-        }
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
@@ -180,25 +123,6 @@ public class SearchServiceImpl implements SearchService {
         map.put("size", pageSize);
         int countOfNews = newsOfCompanyMapper.countMatchNews(map);
         List<NewsOfCompanyWithBLOBs> dateList = newsOfCompanyMapper.selectMatchNews(map);
-        //处理html，含有公司名字变蓝
-        for (NewsOfCompanyWithBLOBs news : dateList) {
-            String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
-            Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
-            String res_abs = cut.cut_sentence(html, name);
-            if (res_abs == null) {
-                news.setDescription(news.getDescription());
-            } else {
-                processStr p = new processStr();
-                ArrayList<String> kstr = new ArrayList<String>();
-                kstr = p.splitStr(name);
-                //多加了个匹配词raw_cor_name也标蓝
-                kstr.add(name);
-                res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
-            }
-
-        }
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
@@ -383,6 +307,7 @@ public class SearchServiceImpl implements SearchService {
     public List<companyinformation> querycompanyinfo() {
         return companyinformationMapper.queryComInfo();
     }
+
 
     /**
      * 获取oreitationvalue
@@ -661,6 +586,44 @@ public class SearchServiceImpl implements SearchService {
         }
         return TopkeyList;
     }
+    /**
+     * 获取Top新闻对应的关键字(时间等匹配条件)
+     *
+     * @param startDate
+     * @param endDate
+     * @return
+     */
+    @Override
+    public List <ComNameNewsCount> getTopMatchNewsCount(String startDate, String endDate) {
+        Map map = new HashMap<>();
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        List <ComNameNewsCount> MatchNewsCount = newsOfTopCompanyMapper.getTopMatchNewsCount(map);
+        return MatchNewsCount;
+    }
+    /**
+     * 获取企业新闻对应的关键字(时间等匹配条件)
+     *
+     * @param startDate
+     * @param endDate
+     * @return
+     */
+    @Override
+    public List <ComNameNewsCount> getMatchNewsCount(String startDate, String endDate) {
+        Map map = new HashMap<>();
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        List <ComNameNewsCount> MatchNewsCount = newsOfCompanyMapper.getMatchNewsCount(map);
+        return MatchNewsCount;
+    }
+    @Override
+    public List<ComNameNewsCount> TopNewsCount() {
+        return newsOfTopCompanyMapper.TopNewsCount();
+    }
+    @Override
+    public List<ComNameNewsCount> NewsCount() {
+        return newsOfCompanyMapper.NewsCount();
+    }
 
 
     /**
@@ -682,7 +645,6 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取关键词生成热词云
-     *
      * @param companyName
      * @return
      */
@@ -758,6 +720,7 @@ public class SearchServiceImpl implements SearchService {
      */
     @Override
     public List<currentnewsWithBLOBs> getSensiveNews(String companyName) {
+        System.out.println("getCountSourceInService:" + companyName);
         Map map = new HashMap();
         map.put("relComName", companyName.trim());
         List<currentnewsWithBLOBs> sensivenews = currentnewsMapper.getSensiveNews(map);
@@ -771,77 +734,6 @@ public class SearchServiceImpl implements SearchService {
      * @return
      */
     @Override
-    public ArrayList<String> splitStr(String str) {
-        //str="产品/4;召回/3;进行/2;监督/3;";
-        ArrayList<String> res = new ArrayList<String>();
-        if (str != null) {
-            String[] temp = str.split(";");
-            for (int i = 0; i < temp.length; i++) {
-                String[] temp1 = temp[i].split("/");
-                res.add(temp1[0]);//仅保留关键词，不要词频
-            }
-        }
-        return res;
-    }
-
-}
-
-//前面name变蓝用到的
-class Abstract_Cut {
-    public String cut_sentence(String text, String target) {
-        String res = new String();
-        int pos = text.indexOf(target);
-        if (pos == -1) return null;
-        int pos_v = pos;
-        while (pos > 0 && text.charAt(pos) != '。') {
-            pos--;
-        }
-        //System.out.println(pos);
-        while (pos_v < text.length() && text.charAt(pos_v) != '。') {
-            pos_v++;
-        }
-        //System.out.println(pos_v);
-        res = text.substring(pos + 1, pos_v);
-        return res;
-    }
-}
-
-class processStr {
-    /**
-     * 将str中的关键词加上<font color=\"red\"><\\/font>
-     * 使其在网页显示时标红
-     *
-     * @param str
-     * @param keyStr
-     * @return
-     */
-    public String addFont(String str, ArrayList<String> keyStr) {
-        for (int i = 0; i < keyStr.size(); i++) {
-            String replace = "<font color=\"red\">" + keyStr.get(i) + "<\\/font>";
-            Pattern p = Pattern.compile(keyStr.get(i));
-            Matcher m = p.matcher(str);
-            str = m.replaceAll(replace);
-        }
-        return str;
-    }
-
-    public String addFont_Blue(String str, ArrayList<String> keyStr) {
-        for (int i = 0; i < keyStr.size(); i++) {
-            String replace = "<font color=\"blue\">" + keyStr.get(i) + "<\\/font>";
-            Pattern p = Pattern.compile(keyStr.get(i));
-            Matcher m = p.matcher(str);
-            str = m.replaceAll(replace);
-        }
-        return str;
-    }
-
-    /**
-     * 字符串分割，取出关键词，不要词频及其他，字符串如str="产品/4;召回/3;进行/2;监督/3;";
-     * 将关键词保存在ArrayList<String>
-     *
-     * @param str
-     * @return
-     */
     public ArrayList<String> splitStr(String str) {
         //str="产品/4;召回/3;进行/2;监督/3;";
         ArrayList<String> res = new ArrayList<String>();

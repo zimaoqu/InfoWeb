@@ -273,7 +273,7 @@ public class controller {
             igap = 1;
         }
         int counti = 0;
-        for (int year = 2016; year <= 2017; year++) {
+        for (int year = 2014; year <= 2016; year++) {
             for (int i = 1; i <= 11; i = i + igap) {
                 String date1 = Integer.toString(year) + "-" + Integer.toString(i) + "-" + "1";
                 String date2 = Integer.toString(year) + "-" + Integer.toString(i + igap) + "-" + "1";
@@ -398,11 +398,20 @@ public class controller {
         List keywords = searchService.getTopComKeywords(pageNo);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryAllTopNews(pageNo);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
+        List<ComNameNewsCount> newsCount = searchService.TopNewsCount();//调用新闻量类
+        List<String> nameList = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>();
+        for(ComNameNewsCount instance:newsCount){
+            nameList.add(instance.getName());
+            numList.add(instance.getCount());
+        }
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("nameList", nameList);
+        json.put("numList", numList);
         json.put("keywords",keywords);
         out.print(json);
     }
@@ -427,14 +436,22 @@ public class controller {
             key="";
         List keywords = searchService.getMatchTopComKeywords(pageNo, startDate, endDate, key);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchTopNews(pageNo, startDate, endDate, key);
+        List<ComNameNewsCount> MatchNewsCount = searchService.getTopMatchNewsCount(startDate, endDate);
+        List<String> nameList = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>();
+        for(ComNameNewsCount instance:MatchNewsCount){
+            nameList.add(instance.getName());
+            numList.add(instance.getCount());
+        }
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
-
         json.put("keywords",keywords);
+        json.put("nameList", nameList);
+        json.put("numList", numList);
         out.print(json);
     }
 
@@ -452,16 +469,23 @@ public class controller {
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
         List keywords = searchService.getComKeywords(pageNo);
-
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryAllNews(pageNo);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
+        List<ComNameNewsCount> newsCount = searchService.NewsCount();//调用新闻量类
+        List<String> nameList = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>();
+        for(ComNameNewsCount instance:newsCount){
+            nameList.add(instance.getName());
+            numList.add(instance.getCount());
+        }
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
         json.put("keywords",keywords);
-
+        json.put("nameList", nameList);
+        json.put("numList", numList);
         out.print(json);
     }
 
@@ -486,12 +510,20 @@ public class controller {
         List keywords = searchService.getMatchComKeywords(pageNo, startDate, endDate, key);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchNews(pageNo, startDate, endDate, key);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
+        List<ComNameNewsCount> MatchNewsCount = searchService.getMatchNewsCount(startDate, endDate);
+        List<String> nameList = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>();
+        for(ComNameNewsCount instance:MatchNewsCount){
+            nameList.add(instance.getName());
+            numList.add(instance.getCount());
+        }
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
-
+        json.put("nameList", nameList);
+        json.put("numList", numList);
         json.put("keywords",keywords);
 
         out.print(json);

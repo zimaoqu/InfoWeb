@@ -38,19 +38,19 @@
         int[] sumyearneg = new int[10];
         int healthlen = 0;
         if (mainby.equals("quarter")) {
-            healthlen = 8;
+            healthlen = 12;
         } else if (mainby.equals("month")) {
-            healthlen = 24;
+            healthlen = 36;
         }
         int tmpyear = 0;
         for (int i = 0; i < healthlen; i++) {
             sumyearpos[tmpyear] = sumyearpos[tmpyear] + posnum[i];
             sumyearneg[tmpyear] = sumyearneg[tmpyear] + negnum[i];
-            if (healthlen == 8) {
+            if (healthlen == 12) {
                 if (i != 0 && i % 4 == 0) {
                     tmpyear++;
                 }
-            } else if (healthlen == 24) {
+            } else if (healthlen == 36) {
                 if (i != 0 && i % 12 == 0) {
                     tmpyear++;
                 }
@@ -121,8 +121,8 @@
                 <br>
                 <font size="5" face="SimHei">分析</font><br>
                 <font size="4" face="SimHei">
-                    <%for (int ii = 0; ii < 2; ii++) { %>
-                    <%=ii + 2016%>年
+                    <%for (int ii = 0; ii < 3; ii++) { %>
+                    <%=ii + 2014%>年
                     <br>正面新闻篇数： <%=sumyearpos[ii]%>篇
                     <br>负面新闻篇数： <%=sumyearneg[ii]%>篇<br>
                     <%}%>
@@ -153,19 +153,20 @@
 
         var xData = function () {
             var data = [];
+
             xlen = 0;
             xmod = 0;
             if (byjs == "month") {
                 gap = "月份"
-                xlen = 24
+                xlen = 36
                 xmod = 12
             }
             else if (byjs == "quarter") {
                 gap = "季度"
-                xlen = 8
+                xlen = 12
                 xmod = 4
             }
-            var year = 2016
+            var year = 2014
             for (var i = 1; i <= xlen; i++) {
                 if (i % xmod == 1) {
                     data.push(year)

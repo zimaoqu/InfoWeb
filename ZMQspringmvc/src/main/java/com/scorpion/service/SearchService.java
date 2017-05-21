@@ -143,5 +143,14 @@ public interface SearchService {
     获取时间匹配新闻关键词（Top companynews）
      */
     public List getMatchTopComKeywords(int page, String startDate, String endDate, String key);
-
+    /*
+    获取top每个公司的新闻数
+     */
+    public List<ComNameNewsCount> TopNewsCount();
+    List<ComNameNewsCount> getTopMatchNewsCount(String startDate, String endDate);
+    /*
+    获取每个公司的新闻数
+     */
+    public List<ComNameNewsCount> NewsCount();
+    List<ComNameNewsCount> getMatchNewsCount(String startDate, String endDate);
 }

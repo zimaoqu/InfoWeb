@@ -35,7 +35,8 @@ function pager(page, totalPages, totalRecords) {
 
 var worddata = new Array();
 var namelist=[];
-
+var nameList=[];//柱状图的nameList
+var numList=[];//柱状图的numList
 function queryData(page) {
     $.ajax({
         cache: false,
@@ -56,8 +57,8 @@ function queryData(page) {
                 pager(page, data.totalPages, data.totalRecords);
                 return;
             }
-
-            worddata = new Array();
+            numList = data.numList;
+            nameList = data.nameList;
             for (var i = 0; i < data.resultList.length; i++) {
                 html += '<div id="' + i + '" onmouseover="drawpic(this)"><h3><b ><font size="4">' + data.resultList[i].title
                     + '</font></b></h3>' + data.resultList[i].date
@@ -67,21 +68,19 @@ function queryData(page) {
                 namelist[i]=data.resultList[i].name;
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
-                    //console.log("key：" + key + ",value：" + data.keywords[i][key]);
+                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
                     keywordData.push({
                         name: key,
                         value: data.keywords[i][key]
                     })
                 }
-                //console.log(keywordData)
                 worddata.push(keywordData);
             }
-
             $("#result").html(html);
 
             //保持两个div高度一致
             document.getElementById("right").style.height = document.getElementById("left").offsetHeight + "px";
-
+            graphic();
             winHistory();
             pager(page, data.totalPages, data.totalRecords);
         },
@@ -128,6 +127,56 @@ function drawpic(obj) {
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     });
+}
+function graphic(){
+    var myChart = echarts.init(document.getElementById("graphic"));
+    option = {
+        title: {
+            text: '新闻最多公司Top10',
+        },
+        tooltip: {},
+        legend: {
+            data: ['新闻量']
+        },
+        toolbox: {
+            show: true,
+        },
+        calculable: true,
+        xAxis: [{}],
+        yAxis: [
+            {
+                data:nameList,
+                show: false
+            }
+        ],
+        series: [
+            {
+                name: '新闻量',
+                type: 'bar',
+                data: numList,
+                itemStyle: {
+                    normal: {
+                        color: function (params) {
+                            // build a color map as your need.
+                            var colorList = [
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                            ];
+                            return colorList[params.dataIndex]
+                        },
+                        label: {
+                            show: true,
+                            position: 'on',
+                            formatter: '{b}{c}',
+                            textStyle: {
+                                color: '#000000'
+                            }
+                        }
+                    }
+                }
+            }]
+    }
+    myChart.setOption(option);
 }
 
 function changeHtml(html) {

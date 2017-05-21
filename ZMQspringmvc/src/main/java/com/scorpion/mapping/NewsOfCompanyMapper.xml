@@ -32,6 +32,10 @@
     <resultMap id="oreitationvalueList" type="com.scorpion.pojo.NewsOfCompany">
         <result column="oreitation" property="oreitation" jdbcType="INTEGER"/>
     </resultMap>
+    <resultMap id="ComNameNewsCount" type="com.scorpion.pojo.ComNameNewsCount">
+        <result column="name" property="name" jdbcType="LONGVARCHAR"/>
+        <result column="num" property="num" jdbcType="INTEGER"/>
+    </resultMap>
     <sql id="Example_Where_Clause">
         <!--
           WARNING - @mbggenerated
@@ -127,16 +131,16 @@
         SELECT count(*) from tb_content where name like CONCAT('%',#{name},'%' ) and DATE BETWEEN #{startDate} and #{endDate}
     </select>
     <select id="getQuartervalue" parameterType="Map" resultType="java.lang.Double">
-        SELECT oreitationvalue from taishinews where name = #{companyName} and DATE BETWEEN #{date1} and #{date2}
+        SELECT oreitationvalue from tb_content where name = #{companyName} and DATE BETWEEN #{date1} and #{date2}
     </select>
     <select id="getPosnum" parameterType="Map" resultType="java.lang.Integer">
-        SELECT count(*) from taishinews where name like CONCAT('%',#{companyName},'%' ) and oreitationvalue > 0 and DATE BETWEEN #{date1} and #{date2}
+        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=1 and DATE BETWEEN #{date1} and #{date2}
     </select>
     <select id="getNeunum" parameterType="Map" resultType="java.lang.Integer">
-        SELECT count(*) from taishinews where name like CONCAT('%',#{companyName},'%' ) and oreitationvalue=0 and DATE BETWEEN #{date1} and #{date2}
+        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=0 and DATE BETWEEN #{date1} and #{date2}
     </select>
     <select id="getNegnum" parameterType="Map" resultType="java.lang.Integer">
-        SELECT count(*) from taishinews where name like CONCAT('%',#{companyName},'%' ) and oreitationvalue &lt; 0 and DATE BETWEEN #{date1} and #{date2}
+        SELECT count(*) from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=-1 and DATE BETWEEN #{date1} and #{date2}
     </select>
 
     <select id="getAllTimePosnum" parameterType="String" resultType="java.lang.Integer">
@@ -158,6 +162,12 @@
     </select>
     <select id="getNegnews" parameterType="String" resultMap="ResultMapWithBLOBs">
         SELECT * from tb_content where name like CONCAT('%',#{companyName},'%' ) and oreitation=-1 order by date DESC
+    </select>
+    <select id="NewsCount" resultMap="ComNameNewsCount">
+        SELECT name,count(*) as num from tb_content GROUP BY name ORDER BY num DESC LIMIT 1,10
+    </select>
+    <select id="getMatchNewsCount" resultMap="ComNameNewsCount">
+        SELECT name,count(*) as num from tb_content WHERE DATE BETWEEN #{startDate} and #{endDate} GROUP BY name ORDER BY num DESC LIMIT 1,10
     </select>
     <select id="getCompanyName" parameterType="String" resultType="java.lang.String">
         SELECT name from tb_content where name like CONCAT('%',#{companyName},'%' ) limit 1,1

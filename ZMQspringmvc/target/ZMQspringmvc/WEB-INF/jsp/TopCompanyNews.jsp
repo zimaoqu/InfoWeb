@@ -43,7 +43,6 @@
                         </span>
 
                     </div>
-
                 </div>
                 <div class="one" style="margin-left: 50px">
                     <input id="key" name="key" type="text" placeholder="企业名称"
@@ -64,8 +63,13 @@
         <%--<div class="news">--%>
     </div>
 
-    <div id="right" class="col-xs-3 span3 divfix">
-        <div class="wordcloud" style="width: 400px;height: 300px;"></div>
+    <div id="right" class="col-xs-3 span3 ">
+    <div class="row">
+        <div id="graphic" style="width: 450px;height: 350px;"></div>
+    </div>
+    <div class="row divfix">
+        <div class="wordcloud" style="top:350px; width: 400px;height: 300px;"></div>
+    </div>
     </div>
 
 </div>
@@ -76,6 +80,7 @@
     var endDate = $("#endDate").val();
 </script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-2.2.0.js"></script>
+<%--<script src="${pageContext.request.contextPath}/resources/js/echarts.min.js"></script>--%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.daterangepicker.min.js"></script>

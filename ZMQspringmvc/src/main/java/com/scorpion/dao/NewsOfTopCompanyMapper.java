@@ -1,9 +1,7 @@
 package com.scorpion.dao;
 
-import com.scorpion.pojo.NewsOfCompanyWithBLOBs;
-import com.scorpion.pojo.NewsOfTopCompany;
-import com.scorpion.pojo.NewsOfTopCompanyExample;
-import com.scorpion.pojo.NewsOfTopCompanyWithBLOBs;
+import com.scorpion.pojo.*;
+
 import java.util.List;
 import java.util.Map;
 
@@ -136,6 +134,12 @@ public interface NewsOfTopCompanyMapper {
     List<NewsOfTopCompanyWithBLOBs> selectMatchNews(Map map);
 
     /**
+     * 获取匹配结果的公司的新闻数
+     * @return
+     */
+
+    List<ComNameNewsCount> getTopMatchNewsCount(Map map);
+    /**
      * 获取所有新闻的条数
      */
     int countAllNews();
@@ -143,6 +147,8 @@ public interface NewsOfTopCompanyMapper {
      * 获取匹配新闻的条数
      */
     int countMatchNews(Map map);
-
-
+    /*
+    企业新闻数统计
+     */
+    List<ComNameNewsCount> TopNewsCount();
 }

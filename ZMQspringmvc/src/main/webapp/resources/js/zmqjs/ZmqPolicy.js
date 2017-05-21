@@ -43,6 +43,7 @@ function queryData(page) {
         data: {page: page},
         async: true,
         success: function (data) {
+            console.log($("#result").html())
             var html = "";
             $("#records").text(data.totalRecords);
             if (!data.totalRecords) {
@@ -52,8 +53,6 @@ function queryData(page) {
                 return;
             }
             for (var i = 0; i < data.resultList.length; i++) {
-                console.log(data.resultList[i].url);
-                console.log(12);
                 html += '<h3><b><font size="4">' + data.resultList[i].title
                     + '</font></b></h3><p>' + data.resultList[i].date
                     + '</p><p>' + data.resultList[i].description + '</p><p><a class="btn btn-default" href='

@@ -1,5 +1,6 @@
 package com.scorpion.dao;
 
+import com.scorpion.pojo.ComNameNewsCount;
 import com.scorpion.pojo.NewsOfCompany;
 import com.scorpion.pojo.NewsOfCompanyExample;
 import com.scorpion.pojo.NewsOfCompanyWithBLOBs;
@@ -226,4 +227,13 @@ public interface NewsOfCompanyMapper {
      */
     List<String> getComKeywords(Map map);
 
+    /*
+    企业新闻数统计
+     */
+    List<ComNameNewsCount> NewsCount();
+    /**
+     * 获取匹配结果的公司的新闻数
+     * @return
+     */
+    List<ComNameNewsCount> getMatchNewsCount(Map map);
 }
