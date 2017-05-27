@@ -586,6 +586,7 @@ public class SearchServiceImpl implements SearchService {
         }
         return TopkeyList;
     }
+
     /**
      * 获取Top新闻对应的关键字(时间等匹配条件)
      *
@@ -594,13 +595,14 @@ public class SearchServiceImpl implements SearchService {
      * @return
      */
     @Override
-    public List <ComNameNewsCount> getTopMatchNewsCount(String startDate, String endDate) {
+    public List<ComNameNewsCount> getTopMatchNewsCount(String startDate, String endDate) {
         Map map = new HashMap<>();
         map.put("startDate", startDate);
         map.put("endDate", endDate);
-        List <ComNameNewsCount> MatchNewsCount = newsOfTopCompanyMapper.getTopMatchNewsCount(map);
+        List<ComNameNewsCount> MatchNewsCount = newsOfTopCompanyMapper.getTopMatchNewsCount(map);
         return MatchNewsCount;
     }
+
     /**
      * 获取企业新闻对应的关键字(时间等匹配条件)
      *
@@ -609,17 +611,19 @@ public class SearchServiceImpl implements SearchService {
      * @return
      */
     @Override
-    public List <ComNameNewsCount> getMatchNewsCount(String startDate, String endDate) {
+    public List<ComNameNewsCount> getMatchNewsCount(String startDate, String endDate) {
         Map map = new HashMap<>();
         map.put("startDate", startDate);
         map.put("endDate", endDate);
-        List <ComNameNewsCount> MatchNewsCount = newsOfCompanyMapper.getMatchNewsCount(map);
+        List<ComNameNewsCount> MatchNewsCount = newsOfCompanyMapper.getMatchNewsCount(map);
         return MatchNewsCount;
     }
+
     @Override
     public List<ComNameNewsCount> TopNewsCount() {
         return newsOfTopCompanyMapper.TopNewsCount();
     }
+
     @Override
     public List<ComNameNewsCount> NewsCount() {
         return newsOfCompanyMapper.NewsCount();
@@ -635,16 +639,22 @@ public class SearchServiceImpl implements SearchService {
     static Map processKeywords(String keywords) {
         Map keywordMap = new HashMap<String, Integer>();
 
-        String[] tmp = keywords.split(";");
-        for (int i = 0; i < tmp.length; i++) {
-            String[] tmp1 = tmp[i].split("/");
-            keywordMap.put(tmp1[0], tmp1[1]);
+        if (keywords != null) {
+            String[] tmp = keywords.split(";");
+            for (int i = 0; i < tmp.length; i++) {
+                String[] tmp1 = tmp[i].split("/");
+                if (tmp1.length == 2) {
+                    keywordMap.put(tmp1[0], tmp1[1]);
+                }
+            }
         }
+
         return keywordMap;
     }
 
     /**
      * 获取关键词生成热词云
+     *
      * @param companyName
      * @return
      */

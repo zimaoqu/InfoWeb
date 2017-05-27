@@ -52,7 +52,7 @@ function queryData(page, startDate, endDate, key) {
         data: {page: page, startDate: startDate, endDate: endDate, key: key},
         async: true,
         success: function (data) {
-            console.log(data);
+            //console.log(data);
             //$("#key").val(key);
             doc.dync.key = key;
             doc.dync.startDate = startDate;
@@ -76,7 +76,7 @@ function queryData(page, startDate, endDate, key) {
                 namelist[i]=data.resultList[i].name;
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
-                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
+                    //console.log("key：" + key + ",value：" + data.keywords[i][key]);
                     keywordData.push({
                         name: key,
                         value: data.keywords[i][key]
