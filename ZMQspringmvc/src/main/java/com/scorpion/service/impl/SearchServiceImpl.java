@@ -36,6 +36,8 @@ public class SearchServiceImpl implements SearchService {
     private companyinformationMapper companyinformationMapper;
     @Autowired
     private democompanyMapper democompanyMapper;
+    @Autowired
+    private eventnewsMapper eventnewsMapper;
     /*
     The size of a page.
      */
@@ -58,6 +60,19 @@ public class SearchServiceImpl implements SearchService {
 
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
+    }
+
+    /**
+     * 获取新闻事件
+     * @param companyName
+     * @return
+     */
+    public List<eventnewsWithBLOBs> getEventNews(String companyName, int flag) {
+        Map map = new HashMap();
+        map.put("relComName", companyName.trim());
+        map.put("flag",flag);
+        List<eventnewsWithBLOBs> eventnews = eventnewsMapper.getEventNews(map);
+        return eventnews;
     }
 
     /**

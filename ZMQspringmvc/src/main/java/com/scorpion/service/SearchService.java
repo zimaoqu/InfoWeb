@@ -14,6 +14,10 @@ import java.util.Map;
  */
 public interface SearchService {
     /*
+    获取事件新闻
+     */
+    List<eventnewsWithBLOBs> getEventNews(String companyName, int flag);
+    /*
     获取所有重点企业新闻，根据page
      */
     public Page<NewsOfCompanyWithBLOBs> queryAllTopNews(int page);
