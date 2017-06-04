@@ -92,16 +92,6 @@ public class controller {
     }
 
     /**
-     * 企业事件分析界面
-     *
-     * @return
-     */
-    @RequestMapping("showEventRelationship")
-    public ModelAndView showEventRelationship() {
-        return new ModelAndView("EventRelationship");
-    }
-
-    /**
      * 跳转到自贸区政策的页面
      *
      * @return
@@ -182,6 +172,35 @@ public class controller {
         return new ModelAndView("ZmqCompare");
     }
 
+    /**
+     * 企业事件分析界面
+     *
+     * @return
+     */
+    @RequestMapping("showEventRelationship")
+    public ModelAndView showEventRelationship(ModelMap modelMap, HttpServletRequest request) {
+
+        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "捷豹路虎汽车贸易（上海）有限公司";
+        String temp = (request.getParameter("flag") != null) ? request.getParameter("flag") : "1";
+
+        int flag = Integer.parseInt(temp);
+
+        String selectdiscomsstr = "";
+        List<eventnewsWithBLOBs> Eventnews=new ArrayList<eventnewsWithBLOBs>();
+        Eventnews=searchService.getEventNews(companyName,flag);
+
+        //企业选择下拉列表
+        List<String> companyList = searchService.getComList();
+        selectdiscomsstr="<option>"+companyName+"</option>";
+        for (int i = 0; i < companyList.size(); i++) {
+            selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
+        }
+
+        modelMap.put("maincom", companyName);
+        modelMap.put("eventnews", Eventnews);
+        modelMap.put("selectdiscomsstr", selectdiscomsstr);
+        return new ModelAndView("EventRelationship",modelMap);
+    }
     /**
      * 第三方数据
      *
