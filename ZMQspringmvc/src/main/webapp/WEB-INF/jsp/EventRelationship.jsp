@@ -67,7 +67,7 @@
         <div class="wrapper">
             <div class="history">
                 <div class="start-history">
-                    <p class="cc_history"><%=selectdiscomsstr%></p>
+                    <p class="cc_history">时间线</p>
                     <p class="next_history">PHYLOGENY</p>
                     <div class="history_left">
                     <%
