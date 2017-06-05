@@ -104,6 +104,11 @@ public interface SearchService {
     int getNegnum(String companyName, String date1, String date2);
     List<String> getComList();
 
+    /*
+    企业历史演变用的
+     */
+    List<String> getComListHis();
+    List<bignews> getHisEvents(String companyName);
 
     /*(企业舆情评价用到的)
     根据公司的名字来获取正面、中立、负面新闻的篇数(所有时间段),正面、中立、负面新闻

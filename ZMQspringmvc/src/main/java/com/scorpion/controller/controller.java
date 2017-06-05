@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 
 
-
 /**
  * Created by Scorpion on 2017/4/19.
  */
@@ -186,12 +185,12 @@ public class controller {
         int flag = Integer.parseInt(temp);
 
         String selectdiscomsstr = "";
-        List<eventnewsWithBLOBs> Eventnews=new ArrayList<eventnewsWithBLOBs>();
-        Eventnews=searchService.getEventNews(companyName,flag);
+        List<eventnewsWithBLOBs> Eventnews = new ArrayList<eventnewsWithBLOBs>();
+        Eventnews = searchService.getEventNews(companyName, flag);
 
         //企业选择下拉列表
         List<String> companyList = searchService.getComList();
-        selectdiscomsstr="<option>"+companyName+"</option>";
+        selectdiscomsstr = "<option>" + companyName + "</option>";
         for (int i = 0; i < companyList.size(); i++) {
             selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
         }
@@ -199,8 +198,35 @@ public class controller {
         modelMap.put("maincom", companyName);
         modelMap.put("eventnews", Eventnews);
         modelMap.put("selectdiscomsstr", selectdiscomsstr);
-        return new ModelAndView("EventRelationship",modelMap);
+        return new ModelAndView("EventRelationship", modelMap);
     }
+
+    /**
+     * 企业历史演变（孙鑫）
+     *
+     * @param modelMap
+     * @param request
+     * @return
+     */
+    @RequestMapping("showHistoricalEvolution")
+    public ModelAndView showHistoricalEvolution(ModelMap modelMap, HttpServletRequest request) {
+        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "日立建机";
+        String selectdiscomsstr = "";
+        List<bignews> eventsHis = searchService.getHisEvents(companyName);
+        //企业选择下拉列表
+        List<String> companyList = searchService.getComListHis();
+        selectdiscomsstr = "<option>" + companyName + "</option>";
+        for (int i = 0; i < companyList.size(); i++) {
+            selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
+        }
+
+        modelMap.put("maincom", companyName);
+        modelMap.put("eventnews", eventsHis);
+        modelMap.put("selectdiscomsstr", selectdiscomsstr);
+        return new ModelAndView("HistoricalEvolution", modelMap);
+    }
+
+
     /**
      * 第三方数据
      *
@@ -333,33 +359,33 @@ public class controller {
     public ModelAndView showComPublicOpinionEvaluation(ModelMap modelMap, HttpServletRequest request) {
 
         String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "上海三星半导体有限公司";
-        
+
         String selectdiscomsstr = "";
         String completename = searchService.getCompanyName(companyName);
-		HashMap<String,Integer> wordcloud=new HashMap<String,Integer>();
-		HashMap<String,Integer> source=new HashMap<String,Integer>();
-		List<currentnewsWithBLOBs> hotnews=new ArrayList<currentnewsWithBLOBs>();
-		List<currentnewsWithBLOBs> sensivenews=new ArrayList<currentnewsWithBLOBs>();
-		
-		//热词提取
-		wordcloud=searchService.getKeywords(companyName);
-		
-		//新闻来源统计
-		source=searchService.getCountSource(companyName);
-		
-		//热点新闻获取
-		hotnews=searchService.getHotNews(companyName);
-		
-		//敏感新闻获取
-		sensivenews=searchService.getSensiveNews(companyName);
-		
+        HashMap<String, Integer> wordcloud = new HashMap<String, Integer>();
+        HashMap<String, Integer> source = new HashMap<String, Integer>();
+        List<currentnewsWithBLOBs> hotnews = new ArrayList<currentnewsWithBLOBs>();
+        List<currentnewsWithBLOBs> sensivenews = new ArrayList<currentnewsWithBLOBs>();
+
+        //热词提取
+        wordcloud = searchService.getKeywords(companyName);
+
+        //新闻来源统计
+        source = searchService.getCountSource(companyName);
+
+        //热点新闻获取
+        hotnews = searchService.getHotNews(companyName);
+
+        //敏感新闻获取
+        sensivenews = searchService.getSensiveNews(companyName);
+
         //企业选择下拉列表
         List<String> companyList = searchService.getComList();
-        selectdiscomsstr="<option>"+companyName+"</option>";
+        selectdiscomsstr = "<option>" + companyName + "</option>";
         for (int i = 0; i < companyList.size(); i++) {
             selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
         }
-        
+
         modelMap.put("wordcloud", wordcloud);
         modelMap.put("source", source);
         modelMap.put("hotnews", hotnews);
@@ -372,6 +398,7 @@ public class controller {
 
     /**
      * 企业声誉分析
+     *
      * @param modelMap
      * @return
      */
@@ -380,12 +407,12 @@ public class controller {
         List<CompanyInfo> comInfo = new ArrayList();
         List<String> companyList = searchService.getComList();
         for (String companyName : companyList) {
-            double sumreputation=0.0;
-            double sumhealth=0.0;
+            double sumreputation = 0.0;
+            double sumhealth = 0.0;
             CompanyInfo c = new CompanyInfo();
             c.setName(companyName);
             List<String> demolist = searchService.getDemoComList();
-            if(demolist.contains(companyName)){
+            if (demolist.contains(companyName)) {
                 sumreputation = searchService.getCurreputation(companyName);
             }
             List<Double> quartervalue = searchService.getQuartervalue(companyName, "2016-11-1", "2016-12-1");
@@ -397,7 +424,7 @@ public class controller {
             c.setHealth(sumhealth);
             comInfo.add(c);
         }
-        modelMap.put("comInfo",comInfo);
+        modelMap.put("comInfo", comInfo);
         return new ModelAndView("ComReputationAnalysis", modelMap);
     }
 
@@ -420,7 +447,7 @@ public class controller {
         List<ComNameNewsCount> newsCount = searchService.TopNewsCount();//调用新闻量类
         List<String> nameList = new ArrayList<>();
         List<Integer> numList = new ArrayList<>();
-        for(ComNameNewsCount instance:newsCount){
+        for (ComNameNewsCount instance : newsCount) {
             nameList.add(instance.getName());
             numList.add(instance.getCount());
         }
@@ -431,7 +458,7 @@ public class controller {
         json.put("totalPages", resultPage.getTotalPages());
         json.put("nameList", nameList);
         json.put("numList", numList);
-        json.put("keywords",keywords);
+        json.put("keywords", keywords);
         out.print(json);
     }
 
@@ -451,14 +478,14 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
-        if(key==null)
-            key="";
+        if (key == null)
+            key = "";
         List keywords = searchService.getMatchTopComKeywords(pageNo, startDate, endDate, key);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchTopNews(pageNo, startDate, endDate, key);
         List<ComNameNewsCount> MatchNewsCount = searchService.getTopMatchNewsCount(startDate, endDate);
         List<String> nameList = new ArrayList<>();
         List<Integer> numList = new ArrayList<>();
-        for(ComNameNewsCount instance:MatchNewsCount){
+        for (ComNameNewsCount instance : MatchNewsCount) {
             nameList.add(instance.getName());
             numList.add(instance.getCount());
         }
@@ -468,7 +495,7 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
-        json.put("keywords",keywords);
+        json.put("keywords", keywords);
         json.put("nameList", nameList);
         json.put("numList", numList);
         out.print(json);
@@ -493,7 +520,7 @@ public class controller {
         List<ComNameNewsCount> newsCount = searchService.NewsCount();//调用新闻量类
         List<String> nameList = new ArrayList<>();
         List<Integer> numList = new ArrayList<>();
-        for(ComNameNewsCount instance:newsCount){
+        for (ComNameNewsCount instance : newsCount) {
             nameList.add(instance.getName());
             numList.add(instance.getCount());
         }
@@ -502,7 +529,7 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
-        json.put("keywords",keywords);
+        json.put("keywords", keywords);
         json.put("nameList", nameList);
         json.put("numList", numList);
         out.print(json);
@@ -524,15 +551,15 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
-        if(key==null)
-            key="";
+        if (key == null)
+            key = "";
         List keywords = searchService.getMatchComKeywords(pageNo, startDate, endDate, key);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchNews(pageNo, startDate, endDate, key);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         List<ComNameNewsCount> MatchNewsCount = searchService.getMatchNewsCount(startDate, endDate);
         List<String> nameList = new ArrayList<>();
         List<Integer> numList = new ArrayList<>();
-        for(ComNameNewsCount instance:MatchNewsCount){
+        for (ComNameNewsCount instance : MatchNewsCount) {
             nameList.add(instance.getName());
             numList.add(instance.getCount());
         }
@@ -543,7 +570,7 @@ public class controller {
         json.put("totalPages", resultPage.getTotalPages());
         json.put("nameList", nameList);
         json.put("numList", numList);
-        json.put("keywords",keywords);
+        json.put("keywords", keywords);
 
         out.print(json);
     }

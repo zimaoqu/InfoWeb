@@ -105,7 +105,15 @@
                         <li><a href="${pageContext.request.contextPath}/zmq/showComReputationAnalysis">企业声誉分析</a></li>
                     </ul></li>
 
-                <li><a href="${pageContext.request.contextPath}/zmq/showEventRelationship">企业事件分析</a></li>
+                <li class="dropdown"><a href="" class="dropdown-toggle"
+                                        data-toggle="dropdown"> 企业事件分析 <b class="caret"></b>
+                </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${pageContext.request.contextPath}/zmq/showEventRelationship">企业事件分析</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showHistoricalEvolution">企业历史演变</a></li>
+                    </ul>
+                </li>
+
 
                 <li class="dropdown"><a href="" class="dropdown-toggle"
                                         data-toggle="dropdown"> 企业关联分析 <b class="caret"></b>
@@ -113,6 +121,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showPotentialRelationship">潜在关系</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showCompanyRelationship">企业关系网</a></li>
+                        <li><a href="http://139.224.199.170:7474" target="Blank">关系数据</a></li>
                     </ul>
                 </li>
 

@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.scorpion.pojo.eventnewsWithBLOBs" %><%--
   Created by IntelliJ IDEA.
   User: Scorpion
   Date: 2017/4/21
@@ -21,113 +23,78 @@
     <br/>
     <%@include file="title.jsp" %>
     <br/>
+    <%
+        String maincom = request.getAttribute("maincom").toString();
+        String selectdiscomsstr=request.getAttribute("selectdiscomsstr").toString();
+        List<eventnewsWithBLOBs> eventnews=(ArrayList<eventnewsWithBLOBs>)request.getAttribute("eventnews");
+    %>
+    <div class="row-fluid">
+        <div class="col-xs-8 span8">
+            <span style="font-size:20px;">
+                重点企业：
+                <select name="selectcompany" id="selectcompany"  style="width:200px;">
+                    "<%=selectdiscomsstr%>"
+                </select>
+                类别：
+                <select name="cla" id="cla" style="width:200px;">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
 
-    <div class="wrapper">
-        <div class="history">
-            <div class="start-history">
-                <p class="cc_history">三星爆炸发展始末</p>
-                <p class="next_history">PHYLOGENY</p>
-                <div class="history_left">
-                    <p class="history_L year2006">
-                        <span class="history_2006_span">2016</span>
-                        <b class="history_2006_b">
-                            <span class="history_l_month">8<br/>月</span>
-                            <span class="history_l_text">充电发生爆炸<br/></span>
-                        </b>
-                    </p>
-                    <p class="history_L yearalmost">
-                        <span class="history_2006_span">2016</span>
-                        <b class="history_2006_b">
-                            <span class="history_l_month">9<br/>月</span>
-                            <span class="history_l_text">海航禁止携带该手机</span>
-                        </b>
-                    </p>
-                    <p class="history_L year2009">
-                        <span class="history_2006_span">2016</span>
-                        <b class="history_2006_b">
-                            <span class="history_l_month">9<br/>月</span>
-                            <span class="history_l_text">韩国启动换机计划</span>
-                        </b>
-                    </p>
-                    <p class="history_L yearalmost">
-                        <span class="history_2006_span blue">2016</span>
-                        <b class="history_2006_b blue">
-                            <span class="history_l_month">10<br/>月</span>
-                            <span class="history_l_text">三星停售该机</span>
-                        </b>
-                    </p>
+                <button id="subcom">提交</button>
+            </span>
+            <script type="text/javascript">
+                $("#subcom").click(function () {
+                    tmp = $("#selectcompany option:selected").text();
+                    flag = $("#cla option:selected").text();
+                    req = "${pageContext.request.contextPath}/zmq/showEventRelationship?com=" + tmp+"&&flag="+flag
+                    $.post(req,
+                        {
+                            //companyname:tmp
+                        },
+                        function () {
+                            location.href = "${pageContext.request.contextPath}/zmq/showEventRelationship?com=" + tmp+"&&flag="+flag
+                        });
+                });
+            </script>
+            <div class="news">
+                <div >
+                    <p style="text-align:center"><b><font size='4'>事件新闻</font></b></p>
 
+                    <table border="1">
+                        <tr>
+                            <th style="text-align:center;">时间</th>
+                            <th style="text-align:center;">事件</th>
+                            <th style="text-align:center;">内容</th>
+                        </tr>
+                        <%
+                            for(int i=0;i<eventnews.size();i++) {
+                                eventnewsWithBLOBs n = eventnews.get(i);
+                                System.out.println(eventnews.size());
+                        %>
+                        <tr>
+                            <%
+                                String _title = n.getTitle();
+                                String _date = n.getDate().toString();
+                                String _url = n.getUrl();
+                            %>
+                            <td style="width: 80px;text-align:center"><%=_date%></td>
+                            <td style="width: 600px;text-align:center"><%=_title%></td>
+                            <td style="width: 70px;text-align:center"><a href="<%=_url%>" target="_blank">查看</a></td>
+                        </tr>
+                        <%
+                            }
+                        %>
+                    </table>
                 </div>
-                <div class="history-img">
-                    <img class="history_img" src="${pageContext.request.contextPath}/resources/images/history.png" alt="">
-                </div>
-                <div class="history_right">
-                    <p class="history_R history_r_2005">
-                        <span class="history_2005_span">2016</span>
-                        <b class="history_2005_b">
-                            <span class="history_r_month">8<br/>月</span>
-                            <span class="history_r_text">三星note7正式发布</span>
-                        </b>
-                    </p>
-                    <p class="history_R yearalmostr">
-                        <span class="history_2005_span">2016</span>
-                        <b class="history_2005_b">
-                            <span class="history_r_month">9<br/>月</span>
-                            <span class="history_r_text">宣布召回手机<br/></span>
-                        </b>
-                    </p>
-                    <p class="history_R yearalmostr">
-                        <span class="history_2005_span">2016</span>
-                        <b class="history_2005_b">
-                            <span class="history_r_month">10<br/>月</span>
-                            <span class="history_r_text">美国市场发生爆炸70多起<br/></span>
-                        </b>
-                    </p>
-                    <p class="history_R yearalmostr">
-                        <span class="history_2005_span">2016</span>
-                        <b class="history_2005_b">
-                            <span class="history_r_month">10<br/>月</span>
-                            <span class="history_r_text">更换后的手机发生自燃</span>
-                        </b>
-                    </p>
-                    <p class="history_R yearalmostr">
-                        <span class="history_2005_span blue">2016</span>
-                        <b class="history_2005_b blue_R">
-                            <span class="history_r_month">10<br/>月</span>
-                            <span class="history_r_text">三星在中国召回手机</span>
-                        </b>
-                    </p>
 
-                </div>
-                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-        </div>
     </div>
-
-    <script src="${pageContext.request.contextPath}/resources/js/jquery.slidy.js"></script>
-    <script>
-        $(window).scroll(function(){
-            var msg = $(".history-img");
-            var item = $(".history_L");
-            var items = $(".history_R");
-            var windowHeight = $(window).height();
-            var Scroll = $(document).scrollTop();
-            if((msg.offset().top - Scroll -windowHeight)<=0){
-                msg.fadeIn(1500);
-            }
-            for(var i=0;i<item.length;i++){
-                if(($(item[i]).offset().top - Scroll - windowHeight)<= -100){
-                    $(item[i]).animate({marginRight:'0px'},'50','swing');
-                }
-            }
-            for(var i=0;i<items.length;i++){
-                if(($(items[i]).offset().top - Scroll - windowHeight)<= -100){
-                    $(items[i]).animate({marginLeft:'0px'},'50','swing');
-                }
-            }});
-
-    </script>
+</div>
 </div>
 
 </body>

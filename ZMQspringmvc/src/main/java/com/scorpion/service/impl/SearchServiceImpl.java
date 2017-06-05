@@ -38,6 +38,8 @@ public class SearchServiceImpl implements SearchService {
     private democompanyMapper democompanyMapper;
     @Autowired
     private eventnewsMapper eventnewsMapper;
+    @Autowired
+    private bignewsMapper bignewsMapper;
     /*
     The size of a page.
      */
@@ -73,6 +75,23 @@ public class SearchServiceImpl implements SearchService {
         map.put("flag",flag);
         List<eventnewsWithBLOBs> eventnews = eventnewsMapper.getEventNews(map);
         return eventnews;
+    }
+
+    /**
+     * 企业历史演变
+     * @return
+     */
+    @Override
+    public List<String> getComListHis() {
+        return bignewsMapper.getComList();
+    }
+
+    @Override
+    public List<bignews> getHisEvents(String companyName) {
+        Map map = new HashMap();
+        map.put("relComName", companyName.trim());
+        List<bignews> eventHis = bignewsMapper.getHisEvents(map);
+        return eventHis;
     }
 
     /**
@@ -468,11 +487,6 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取公司完整的名字
-     * <<<<<<< HEAD
-     * <p>
-     * =======
-     * >>>>>>> c05355fbfbb0e385faf017182ea9d683f9e543ea
-     *
      * @param name
      * @return
      */
@@ -485,11 +499,6 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * get Curreputation
-     * <<<<<<< HEAD
-     * <p>
-     * =======
-     * >>>>>>> c05355fbfbb0e385faf017182ea9d683f9e543ea
-     *
      * @param companyName
      * @return
      */
@@ -506,7 +515,6 @@ public class SearchServiceImpl implements SearchService {
     }
 
     /**
-     * <<<<<<< HEAD
      * 获取普通新闻对应的关键字
      *
      * @param page
