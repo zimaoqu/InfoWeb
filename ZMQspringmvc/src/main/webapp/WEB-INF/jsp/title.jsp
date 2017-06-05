@@ -110,7 +110,7 @@
                 </a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showEventRelationship">企业事件分析</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showHistoricalEvolution">企业历史演变</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showHistoricalEvolution">企业热点事件链</a></li>
                     </ul>
                 </li>
 
