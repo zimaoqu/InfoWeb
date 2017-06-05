@@ -70,12 +70,12 @@
             <div class="cd-timeline-content" >
                 <h2>
                     <a href='<%= eventnews.get(i).getUrl() %>' target="_blank">
-                        <strong><%= eventnews.get(i).getTitle()%></strong>
+                        <strong style="font-size: 20px"><%= eventnews.get(i).getTitle()%></strong>
                     </a>
                 </h2>
-                <p>关键词：<%= eventnews.get(i).getKeywords()%>
+                <p style="font-size: 15px">关键词：<%= eventnews.get(i).getKeywords()%>
                 </p>
-                <span class="cd-date"><%= eventnews.get(i).getDate()%></span>
+                <span class="cd-date" style="font-size: 15px"><%= eventnews.get(i).getDate()%></span>
             </div>
         </div>
         <%}%>
