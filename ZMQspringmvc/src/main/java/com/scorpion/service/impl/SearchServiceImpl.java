@@ -77,6 +77,10 @@ public class SearchServiceImpl implements SearchService {
         return eventnews;
     }
 
+    public List<String> getComlist(){
+        return eventnewsMapper.getComlist();
+    };
+
     /**
      * 企业历史演变
      * @return
@@ -85,6 +89,8 @@ public class SearchServiceImpl implements SearchService {
     public List<String> getComListHis() {
         return bignewsMapper.getComList();
     }
+
+
 
     @Override
     public List<bignews> getHisEvents(String companyName) {
