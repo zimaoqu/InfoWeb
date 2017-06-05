@@ -189,7 +189,7 @@ public class controller {
         Eventnews = searchService.getEventNews(companyName, flag);
 
         //企业选择下拉列表
-        List<String> companyList = searchService.getComList();
+        List<String> companyList = searchService.getComlist();
         selectdiscomsstr = "<option>" + companyName + "</option>";
         for (int i = 0; i < companyList.size(); i++) {
             selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
