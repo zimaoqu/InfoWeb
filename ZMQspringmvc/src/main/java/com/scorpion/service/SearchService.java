@@ -110,6 +110,11 @@ public interface SearchService {
     List<String> getComListHis();
     List<bignews> getHisEvents(String companyName);
 
+    /*
+    公司名称：事件分析
+     */
+    List<String> getComlist();
+
     /*(企业舆情评价用到的)
     根据公司的名字来获取正面、中立、负面新闻的篇数(所有时间段),正面、中立、负面新闻
      */

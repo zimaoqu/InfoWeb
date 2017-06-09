@@ -29,6 +29,10 @@
     SELECT * FROM tb_event WHERE flag=#{flag} AND relname LIKE CONCAT('%',#{relComName},'%' ) ORDER BY date
   </select>
 
+  <select id="getComlist" parameterType="Map" resultType="java.lang.String">
+   SELECT DISTINCT relname from tb_event
+  </select>
+
   <sql id="Example_Where_Clause" >
     <!--
       WARNING - @mbggenerated

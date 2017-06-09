@@ -122,4 +122,5 @@ public interface eventnewsMapper {
     int updateByPrimaryKey(eventnews record);
 
     List<eventnewsWithBLOBs> getEventNews(Map map);
+    List<String> getComlist();
 }
