@@ -120,6 +120,7 @@
                             String _title1 = n.getTitle();
                             String _date1 = formatter.format(n.getDate());
                             String _year1 = _date1.substring(0,4);
+
                             String _month1 = _date1.substring(5,7);
                             String _url1 = n.getUrl();
                     %>
