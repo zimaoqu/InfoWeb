@@ -5,6 +5,7 @@ import com.scorpion.pojo.negativenewsExample;
 import com.scorpion.pojo.negativenewsWithBLOBs;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import com.scorpion.pojo.*;
 
 public interface negativenewsMapper {
     /**
@@ -124,4 +125,7 @@ public interface negativenewsMapper {
      * @return
      */
     List<negativenewsWithBLOBs> queryNegativenews();
+
+    List<ComNameNewsCount> ComMonthNewsCount();
+    List<ComNameNewsCount> ComMonthBeforeNewsCount();
 }

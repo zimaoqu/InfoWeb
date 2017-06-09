@@ -289,10 +289,21 @@ public class controller {
         List<negativenewsWithBLOBs> queryNegNews = searchService.queryNegativenews();
         List<currentnewsWithBLOBs> queryCurNews = searchService.queryCurrentnews();
         List<companyinformation> queryComInfo = searchService.querycompanyinfo();
+        List<ComNameNewsCount> warningCount = searchService.CompanyWarningCount();
+        List<ComNameNewsCount> warningBeforeCount = searchService.CompanyWarningBeforeCount();
+        List<Integer> BeforeCount = new ArrayList<>();
+        for(int i = 0;i<warningCount.size();i++) {
+            for (int j = 0; j < warningBeforeCount.size(); j++)
+                if (warningCount.get(i).getName().equals(warningBeforeCount.get(j).getName())) {
+                    BeforeCount.add(warningBeforeCount.get(j).getCount());
+                }
+        }
         modelMap.put("columnName", columnName);
         modelMap.put("queryNegNews", queryNegNews);
         modelMap.put("queryCurNews", queryCurNews);
         modelMap.put("queryComInfo", queryComInfo);
+        modelMap.put("warningCount",warningCount);
+        modelMap.put("BeforeCount",BeforeCount);
         return new ModelAndView("AbnormalWarning", modelMap);
     }
 

@@ -24,6 +24,10 @@
     <result column="html" property="html" jdbcType="LONGVARCHAR" />
     <result column="relcompany" property="relcompany" jdbcType="LONGVARCHAR" />
   </resultMap>
+  <resultMap id="ComNameNewsCount" type="com.scorpion.pojo.ComNameNewsCount">
+    <result column="name" property="name" jdbcType="LONGVARCHAR"/>
+    <result column="num" property="num" jdbcType="INTEGER"/>
+  </resultMap>
   <sql id="Example_Where_Clause" >
     <!--
       WARNING - @mbggenerated
@@ -97,6 +101,12 @@
     -->
     id, source, date, oreitationvalue, ispush, isread
   </sql>
+  <select id="ComMonthNewsCount" resultMap="ComNameNewsCount">
+    SELECT name,count(*) as num from topcompany WHERE DATE BETWEEN date_add(curdate(), interval -1 year) and curdate() GROUP BY name ORDER BY name
+  </select>
+  <select id="ComMonthBeforeNewsCount" resultMap="ComNameNewsCount">
+    SELECT name,count(*) as num from topcompany WHERE DATE BETWEEN date_add(curdate(), interval -2 year) and date_add(curdate(), interval -1 year) GROUP BY name ORDER BY name
+  </select>
   <sql id="Blob_Column_List" >
     <!--
       WARNING - @mbggenerated

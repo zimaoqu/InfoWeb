@@ -2,7 +2,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.text.DecimalFormat" %>
 <%@ page import="com.scorpion.pojo.currentnewsWithBLOBs" %>
-<%@ page import="com.scorpion.pojo.companyinformation" %><%--
+<%@ page import="com.scorpion.pojo.companyinformation" %>
+<%@ page import="com.scorpion.pojo.ComNameNewsCount" %><%--
   Created by IntelliJ IDEA.
   User: Scorpion
   Date: 2017/4/24
@@ -51,6 +52,8 @@
     List<negativenewsWithBLOBs> queryNegNews = (List<negativenewsWithBLOBs>) request.getAttribute("queryNegNews");
     List<currentnewsWithBLOBs> queryCurNews = (List<currentnewsWithBLOBs>) request.getAttribute("queryCurNews");
     List<companyinformation> queryComInfo = (List<companyinformation>) request.getAttribute("queryComInfo");
+    List<ComNameNewsCount> warningCount = (List<ComNameNewsCount>) request.getAttribute("warningCount");
+    List<Integer> beforeCount = (List<Integer>) request.getAttribute("BeforeCount");
     DecimalFormat df = new DecimalFormat("######0.000");
 %>
 
@@ -138,37 +141,22 @@
             <table class="gridtable">
                 <tr>
                     <th>企业名称</th>
-                    <th>上月新闻数</th>
-                    <th>本月新闻数</th>
-                    <th>本月负面数</th>
+                    <th>一月内新闻数</th>
+                    <th>上一月新闻数</th>
                 </tr>
                 <%
                     int count = 0;
-                    for (int i = 0; i < queryComInfo.size() & count < 25; i++) {
-                        companyinformation comInfo = queryComInfo.get(i);
-                        String _companyname = comInfo.getName();
-                        Integer _lastmonthsum = comInfo.getLastmonthsum();
-                        Integer _curmonthsum = comInfo.getCurmonthsum();
-                        Integer _curmonthneg = comInfo.getCurmonthneg();
-                        double a = _curmonthneg * 1.0;
-                        double b = _curmonthsum * 1.0;
-                        double tmp = 0.0;
-                        if (a != 0.0 && b != 0.0) {
-                            tmp = a / b;
-                        }
-                        if (tmp > 0.3) {
+                    for (int i = 0; i < warningCount.size() & count < 25; i++) {
+                        ComNameNewsCount c = warningCount.get(i);
+                        String _companyname = c.getName();
+                        Integer _curmonth = c.getCount();
+                        Integer _lastmonth = beforeCount.get(i);
                 %>
-                <td><font color="red"><%=_companyname%>
-                </font></td>
-                <%} else {%>
                 <td><%=_companyname%>
                 </td>
-                <%}%>
-                <td><%=_lastmonthsum%>
+                <td><%=_curmonth%>
                 </td>
-                <td><%=_curmonthsum%>
-                </td>
-                <td><%=_curmonthneg%>
+                <td><%=_lastmonth%>
                 </td>
                 </tr>
                 <%
