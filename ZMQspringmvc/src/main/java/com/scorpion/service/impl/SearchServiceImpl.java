@@ -858,6 +858,30 @@ public class SearchServiceImpl implements SearchService {
         }
         return res;
     }
+    public List<ComNameNewsCount> CompanyWarningCount() {
+        List<ComNameNewsCount> dateNow = negativenewsMapper.ComMonthNewsCount();
+        List<ComNameNewsCount> dateBefore = negativenewsMapper.ComMonthBeforeNewsCount();
+        List<ComNameNewsCount> warningCom = new ArrayList();
+        int n = 0;
+        for(int i = 0;i<dateNow.size();i++)
+        {
+            for(int j = 0;j<dateBefore.size();j++)
+            {
+                ComNameNewsCount c = new ComNameNewsCount();
+                if(dateNow.get(i).getName().equals(dateBefore.get(j).getName())) {
+                    if (dateNow.get(i).getCount() > dateBefore.get(j).getCount() * 2 && dateNow.get(i).getCount() > 0) {
+                        c.setCount(dateNow.get(i).getCount());
+                        c.setName(dateNow.get(i).getName());
+                        warningCom.add(c);
+                    }
+                }
+            }
+        }
+        return warningCom;
+    }
+    public List<ComNameNewsCount> CompanyWarningBeforeCount() {
+        return negativenewsMapper.ComMonthBeforeNewsCount();
+    }
 }
 //前面name变蓝用到的
 class Abstract_Cut {

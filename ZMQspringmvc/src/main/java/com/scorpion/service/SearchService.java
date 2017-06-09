@@ -167,4 +167,7 @@ public interface SearchService {
      */
     public List<ComNameNewsCount> NewsCount();
     List<ComNameNewsCount> getMatchNewsCount(String startDate, String endDate);
+
+    public List<ComNameNewsCount> CompanyWarningCount();
+    public List<ComNameNewsCount> CompanyWarningBeforeCount();
 }
