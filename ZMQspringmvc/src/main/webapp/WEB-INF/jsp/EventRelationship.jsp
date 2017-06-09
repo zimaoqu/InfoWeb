@@ -81,7 +81,6 @@
                             }
                             String _date = formatter.format(n.getDate());
                             String _year = _date.substring(0,4);
-                            System.out.println(_date);
                             String _month = _date.substring(5,7);
                             String _url = n.getUrl();
                     %>
@@ -121,7 +120,7 @@
                             String _title1 = n.getTitle();
                             String _date1 = formatter.format(n.getDate());
                             String _year1 = _date1.substring(0,4);
-                            System.out.println(_date1);
+
                             String _month1 = _date1.substring(5,7);
                             String _url1 = n.getUrl();
                     %>

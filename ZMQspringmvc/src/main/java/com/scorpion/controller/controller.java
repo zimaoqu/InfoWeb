@@ -651,7 +651,6 @@ public class controller {
     public void matchSHZmqNews(HttpServletResponse response, String page, String startDate, String endDate) throws IOException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        System.out.println("matchSHZmqNews");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
         Page<NewsOfSHZmqWithBLOBs> resultPage = searchService.queryMatchSHZmqNews(pageNo, startDate, endDate);
         List<NewsOfSHZmqWithBLOBs> resultList = resultPage.getContent();
@@ -751,7 +750,6 @@ public class controller {
     public void matchPolicyNews(HttpServletResponse response, String page, String startDate, String endDate, String cat) throws IOException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        System.out.println("matchPolicyNewws");
 
         int pageNo = page == null ? 1 : Integer.parseInt(page);
         Page<PolicyWithBLOBs> resultPage = searchService.queryMatchPolicyNews(pageNo, startDate, endDate, cat);
