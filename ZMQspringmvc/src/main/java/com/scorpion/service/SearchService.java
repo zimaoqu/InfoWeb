@@ -145,9 +145,26 @@ public interface SearchService {
      */
     public List getComKeywords(int page);
     /*
+    获取其他自贸区新闻关键词
+     */
+    public List getOtherZmqKeywords(int page);
+
+    /*
+    获取其他自贸区新闻的关键词
+     */
+    public List getSHZmqKeywords(int page);
+    /*
     获取时间匹配新闻关键词（普通companynews）
      */
     public List getMatchComKeywords(int page, String startDate, String endDate, String key);
+    /*
+    获取时间匹配其他自贸区新闻关键词
+     */
+    public List getMatchOtherZmqKeywords(int page, String startDate, String endDate, String key);
+    /*
+    获取时间匹配上海自贸区新闻关键词
+     */
+    public List getMatchSHZmqKeywords(int page, String startDate, String endDate);
 
     /*
     获取新闻关键词（Top companynews）
@@ -170,4 +187,7 @@ public interface SearchService {
 
     public List<ComNameNewsCount> CompanyWarningCount();
     public List<ComNameNewsCount> CompanyWarningBeforeCount();
+
+    public List<ComNameNewsCount> OtherZmqNewsCount();
+    public List<ComNameNewsCount> getMatchOtherZmqNewsCount(String startDate, String endDate);
 }

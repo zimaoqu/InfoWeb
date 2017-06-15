@@ -1,9 +1,7 @@
 package com.scorpion.dao;
 
-import com.scorpion.pojo.NewsOfOtherZmq;
-import com.scorpion.pojo.NewsOfOtherZmqExample;
-import com.scorpion.pojo.NewsOfOtherZmqKey;
-import com.scorpion.pojo.NewsOfOtherZmqWithBLOBs;
+import com.scorpion.pojo.*;
+
 import java.util.List;
 import java.util.Map;
 
@@ -141,4 +139,8 @@ public interface NewsOfOtherZmqMapper {
      * 获取匹配新闻的条数
      */
     int countMatchOtherZmqNews(Map map);
+
+    List<ComNameNewsCount> OtherZmqNewsCount();
+    List<ComNameNewsCount> getMatchOtherZmqNewsCount(Map map);
+
 }

@@ -33,7 +33,10 @@ function pager(page, totalPages, totalRecords) {
     }, true);
 }
 
-
+var worddata = new Array();
+var namelist=[];
+var nameList=[];//柱状图的nameList
+var numList=[];//柱状图的numList
 function queryData(page) {
     $.ajax({
         cache: false,
@@ -43,7 +46,6 @@ function queryData(page) {
         data: {page: page},
         async: true,
         success: function (data) {
-            console.log($("#result").html())
             var html = "";
             $("#records").text(data.totalRecords);
             if (!data.totalRecords) {
@@ -52,17 +54,30 @@ function queryData(page) {
                 pager(page, data.totalPages, data.totalRecords);
                 return;
             }
+            worddata = new Array();
+            numList = data.numList;
+            nameList = data.nameList;
             for (var i = 0; i < data.resultList.length; i++) {
-                html += '<h3><b><font size="4">' + data.resultList[i].title
-                    + '</font></b></h3><p>' + data.resultList[i].date
-                    + '</p><p>' + data.resultList[i].description + '</p><p><a class="btn btn-default" href='
+                html += '<div id="' + i + '" onmouseover="drawpic(this)"><h3><b ><font size="4">' + data.resultList[i].title
+                    + '</font></b></h3>' + data.resultList[i].date
+                    + '</p><p>' + data.resultList[i].description + '</p><a class="btn btn-default" href='
                     + data.resultList[i].url + ' target="_blank">原文»</a>&nbsp;<font color="blue">'
-                    + data.resultList[i].name + '</font>';
+                    + data.resultList[i].name + '</font></div>';
+                namelist[i]=data.resultList[i].name;
+                var keywordData = [];
+                for (var key in data.keywords[i]) {
+                    keywordData.push({
+                        name: key,
+                        value: data.keywords[i][key]
+                    })
+                }
+                worddata.push(keywordData);
             }
             // html = template("rslt", data);
             // html = changeHtml(html);
             //document.getElementById("result").innerHTML = html;
             $("#result").html(html);
+            graphic();
             winHistory();
             pager(page, data.totalPages, data.totalRecords);
         },
@@ -71,7 +86,95 @@ function queryData(page) {
         }
     });
 }
+function drawpic(obj) {
+    var id = obj.id;
+    var comname = namelist[id];
+    $(".wordcloud").each(function () {
+        var myChart = echarts.init(this);
+        option = {
+            title: {
+                text: comname+"关键词词云图"
+            },
+            tooltip: {},
+            series: [{
+                type: 'wordCloud',
+                gridSize: 20,
+                sizeRange: [12, 50],
+                rotationRange: [0, 0],
+                shape: 'circle',
+                textStyle: {
+                    normal: {
+                        color: function () {
+                            return 'rgb(' + [
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160)
+                                ].join(',') + ')';
+                        }
+                    },
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                data: worddata[id]
+            }]
+        };
 
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    });
+}
+function graphic(){
+    var myChart = echarts.init(document.getElementById("graphic"));
+    option = {
+        title: {
+            text: '自贸区新闻量统计(Top10)',
+        },
+        tooltip: {},
+        legend: {
+            data: ['新闻量']
+        },
+        toolbox: {
+            show: true,
+        },
+        calculable: true,
+        xAxis: [{}],
+        yAxis: [
+            {
+                data:nameList,
+                show: false
+            }
+        ],
+        series: [
+            {
+                name: '新闻量',
+                type: 'bar',
+                data: numList,
+                itemStyle: {
+                    normal: {
+                        color: function (params) {
+                            // build a color map as your need.
+                            var colorList = [
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                            ];
+                            return colorList[params.dataIndex]
+                        },
+                        label: {
+                            show: true,
+                            position: 'on',
+                            formatter: '{b}{c}',
+                            textStyle: {
+                                color: '#000000'
+                            }
+                        }
+                    }
+                }
+            }]
+    }
+    myChart.setOption(option);
+}
 function changeHtml(html) {
     html = html.replace(/&lt;/gi, "<");
     html = html.replace(/&gt;/gi, ">");

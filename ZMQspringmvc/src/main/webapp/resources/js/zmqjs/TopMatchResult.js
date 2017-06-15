@@ -62,6 +62,7 @@ function queryData(page, startDate, endDate, key) {
                 pager(page, data.totalPages, data.totalRecords);
                 return;
             }
+            worddata = new Array();
             numList = data.numList;
             nameList = data.nameList;
             for (var i = 0; i < data.resultList.length; i++) {
