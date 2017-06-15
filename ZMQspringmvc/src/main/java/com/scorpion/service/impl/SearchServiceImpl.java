@@ -615,6 +615,46 @@ public class SearchServiceImpl implements SearchService {
     }
 
     /**
+     * 获取上海自贸区新闻的关键字
+     * @param page
+     * @return
+     */
+    @Override
+    public List getSHZmqKeywords(int page) {
+        Map map = new HashMap();
+        List keyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfSHZmqWithBLOBs> dateList = newsOfSHZmqMapper.selectAllSHZmqNews(map);
+        for (NewsOfSHZmqWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
+                keyList.add(processKeywords(news.getKeywords()));
+        }
+        return keyList;
+    }
+
+    /**
+     * 获取其他自贸区新闻的关键字
+     * @param page
+     * @return
+     */
+    @Override
+    public List getOtherZmqKeywords(int page) {
+        Map map = new HashMap();
+        List keyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfOtherZmqWithBLOBs> dateList = newsOfOtherZmqMapper.selectAllOtherZmqNews(map);
+        for (NewsOfOtherZmqWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
+                keyList.add(processKeywords(news.getKeywords()));
+        }
+        return keyList;
+    }
+
+    /**
      * 获取普通新闻对应的关键字(时间等匹配条件)
      *
      * @param page
@@ -635,6 +675,56 @@ public class SearchServiceImpl implements SearchService {
         map.put("size", pageSize);
         List<NewsOfCompanyWithBLOBs> dateList = newsOfCompanyMapper.selectMatchNews(map);
         for (NewsOfCompanyWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
+                keyList.add(processKeywords(news.getKeywords()));
+        }
+        return keyList;
+    }
+
+    /**
+     *根据匹配条件获取上海自贸区新闻的关键词
+     * @param page
+     * @param startDate
+     * @param endDate
+     * @return
+     */
+    @Override
+    public List getMatchSHZmqKeywords(int page, String startDate, String endDate) {
+        Map map = new HashMap<>();
+        List keyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfSHZmqWithBLOBs> dateList = newsOfSHZmqMapper.selectMatchSHZmqNews(map);
+        for (NewsOfSHZmqWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
+                keyList.add(processKeywords(news.getKeywords()));
+        }
+        return keyList;
+    }
+
+    /**
+     * 根据匹配条件获取其他自贸区新闻的关键词
+     * @param page
+     * @param startDate
+     * @param endDate
+     * @param key
+     * @return
+     */
+    @Override
+    public List getMatchOtherZmqKeywords(int page, String startDate, String endDate, String key) {
+        Map map = new HashMap<>();
+        List keyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("name", key);
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfOtherZmqWithBLOBs> dateList = newsOfOtherZmqMapper.selectMatchOtherZmqNews(map);
+        for (NewsOfOtherZmqWithBLOBs news : dateList) {
             if (!news.getKeywords().isEmpty())
                 keyList.add(processKeywords(news.getKeywords()));
         }
@@ -731,6 +821,19 @@ public class SearchServiceImpl implements SearchService {
         return newsOfCompanyMapper.NewsCount();
     }
 
+    @Override
+    public List<ComNameNewsCount> OtherZmqNewsCount() {
+        return newsOfOtherZmqMapper.OtherZmqNewsCount();
+    }
+
+    @Override
+    public List<ComNameNewsCount> getMatchOtherZmqNewsCount(String startDate, String endDate) {
+        Map map = new HashMap<>();
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        List<ComNameNewsCount> MatchOtherZmqNewsCount = newsOfOtherZmqMapper.getMatchOtherZmqNewsCount(map);
+        return MatchOtherZmqNewsCount;
+    }
 
     /**
      * 处理keywords函数  分割之类的

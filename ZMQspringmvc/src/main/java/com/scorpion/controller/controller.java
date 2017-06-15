@@ -615,6 +615,7 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
+        List keywords = searchService.getSHZmqKeywords(pageNo);
         Page<NewsOfSHZmqWithBLOBs> resultPage = searchService.queryAllSHZmqNews(pageNo);
         List<NewsOfSHZmqWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
@@ -622,6 +623,7 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("keywords", keywords);
         out.print(json);
     }
 
@@ -638,13 +640,24 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
+        List keywords = searchService.getOtherZmqKeywords(pageNo);
         Page<NewsOfOtherZmqWithBLOBs> resultPage = searchService.queryAllOtherZmqNews(pageNo);
         List<NewsOfOtherZmqWithBLOBs> resultList = resultPage.getContent();
+        List<ComNameNewsCount> newsCount = searchService.OtherZmqNewsCount();//调用新闻量类
+        List<String> nameList = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>();
+        for (ComNameNewsCount instance : newsCount) {
+            nameList.add(instance.getName());
+            numList.add(instance.getCount());
+        }
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("keywords", keywords);
+        json.put("nameList", nameList);
+        json.put("numList", numList);
         out.print(json);
     }
 
@@ -663,6 +676,7 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
+        List keywords = searchService.getMatchSHZmqKeywords(pageNo, startDate, endDate);
         Page<NewsOfSHZmqWithBLOBs> resultPage = searchService.queryMatchSHZmqNews(pageNo, startDate, endDate);
         List<NewsOfSHZmqWithBLOBs> resultList = resultPage.getContent();
         PrintWriter out = response.getWriter();
@@ -670,6 +684,7 @@ public class controller {
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("keywords", keywords);
         out.print(json);
     }
 
@@ -688,13 +703,25 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
+        List keywords = searchService.getMatchOtherZmqKeywords(pageNo, startDate, endDate, key);
         Page<NewsOfOtherZmqWithBLOBs> resultPage = searchService.queryMatchOtherZmqNews(pageNo, startDate, endDate, key);
         List<NewsOfOtherZmqWithBLOBs> resultList = resultPage.getContent();
+        List<ComNameNewsCount> MatchNewsCount = searchService.getMatchNewsCount(startDate, endDate);
+        List<String> nameList = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>();
+        for (ComNameNewsCount instance : MatchNewsCount) {
+            nameList.add(instance.getName());
+            numList.add(instance.getCount());
+        }
+
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("resultList", resultList);
         json.put("totalRecords", resultPage.getTotalRecords());
         json.put("totalPages", resultPage.getTotalPages());
+        json.put("keywords", keywords);
+        json.put("nameList", nameList);
+        json.put("numList", numList);
         out.print(json);
     }
 

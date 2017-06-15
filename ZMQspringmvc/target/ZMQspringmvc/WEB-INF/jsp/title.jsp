@@ -121,7 +121,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showPotentialRelationship">潜在关系</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showCompanyRelationship">企业关系网</a></li>
-                        <li><a href="http://139.224.199.170:7474" target="Blank">关系数据</a></li>
+                        <li><a href="http://139.224.199.170:7474" target="Blank">关系图数据库</a></li>
                     </ul>
                 </li>
 

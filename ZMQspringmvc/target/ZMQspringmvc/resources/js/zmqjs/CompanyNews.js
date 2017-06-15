@@ -57,6 +57,7 @@ function queryData(page) {
                 pager(page, data.totalPages, data.totalRecords);
                 return;
             }
+            worddata = new Array();
             numList = data.numList;
             nameList = data.nameList;
             for (var i = 0; i < data.resultList.length; i++) {
@@ -68,7 +69,6 @@ function queryData(page) {
                 namelist[i]=data.resultList[i].name;
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
-                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
                     keywordData.push({
                         name: key,
                         value: data.keywords[i][key]

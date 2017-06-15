@@ -62,6 +62,14 @@
         </div>
         <%--<div class="news">--%>
     </div>
+    <div id="right" class="col-xs-3 span3 ">
+        <div class="row">
+            <div id="graphic" style="width: 450px;height: 350px;"></div>
+        </div>
+        <div class="row divfix">
+            <div class="wordcloud" style="top:350px; width: 400px;height: 300px;"></div>
+        </div>
+    </div>
 
 </div>
 </body>

@@ -25,6 +25,10 @@
     <result column="Relcompany" property="relcompany" jdbcType="LONGVARCHAR" />
     <result column="html" property="html" jdbcType="LONGVARCHAR" />
   </resultMap>
+  <resultMap id="ComNameNewsCount" type="com.scorpion.pojo.ComNameNewsCount">
+    <result column="name" property="name" jdbcType="LONGVARCHAR"/>
+    <result column="num" property="num" jdbcType="INTEGER"/>
+  </resultMap>
   <sql id="Example_Where_Clause" >
     <!--
       WARNING - @mbggenerated
@@ -116,6 +120,12 @@
   </select>
   <select id="countMatchOtherZmqNews"  parameterType="Map" resultType="java.lang.Integer">
     SELECT count(*) from zimaoqunews where name like CONCAT('%',#{name},'%' ) and DATE BETWEEN #{startDate} and #{endDate}
+  </select>
+  <select id="OtherZmqNewsCount" resultMap="ComNameNewsCount">
+    SELECT name,count(*) as num from zimaoqunews GROUP BY name ORDER BY num DESC LIMIT 1,10
+  </select>
+  <select id="getMatchOtherZmqNewsCount" resultMap="ComNameNewsCount">
+    SELECT name,count(*) as num from zimaoqunews WHERE DATE BETWEEN #{startDate} and #{endDate} GROUP BY name ORDER BY num DESC LIMIT 1,10
   </select>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.scorpion.pojo.NewsOfOtherZmqExample" >
     <!--
