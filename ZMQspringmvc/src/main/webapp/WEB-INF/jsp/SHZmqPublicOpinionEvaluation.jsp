@@ -14,7 +14,10 @@
 </head>
 
 <style>
+<<<<<<< HEAD
 
+=======
+>>>>>>> a65c6000a36a9387a45998132be6111fb7549c17
     .echart_container {
         width: 660px;
         height: 600px;
@@ -29,6 +32,7 @@
     }
 
     .piccontainer {
+<<<<<<< HEAD
         width: 400px;
         height: 300px;
     }
@@ -36,6 +40,15 @@
     .container {
         width: 1320px;
     }
+=======
+	width: 400px;
+	height: 300px;
+    }
+    .container{
+	width: 1320px;
+    }
+
+>>>>>>> a65c6000a36a9387a45998132be6111fb7549c17
 </style>
 
 <body>
