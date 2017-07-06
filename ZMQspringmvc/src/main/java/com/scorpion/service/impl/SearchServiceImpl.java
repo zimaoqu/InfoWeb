@@ -64,7 +64,7 @@ public class SearchServiceImpl implements SearchService {
         //处理html，含有公司名字变蓝
         for (NewsOfTopCompanyWithBLOBs news : dateList) {
             String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
+            String name = news.getName();
             Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
             String res_abs = cut.cut_sentence(html, name);
             if (res_abs == null) {
@@ -76,7 +76,8 @@ public class SearchServiceImpl implements SearchService {
                 //多加了个匹配词raw_cor_name也标蓝
                 kstr.add(name);
                 res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
             }
 
         }
@@ -86,30 +87,33 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取新闻事件
+     *
      * @param companyName
      * @return
      */
     public List<eventnewsWithBLOBs> getEventNews(String companyName, int flag) {
         Map map = new HashMap();
         map.put("relComName", companyName.trim());
-        map.put("flag",flag);
+        map.put("flag", flag);
         List<eventnewsWithBLOBs> eventnews = eventnewsMapper.getEventNews(map);
         return eventnews;
     }
 
-    public List<String> getComlist(){
+    public List<String> getComlist() {
         return eventnewsMapper.getComlist();
-    };
+    }
+
+    ;
 
     /**
      * 企业历史演变
+     *
      * @return
      */
     @Override
     public List<String> getComListHis() {
         return bignewsMapper.getComList();
     }
-
 
 
     @Override
@@ -143,7 +147,7 @@ public class SearchServiceImpl implements SearchService {
         //处理html，含有公司名字变蓝
         for (NewsOfTopCompanyWithBLOBs news : dateList) {
             String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
+            String name = news.getName();
             Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
             String res_abs = cut.cut_sentence(html, name);
             if (res_abs == null) {
@@ -155,7 +159,8 @@ public class SearchServiceImpl implements SearchService {
                 //多加了个匹配词raw_cor_name也标蓝
                 kstr.add(name);
                 res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
             }
 
         }
@@ -180,7 +185,7 @@ public class SearchServiceImpl implements SearchService {
         //处理html，含有公司名字变蓝
         for (NewsOfCompanyWithBLOBs news : dateList) {
             String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
+            String name = news.getName();
             Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
             String res_abs = cut.cut_sentence(html, name);
             if (res_abs == null) {
@@ -192,7 +197,8 @@ public class SearchServiceImpl implements SearchService {
                 //多加了个匹配词raw_cor_name也标蓝
                 kstr.add(name);
                 res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
             }
 
         }
@@ -223,7 +229,7 @@ public class SearchServiceImpl implements SearchService {
         //处理html，含有公司名字变蓝
         for (NewsOfCompanyWithBLOBs news : dateList) {
             String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
+            String name = news.getName();
             Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
             String res_abs = cut.cut_sentence(html, name);
             if (res_abs == null) {
@@ -235,7 +241,9 @@ public class SearchServiceImpl implements SearchService {
                 //多加了个匹配词raw_cor_name也标蓝
                 kstr.add(name);
                 res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
+
             }
 
         }
@@ -566,6 +574,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取公司完整的名字
+     *
      * @param name
      * @return
      */
@@ -578,6 +587,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * get Curreputation
+     *
      * @param companyName
      * @return
      */
@@ -616,6 +626,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取上海自贸区新闻的关键字
+     *
      * @param page
      * @return
      */
@@ -636,6 +647,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取其他自贸区新闻的关键字
+     *
      * @param page
      * @return
      */
@@ -682,7 +694,8 @@ public class SearchServiceImpl implements SearchService {
     }
 
     /**
-     *根据匹配条件获取上海自贸区新闻的关键词
+     * 根据匹配条件获取上海自贸区新闻的关键词
+     *
      * @param page
      * @param startDate
      * @param endDate
@@ -707,6 +720,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 根据匹配条件获取其他自贸区新闻的关键词
+     *
      * @param page
      * @param startDate
      * @param endDate
@@ -961,17 +975,16 @@ public class SearchServiceImpl implements SearchService {
         }
         return res;
     }
+
     public List<ComNameNewsCount> CompanyWarningCount() {
         List<ComNameNewsCount> dateNow = negativenewsMapper.ComMonthNewsCount();
         List<ComNameNewsCount> dateBefore = negativenewsMapper.ComMonthBeforeNewsCount();
         List<ComNameNewsCount> warningCom = new ArrayList();
         int n = 0;
-        for(int i = 0;i<dateNow.size();i++)
-        {
-            for(int j = 0;j<dateBefore.size();j++)
-            {
+        for (int i = 0; i < dateNow.size(); i++) {
+            for (int j = 0; j < dateBefore.size(); j++) {
                 ComNameNewsCount c = new ComNameNewsCount();
-                if(dateNow.get(i).getName().equals(dateBefore.get(j).getName())) {
+                if (dateNow.get(i).getName().equals(dateBefore.get(j).getName())) {
                     if (dateNow.get(i).getCount() > dateBefore.get(j).getCount() * 2 && dateNow.get(i).getCount() > 0) {
                         c.setCount(dateNow.get(i).getCount());
                         c.setName(dateNow.get(i).getName());
@@ -982,10 +995,12 @@ public class SearchServiceImpl implements SearchService {
         }
         return warningCom;
     }
+
     public List<ComNameNewsCount> CompanyWarningBeforeCount() {
         return negativenewsMapper.ComMonthBeforeNewsCount();
     }
 }
+
 //前面name变蓝用到的
 class Abstract_Cut {
     public String cut_sentence(String text, String target) {
