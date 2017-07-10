@@ -190,4 +190,37 @@ public interface SearchService {
 
     public List<ComNameNewsCount> OtherZmqNewsCount();
     public List<ComNameNewsCount> getMatchOtherZmqNewsCount(String startDate, String endDate);
+
+    /*
+    获取所有GDP数据
+     */
+    public List<IndicateOfGDPCountry > queryAllGDPCountry();
+
+    /*
+    获取上海地区GDP数据
+     */
+    public List<IndicateOfGDPSH > queryAllGDPSH();
+
+    /*
+    获取全国PPI数据
+     */
+    public List<IndicateOfPPI> queryAllPPI();
+
+    /*
+    获取全国CPI数据
+     */
+    public List<IndicateOfCPI> queryAllCPI();
+
+    /*
+    获取全国进出口总额数据
+     */
+    public List<IndicateOfExportImport> queryAllExportImport();
+
+    /*
+    获取中国BDI数据
+     */
+    public List<IndicateOfBDI> queryAllBDI();
+
+
+
 }
