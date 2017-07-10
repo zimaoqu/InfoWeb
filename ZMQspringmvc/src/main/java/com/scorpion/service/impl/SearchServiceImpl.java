@@ -42,6 +42,18 @@ public class SearchServiceImpl implements SearchService {
     private eventnewsMapper eventnewsMapper;
     @Autowired
     private bignewsMapper bignewsMapper;
+    @Autowired
+    private IndicateOfGDPCountryMapper indicateOfGDPCountryMapper;
+    @Autowired
+    private IndicateOfGDPSHMapper indicateOfGDPSHMapper;
+    @Autowired
+    private IndicateOfPPIMapper indicateOfPPIMapper;
+    @Autowired
+    private IndicateOfCPIMapper indicateOfCPIMapper;
+    @Autowired
+    private IndicateOfExportImportMapper indicateOfExportImportMapper;
+    @Autowired
+    private IndicateOfBDIMapper indicateOfBDIMapper;
     /*
     The size of a page.
      */
@@ -199,6 +211,8 @@ public class SearchServiceImpl implements SearchService {
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
+
+
 
     /**
      * 获取匹配得到的企业新闻
@@ -833,6 +847,78 @@ public class SearchServiceImpl implements SearchService {
         map.put("endDate", endDate);
         List<ComNameNewsCount> MatchOtherZmqNewsCount = newsOfOtherZmqMapper.getMatchOtherZmqNewsCount(map);
         return MatchOtherZmqNewsCount;
+    }
+
+    /**
+     *
+     * 获取全国GDP指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfGDPCountry> queryAllGDPCountry() {
+        List<IndicateOfGDPCountry> GDPCountryList = indicateOfGDPCountryMapper.selectAllGDPCountry();
+        return GDPCountryList;
+    }
+
+    /**
+     *
+     * 获取上海地区GDP指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfGDPSH> queryAllGDPSH() {
+        List<IndicateOfGDPSH> GDPSHList = indicateOfGDPSHMapper.selectAllGDPSH();
+        return GDPSHList;
+    }
+
+    /**
+     *
+     * 获取全国PPI指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfPPI> queryAllPPI() {
+        List<IndicateOfPPI> PPIList = indicateOfPPIMapper.selectAllPPI();
+        return PPIList;
+    }
+
+    /**
+     *
+     * 获取全国CPI指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfCPI> queryAllCPI() {
+        List<IndicateOfCPI> CPIList = indicateOfCPIMapper.selectAllCPI();
+        return CPIList;
+    }
+
+    /**
+     *
+     * 获取全国进出口总额指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfExportImport> queryAllExportImport() {
+        List<IndicateOfExportImport> ExportImportList = indicateOfExportImportMapper.selectAllExportImport();
+        return ExportImportList;
+    }
+
+    /**
+     *
+     * 获取中国BDI指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfBDI> queryAllBDI() {
+        List<IndicateOfBDI> BDIList = indicateOfBDIMapper.selectAllBDI();
+        return BDIList;
     }
 
     /**

@@ -800,6 +800,186 @@ public class controller {
         out.print(json);
     }
 
+    /**
+     * 跳到关键指标监控页面
+     *
+     * @return
+     */
+    @RequestMapping("showKeyIndicates")
+    public ModelAndView showKeyIndicates() {
+        return new ModelAndView("KeyIndicates");
+    }
+
+    /**
+     * 关键指标监控-全国GDP
+     *
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("queryKeyIndicatesGDPCountry")
+    public void queryKeyIndicatesGDPCountry(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        System.out.println(12312);
+        List<IndicateOfGDPCountry> GDPCountryCount = searchService.queryAllGDPCountry();//查询GDP数据
+        List<String> nameList = new ArrayList<>();
+        List<String> numList = new ArrayList<>();
+        for (IndicateOfGDPCountry instance : GDPCountryCount) {
+            nameList.add(instance.getSeasonName());
+            System.out.println(instance.getSeasonName());
+            numList.add(instance.getData());
+            System.out.println(instance.getData());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        out.print(json);
+    }
+
+    /**
+     * 关键指标监控-上海地区GDP
+     *
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("queryKeyIndicatesGDPSH")
+    public void queryKeyIndicatesGDPSH(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+//        System.out.println(12312);
+        List<IndicateOfGDPSH> GDPSHCount = searchService.queryAllGDPSH();//查询上海地区GDP数据
+        List<String> nameList = new ArrayList<>();
+        List<String> numList = new ArrayList<>();
+        for (IndicateOfGDPSH instance : GDPSHCount) {
+            nameList.add(instance.getSeasonName());
+            System.out.println(instance.getSeasonName());
+            numList.add(instance.getData());
+            System.out.println(instance.getData());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        out.print(json);
+    }
+
+    /**
+     * 关键指标监控-全国PPI
+     *
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("queryKeyIndicatesPPI")
+    public void queryKeyIndicatesPPI(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        List<String> nameList = new ArrayList<>();
+        List<String> numListPPI = new ArrayList<>();
+        List<String> numListCPI = new ArrayList<>();
+//        System.out.println(12312);
+        List<IndicateOfPPI> PPICount = searchService.queryAllPPI();//查询全国PPI数据
+        for (IndicateOfPPI instance : PPICount) {
+//            nameListPPI.add(instance.getSeason());
+//            System.out.println(instance.getSeason());
+            numListPPI.add(instance.getData());
+            System.out.println(instance.getData());
+        }
+        List<IndicateOfCPI> CPICount = searchService.queryAllCPI();//查询全国PPI数据
+        for (IndicateOfCPI instance : CPICount) {
+            nameList.add(instance.getSeason());
+            System.out.println(instance.getSeason());
+            numListCPI.add(instance.getData());
+            System.out.println(instance.getData());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numListPPI", numListPPI);
+        json.put("numListCPI", numListCPI);
+        out.print(json);
+    }
+
+    /**
+     * 关键指标监控-全国CPI
+     *
+     * @return
+     */
+//    @ResponseBody
+//    @RequestMapping("queryKeyIndicatesCPI")
+//    public void queryKeyIndicatesCPI(HttpServletResponse response) throws IOException {
+//        response.setCharacterEncoding("UTF-8");
+//        response.setContentType("application/json");
+////        System.out.println(12312);
+//        List<IndicateOfCPI> CPICount = searchService.queryAllCPI();//查询全国PPI数据
+//        List<String> nameList = new ArrayList<>();
+//        List<String> numList = new ArrayList<>();
+//        for (IndicateOfCPI instance : CPICount) {
+//            nameList.add(instance.getSeason());
+//            System.out.println(instance.getSeason());
+//            numList.add(instance.getData());
+//            System.out.println(instance.getData());
+//        }
+//        PrintWriter out = response.getWriter();
+//        JSONObject json = new JSONObject();
+//        json.put("nameList", nameList);
+//        json.put("numList", numList);
+//        out.print(json);
+//    }
+
+    /**
+     * 关键指标监控-全国进出口总额
+     *
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("queryKeyIndicatesExportImport")
+    public void queryKeyIndicatesExportImport(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+//        System.out.println(12312);
+        List<IndicateOfExportImport> ExportImportCount = searchService.queryAllExportImport();//查询全国PPI数据
+        List<String> nameList = new ArrayList<>();
+        List<String> numList = new ArrayList<>();
+        for (IndicateOfExportImport instance : ExportImportCount) {
+            nameList.add(instance.getSeason());
+            System.out.println(instance.getSeason());
+            numList.add(instance.getData());
+            System.out.println(instance.getData());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        out.print(json);
+    }
+
+    /**
+     * 关键指标监控-中国BDI指标
+     *
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("queryKeyIndicatesBDI")
+    public void queryKeyIndicatesBDI(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+//        System.out.println(12312);
+        List<IndicateOfBDI> BDICount = searchService.queryAllBDI();//查询全国PPI数据
+        List<String> nameList = new ArrayList<>();
+        List<String> numList = new ArrayList<>();
+        for (IndicateOfBDI instance : BDICount) {
+            nameList.add(instance.getSeason());
+            System.out.println(instance.getSeason());
+            numList.add(instance.getData());
+            System.out.println(instance.getData());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        out.print(json);
+    }
 }
 
 
