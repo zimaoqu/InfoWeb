@@ -53,22 +53,6 @@ function graphicPPIandCPI(){
         ],
         series: [
             {
-                name: 'PPI',
-                type: 'line',
-                data: numListPPI,
-                itemStyle: {
-                    normal: {
-                        color:'#c3239c'
-                        },
-                    label: {
-                        normal: {
-                            show: true,
-                            position: '2007年01月'
-                        }
-                        }
-                    }
-            },
-            {
                 name: 'CPI',
                 type: 'line',
                 data: numListCPI,
@@ -86,6 +70,22 @@ function graphicPPIandCPI(){
                     }
                 }
             },
+            {
+                name: 'PPI',
+                type: 'line',
+                data: numListPPI,
+                itemStyle: {
+                    normal: {
+                        color:'#c3239c'
+                        },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: '2007年01月'
+                        }
+                        }
+                    }
+            }
 
 
             ]
