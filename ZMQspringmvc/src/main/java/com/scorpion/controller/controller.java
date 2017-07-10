@@ -875,12 +875,13 @@ public class controller {
 //        System.out.println(12312);
         List<IndicateOfPPI> PPICount = searchService.queryAllPPI();//查询全国PPI数据
         for (IndicateOfPPI instance : PPICount) {
-            nameList.add(instance.getSeason());
+            
 //            System.out.println(instance.getSeason());
             numListPPI.add(instance.getData());
         }
         List<IndicateOfCPI> CPICount = searchService.queryAllCPI();//查询全国PPI数据
         for (IndicateOfCPI instance : CPICount) {
+            nameList.add(instance.getSeason());
             numListCPI.add(instance.getData());
         }
         PrintWriter out = response.getWriter();
