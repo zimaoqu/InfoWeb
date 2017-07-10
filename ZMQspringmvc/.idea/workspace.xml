@@ -7,6 +7,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="776c85fa-a302-45a7-aaed-fbfc340a170c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfBDIMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfCPIMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfExportImportMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfGDPCountryMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfGDPSHMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfPPIMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfExportImportMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfGDPCountryMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfGDPSHMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfPPIMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfBDI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfBDIExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfCPI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfCPIExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfExportImport.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfExportImportExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPCountry.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPCountryExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPSH.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPSHExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfPPI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfPPIExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/KeyIndicates.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesBDI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesCPI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesExportImport.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesGDPCountry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesGDPSH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPPI.js" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/relation_data/投资/AllRelations0.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/relation_data/投资/AllRelations1.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/relation_data/投资/AllRelations2.txt" afterPath="" />
@@ -227,12 +257,346 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/relation_data/收购/relations_removed7.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/relation_data/收购/relations_removed8.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/relation_data/收购/relations_removed9.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/controller/controller.class" afterPath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/controller/controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/service/SearchService.class" afterPath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/service/SearchService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/service/impl/SearchServiceImpl.class" afterPath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/service/impl/SearchServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/controller/controller.class" afterPath="$PROJECT_DIR$/target/classes/com/scorpion/controller/controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/service/SearchService.class" afterPath="$PROJECT_DIR$/target/classes/com/scorpion/service/SearchService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/service/impl/SearchServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/scorpion/service/impl/SearchServiceImpl.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/controller/controller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/dao/NewsOfCompanyMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/dao/NewsOfOtherZmqMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/dao/NewsOfSHZmqMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/dao/NewsOfTopCompanyMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/dao/PolicyMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/dao/PolicyOfZmqMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/dao/companyinformationMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/dao/currentnewsMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/dao/democompanyMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/dao/negativenewsMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/mapping/NewsOfCompanyMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/mapping/NewsOfOtherZmqMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/mapping/NewsOfSHZmqMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/mapping/NewsOfTopCompanyMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/mapping/PolicyMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/mapping/PolicyOfZmqMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/mapping/companyinformationMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/mapping/currentnewsMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/mapping/negativenewsMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/CompanyInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfCompany.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfCompanyExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfCompanyExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfCompanyExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfCompanyExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfCompanyWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfOtherZmq.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfOtherZmqExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfOtherZmqExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfOtherZmqExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfOtherZmqExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfOtherZmqKey.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfOtherZmqWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfSHZmq.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfSHZmqExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfSHZmqExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfSHZmqExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfSHZmqExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfSHZmqKey.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfSHZmqWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfTopCompany.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfTopCompanyExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfTopCompanyExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfTopCompanyExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfTopCompanyExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/NewsOfTopCompanyWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/Policy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyOfZmq.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyOfZmqExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyOfZmqExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyOfZmqExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyOfZmqExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyOfZmqKey.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyOfZmqWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/PolicyWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/SourceOfNews.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/companyinformation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/companyinformationExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/companyinformationExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/companyinformationExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/companyinformationExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/currentnews.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/currentnewsExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/currentnewsExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/currentnewsExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/currentnewsExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/currentnewsWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/democompany.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/democompanyExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/democompanyExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/democompanyExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/democompanyExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/negativenews.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/negativenewsExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/negativenewsExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/negativenewsExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/negativenewsExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/pojo/negativenewsWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/service/SearchService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/service/impl/SearchServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/util/data/Page.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/generatorConfig.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/jdbc.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/log4j.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/spring-mvc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/spring-mybatis.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/system.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/AbnormalWarning.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/ComHealthTendency.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/ComPublicOpinionEvaluation.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/ComReputationAnalysis.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/CompanyNews.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/CompanyRelationship.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/CompanyRelationship_last_half_year.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/CompanyRelationship_last_month.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/CompanyRelationship_last_season.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/EventRelationship.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/MatchOtherZmqResult.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/MatchResult.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/MatchSHZmqResult.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/OtherZmqNews.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/PolicyNews.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/PotentialRelationship.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/SHZmqHealthTendency.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/SHZmqNews.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/SHZmqPublicOpinionEvaluation.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/ThirdPartyData.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/TopCompanyNews.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/TopMatchResult.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/ZmqCompare.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/ZmqPolicy.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/home.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/title.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/activation-1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/aopalliance-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/assertj-core-1.5.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/commons-codec-1.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/commons-collections-3.2.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/commons-dbcp-1.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/commons-io-1.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/commons-lang-2.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/commons-lang3-3.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/commons-logging-1.1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/commons-pool-1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/fastjson-1.1.37.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/guava-15.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/httpclient-4.3.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/httpcore-4.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/jackson-annotations-2.7.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/jackson-core-2.7.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/jackson-databind-2.7.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/javaee-api-7.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/javax.mail-1.5.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/jedis-2.0.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/json-path-0.8.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/json-smart-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/jsoup-1.8.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/log4j-1.2.17.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/mybatis-3.3.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/mybatis-spring-1.2.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/mysql-connector-java-5.1.30.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/slf4j-api-1.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/slf4j-log4j12-1.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/spring-aop-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/spring-beans-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/spring-context-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/spring-core-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/spring-expression-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/spring-jdbc-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/spring-test-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/spring-tx-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/spring-web-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/spring-webmvc-4.2.5.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/webmagic-core-0.5.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/webmagic-extension-0.5.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/lib/xsoup-0.3.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/News.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/Stock.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/bootstrap-datetimepicker.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/chinaz.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/daterangepicker.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/history.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/jquery-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/css/pagination.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/dict/all.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/dict/half_year.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/dict/month.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/dict/real_data/all(162).txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/dict/real_data/half_year(100).txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/dict/real_data/month(10).txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/dict/real_data/season(50).txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/dict/season.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/images/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/images/bgnav_ico.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/images/history.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/images/history_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/images/history_start.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/images/inside.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/images/outside.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/images/sprites.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/Clock.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/bootstrap-datetimepicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/buttonClick.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/china.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/cycle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/d3.v3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/d3pie.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/demo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/echarts-wordcloud.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/echarts.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/feedback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/feedback_keycorp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/history.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/jquery-1.8.3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/jquery-1.9.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/jquery-2.2.0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/jquery.daterangepicker.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/jquery.easing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/jquery.mousewheel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/jquery.slidy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/json2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/json_parse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/json_parse_state.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/npm.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/pageresponse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/pagination.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/paging.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/CompanyNews.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/MatchOtherZmq.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/MatchResult.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/MatchSHZmqResult.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/OtherZmqNews.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/PolicyNews.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/PolicyNewsByCat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/PolicyNewsByCon.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/SHZmqNews.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/TopCompanyNews.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/TopMatchResult.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/js/zmqjs/ZmqPolicy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/plugins/livesearch/jquery.livesearch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/plugins/template/template-debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/plugins/template/template-native-debug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/plugins/template/template-native.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/resources/plugins/template/template.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/controller/controller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/dao/NewsOfCompanyMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/dao/NewsOfOtherZmqMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/dao/NewsOfSHZmqMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/dao/NewsOfTopCompanyMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/dao/PolicyMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/dao/PolicyOfZmqMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/dao/companyinformationMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/dao/currentnewsMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/dao/democompanyMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/dao/negativenewsMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/mapping/NewsOfCompanyMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/mapping/NewsOfOtherZmqMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/mapping/NewsOfSHZmqMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/mapping/NewsOfTopCompanyMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/mapping/PolicyMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/mapping/PolicyOfZmqMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/mapping/companyinformationMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/mapping/currentnewsMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/mapping/negativenewsMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/CompanyInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfCompany.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfCompanyExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfCompanyExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfCompanyExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfCompanyExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfCompanyWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfOtherZmq.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfOtherZmqExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfOtherZmqExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfOtherZmqExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfOtherZmqExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfOtherZmqKey.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfOtherZmqWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfSHZmq.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfSHZmqExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfSHZmqExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfSHZmqExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfSHZmqExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfSHZmqKey.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfSHZmqWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfTopCompany.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfTopCompanyExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfTopCompanyExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfTopCompanyExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfTopCompanyExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/NewsOfTopCompanyWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/Policy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyOfZmq.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyOfZmqExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyOfZmqExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyOfZmqExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyOfZmqExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyOfZmqKey.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyOfZmqWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/PolicyWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/SourceOfNews.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/companyinformation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/companyinformationExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/companyinformationExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/companyinformationExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/companyinformationExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/currentnews.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/currentnewsExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/currentnewsExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/currentnewsExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/currentnewsExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/currentnewsWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/democompany.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/democompanyExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/democompanyExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/democompanyExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/democompanyExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/negativenews.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/negativenewsExample$Criteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/negativenewsExample$Criterion.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/negativenewsExample$GeneratedCriteria.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/negativenewsExample.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/pojo/negativenewsWithBLOBs.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/service/SearchService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/service/impl/SearchServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/util/data/Page.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/log4j.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/spring-mybatis.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/system.properties" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZMQspringmvc.iml" afterPath="$PROJECT_DIR$/ZMQspringmvc.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" />
@@ -241,13 +605,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/ZMQspringmvc/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/jdbc.properties" afterPath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/jdbc.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/SHZmqPublicOpinionEvaluation.jsp" afterPath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/SHZmqPublicOpinionEvaluation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/title.jsp" afterPath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/jsp/title.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/target/ZMQspringmvc/WEB-INF/classes/com/scorpion/mapping/democompanyMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfBDIMapper.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/target/classes/com/scorpion/mapping/democompanyMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfCPIMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -267,18 +626,18 @@
       <file leaf-file-name="KeyIndicates.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/KeyIndicates.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
+            <state relative-caret-position="2916">
               <caret line="81" column="60" lean-forward="false" selection-start-line="81" selection-start-column="60" selection-end-line="81" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="168" column="56" lean-forward="true" selection-start-line="168" selection-start-column="56" selection-end-line="168" selection-end-column="56" />
+            <state relative-caret-position="36">
+              <caret line="168" column="56" lean-forward="false" selection-start-line="168" selection-start-column="56" selection-end-line="168" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -287,7 +646,7 @@
       <file leaf-file-name="IndicateOfPPIMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfPPIMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10260">
+            <state relative-caret-position="3440">
               <caret line="285" column="37" lean-forward="false" selection-start-line="285" selection-start-column="37" selection-end-line="285" selection-end-column="37" />
               <folding>
                 <marker date="1499504556466" expanded="true" signature="4369:4468" ph="select from ppi" />
@@ -300,6 +659,26 @@
                 <marker date="1499504556466" expanded="true" signature="9733:10002" ph="update ppi s... " />
                 <marker date="1499504556466" expanded="true" signature="10075:10108" ph="SELECT * fro... PPI" />
                 <marker date="1499504556466" expanded="true" signature="10119:10129" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndicateOfGDPCountryMapper.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfGDPCountryMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2952">
+              <caret line="82" column="29" lean-forward="false" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+              <folding>
+                <marker date="1499410221013" expanded="true" signature="3488:3534" ph="SELECT * fro... GDP_Country" />
+                <marker date="1499410221013" expanded="true" signature="4559:4666" ph="select from gdp_country" />
+                <marker date="1499410221013" expanded="true" signature="4883:4944" ph="delete from " />
+                <marker date="1499410221013" expanded="true" signature="5186:5209" ph="delete from " />
+                <marker date="1499410221013" expanded="true" signature="5528:5805" ph="insert into gdp_country... " />
+                <marker date="1499410221013" expanded="true" signature="7331:7363" ph="select count... gdp_country" />
+                <marker date="1499410221013" expanded="true" signature="8633:8949" ph="update gdp_c... " />
+                <marker date="1499410221013" expanded="true" signature="9299:9839" ph="update gdp_c... " />
+                <marker date="1499410221013" expanded="true" signature="10077:10354" ph="update gdp_c... " />
               </folding>
             </state>
           </provider>
@@ -330,7 +709,37 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="26640">
               <caret line="787" column="31" lean-forward="false" selection-start-line="787" selection-start-column="16" selection-end-line="787" selection-end-column="31" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1119#1120#0" expanded="false" />
+                <element signature="e#1166#1167#0" expanded="false" />
+                <element signature="e#1315#1316#0" expanded="false" />
+                <element signature="e#1372#1373#0" expanded="false" />
+                <element signature="e#1953#1954#0" expanded="false" />
+                <element signature="e#2007#2008#0" expanded="false" />
+                <element signature="e#2552#2553#0" expanded="false" />
+                <element signature="e#2604#2605#0" expanded="false" />
+                <element signature="e#2743#2744#0" expanded="false" />
+                <element signature="e#2795#2796#0" expanded="false" />
+                <element signature="e#2937#2938#0" expanded="false" />
+                <element signature="e#2992#2993#0" expanded="false" />
+                <element signature="e#3964#3965#0" expanded="false" />
+                <element signature="e#4035#4036#0" expanded="false" />
+                <element signature="e#4190#4191#0" expanded="false" />
+                <element signature="e#4252#4253#0" expanded="false" />
+                <element signature="e#4385#4386#0" expanded="false" />
+                <element signature="e#4438#4439#0" expanded="false" />
+                <element signature="e#6766#6767#0" expanded="false" />
+                <element signature="e#6823#6824#0" expanded="false" />
+                <element signature="e#6977#6978#0" expanded="false" />
+                <element signature="e#7041#7042#0" expanded="false" />
+                <element signature="e#7191#7192#0" expanded="false" />
+                <element signature="e#7253#7254#0" expanded="false" />
+                <element signature="e#7935#7936#0" expanded="false" />
+                <element signature="e#7988#7989#0" expanded="false" />
+                <element signature="e#29822#29823#0" expanded="false" />
+                <element signature="e#29877#29878#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -833,6 +1242,36 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="SearchServiceImpl.java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scorpion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapping" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1630,14 +2069,15 @@
       <workItem from="1499500471001" duration="15094000" />
       <workItem from="1499649376130" duration="452000" />
       <workItem from="1499649920423" duration="42000" />
+      <workItem from="1499650021449" duration="629000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="417983000" />
+    <option name="totallyTimeSpent" value="418612000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1909" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="1909" y="-11" width="1942" height="1042" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1663,7 +2103,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27078384" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21652268" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29157668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1934,13 +2374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfGDPCountryMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="82" column="29" lean-forward="false" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfGDPSHMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -2047,25 +2480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfPPIMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10260">
-          <caret line="285" column="37" lean-forward="false" selection-start-line="285" selection-start-column="37" selection-end-line="285" selection-end-column="37" />
-          <folding>
-            <marker date="1499504556466" expanded="true" signature="4369:4468" ph="select from ppi" />
-            <marker date="1499504556466" expanded="true" signature="4684:4737" ph="delete from " />
-            <marker date="1499504556466" expanded="true" signature="4971:4986" ph="delete from " />
-            <marker date="1499504556466" expanded="true" signature="5296:5565" ph="insert into ppi... " />
-            <marker date="1499504556466" expanded="true" signature="7053:7077" ph="select count... ppi" />
-            <marker date="1499504556466" expanded="true" signature="8328:8636" ph="update ppi s... " />
-            <marker date="1499504556466" expanded="true" signature="8977:9503" ph="update ppi a... " />
-            <marker date="1499504556466" expanded="true" signature="9733:10002" ph="update ppi s... " />
-            <marker date="1499504556466" expanded="true" signature="10075:10108" ph="SELECT * fro... PPI" />
-            <marker date="1499504556466" expanded="true" signature="10119:10129" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPPI.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2124">
@@ -2086,7 +2500,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26640">
           <caret line="787" column="31" lean-forward="false" selection-start-line="787" selection-start-column="16" selection-end-line="787" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1119#1120#0" expanded="false" />
+            <element signature="e#1166#1167#0" expanded="false" />
+            <element signature="e#1315#1316#0" expanded="false" />
+            <element signature="e#1372#1373#0" expanded="false" />
+            <element signature="e#1953#1954#0" expanded="false" />
+            <element signature="e#2007#2008#0" expanded="false" />
+            <element signature="e#2552#2553#0" expanded="false" />
+            <element signature="e#2604#2605#0" expanded="false" />
+            <element signature="e#2743#2744#0" expanded="false" />
+            <element signature="e#2795#2796#0" expanded="false" />
+            <element signature="e#2937#2938#0" expanded="false" />
+            <element signature="e#2992#2993#0" expanded="false" />
+            <element signature="e#3964#3965#0" expanded="false" />
+            <element signature="e#4035#4036#0" expanded="false" />
+            <element signature="e#4190#4191#0" expanded="false" />
+            <element signature="e#4252#4253#0" expanded="false" />
+            <element signature="e#4385#4386#0" expanded="false" />
+            <element signature="e#4438#4439#0" expanded="false" />
+            <element signature="e#6766#6767#0" expanded="false" />
+            <element signature="e#6823#6824#0" expanded="false" />
+            <element signature="e#6977#6978#0" expanded="false" />
+            <element signature="e#7041#7042#0" expanded="false" />
+            <element signature="e#7191#7192#0" expanded="false" />
+            <element signature="e#7253#7254#0" expanded="false" />
+            <element signature="e#7935#7936#0" expanded="false" />
+            <element signature="e#7988#7989#0" expanded="false" />
+            <element signature="e#29822#29823#0" expanded="false" />
+            <element signature="e#29877#29878#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2107,7 +2551,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/KeyIndicates.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
+        <state relative-caret-position="2916">
           <caret line="81" column="60" lean-forward="false" selection-start-line="81" selection-start-column="60" selection-end-line="81" selection-end-column="60" />
           <folding />
         </state>
@@ -2115,9 +2559,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="168" column="56" lean-forward="true" selection-start-line="168" selection-start-column="56" selection-end-line="168" selection-end-column="56" />
+        <state relative-caret-position="36">
+          <caret line="168" column="56" lean-forward="false" selection-start-line="168" selection-start-column="56" selection-end-line="168" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfPPIMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3440">
+          <caret line="285" column="37" lean-forward="false" selection-start-line="285" selection-start-column="37" selection-end-line="285" selection-end-column="37" />
+          <folding>
+            <marker date="1499504556466" expanded="true" signature="4369:4468" ph="select from ppi" />
+            <marker date="1499504556466" expanded="true" signature="4684:4737" ph="delete from " />
+            <marker date="1499504556466" expanded="true" signature="4971:4986" ph="delete from " />
+            <marker date="1499504556466" expanded="true" signature="5296:5565" ph="insert into ppi... " />
+            <marker date="1499504556466" expanded="true" signature="7053:7077" ph="select count... ppi" />
+            <marker date="1499504556466" expanded="true" signature="8328:8636" ph="update ppi s... " />
+            <marker date="1499504556466" expanded="true" signature="8977:9503" ph="update ppi a... " />
+            <marker date="1499504556466" expanded="true" signature="9733:10002" ph="update ppi s... " />
+            <marker date="1499504556466" expanded="true" signature="10075:10108" ph="SELECT * fro... PPI" />
+            <marker date="1499504556466" expanded="true" signature="10119:10129" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfGDPCountryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2952">
+          <caret line="82" column="29" lean-forward="false" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+          <folding>
+            <marker date="1499410221013" expanded="true" signature="3488:3534" ph="SELECT * fro... GDP_Country" />
+            <marker date="1499410221013" expanded="true" signature="4559:4666" ph="select from gdp_country" />
+            <marker date="1499410221013" expanded="true" signature="4883:4944" ph="delete from " />
+            <marker date="1499410221013" expanded="true" signature="5186:5209" ph="delete from " />
+            <marker date="1499410221013" expanded="true" signature="5528:5805" ph="insert into gdp_country... " />
+            <marker date="1499410221013" expanded="true" signature="7331:7363" ph="select count... gdp_country" />
+            <marker date="1499410221013" expanded="true" signature="8633:8949" ph="update gdp_c... " />
+            <marker date="1499410221013" expanded="true" signature="9299:9839" ph="update gdp_c... " />
+            <marker date="1499410221013" expanded="true" signature="10077:10354" ph="update gdp_c... " />
+          </folding>
         </state>
       </provider>
     </entry>
