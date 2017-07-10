@@ -875,7 +875,7 @@ public class controller {
 //        System.out.println(12312);
         List<IndicateOfPPI> PPICount = searchService.queryAllPPI();//查询全国PPI数据
         for (IndicateOfPPI instance : PPICount) {
-//            nameListPPI.add(instance.getSeason());
+            nameList.add(instance.getSeason());
 //            System.out.println(instance.getSeason());
             numListPPI.add(instance.getData());
         }
