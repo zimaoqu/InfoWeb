@@ -87,6 +87,10 @@ public interface SearchService {
      */
     public List<currentnewsWithBLOBs> queryCurrentnews();
 
+    public Page<NewsOfIndustryWithBLOBs> queryAllIndustryNews(int page);
+
+    public Page<NewsOfIndustryWithBLOBs> queryMatchIndustryNews(int page, String startDate, String endDate,String key);
+
     /*
     queryCompanyinformation
      */
@@ -174,6 +178,15 @@ public interface SearchService {
     获取时间匹配新闻关键词（Top companynews）
      */
     public List getMatchTopComKeywords(int page, String startDate, String endDate, String key);
+
+    /*
+    获取行业新闻关键词
+     */
+    public List getIndustryKeywords(int page);
+    /*
+    获取匹配条件行业新闻关键词
+     */
+    public List getMatchIndustryKeywords(int page,String startDate, String endDate,String key);
     /*
     获取top每个公司的新闻数
      */
@@ -191,6 +204,8 @@ public interface SearchService {
     public List<ComNameNewsCount> OtherZmqNewsCount();
     public List<ComNameNewsCount> getMatchOtherZmqNewsCount(String startDate, String endDate);
 
+    public List<ComNameNewsCount> IndustryNewsCount();
+    public List<ComNameNewsCount> getMatchIndustryNewsCount(String startDate, String endDate);
     /*
     获取所有GDP数据
      */

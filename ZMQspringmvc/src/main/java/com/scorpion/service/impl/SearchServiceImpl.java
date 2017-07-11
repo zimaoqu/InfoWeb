@@ -54,6 +54,8 @@ public class SearchServiceImpl implements SearchService {
     private IndicateOfExportImportMapper indicateOfExportImportMapper;
     @Autowired
     private IndicateOfBDIMapper indicateOfBDIMapper;
+    @Autowired
+    private NewsOfIndustryMapper newsOfIndustryMapper;
     /*
     The size of a page.
      */
@@ -862,6 +864,129 @@ public class SearchServiceImpl implements SearchService {
         List<ComNameNewsCount> MatchOtherZmqNewsCount = newsOfOtherZmqMapper.getMatchOtherZmqNewsCount(map);
         return MatchOtherZmqNewsCount;
     }
+
+    /*
+    行业数据分析的新闻展示代码
+     */
+    @Override
+    public Page<NewsOfIndustryWithBLOBs> queryAllIndustryNews(int page) {
+        Map map = new HashMap<>();
+        int countOfNews = newsOfIndustryMapper.countAllNews();
+        int start = (page - 1) * pageSize;
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfIndustryWithBLOBs> dateList = newsOfIndustryMapper.selectAllNews(map);
+        //处理html，含有公司名字变蓝
+        for (NewsOfIndustryWithBLOBs news : dateList) {
+            String html = news.getHtml();
+            String name = news.getName();
+            Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
+            String res_abs = cut.cut_sentence(html, name);
+            if (res_abs == null) {
+                news.setDescription(news.getDescription());
+            } else {
+                processStr p = new processStr();
+                ArrayList<String> kstr = new ArrayList<String>();
+                kstr = p.splitStr(name);
+                //多加了个匹配词raw_cor_name也标蓝
+                kstr.add(name);
+                res_abs = p.addFont_Blue(res_abs, kstr);
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
+            }
+
+        }
+        Page<NewsOfIndustryWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
+        return resultPage;
+    }
+
+    @Override
+    public Page<NewsOfIndustryWithBLOBs> queryMatchIndustryNews(int page, String startDate, String endDate,String key) {
+        Map map = new HashMap<>();
+        int start = (page - 1) * pageSize;
+        map.put("name", key);
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        map.put("start", start);
+        map.put("size", pageSize);
+        int countOfNews = newsOfCompanyMapper.countMatchNews(map);
+        List<NewsOfIndustryWithBLOBs> dateList = newsOfIndustryMapper.selectMatchNews(map);
+        //处理html，含有公司名字变蓝
+        for (NewsOfIndustryWithBLOBs news : dateList) {
+            String html = news.getHtml();
+            String name = news.getName();
+            Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
+            String res_abs = cut.cut_sentence(html, name);
+            if (res_abs == null) {
+                news.setDescription(news.getDescription());
+            } else {
+                processStr p = new processStr();
+                ArrayList<String> kstr = new ArrayList<String>();
+                kstr = p.splitStr(name);
+                //多加了个匹配词raw_cor_name也标蓝
+                kstr.add(name);
+                res_abs = p.addFont_Blue(res_abs, kstr);
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
+
+            }
+
+        }
+        Page<NewsOfIndustryWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
+        return resultPage;
+    }
+
+    @Override
+    public List getIndustryKeywords(int page) {
+        Map map = new HashMap<>();
+        List keyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfIndustryWithBLOBs> dateList = newsOfIndustryMapper.selectAllNews(map);
+        for (NewsOfIndustryWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
+                keyList.add(processKeywords(news.getKeywords()));
+        }
+        return keyList;
+    }
+
+    @Override
+    public List getMatchIndustryKeywords(int page, String startDate, String endDate,String key) {
+        Map map = new HashMap<>();
+        List keyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("name", key);
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfIndustryWithBLOBs> dateList = newsOfIndustryMapper.selectMatchNews(map);
+        for (NewsOfIndustryWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
+                keyList.add(processKeywords(news.getKeywords()));
+        }
+        return keyList;
+    }
+
+    @Override
+    public List<ComNameNewsCount> IndustryNewsCount() {
+        return newsOfIndustryMapper.NewsCount();
+    }
+
+    @Override
+    public List<ComNameNewsCount> getMatchIndustryNewsCount(String startDate, String endDate) {
+        Map map = new HashMap<>();
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        List<ComNameNewsCount> MatchIndustryNewsCount = newsOfIndustryMapper.getMatchNewsCount(map);
+        return MatchIndustryNewsCount;
+    }
+
+
+
+
+
 
     /**
      *

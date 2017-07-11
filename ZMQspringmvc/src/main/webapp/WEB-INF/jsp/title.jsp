@@ -143,7 +143,7 @@
                                         data-toggle="dropdown"> 行业数据与分析 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">重点行业新闻</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showIndustryNews">重点行业新闻</a></li>
                         <li><a href="#">第三方数据</a></li>
                         <li><a href="#">行业态势分析</a></li>
                     </ul>

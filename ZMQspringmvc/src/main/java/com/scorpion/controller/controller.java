@@ -277,6 +277,8 @@ public class controller {
         return new ModelAndView("PolicyNews");
     }
 
+
+
     /**
      * 返回企业预警页面
      *
@@ -799,6 +801,87 @@ public class controller {
         json.put("totalPages", resultPage.getTotalPages());
         out.print(json);
     }
+
+    /*
+    行业数据分析版块的代码
+     */
+    /**
+     * 跳转到行业分类新闻
+     * @return
+     */
+    @RequestMapping("showIndustryNews")
+    public ModelAndView showIndustryNews(){
+        return new ModelAndView("IndustryNews");
+    }
+    @RequestMapping("showMatchIndustryNews")
+    public ModelAndView showMatchIndustryNews(String startDate, String endDate,String key, ModelMap modelMap) {
+        modelMap.addAttribute("startDate", startDate);
+        modelMap.addAttribute("endDate", endDate);
+        modelMap.addAttribute("key", key);
+        return new ModelAndView("MatchIndustryNews");
+    }
+    @ResponseBody
+    @RequestMapping("queryIndustryNews")
+    public void queryIndustryNews(HttpServletResponse response, String page) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        int pageNo = page == null ? 1 : Integer.parseInt(page);
+        List keywords = searchService.getIndustryKeywords(pageNo);
+        Page<NewsOfIndustryWithBLOBs> resultPage = searchService.queryAllIndustryNews(pageNo);
+        List<NewsOfIndustryWithBLOBs> resultList = resultPage.getContent();
+        List<ComNameNewsCount> newsCount = searchService.IndustryNewsCount();//调用新闻量类
+        List<String> nameList = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>();
+        for (ComNameNewsCount instance : newsCount) {
+            nameList.add(instance.getName());
+            numList.add(instance.getCount());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("resultList", resultList);
+        json.put("totalRecords", resultPage.getTotalRecords());
+        json.put("totalPages", resultPage.getTotalPages());
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        json.put("keywords", keywords);
+        out.print(json);
+    }
+    @ResponseBody
+    @RequestMapping("matchIndustryIndustryNews")
+    public void matchIndustryIndustryNews(HttpServletResponse response, String page, String startDate, String endDate, String key) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        int pageNo = page == null ? 1 : Integer.parseInt(page);
+        if (key == null)
+            key = "";
+        List keywords = searchService.getMatchIndustryKeywords(pageNo, startDate, endDate, key);
+        Page<NewsOfIndustryWithBLOBs> resultPage = searchService.queryMatchIndustryNews(pageNo, startDate, endDate, key);
+        List<NewsOfIndustryWithBLOBs> resultList = resultPage.getContent();
+        List<ComNameNewsCount> MatchNewsCount = searchService.getMatchIndustryNewsCount(startDate, endDate);
+        List<String> nameList = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>();
+        for (ComNameNewsCount instance : MatchNewsCount) {
+            nameList.add(instance.getName());
+            numList.add(instance.getCount());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("resultList", resultList);
+        json.put("totalRecords", resultPage.getTotalRecords());
+        json.put("totalPages", resultPage.getTotalPages());
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        json.put("keywords", keywords);
+
+        out.print(json);
+    }
+
+
+
+
+
+
+
 
     /**
      * 跳到关键指标监控页面
