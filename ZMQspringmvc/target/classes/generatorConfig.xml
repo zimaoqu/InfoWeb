@@ -38,7 +38,7 @@
         <!--<table tableName="zimaoqu_policy" domainObjectName="PolicyOfZmq" ></table>-->
         <!--<table tableName="zimaoqunews" domainObjectName="NewsOfOtherZmq" ></table>-->
 
-        <table tableName="bignews" domainObjectName="bignews" ></table>
+        <table tableName="industry_news" domainObjectName="NewsOfIndustry" ></table>
         <!--<table tableName="negativenews" domainObjectName="negativenews" ></table>-->
         <!--<table tableName="companyinformation" domainObjectName="companyinformation" ></table>-->
         <!--<table tableName="currentnews" domainObjectName="currentnews" ></table>-->

@@ -1,7 +1,7 @@
 /**
- * Created by Scorpion on 2017/4/19.
- * Ajax异步访问重点企业新闻列表
+ * Created by Scorpion on 2017/7/11.
  */
+
 (function () {
     var doc = window.doc = {
         dync: {
@@ -34,19 +34,22 @@ function pager(page, totalPages, totalRecords) {
 }
 
 var worddata = new Array();
-var namelist=[];//wordcloud's namelist
+var namelist=[];
 var nameList=[];//柱状图的nameList
 var numList=[];//柱状图的numList
 function queryData(page) {
     $.ajax({
         cache: false,
-        url: "/zmq/queryTopCompanyNews",
+        url: "/zmq/queryIndustryNews",
         type: "GET",
         dataType: "json",
         data: {page: page},
         async: true,
         success: function (data) {
+            console.log($("#result").html())
             var html = "";
+            var html2 = "";
+
             $("#records").text(data.totalRecords);
             if (!data.totalRecords) {
                 $("#result").html("");
@@ -58,16 +61,15 @@ function queryData(page) {
             numList = data.numList;
             nameList = data.nameList;
             for (var i = 0; i < data.resultList.length; i++) {
+                console.log(data.resultList[i].category)
                 html += '<div id="' + i + '" onmouseover="drawpic(this)"><h3><b ><font size="4">' + data.resultList[i].title
                     + '</font></b></h3>' + data.resultList[i].date
                     + '</p><p>' + data.resultList[i].description + '</p><a class="btn btn-default" href='
                     + data.resultList[i].url + ' target="_blank">原文»</a>&nbsp;<font color="blue">'
-                    + data.resultList[i].name + '</font></div>';
+                    + data.resultList[i].category + '</font></div>';
                 namelist[i]=data.resultList[i].name;
-                console.log(data.resultList[i].description)
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
-                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
                     keywordData.push({
                         name: key,
                         value: data.keywords[i][key]
@@ -76,6 +78,7 @@ function queryData(page) {
                 worddata.push(keywordData);
             }
             $("#result").html(html);
+
             //保持两个div高度一致
             document.getElementById("right").style.height = document.getElementById("left").offsetHeight + "px";
             graphic();
@@ -94,7 +97,7 @@ function drawpic(obj) {
         var myChart = echarts.init(this);
         option = {
             title: {
-                text: comname+"关键词词云图"
+                text: "关键词词云图"
             },
             tooltip: {},
             series: [{
@@ -121,60 +124,76 @@ function drawpic(obj) {
                 data: worddata[id]
             }]
         };
+
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     });
 }
 function graphic(){
-            var myChart = echarts.init(document.getElementById("graphic"));
-            option = {
-                title: {
-                    text: '新闻最多公司Top10',
-                },
-                tooltip: {},
-                legend: {
-                    data: ['新闻量']
-                },
-                toolbox: {
-                    show: true,
-                },
-                calculable: true,
-                xAxis: [{}],
-                yAxis: [
-                    {
-                       data:nameList,
-                        show: false
-                    }
-                ],
-                series: [
-                    {
-                        name: '新闻量',
-                        type: 'bar',
-                        data: numList,
-                        itemStyle: {
-                            normal: {
-                                color: function (params) {
-                                    // build a color map as your need.
-                                    var colorList = [
-                                        '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
-                                        '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
-                                    ];
-                                    return colorList[params.dataIndex]
-                                },
-                                label: {
-                                    show: true,
-                                    position: 'on',
-                                    formatter: '{b}{c}',
-                                    textStyle: {
-                                        color: '#000000'
-                                    }
-                                }
+    var myChart = echarts.init(document.getElementById("graphic"));
+    option = {
+        title: {
+            text: '行业新闻量统计',
+        },
+        tooltip: {},
+        legend: {
+            // y:'top',
+            left:'center',
+            data: ['新闻量']
+        },
+        toolbox: {
+            show: true,
+        },
+        calculable: true,
+        xAxis: [
+            {
+                data:nameList,
+                show: true,           //横坐标显示
+            }
+        ],
+        yAxis: [
+            {
+                // data:nameList,
+                // show: true,           //纵坐标显示
+            }
+        ],
+        series: [
+            {
+                name: '新闻量',
+                type: 'bar',
+                barwidth:'25%',
+                data: numList,
+                itemStyle: {
+                    normal: {
+                        color: function (params) {
+                            // build a color map as your need.
+                            var colorList = [
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                            ];
+                            return colorList[params.dataIndex]
+                        },
+                        label: {
+                            show: false,
+                            position: 'on',
+                            formatter: '{b}{c}',
+                            textStyle: {
+                                color: '#000000'
                             }
                         }
-                    }]
-            }
-            myChart.setOption(option);
+                    }
+                }
+            }]
+    }
+    myChart.setOption(option);
 }
+
 function changeHtml(html) {
     html = html.replace(/&lt;/gi, "<");
     html = html.replace(/&gt;/gi, ">");
@@ -191,12 +210,13 @@ window.onpopstate = function (e) {
 function winHistory() {
     var title = "重中之重企业新闻";
     document.title = title;
-    var url = "/zmq/queryTopCompanyNews";
+    var url = "/zmq/queryCompanyNews";
     var state = {title: title, url: url};
     history.replaceState(state, title, url);
 }
 
 function bind() {
+    var url = window.location.href;
     // var keyword = decodeURI(url.substring(url.indexOf("=")+1, url.indexOf("&")));
     // $("#key").val(key);
 
@@ -221,7 +241,3 @@ function bind() {
     });
 
 }
-/**
- * Created by Scorpion on 2017/3/20.
- */
-

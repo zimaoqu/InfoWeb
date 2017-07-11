@@ -143,7 +143,7 @@
                                         data-toggle="dropdown"> 行业数据与分析 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">重点行业新闻</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showIndustryNews">重点行业新闻</a></li>
                         <li><a href="#">第三方数据</a></li>
                         <li><a href="#">行业态势分析</a></li>
                     </ul>
@@ -154,7 +154,7 @@
                 </a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showPolicyNews">政策新闻推送</a></li>
-                        <li><a href="#">关键指标监控</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showKeyIndicates">关键指标监控</a></li>
                         <li><a href="#">指标关联分析</a></li>
                     </ul>
                 </li>

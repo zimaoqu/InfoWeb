@@ -64,6 +64,7 @@ function queryData(page) {
                     + data.resultList[i].url + ' target="_blank">原文»</a>&nbsp;<font color="blue">'
                     + data.resultList[i].name + '</font></div>';
                 namelist[i]=data.resultList[i].name;
+                console.log(data.resultList[i].description)
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
                     console.log("key：" + key + ",value：" + data.keywords[i][key]);

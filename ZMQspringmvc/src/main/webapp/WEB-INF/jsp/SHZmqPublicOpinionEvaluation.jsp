@@ -15,6 +15,9 @@
 
 <style>
 <<<<<<< HEAD
+
+=======
+>>>>>>> a65c6000a36a9387a45998132be6111fb7549c17
     .echart_container {
         width: 660px;
         height: 600px;
@@ -22,21 +25,30 @@
         display: inline
     }
 
-
     .divcss {
         margin-left: auto;
         margin-right: auto;
         width: 1400px;
     }
+
+    .piccontainer {
+<<<<<<< HEAD
+        width: 400px;
+        height: 300px;
+    }
+
+    .container {
+        width: 1320px;
+    }
 =======
-.piccontainer {
 	width: 400px;
 	height: 300px;
-}
-.container{
+    }
+    .container{
 	width: 1320px;
-}
->>>>>>> c05355fbfbb0e385faf017182ea9d683f9e543ea
+    }
+
+>>>>>>> a65c6000a36a9387a45998132be6111fb7549c17
 </style>
 
 <body>

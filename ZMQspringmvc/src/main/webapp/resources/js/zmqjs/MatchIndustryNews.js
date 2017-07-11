@@ -1,11 +1,18 @@
 /**
- * Created by Scorpion on 2017/4/19.
- * Ajax异步访问重点企业新闻列表
+ * Created by Scorpion on 2017/7/11.
  */
-(function () {
+/**
+ * Created by Scorpion on 2017/4/21.
+ * Ajax获取条件查询的企业新闻的结果
+ */
+$(function () {
     var doc = window.doc = {
         dync: {
-            cp: 1		//当前页码
+            cp: 1,		//当前页码
+            key: key,
+            startDate: startDate,
+            endDate: endDate
+
         },
         bindFunc: function () {
             bind();
@@ -14,10 +21,11 @@
             doc.bindFunc();
         }
     };
-
+    console.log(startDate);
+    console.log(endDate);
     doc.init();
-    queryData(1);
-})();
+    queryData(1, startDate, endDate, key);
+});
 
 
 function pager(page, totalPages, totalRecords) {
@@ -28,24 +36,30 @@ function pager(page, totalPages, totalRecords) {
         click: function (n) {
             this.selectPage(n);
             doc.dync.cp = n;
-            queryData(n);
+            queryData(n, doc.dync.startDate, doc.dync.endDate, doc.dync.key);
         }
     }, true);
 }
 
+
 var worddata = new Array();
-var namelist=[];//wordcloud's namelist
+var namelist=[];
 var nameList=[];//柱状图的nameList
 var numList=[];//柱状图的numList
-function queryData(page) {
+function queryData(page, startDate, endDate, key) {
     $.ajax({
         cache: false,
-        url: "/zmq/queryTopCompanyNews",
+        url: "/zmq/matchIndustryIndustryNews",
         type: "GET",
         dataType: "json",
-        data: {page: page},
+        data: {page: page, startDate: startDate, endDate: endDate, key: key},
         async: true,
         success: function (data) {
+            //console.log(data);
+            //$("#key").val(key);
+            doc.dync.key = key;
+            doc.dync.startDate = startDate;
+            doc.dync.endDate = endDate;
             var html = "";
             $("#records").text(data.totalRecords);
             if (!data.totalRecords) {
@@ -62,12 +76,11 @@ function queryData(page) {
                     + '</font></b></h3>' + data.resultList[i].date
                     + '</p><p>' + data.resultList[i].description + '</p><a class="btn btn-default" href='
                     + data.resultList[i].url + ' target="_blank">原文»</a>&nbsp;<font color="blue">'
-                    + data.resultList[i].name + '</font></div>';
+                    + data.resultList[i].category + '</font></div>';
                 namelist[i]=data.resultList[i].name;
-                console.log(data.resultList[i].description)
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
-                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
+                    //console.log("key：" + key + ",value：" + data.keywords[i][key]);
                     keywordData.push({
                         name: key,
                         value: data.keywords[i][key]
@@ -76,6 +89,7 @@ function queryData(page) {
                 worddata.push(keywordData);
             }
             $("#result").html(html);
+
             //保持两个div高度一致
             document.getElementById("right").style.height = document.getElementById("left").offsetHeight + "px";
             graphic();
@@ -94,7 +108,7 @@ function drawpic(obj) {
         var myChart = echarts.init(this);
         option = {
             title: {
-                text: comname+"关键词词云图"
+                text: "关键词词云图"
             },
             tooltip: {},
             series: [{
@@ -121,59 +135,74 @@ function drawpic(obj) {
                 data: worddata[id]
             }]
         };
+
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     });
 }
 function graphic(){
-            var myChart = echarts.init(document.getElementById("graphic"));
-            option = {
-                title: {
-                    text: '新闻最多公司Top10',
-                },
-                tooltip: {},
-                legend: {
-                    data: ['新闻量']
-                },
-                toolbox: {
-                    show: true,
-                },
-                calculable: true,
-                xAxis: [{}],
-                yAxis: [
-                    {
-                       data:nameList,
-                        show: false
-                    }
-                ],
-                series: [
-                    {
-                        name: '新闻量',
-                        type: 'bar',
-                        data: numList,
-                        itemStyle: {
-                            normal: {
-                                color: function (params) {
-                                    // build a color map as your need.
-                                    var colorList = [
-                                        '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
-                                        '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
-                                    ];
-                                    return colorList[params.dataIndex]
-                                },
-                                label: {
-                                    show: true,
-                                    position: 'on',
-                                    formatter: '{b}{c}',
-                                    textStyle: {
-                                        color: '#000000'
-                                    }
-                                }
+    var myChart = echarts.init(document.getElementById("graphic"));
+    option = {
+        title: {
+            text: '行业新闻量统计',
+        },
+        tooltip: {},
+        legend: {
+            // y:'top',
+            left:'center',
+            data: ['新闻量']
+        },
+        toolbox: {
+            show: true,
+        },
+        calculable: true,
+        xAxis: [
+            {
+                data:nameList,
+                show: true,           //横坐标显示
+            }
+        ],
+        yAxis: [
+            {
+                // data:nameList,
+                // show: true,           //纵坐标显示
+            }
+        ],
+        series: [
+            {
+                name: '新闻量',
+                type: 'bar',
+                barwidth:'25%',
+                data: numList,
+                itemStyle: {
+                    normal: {
+                        color: function (params) {
+                            // build a color map as your need.
+                            var colorList = [
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                            ];
+                            return colorList[params.dataIndex]
+                        },
+                        label: {
+                            show: false,
+                            position: 'on',
+                            formatter: '{b}{c}',
+                            textStyle: {
+                                color: '#000000'
                             }
                         }
-                    }]
-            }
-            myChart.setOption(option);
+                    }
+                }
+            }]
+    }
+    myChart.setOption(option);
 }
 function changeHtml(html) {
     html = html.replace(/&lt;/gi, "<");
@@ -184,30 +213,41 @@ function changeHtml(html) {
 
 window.onpopstate = function (e) {
     document.title = e.state.title;
-    $.get(e.state.url).done(queryData(1));
+    $("#key").val(e.state.key);
+    $("#startDate").val(e.state.startDate);
+    $("#endDate").val(e.state.endDate);
+    $.get(e.state.url).done(queryData(1, e.state.startDate, e.state.endDate));
 };
 
 //浏览器历史状态
 function winHistory() {
-    var title = "重中之重企业新闻";
+    var title = "重点企业新闻";
     document.title = title;
-    var url = "/zmq/queryTopCompanyNews";
-    var state = {title: title, url: url};
+    var url = ctx + "/zmq/matchCompanyNews?startDate=" + doc.dync.startDate + "&endDate="
+        + doc.dync.endDate + "&key=" + doc.dync.key;
+    var state = {title: title, url: url, startDate: doc.dync.startDate, endDate: doc.dync.endDate, key: doc.dync.key};
     history.replaceState(state, title, url);
 }
 
 function bind() {
+    var url = window.location.href;
     // var keyword = decodeURI(url.substring(url.indexOf("=")+1, url.indexOf("&")));
-    // $("#key").val(key);
+    $("#key").val(key);
+    $("#startDate").val(startDate);
+    $("#endDate").val(endDate);
 
     //响应回车事件
     $(document).keyup(function (event) {
         if (event.keyCode == 13) {
-            queryData(1);
+            doc.dync.key = $("#key").val();
+            doc.dync.startDate = $("#startDate").val();
+            doc.dync.endDate = $("#endDate").val();
+            queryData(1, doc.dync.startDate, doc.dync.endDate, doc.dync.key);
         }
     });
 
-    //动态查询
+
+    // //动态查询
     // $("#key").livesearch({
     //     searchCallback: queryData,
     //     innerText: "",
@@ -217,7 +257,10 @@ function bind() {
 
     //点击查询
     $("#sub").click(function () {
-        queryData(1);
+        doc.dync.key = $("#key").val();
+        doc.dync.startDate = $("#startDate").val();
+        doc.dync.endDate = $("#endDate").val();
+        queryData(1, doc.dync.startDate, doc.dync.endDate, doc.dync.key);
     });
 
 }

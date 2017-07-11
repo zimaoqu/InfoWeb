@@ -42,6 +42,20 @@ public class SearchServiceImpl implements SearchService {
     private eventnewsMapper eventnewsMapper;
     @Autowired
     private bignewsMapper bignewsMapper;
+    @Autowired
+    private IndicateOfGDPCountryMapper indicateOfGDPCountryMapper;
+    @Autowired
+    private IndicateOfGDPSHMapper indicateOfGDPSHMapper;
+    @Autowired
+    private IndicateOfPPIMapper indicateOfPPIMapper;
+    @Autowired
+    private IndicateOfCPIMapper indicateOfCPIMapper;
+    @Autowired
+    private IndicateOfExportImportMapper indicateOfExportImportMapper;
+    @Autowired
+    private IndicateOfBDIMapper indicateOfBDIMapper;
+    @Autowired
+    private NewsOfIndustryMapper newsOfIndustryMapper;
     /*
     The size of a page.
      */
@@ -64,7 +78,7 @@ public class SearchServiceImpl implements SearchService {
         //处理html，含有公司名字变蓝
         for (NewsOfTopCompanyWithBLOBs news : dateList) {
             String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
+            String name = news.getName();
             Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
             String res_abs = cut.cut_sentence(html, name);
             if (res_abs == null) {
@@ -76,7 +90,8 @@ public class SearchServiceImpl implements SearchService {
                 //多加了个匹配词raw_cor_name也标蓝
                 kstr.add(name);
                 res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
             }
 
         }
@@ -86,30 +101,33 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取新闻事件
+     *
      * @param companyName
      * @return
      */
     public List<eventnewsWithBLOBs> getEventNews(String companyName, int flag) {
         Map map = new HashMap();
         map.put("relComName", companyName.trim());
-        map.put("flag",flag);
+        map.put("flag", flag);
         List<eventnewsWithBLOBs> eventnews = eventnewsMapper.getEventNews(map);
         return eventnews;
     }
 
-    public List<String> getComlist(){
+    public List<String> getComlist() {
         return eventnewsMapper.getComlist();
-    };
+    }
+
+    ;
 
     /**
      * 企业历史演变
+     *
      * @return
      */
     @Override
     public List<String> getComListHis() {
         return bignewsMapper.getComList();
     }
-
 
 
     @Override
@@ -143,7 +161,7 @@ public class SearchServiceImpl implements SearchService {
         //处理html，含有公司名字变蓝
         for (NewsOfTopCompanyWithBLOBs news : dateList) {
             String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
+            String name = news.getName();
             Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
             String res_abs = cut.cut_sentence(html, name);
             if (res_abs == null) {
@@ -155,7 +173,8 @@ public class SearchServiceImpl implements SearchService {
                 //多加了个匹配词raw_cor_name也标蓝
                 kstr.add(name);
                 res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
             }
 
         }
@@ -180,7 +199,7 @@ public class SearchServiceImpl implements SearchService {
         //处理html，含有公司名字变蓝
         for (NewsOfCompanyWithBLOBs news : dateList) {
             String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
+            String name = news.getName();
             Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
             String res_abs = cut.cut_sentence(html, name);
             if (res_abs == null) {
@@ -192,13 +211,16 @@ public class SearchServiceImpl implements SearchService {
                 //多加了个匹配词raw_cor_name也标蓝
                 kstr.add(name);
                 res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
             }
 
         }
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
+
+
 
     /**
      * 获取匹配得到的企业新闻
@@ -223,7 +245,7 @@ public class SearchServiceImpl implements SearchService {
         //处理html，含有公司名字变蓝
         for (NewsOfCompanyWithBLOBs news : dateList) {
             String html = news.getHtml();
-            String name = news.getName().substring(0, 4);
+            String name = news.getName();
             Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
             String res_abs = cut.cut_sentence(html, name);
             if (res_abs == null) {
@@ -235,7 +257,9 @@ public class SearchServiceImpl implements SearchService {
                 //多加了个匹配词raw_cor_name也标蓝
                 kstr.add(name);
                 res_abs = p.addFont_Blue(res_abs, kstr);
-                news.setDescription("..." + res_abs + "...");
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
+
             }
 
         }
@@ -566,6 +590,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取公司完整的名字
+     *
      * @param name
      * @return
      */
@@ -578,6 +603,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * get Curreputation
+     *
      * @param companyName
      * @return
      */
@@ -616,6 +642,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取上海自贸区新闻的关键字
+     *
      * @param page
      * @return
      */
@@ -636,6 +663,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 获取其他自贸区新闻的关键字
+     *
      * @param page
      * @return
      */
@@ -682,7 +710,8 @@ public class SearchServiceImpl implements SearchService {
     }
 
     /**
-     *根据匹配条件获取上海自贸区新闻的关键词
+     * 根据匹配条件获取上海自贸区新闻的关键词
+     *
      * @param page
      * @param startDate
      * @param endDate
@@ -707,6 +736,7 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 根据匹配条件获取其他自贸区新闻的关键词
+     *
      * @param page
      * @param startDate
      * @param endDate
@@ -835,6 +865,201 @@ public class SearchServiceImpl implements SearchService {
         return MatchOtherZmqNewsCount;
     }
 
+    /*
+    行业数据分析的新闻展示代码
+     */
+    @Override
+    public Page<NewsOfIndustryWithBLOBs> queryAllIndustryNews(int page) {
+        Map map = new HashMap<>();
+        int countOfNews = newsOfIndustryMapper.countAllNews();
+        int start = (page - 1) * pageSize;
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfIndustryWithBLOBs> dateList = newsOfIndustryMapper.selectAllNews(map);
+        //处理html，含有公司名字变蓝
+        for (NewsOfIndustryWithBLOBs news : dateList) {
+            String html = news.getHtml();
+            String name = news.getName();
+            Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
+            String res_abs = cut.cut_sentence(html, name);
+            if (res_abs == null) {
+                news.setDescription(news.getDescription());
+            } else {
+                processStr p = new processStr();
+                ArrayList<String> kstr = new ArrayList<String>();
+                kstr = p.splitStr(name);
+                //多加了个匹配词raw_cor_name也标蓝
+                kstr.add(name);
+                res_abs = p.addFont_Blue(res_abs, kstr);
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
+            }
+
+        }
+        Page<NewsOfIndustryWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
+        return resultPage;
+    }
+
+    @Override
+    public Page<NewsOfIndustryWithBLOBs> queryMatchIndustryNews(int page, String startDate, String endDate,String key) {
+        Map map = new HashMap<>();
+        int start = (page - 1) * pageSize;
+        map.put("name", key);
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        map.put("start", start);
+        map.put("size", pageSize);
+        int countOfNews = newsOfCompanyMapper.countMatchNews(map);
+        List<NewsOfIndustryWithBLOBs> dateList = newsOfIndustryMapper.selectMatchNews(map);
+        //处理html，含有公司名字变蓝
+        for (NewsOfIndustryWithBLOBs news : dateList) {
+            String html = news.getHtml();
+            String name = news.getName();
+            Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
+            String res_abs = cut.cut_sentence(html, name);
+            if (res_abs == null) {
+                news.setDescription(news.getDescription());
+            } else {
+                processStr p = new processStr();
+                ArrayList<String> kstr = new ArrayList<String>();
+                kstr = p.splitStr(name);
+                //多加了个匹配词raw_cor_name也标蓝
+                kstr.add(name);
+                res_abs = p.addFont_Blue(res_abs, kstr);
+                if (news.getDescription().length() > 300)
+                    news.setDescription("..." + res_abs + "...");
+
+            }
+
+        }
+        Page<NewsOfIndustryWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
+        return resultPage;
+    }
+
+    @Override
+    public List getIndustryKeywords(int page) {
+        Map map = new HashMap<>();
+        List keyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfIndustryWithBLOBs> dateList = newsOfIndustryMapper.selectAllNews(map);
+        for (NewsOfIndustryWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
+                keyList.add(processKeywords(news.getKeywords()));
+        }
+        return keyList;
+    }
+
+    @Override
+    public List getMatchIndustryKeywords(int page, String startDate, String endDate,String key) {
+        Map map = new HashMap<>();
+        List keyList = new ArrayList();
+        int start = (page - 1) * pageSize;
+        map.put("name", key);
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        map.put("start", start);
+        map.put("size", pageSize);
+        List<NewsOfIndustryWithBLOBs> dateList = newsOfIndustryMapper.selectMatchNews(map);
+        for (NewsOfIndustryWithBLOBs news : dateList) {
+            if (!news.getKeywords().isEmpty())
+                keyList.add(processKeywords(news.getKeywords()));
+        }
+        return keyList;
+    }
+
+    @Override
+    public List<ComNameNewsCount> IndustryNewsCount() {
+        return newsOfIndustryMapper.NewsCount();
+    }
+
+    @Override
+    public List<ComNameNewsCount> getMatchIndustryNewsCount(String startDate, String endDate) {
+        Map map = new HashMap<>();
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        List<ComNameNewsCount> MatchIndustryNewsCount = newsOfIndustryMapper.getMatchNewsCount(map);
+        return MatchIndustryNewsCount;
+    }
+
+
+
+
+
+
+    /**
+     *
+     * 获取全国GDP指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfGDPCountry> queryAllGDPCountry() {
+        List<IndicateOfGDPCountry> GDPCountryList = indicateOfGDPCountryMapper.selectAllGDPCountry();
+        return GDPCountryList;
+    }
+
+    /**
+     *
+     * 获取上海地区GDP指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfGDPSH> queryAllGDPSH() {
+        List<IndicateOfGDPSH> GDPSHList = indicateOfGDPSHMapper.selectAllGDPSH();
+        return GDPSHList;
+    }
+
+    /**
+     *
+     * 获取全国PPI指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfPPI> queryAllPPI() {
+        List<IndicateOfPPI> PPIList = indicateOfPPIMapper.selectAllPPI();
+        return PPIList;
+    }
+
+    /**
+     *
+     * 获取全国CPI指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfCPI> queryAllCPI() {
+        List<IndicateOfCPI> CPIList = indicateOfCPIMapper.selectAllCPI();
+        return CPIList;
+    }
+
+    /**
+     *
+     * 获取全国进出口总额指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfExportImport> queryAllExportImport() {
+        List<IndicateOfExportImport> ExportImportList = indicateOfExportImportMapper.selectAllExportImport();
+        return ExportImportList;
+    }
+
+    /**
+     *
+     * 获取中国BDI指标
+     *
+     *
+     */
+    @Override
+    public List<IndicateOfBDI> queryAllBDI() {
+        List<IndicateOfBDI> BDIList = indicateOfBDIMapper.selectAllBDI();
+        return BDIList;
+    }
+
     /**
      * 处理keywords函数  分割之类的
      *
@@ -961,17 +1186,16 @@ public class SearchServiceImpl implements SearchService {
         }
         return res;
     }
+
     public List<ComNameNewsCount> CompanyWarningCount() {
         List<ComNameNewsCount> dateNow = negativenewsMapper.ComMonthNewsCount();
         List<ComNameNewsCount> dateBefore = negativenewsMapper.ComMonthBeforeNewsCount();
         List<ComNameNewsCount> warningCom = new ArrayList();
         int n = 0;
-        for(int i = 0;i<dateNow.size();i++)
-        {
-            for(int j = 0;j<dateBefore.size();j++)
-            {
+        for (int i = 0; i < dateNow.size(); i++) {
+            for (int j = 0; j < dateBefore.size(); j++) {
                 ComNameNewsCount c = new ComNameNewsCount();
-                if(dateNow.get(i).getName().equals(dateBefore.get(j).getName())) {
+                if (dateNow.get(i).getName().equals(dateBefore.get(j).getName())) {
                     if (dateNow.get(i).getCount() > dateBefore.get(j).getCount() * 2 && dateNow.get(i).getCount() > 0) {
                         c.setCount(dateNow.get(i).getCount());
                         c.setName(dateNow.get(i).getName());
@@ -982,10 +1206,12 @@ public class SearchServiceImpl implements SearchService {
         }
         return warningCom;
     }
+
     public List<ComNameNewsCount> CompanyWarningBeforeCount() {
         return negativenewsMapper.ComMonthBeforeNewsCount();
     }
 }
+
 //前面name变蓝用到的
 class Abstract_Cut {
     public String cut_sentence(String text, String target) {
