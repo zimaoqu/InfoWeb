@@ -28,6 +28,11 @@
     <result column="name" property="name" jdbcType="LONGVARCHAR"/>
     <result column="num" property="num" jdbcType="INTEGER"/>
   </resultMap>
+  <resultMap id="PredictedandRealistic" type="com.scorpion.pojo.PredictedandRealistic">
+    <result column="name" property="name" jdbcType="LONGVARCHAR"/>
+    <result column="predicted" property="predicted" jdbcType="LONGVARCHAR"/>
+    <result column="realistic" property="realistic" jdbcType="LONGVARCHAR"/>
+  </resultMap>
   <sql id="Example_Where_Clause" >
     <!--
       WARNING - @mbggenerated
@@ -106,6 +111,9 @@
   </select>
   <select id="ComMonthBeforeNewsCount" resultMap="ComNameNewsCount">
     SELECT name,count(*) as num from topcompany WHERE DATE BETWEEN date_add(curdate(), interval -2 year) and date_add(curdate(), interval -1 year) GROUP BY name ORDER BY name
+  </select>
+  <select id="PredictedRealisticString" resultMap="PredictedandRealistic">
+    SELECT name,predicted,realistic from timecount ORDER BY id
   </select>
   <sql id="Blob_Column_List" >
     <!--

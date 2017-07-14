@@ -200,6 +200,7 @@ public interface SearchService {
 
     public List<ComNameNewsCount> CompanyWarningCount();
     public List<ComNameNewsCount> CompanyWarningBeforeCount();
+    public List<PredictedandRealistic> CompanyPredictWarning();
 
     public List<ComNameNewsCount> OtherZmqNewsCount();
     public List<ComNameNewsCount> getMatchOtherZmqNewsCount(String startDate, String endDate);

@@ -94,6 +94,7 @@
                         <li><a href="${pageContext.request.contextPath}/zmq/showTopCompanyNews">重中之重企业新闻</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showCompanyNews">重点企业新闻推送</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalWarning">企业异常预警</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnomalComWarning">企业预警</a></li>
                     </ul></li>
 
                 <li class="dropdown"><a href="/InfoWeb/relTendency" class="dropdown-toggle"

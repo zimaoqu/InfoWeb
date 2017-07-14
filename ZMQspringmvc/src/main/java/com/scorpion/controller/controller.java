@@ -308,6 +308,59 @@ public class controller {
         modelMap.put("BeforeCount",BeforeCount);
         return new ModelAndView("AbnormalWarning", modelMap);
     }
+    /**
+     * 企业预警（张翔）
+     *
+     * @param modelMap
+     * @param request
+     * @return
+     */
+    @RequestMapping("showAbnomalComWarning")
+    public ModelAndView AbnomalComWarnin(ModelMap modelMap, HttpServletRequest request) {
+
+//        String selectdiscomsstr = "";
+//        List<bignews> eventsHis = searchService.getHisEvents(companyName);
+//        //企业选择下拉列表
+//        List<String> companyList = searchService.getComListHis();
+
+        List<PredictedandRealistic> WarningCom = searchService.CompanyPredictWarning();
+        List<Double> pre = new ArrayList<>();
+        List<Double> rea = new ArrayList<>();
+        List<List<Double>> predicteddata = new ArrayList<>();
+        List<List<Double>> realisticdata = new ArrayList<>();
+        List<String> WarningName = new ArrayList<>();
+        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : WarningCom.get(0).getName();
+//        System.out.println(companyName);
+        for(int i = 0;i<WarningCom.size();i++){
+            String[] arrp = WarningCom.get(i).getPredicted().split(";");
+            String[] arrr = WarningCom.get(i).getRealistic().split(";");
+            pre = new ArrayList<>();
+            rea = new ArrayList<>();
+            for(int j = 0;j<arrp.length;j++){
+                pre.add(Double.valueOf(arrp[j]));
+                rea.add(Double.valueOf(arrr[j]));
+            }
+            predicteddata.add(pre);
+            realisticdata.add(rea);
+            WarningName.add(WarningCom.get(i).getName());
+            for(int j = 0;j<WarningName.size();j++){
+                if(WarningName.get(j).equals(companyName)) {
+                    pre = predicteddata.get(j);
+                    rea = realisticdata.get(j);
+                }
+            }
+        }
+
+        modelMap.put("predictedData",pre);
+        modelMap.put("realisticData",rea);
+        modelMap.put("warningName",WarningName);
+        modelMap.put("mainCom",companyName);
+
+//        modelMap.put("maincom", companyName);
+//        modelMap.put("eventnews", eventsHis);
+//        modelMap.put("selectdiscomsstr", selectdiscomsstr);
+        return new ModelAndView("AbnomalComWarning", modelMap);
+    }
 
     /**
      * 企业健康态势
