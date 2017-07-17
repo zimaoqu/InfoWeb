@@ -929,9 +929,12 @@ public class controller {
         out.print(json);
     }
 
-
-
-
+    @RequestMapping("queryKeyByFlag")
+    public ModelAndView queryKeyByFlag(ModelMap modelMap, HttpServletRequest request) {
+        String flag = (request.getParameter("flag") != null) ? request.getParameter("flag") : "1";
+        modelMap.put("flag",flag);
+        return new ModelAndView("KeyIndicates",modelMap);
+    }
 
 
 
