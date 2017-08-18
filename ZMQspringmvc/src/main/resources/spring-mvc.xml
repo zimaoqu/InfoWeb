@@ -11,7 +11,7 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
 
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-    <context:component-scan base-package="com.scorpion.controller" />
+    <context:component-scan base-package="com.scorpion.controller"/>
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <bean id="mappingJacksonHttpMessageConverter"
           class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
@@ -27,7 +27,7 @@
             class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
         <property name="messageConverters">
             <list>
-                <ref bean="mappingJacksonHttpMessageConverter" /> <!-- JSON转换器 -->
+                <ref bean="mappingJacksonHttpMessageConverter"/> <!-- JSON转换器 -->
             </list>
         </property>
     </bean>
@@ -35,7 +35,15 @@
     <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <property name="suffix" value=".jsp" />
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 拦截所有URL中包含/user/的请求 -->
+            <mvc:mapping path="/zmq/**"/>
+            <bean class="com.scorpion.interceptor.LoginInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
