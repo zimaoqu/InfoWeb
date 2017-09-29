@@ -17,6 +17,7 @@ public interface SearchService {
     获取事件新闻
      */
     List<eventnewsWithBLOBs> getEventNews(String companyName, int flag);
+
     /*
     获取所有重点企业新闻，根据page
      */
@@ -25,7 +26,7 @@ public interface SearchService {
     /*
     根据条件匹配重点企业新闻
      */
-    public Page<NewsOfCompanyWithBLOBs> queryMatchTopNews(int page, String startDate, String endDate, String key);
+    public Page<NewsOfCompanyWithBLOBs> queryMatchTopNews(int page, String startDate, String endDate, String key, String industry);
 
     /*
     获取所有企业新闻，根据page
@@ -89,7 +90,7 @@ public interface SearchService {
 
     public Page<NewsOfIndustryWithBLOBs> queryAllIndustryNews(int page);
 
-    public Page<NewsOfIndustryWithBLOBs> queryMatchIndustryNews(int page, String startDate, String endDate,String key);
+    public Page<NewsOfIndustryWithBLOBs> queryMatchIndustryNews(int page, String startDate, String endDate, String key);
 
     /*
     queryCompanyinformation
@@ -105,13 +106,16 @@ public interface SearchService {
     某个时间段正负新闻量以及所有公司名字
      */
     int getPosnum(String companyName, String date1, String date2);
+
     int getNegnum(String companyName, String date1, String date2);
+
     List<String> getComList();
 
     /*
     企业历史演变用的
      */
     List<String> getComListHis();
+
     List<bignews> getHisEvents(String companyName);
 
     /*
@@ -123,24 +127,35 @@ public interface SearchService {
     根据公司的名字来获取正面、中立、负面新闻的篇数(所有时间段),正面、中立、负面新闻
      */
     int getAllTimePosnums(String companyName);
+
     int getAllTimeNeunums(String companyName);
+
     int getAllTimeNegnums(String companyName);
+
     List<NewsOfCompanyWithBLOBs> getPosnews(String companyName);
+
     List<NewsOfCompanyWithBLOBs> getNeunews(String companyName);
+
     List<NewsOfCompanyWithBLOBs> getNegnews(String companyName);
+
     String getCompanyName(String name);
 
-    HashMap<String,Integer> getKeywords(String companyName);
-    HashMap<String,Integer> getCountSource(String companyName);
+    HashMap<String, Integer> getKeywords(String companyName);
+
+    HashMap<String, Integer> getCountSource(String companyName);
+
     List<currentnewsWithBLOBs> getHotNews(String companyName);
+
     List<currentnewsWithBLOBs> getSensiveNews(String companyName);
 
     //字符串处理
     public ArrayList<String> splitStr(String str);
+
     /*
     (企业声誉分析用到的)
      */
     double getCurreputation(String companyName);
+
     List<String> getDemoComList();
 
 
@@ -148,6 +163,7 @@ public interface SearchService {
     获取新闻关键词（普通companynews）
      */
     public List getComKeywords(int page);
+
     /*
     获取其他自贸区新闻关键词
      */
@@ -157,14 +173,17 @@ public interface SearchService {
     获取其他自贸区新闻的关键词
      */
     public List getSHZmqKeywords(int page);
+
     /*
     获取时间匹配新闻关键词（普通companynews）
      */
     public List getMatchComKeywords(int page, String startDate, String endDate, String key);
+
     /*
     获取时间匹配其他自贸区新闻关键词
      */
     public List getMatchOtherZmqKeywords(int page, String startDate, String endDate, String key);
+
     /*
     获取时间匹配上海自贸区新闻关键词
      */
@@ -174,48 +193,59 @@ public interface SearchService {
     获取新闻关键词（Top companynews）
      */
     public List getTopComKeywords(int page);
+
     /*
     获取时间匹配新闻关键词（Top companynews）
      */
-    public List getMatchTopComKeywords(int page, String startDate, String endDate, String key);
+    public List getMatchTopComKeywords(int page, String startDate, String endDate, String key, String industry);
 
     /*
     获取行业新闻关键词
      */
     public List getIndustryKeywords(int page);
+
     /*
     获取匹配条件行业新闻关键词
      */
-    public List getMatchIndustryKeywords(int page,String startDate, String endDate,String key);
+    public List getMatchIndustryKeywords(int page, String startDate, String endDate, String key);
+
     /*
     获取top每个公司的新闻数
      */
     public List<ComNameNewsCount> TopNewsCount();
+
     List<ComNameNewsCount> getTopMatchNewsCount(String startDate, String endDate);
+
     /*
     获取每个公司的新闻数
      */
     public List<ComNameNewsCount> NewsCount();
+
     List<ComNameNewsCount> getMatchNewsCount(String startDate, String endDate);
 
     public List<ComNameNewsCount> CompanyWarningCount();
+
     public List<ComNameNewsCount> CompanyWarningBeforeCount();
+
     public List<PredictedandRealistic> CompanyPredictWarning();
 
     public List<ComNameNewsCount> OtherZmqNewsCount();
+
     public List<ComNameNewsCount> getMatchOtherZmqNewsCount(String startDate, String endDate);
 
     public List<ComNameNewsCount> IndustryNewsCount();
+
     public List<ComNameNewsCount> getMatchIndustryNewsCount(String startDate, String endDate);
+
     /*
     获取所有GDP数据
      */
-    public List<IndicateOfGDPCountry > queryAllGDPCountry();
+    public List<IndicateOfGDPCountry> queryAllGDPCountry();
 
     /*
     获取上海地区GDP数据
      */
-    public List<IndicateOfGDPSH > queryAllGDPSH();
+    public List<IndicateOfGDPSH> queryAllGDPSH();
 
     /*
     获取全国PPI数据
@@ -238,5 +268,14 @@ public interface SearchService {
     public List<IndicateOfBDI> queryAllBDI();
 
 
+    /*
+    获得行业列表
+     */
+    public List<String> getIndustryList();
+
+    /*
+    获取某个行业的公司
+     */
+    public List<String> getComOfIndustry(String industry);
 
 }

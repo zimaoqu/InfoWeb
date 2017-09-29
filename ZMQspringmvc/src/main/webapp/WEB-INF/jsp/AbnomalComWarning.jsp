@@ -58,6 +58,8 @@
             });
         </script>
         <h3><%=comName%>：预警</h3>
+        <h5>预测值与实际值方差大于实际值平均值，预警注意！</h5>
+        <script language="javascript">alert("预测值与实际值方差大于实际值平均值，企业出现异常，预警注意！");</script>
         <div class="row" id ="main" style="width: 900px;height: 500px;margin-left:50px; margin-top:30px"></div>
         <script type="text/javascript">
 

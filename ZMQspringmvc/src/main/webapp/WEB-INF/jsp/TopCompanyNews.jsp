@@ -14,7 +14,6 @@
     <link href="${pageContext.request.contextPath}/resources/css/pagination.css" rel="stylesheet">
 
 
-
     <title>中国自由贸易试验区大数据管理与分析平台</title>
 
 </head>
@@ -24,6 +23,9 @@
     <br/>
     <%@include file="title.jsp" %>
     <br/>
+    <%
+        String industry = request.getAttribute("industry").toString();
+    %>
 
 </div>
 <div class="row-fluid">
@@ -35,10 +37,12 @@
                     <div class="demo">
                         <span id="two-inputs">
                             <div class="one">
-                                <input id="date-range200" size="20" class="form-control" name="startDate" placeholder="起始时间" value="${startDate}">
+                                <input id="date-range200" size="20" class="form-control" name="startDate"
+                                       placeholder="起始时间" value="${startDate}">
                             </div>
                             <div class="one">
-                                <input id="date-range201" size="20" class="form-control" name="endDate" placeholder="截止时间" value="${endDate}">
+                                <input id="date-range201" size="20" class="form-control" name="endDate"
+                                       placeholder="截止时间" value="${endDate}">
                             </div>
                         </span>
 
@@ -49,6 +53,11 @@
                            class="form-control" value="${key}"/> <span class="input-group-btn">
 								<!-- <button class="btn btn-default" type="button">搜索</button> -->
 							</span>
+                </div>
+                <div class="one" style="margin-left: 50px">
+                    <select name="industry" id="industry" style="width:200px;height: 35px">
+                        "<%=industry%>"
+                    </select>
                 </div>
                 <input type="submit" value="搜索" class="btn btn-default"/>
             </form>
@@ -64,12 +73,12 @@
     </div>
 
     <div id="right" class="col-xs-3 span3 ">
-    <div class="row">
-        <div id="graphic" style="width: 450px;height: 350px;"></div>
-    </div>
-    <div class="row divfix">
-        <div class="wordcloud" style="top:350px; width: 400px;height: 300px;"></div>
-    </div>
+        <div class="row">
+            <div id="graphic" style="width: 450px;height: 350px;"></div>
+        </div>
+        <div class="row divfix">
+            <div class="wordcloud" style="top:350px; width: 400px;height: 300px;"></div>
+        </div>
     </div>
 
 </div>
@@ -78,6 +87,7 @@
     var key = $("#key").val();
     var startDate = $("#startDate").val();
     var endDate = $("#endDate").val();
+    var industry = $("#industry option:selected").text();
 </script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-2.2.0.js"></script>
 <%--<script src="${pageContext.request.contextPath}/resources/js/echarts.min.js"></script>--%>

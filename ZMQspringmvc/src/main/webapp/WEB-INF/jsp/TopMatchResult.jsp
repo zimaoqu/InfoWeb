@@ -31,6 +31,10 @@
     <br/>
     <%@include file="title.jsp" %>
     <br/>
+    <%
+        String industryList = request.getAttribute("industryList").toString();
+        String industry = request.getAttribute("industry").toString();
+    %>
 
 </div>
 <div class="row-fluid">
@@ -59,6 +63,11 @@
                            class="form-control" value="${key}"/> <span class="input-group-btn">
 								<!-- <button class="btn btn-default" type="button">搜索</button> -->
 							</span>
+                </div>
+                <div class="one" style="margin-left: 50px">
+                    <select name="industry" id="industry" style="width:200px;height: 35px">
+                        "<%=industryList%>"
+                    </select>
                 </div>
                 <input type="submit" value="搜索" class="btn btn-default"/>
             </form>
@@ -96,6 +105,7 @@
     var key = $("#key").val();
     var startDate = $("input[name='startDate']").val();
     var endDate = $("input[name='endDate']").val();
+    var industry = $("#industry option:selected").text();
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>

@@ -8,7 +8,8 @@ $(function () {
             cp: 1,		//当前页码
             key: key,
             startDate: startDate,
-            endDate: endDate
+            endDate: endDate,
+            industry: industry
 
         },
         bindFunc: function () {
@@ -20,7 +21,8 @@ $(function () {
     };
 
     doc.init();
-    queryData(1, startDate, endDate, key);
+    console.log(industry);
+    queryData(1, startDate, endDate, key, industry);
 });
 
 
@@ -32,28 +34,29 @@ function pager(page, totalPages, totalRecords) {
         click: function (n) {
             this.selectPage(n);
             doc.dync.cp = n;
-            queryData(n, doc.dync.startDate, doc.dync.endDate, doc.dync.key);
+            queryData(n, doc.dync.startDate, doc.dync.endDate, doc.dync.key, doc.dync.industry);
         }
     }, true);
 }
 
 var worddata = new Array();
-var namelist=[];
-var nameList=[];//柱状图的nameList
-var numList=[];//柱状图的numList
+var namelist = [];
+var nameList = [];//柱状图的nameList
+var numList = [];//柱状图的numList
 function queryData(page, startDate, endDate, key) {
     $.ajax({
         cache: false,
         url: "/zmq/matchTopCompanyNews",
         type: "GET",
         dataType: "json",
-        data: {page: page, startDate: startDate, endDate: endDate, key: key},
+        data: {page: page, startDate: startDate, endDate: endDate, key: key, industry: industry},
         async: true,
         success: function (data) {
             //$("#key").val(key);
             doc.dync.key = key;
             doc.dync.startDate = startDate;
             doc.dync.endDate = endDate;
+            doc.dync.industry = industry;
             var html = "";
             $("#records").text(data.totalRecords);
             if (!data.totalRecords) {
@@ -71,10 +74,9 @@ function queryData(page, startDate, endDate, key) {
                     + '</p><p>' + data.resultList[i].description + '</p><a class="btn btn-default" href='
                     + data.resultList[i].url + ' target="_blank">原文»</a>&nbsp;<font color="blue">'
                     + data.resultList[i].name + '</font></div>';
-                namelist[i]=data.resultList[i].name;
+                namelist[i] = data.resultList[i].name;
                 var keywordData = [];
                 for (var key in data.keywords[i]) {
-                    console.log("key：" + key + ",value：" + data.keywords[i][key]);
                     keywordData.push({
                         name: key,
                         value: data.keywords[i][key]
@@ -103,7 +105,7 @@ function drawpic(obj) {
         var myChart = echarts.init(this);
         option = {
             title: {
-                text: comname+"关键词词云图"
+                text: comname + "关键词词云图"
             },
             tooltip: {},
             series: [{
@@ -135,7 +137,7 @@ function drawpic(obj) {
         myChart.setOption(option);
     });
 }
-function graphic(){
+function graphic() {
     var myChart = echarts.init(document.getElementById("graphic"));
     option = {
         title: {
@@ -152,7 +154,7 @@ function graphic(){
         xAxis: [{}],
         yAxis: [
             {
-                data:nameList,
+                data: nameList,
                 show: false
             }
         ],
@@ -205,8 +207,11 @@ function winHistory() {
     var title = "重中之重企业新闻";
     document.title = title;
     var url = "/zmq/matchTopCompanyNews?startDate=" + doc.dync.startDate + "&endDate="
-        + doc.dync.endDate + "&key=" + doc.dync.key;
-    var state = {title: title, url: url, startDate: doc.dync.startDate, endDate: doc.dync.endDate, key: doc.dync.key};
+        + doc.dync.endDate + "&key=" + doc.dync.key + "industry=" + doc.dync.industry;
+    var state = {
+        title: title, url: url, startDate: doc.dync.startDate, endDate: doc.dync.endDate, key: doc.dync.key,
+        industry: industry
+    };
     history.replaceState(state, title, url);
 }
 
@@ -216,6 +221,8 @@ function bind() {
     $("#key").val(key);
     $("#startDate").val(startDate);
     $("#endDate").val(endDate);
+    $("#industry").val(industry);
+
 
     //响应回车事件
     $(document).keyup(function (event) {
@@ -223,7 +230,8 @@ function bind() {
             doc.dync.key = $("#key").val();
             doc.dync.startDate = $("#startDate").val();
             doc.dync.endDate = $("#endDate").val();
-            queryData(1, doc.dync.startDate, doc.dync.endDate, doc.dync.key);
+            doc.dync.industry = $("#industry").val();
+            queryData(1, doc.dync.startDate, doc.dync.endDate, doc.dync.key,doc.dync.industry);
         }
     });
 
@@ -241,7 +249,8 @@ function bind() {
         doc.dync.key = $("#key").val();
         doc.dync.startDate = $("#startDate").val();
         doc.dync.endDate = $("#endDate").val();
-        queryData(1, doc.dync.startDate, doc.dync.endDate, doc.dync.key);
+        doc.dync.industry = $("#industry").val();
+        queryData(1, doc.dync.startDate, doc.dync.endDate, doc.dync.key, doc.dync.industry);
     });
 
 }

@@ -56,6 +56,8 @@ public class SearchServiceImpl implements SearchService {
     private IndicateOfBDIMapper indicateOfBDIMapper;
     @Autowired
     private NewsOfIndustryMapper newsOfIndustryMapper;
+    @Autowired
+    private TopCompanyInfoMapper topCompanyInfoMapper;
     /*
     The size of a page.
      */
@@ -148,13 +150,14 @@ public class SearchServiceImpl implements SearchService {
      * @return
      */
     @Override
-    public Page<NewsOfCompanyWithBLOBs> queryMatchTopNews(int page, String startDate, String endDate, String key) {
+    public Page<NewsOfCompanyWithBLOBs> queryMatchTopNews(int page, String startDate, String endDate, String key,String industry) {
         Map map = new HashMap<>();
         int start = (page - 1) * pageSize;
         map.put("name", key);
         map.put("startDate", startDate);
         map.put("endDate", endDate);
         map.put("start", start);
+        map.put("industry", industry);
         map.put("size", pageSize);
         int countOfNews = newsOfTopCompanyMapper.countMatchNews(map);
         List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectMatchNews(map);
@@ -792,7 +795,7 @@ public class SearchServiceImpl implements SearchService {
      * @return
      */
     @Override
-    public List getMatchTopComKeywords(int page, String startDate, String endDate, String key) {
+    public List getMatchTopComKeywords(int page, String startDate, String endDate, String key, String industry) {
         Map map = new HashMap<>();
         List TopkeyList = new ArrayList();
         int start = (page - 1) * pageSize;
@@ -800,6 +803,7 @@ public class SearchServiceImpl implements SearchService {
         map.put("startDate", startDate);
         map.put("endDate", endDate);
         map.put("start", start);
+        map.put("industry", industry);
         map.put("size", pageSize);
         List<NewsOfTopCompanyWithBLOBs> dateList = newsOfTopCompanyMapper.selectMatchNews(map);
         for (NewsOfTopCompanyWithBLOBs news : dateList) {
@@ -1252,6 +1256,18 @@ public class SearchServiceImpl implements SearchService {
             }
         }
         return Warningname;
+    }
+
+    @Override
+    public List<String> getIndustryList() {
+        return topCompanyInfoMapper.getIndustryList();
+    }
+
+    @Override
+    public List<String> getComOfIndustry(String industry) {
+        Map map = new HashMap();
+        map.put("hy", industry.trim());
+        return topCompanyInfoMapper.getComOfIndustry(map);
     }
 }
 

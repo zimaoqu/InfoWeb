@@ -52,8 +52,16 @@ public class controller {
      * @return
      */
     @RequestMapping("showTopCompanyNews")
-    public ModelAndView showTopCompanyNews() {
-        return new ModelAndView("TopCompanyNews");
+    public ModelAndView showTopCompanyNews(ModelMap modelMap) {
+        String industry = "";
+        //行业选择下拉列表
+        List<String> companyList = searchService.getIndustryList();
+        industry = "<option>" + " " + "</option>";
+        for (int i = 0; i < companyList.size(); i++) {
+            industry = industry + "<option>" + companyList.get(i) + "</option>";
+        }
+        modelMap.put("industry", industry);
+        return new ModelAndView("TopCompanyNews", modelMap);
     }
 
     /**
@@ -62,10 +70,19 @@ public class controller {
      * @return
      */
     @RequestMapping("showTopMatchResult")
-    public ModelAndView showTopMatchResult(String startDate, String endDate, String key, ModelMap modelMap) {
+    public ModelAndView showTopMatchResult(String startDate, String endDate, String key, String industry, ModelMap modelMap) {
+        String industryList = "";
+        //行业选择下拉列表
+        List<String> companyList = searchService.getIndustryList();
+        industryList = "<option>" + industry + "</option>";
+        for (int i = 0; i < companyList.size(); i++) {
+            industryList = industryList + "<option>" + companyList.get(i) + "</option>";
+        }
+        modelMap.put("industry", industry);
         modelMap.addAttribute("startDate", startDate);
         modelMap.addAttribute("endDate", endDate);
         modelMap.addAttribute("key", key);
+        modelMap.addAttribute("industryList", industryList);
         return new ModelAndView("TopMatchResult", modelMap);
     }
 
@@ -278,7 +295,6 @@ public class controller {
     }
 
 
-
     /**
      * 返回企业预警页面
      *
@@ -294,7 +310,7 @@ public class controller {
         List<ComNameNewsCount> warningCount = searchService.CompanyWarningCount();
         List<ComNameNewsCount> warningBeforeCount = searchService.CompanyWarningBeforeCount();
         List<Integer> BeforeCount = new ArrayList<>();
-        for(int i = 0;i<warningCount.size();i++) {
+        for (int i = 0; i < warningCount.size(); i++) {
             for (int j = 0; j < warningBeforeCount.size(); j++)
                 if (warningCount.get(i).getName().equals(warningBeforeCount.get(j).getName())) {
                     BeforeCount.add(warningBeforeCount.get(j).getCount());
@@ -304,10 +320,11 @@ public class controller {
         modelMap.put("queryNegNews", queryNegNews);
         modelMap.put("queryCurNews", queryCurNews);
         modelMap.put("queryComInfo", queryComInfo);
-        modelMap.put("warningCount",warningCount);
-        modelMap.put("BeforeCount",BeforeCount);
+        modelMap.put("warningCount", warningCount);
+        modelMap.put("BeforeCount", BeforeCount);
         return new ModelAndView("AbnormalWarning", modelMap);
     }
+
     /**
      * 企业预警（张翔）
      *
@@ -331,30 +348,30 @@ public class controller {
         List<String> WarningName = new ArrayList<>();
         String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : WarningCom.get(0).getName();
 //        System.out.println(companyName);
-        for(int i = 0;i<WarningCom.size();i++){
+        for (int i = 0; i < WarningCom.size(); i++) {
             String[] arrp = WarningCom.get(i).getPredicted().split(";");
             String[] arrr = WarningCom.get(i).getRealistic().split(";");
             pre = new ArrayList<>();
             rea = new ArrayList<>();
-            for(int j = 0;j<arrp.length;j++){
+            for (int j = 0; j < arrp.length; j++) {
                 pre.add(Double.valueOf(arrp[j]));
                 rea.add(Double.valueOf(arrr[j]));
             }
             predicteddata.add(pre);
             realisticdata.add(rea);
             WarningName.add(WarningCom.get(i).getName());
-            for(int j = 0;j<WarningName.size();j++){
-                if(WarningName.get(j).equals(companyName)) {
+            for (int j = 0; j < WarningName.size(); j++) {
+                if (WarningName.get(j).equals(companyName)) {
                     pre = predicteddata.get(j);
                     rea = realisticdata.get(j);
                 }
             }
         }
 
-        modelMap.put("predictedData",pre);
-        modelMap.put("realisticData",rea);
-        modelMap.put("warningName",WarningName);
-        modelMap.put("mainCom",companyName);
+        modelMap.put("predictedData", pre);
+        modelMap.put("realisticData", rea);
+        modelMap.put("warningName", WarningName);
+        modelMap.put("mainCom", companyName);
 
 //        modelMap.put("maincom", companyName);
 //        modelMap.put("eventnews", eventsHis);
@@ -540,14 +557,17 @@ public class controller {
      */
     @ResponseBody
     @RequestMapping("matchTopCompanyNews")
-    public void matchTopCompanyNews(HttpServletResponse response, String page, String startDate, String endDate, String key) throws IOException {
+    public void matchTopCompanyNews(HttpServletResponse response, String page, String startDate, String endDate, String key, String industry) throws IOException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
-        if (key == null)
-            key = "";
-        List keywords = searchService.getMatchTopComKeywords(pageNo, startDate, endDate, key);
-        Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchTopNews(pageNo, startDate, endDate, key);
+        if (startDate == "") {
+            startDate = "1990-01-01";
+        }
+        if (endDate == "")
+            endDate = "2020-12-31";
+        List keywords = searchService.getMatchTopComKeywords(pageNo, startDate, endDate, key, industry);
+        Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchTopNews(pageNo, startDate, endDate, key, industry);
         List<ComNameNewsCount> MatchNewsCount = searchService.getTopMatchNewsCount(startDate, endDate);
         List<String> nameList = new ArrayList<>();
         List<Integer> numList = new ArrayList<>();
@@ -858,21 +878,25 @@ public class controller {
     /*
     行业数据分析版块的代码
      */
+
     /**
      * 跳转到行业分类新闻
+     *
      * @return
      */
     @RequestMapping("showIndustryNews")
-    public ModelAndView showIndustryNews(){
+    public ModelAndView showIndustryNews() {
         return new ModelAndView("IndustryNews");
     }
+
     @RequestMapping("showMatchIndustryNews")
-    public ModelAndView showMatchIndustryNews(String startDate, String endDate,String key, ModelMap modelMap) {
+    public ModelAndView showMatchIndustryNews(String startDate, String endDate, String key, ModelMap modelMap) {
         modelMap.addAttribute("startDate", startDate);
         modelMap.addAttribute("endDate", endDate);
         modelMap.addAttribute("key", key);
         return new ModelAndView("MatchIndustryNews");
     }
+
     @ResponseBody
     @RequestMapping("queryIndustryNews")
     public void queryIndustryNews(HttpServletResponse response, String page) throws IOException {
@@ -899,6 +923,7 @@ public class controller {
         json.put("keywords", keywords);
         out.print(json);
     }
+
     @ResponseBody
     @RequestMapping("matchIndustryIndustryNews")
     public void matchIndustryIndustryNews(HttpServletResponse response, String page, String startDate, String endDate, String key) throws IOException {
@@ -932,11 +957,9 @@ public class controller {
     @RequestMapping("queryKeyByFlag")
     public ModelAndView queryKeyByFlag(ModelMap modelMap, HttpServletRequest request) {
         String flag = (request.getParameter("flag") != null) ? request.getParameter("flag") : "1";
-        modelMap.put("flag",flag);
-        return new ModelAndView("KeyIndicates",modelMap);
+        modelMap.put("flag", flag);
+        return new ModelAndView("KeyIndicates", modelMap);
     }
-
-
 
 
     /**
@@ -1014,7 +1037,7 @@ public class controller {
 //        System.out.println(12312);
         List<IndicateOfPPI> PPICount = searchService.queryAllPPI();//查询全国PPI数据
         for (IndicateOfPPI instance : PPICount) {
-            
+
 //            System.out.println(instance.getSeason());
             numListPPI.add(instance.getData());
         }
@@ -1030,7 +1053,6 @@ public class controller {
         json.put("numListCPI", numListCPI);
         out.print(json);
     }
-
 
 
     /**
