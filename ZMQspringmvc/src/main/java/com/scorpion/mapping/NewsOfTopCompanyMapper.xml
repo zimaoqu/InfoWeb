@@ -35,6 +35,10 @@
         <result column="name" property="name" jdbcType="LONGVARCHAR"/>
         <result column="num" property="num" jdbcType="INTEGER"/>
     </resultMap>
+    <resultMap id="IndustryCount" type="com.scorpion.pojo.IndustryCount">
+        <result column="industry" property="industry" jdbcType="LONGVARCHAR"/>
+        <result column="count" property="count" jdbcType="INTEGER"/>
+    </resultMap>
     <sql id="Example_Where_Clause">
         <!--
           WARNING - @mbggenerated
@@ -131,6 +135,9 @@
     </select>
     <select id="getTopMatchNewsCount" resultMap="ComNameNewsCount">
         SELECT name,count(*) as num from topcompany WHERE DATE BETWEEN #{startDate} and #{endDate} GROUP BY name ORDER BY num DESC LIMIT 1,10
+    </select>
+    <select id="TopNewsIndustryCount" resultMap="IndustryCount">
+        SELECT industry,count(*) as count from topcompany GROUP BY industry ORDER BY count DESC LIMIT 1,10
     </select>
     <select id="countMatchNews" parameterType="Map" resultType="java.lang.Integer">
     SELECT count(*) from topcompany where name like CONCAT('%',#{name},'%' ) and industry Like CONCAT('%',#{industry},'%' ) and DATE BETWEEN #{startDate} and #{endDate}

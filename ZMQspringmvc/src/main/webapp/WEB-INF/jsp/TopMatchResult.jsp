@@ -94,6 +94,9 @@
         <div class="row">
             <div id="graphic" style="width: 450px;height: 350px;"></div>
         </div>
+        <div>
+            <div id="graphic2" style="width: 400px;height: 350px;"></div>
+        </div>
         <div class="row divfix">
             <div class="wordcloud" style="top:350px; width: 400px;height: 300px;"></div>
         </div>

@@ -1269,6 +1269,15 @@ public class SearchServiceImpl implements SearchService {
         map.put("hy", industry.trim());
         return topCompanyInfoMapper.getComOfIndustry(map);
     }
+
+    /**
+     * 重中之重行业新闻统计
+     * @return
+     */
+    @Override
+    public List<IndustryCount> TopNewsIndustryCount() {
+        return newsOfTopCompanyMapper.TopNewsIndustryCount();
+    }
 }
 
 //前面name变蓝用到的

@@ -528,6 +528,14 @@ public class controller {
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryAllTopNews(pageNo);
         List<NewsOfCompanyWithBLOBs> resultList = resultPage.getContent();
         List<ComNameNewsCount> newsCount = searchService.TopNewsCount();//调用新闻量类
+
+        List<IndustryCount> topIndustryCounts = searchService.TopNewsIndustryCount();//行业新闻量
+        List<String> industryList = new ArrayList<>();
+        List<Integer> countList = new ArrayList<>();
+        for(IndustryCount industryCount:topIndustryCounts){
+            industryList.add(industryCount.getIndustry());
+            countList.add(industryCount.getCount());
+        }
         List<String> nameList = new ArrayList<>();
         List<Integer> numList = new ArrayList<>();
         for (ComNameNewsCount instance : newsCount) {
@@ -541,6 +549,8 @@ public class controller {
         json.put("totalPages", resultPage.getTotalPages());
         json.put("nameList", nameList);
         json.put("numList", numList);
+        json.put("industryList", industryList);
+        json.put("countList", countList);
         json.put("keywords", keywords);
         out.print(json);
     }
@@ -569,6 +579,14 @@ public class controller {
         List keywords = searchService.getMatchTopComKeywords(pageNo, startDate, endDate, key, industry);
         Page<NewsOfCompanyWithBLOBs> resultPage = searchService.queryMatchTopNews(pageNo, startDate, endDate, key, industry);
         List<ComNameNewsCount> MatchNewsCount = searchService.getTopMatchNewsCount(startDate, endDate);
+        //行业新闻量统计
+        List<IndustryCount> topIndustryCounts = searchService.TopNewsIndustryCount();//行业新闻量
+        List<String> industryList = new ArrayList<>();
+        List<Integer> countList = new ArrayList<>();
+        for(IndustryCount industryCount:topIndustryCounts){
+            industryList.add(industryCount.getIndustry());
+            countList.add(industryCount.getCount());
+        }
         List<String> nameList = new ArrayList<>();
         List<Integer> numList = new ArrayList<>();
         for (ComNameNewsCount instance : MatchNewsCount) {
@@ -583,6 +601,8 @@ public class controller {
         json.put("totalPages", resultPage.getTotalPages());
         json.put("keywords", keywords);
         json.put("nameList", nameList);
+        json.put("industryList", industryList);
+        json.put("countList", countList);
         json.put("numList", numList);
         out.print(json);
     }

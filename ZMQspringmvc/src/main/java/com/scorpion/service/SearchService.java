@@ -278,4 +278,8 @@ public interface SearchService {
      */
     public List<String> getComOfIndustry(String industry);
 
+    /*
+
+     */
+    public List<IndustryCount> TopNewsIndustryCount();
 }

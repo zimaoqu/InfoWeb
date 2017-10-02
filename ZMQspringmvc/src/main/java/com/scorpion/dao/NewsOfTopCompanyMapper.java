@@ -151,4 +151,6 @@ public interface NewsOfTopCompanyMapper {
     企业新闻数统计
      */
     List<ComNameNewsCount> TopNewsCount();
+
+    List<IndustryCount> TopNewsIndustryCount();
 }

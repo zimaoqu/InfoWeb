@@ -43,6 +43,8 @@ var worddata = new Array();
 var namelist = [];
 var nameList = [];//柱状图的nameList
 var numList = [];//柱状图的numList
+var industryList = []
+var countList = []
 function queryData(page, startDate, endDate, key) {
     $.ajax({
         cache: false,
@@ -68,6 +70,8 @@ function queryData(page, startDate, endDate, key) {
             worddata = new Array();
             numList = data.numList;
             nameList = data.nameList;
+            industryList = data.industryList;
+            countList= data.countList;
             for (var i = 0; i < data.resultList.length; i++) {
                 html += '<div id="' + i + '" onmouseover="drawpic(this)"><h3><b ><font size="4">' + data.resultList[i].title
                     + '</font></b></h3>' + data.resultList[i].date
@@ -89,6 +93,7 @@ function queryData(page, startDate, endDate, key) {
             //保持两个div高度一致
             document.getElementById("right").style.height = document.getElementById("left").offsetHeight + "px";
             graphic();
+            graphic_industry();
             winHistory();
             pager(page, data.totalPages, data.totalRecords);
         },
@@ -163,6 +168,58 @@ function graphic() {
                 name: '新闻量',
                 type: 'bar',
                 data: numList,
+                itemStyle: {
+                    normal: {
+                        color: function (params) {
+                            // build a color map as your need.
+                            var colorList = [
+                                '#5E5AAE', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+                                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                            ];
+                            return colorList[params.dataIndex]
+                        },
+                        label: {
+                            show: true,
+                            position: 'on',
+                            formatter: '{b}{c}',
+                            textStyle: {
+                                color: '#000000'
+                            }
+                        }
+                    }
+                }
+            }]
+    }
+    myChart.setOption(option);
+}
+
+//行业
+function graphic_industry() {
+    var myChart = echarts.init(document.getElementById("graphic2"));
+    option = {
+        title: {
+            text: '行业统计',
+        },
+        tooltip: {},
+        legend: {
+            data: ['新闻量']
+        },
+        toolbox: {
+            show: true,
+        },
+        calculable: true,
+        xAxis: [{}],
+        yAxis: [
+            {
+                data: industryList,
+                show: false
+            }
+        ],
+        series: [
+            {
+                name: '新闻量',
+                type: 'bar',
+                data: countList,
                 itemStyle: {
                     normal: {
                         color: function (params) {
