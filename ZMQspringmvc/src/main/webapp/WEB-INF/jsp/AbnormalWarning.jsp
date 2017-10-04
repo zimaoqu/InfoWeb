@@ -48,8 +48,6 @@
 
 <body>
 <%
-    String[] columnName = (String[]) request.getAttribute("columnName");
-    List<negativenewsWithBLOBs> queryNegNews = (List<negativenewsWithBLOBs>) request.getAttribute("queryNegNews");
     List<currentnewsWithBLOBs> queryCurNews = (List<currentnewsWithBLOBs>) request.getAttribute("queryCurNews");
     List<companyinformation> queryComInfo = (List<companyinformation>) request.getAttribute("queryComInfo");
     List<ComNameNewsCount> warningCount = (List<ComNameNewsCount>) request.getAttribute("warningCount");
@@ -63,55 +61,23 @@
     <br/>
     <div style="margin-left: 250px">
         <div id="main" style="width: 900px; height: 600px; float: left; display: inline">
-            <span id="spanFirstt">第一页</span> <span id="spanPret">上一页</span> <span
-                id="spanNextt">下一页</span> <span id="spanLastt">最后一页</span> 第<span
-                id="spanPageNumt"></span>页/共<span id="spanTotalPaget"></span>页
-
+            <a href ='javascript:GoToFirstPage();'>首页</a>
+            <a href = 'javascript:GoToPrePage();'>上一页</a>
+            <a href = 'javascript:GoToNextPage();'>下一页</a>
+            <a href = 'javascript:GoToEndPage();'>最后一页</a>
             <table class="gridtable">
                 <tr>
-                    <%
-                        for (int i = 0; i < columnName.length; i++) {
-                    %>
-                    <th><%=columnName[i]%>
-                    </th>
-                    <%
-                        }
-                    %>
+                    <th>序号</th>
+                    <th>预警标题</th>
+                    <th>发布时间</th>
+                    <th>相关企业</th>
+                    <th>指数</th>
+                    <th>通知</th>
+                    <th>状态</th>
                 </tr>
                 <tbody id="tablelsw">
-                <%
-                    for (int i = 0; i < queryNegNews.size(); i++) {
-                        negativenewsWithBLOBs negNews = queryNegNews.get(i);
-                        Integer _id = negNews.getId();
-                        String _title = negNews.getTitle();
-                        String _url = negNews.getUrl();
-                        String _date = negNews.getDate();
-                        String _relcompany = negNews.getRelcompany();
-                        double _oreitationvalue = negNews.getOreitationvalue();
-                %>
-                <tr>
-                    <td><%=_id%>
-                    </td>
-                    <td style="width: 320px"><a href="<%=_url%>" target="_blank"><%=_title%>
-                    </a></td>
-                    <td style="width: 91px;height: 34px"><%=_date%>
-                    </td>
-                    <td><%=_relcompany%>
-                    </td>
-                    <td><%=df.format(_oreitationvalue)%>
-                    </td>
-                    <td><input type="submit" value="发送"/></td>
-                    <td><input type="button" value="未读"/></td>
-                </tr>
-                <%
-                    }
-                %>
                 </tbody>
             </table>
-            </table>
-            <span id="spanFirst">第一页</span> <span id="spanPre">上一页</span> <span
-                id="spanNext">下一页</span> <span id="spanLast">最后一页</span> 第<span
-                id="spanPageNum"></span>页/共<span id="spanTotalPage"></span>页
         </div>
 
         <div id="main2" style="width: 400px; height: 600px;float: left; display: inline;margin-left: 10px;">
@@ -168,35 +134,7 @@
 </div>
 </body>
 <script src="${pageContext.request.contextPath}/resources/js/paging.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/buttonClick.js"></script>
-
-<script type="text/javascript">
-    window.onload = function () {
-        IniButtonEvent();
-    }
-</script>
+<script src="${pageContext.request.contextPath}/resources/js/zmqjs/AbnormalWarning.js"></script>
 </html>
-<script>
-    var theTable = document.getElementById("tablelsw");
-    var totalPage = document.getElementById("spanTotalPage");
-    var pageNum = document.getElementById("spanPageNum");
 
-    var spanPre = document.getElementById("spanPre");
-    var spanNext = document.getElementById("spanNext");
-    var spanFirst = document.getElementById("spanFirst");
-    var spanLast = document.getElementById("spanLast");
-
-    var totalPaget = document.getElementById("spanTotalPaget");
-    var pageNumt = document.getElementById("spanPageNumt");
-
-    var spanPret = document.getElementById("spanPret");
-    var spanNextt = document.getElementById("spanNextt");
-    var spanFirstt = document.getElementById("spanFirstt");
-    var spanLastt = document.getElementById("spanLastt");
-
-    var numberRowsInTable = theTable.rows.length;
-    var pageSize = 30;
-    var page = 1;
-    hide();
-</script>
 

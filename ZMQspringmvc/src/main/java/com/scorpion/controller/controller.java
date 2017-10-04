@@ -303,8 +303,6 @@ public class controller {
      */
     @RequestMapping("showAbnormalWarning")
     public ModelAndView showAbnormalWarning(ModelMap modelMap) {
-        String[] columnName = {"序号", "预警标题", "发布时间", "相关企业", "指数", "通知", "状态"};
-        List<negativenewsWithBLOBs> queryNegNews = searchService.queryNegativenews();
         List<currentnewsWithBLOBs> queryCurNews = searchService.queryCurrentnews();
         List<companyinformation> queryComInfo = searchService.querycompanyinfo();
         List<ComNameNewsCount> warningCount = searchService.CompanyWarningCount();
@@ -316,13 +314,30 @@ public class controller {
                     BeforeCount.add(warningBeforeCount.get(j).getCount());
                 }
         }
-        modelMap.put("columnName", columnName);
-        modelMap.put("queryNegNews", queryNegNews);
         modelMap.put("queryCurNews", queryCurNews);
         modelMap.put("queryComInfo", queryComInfo);
         modelMap.put("warningCount", warningCount);
         modelMap.put("BeforeCount", BeforeCount);
         return new ModelAndView("AbnormalWarning", modelMap);
+    }
+
+    /**
+     * ajax获取abnormalwarning
+     * @param response
+     * @param page
+     * ZCH edit at 2017.10.04
+     */
+    @ResponseBody
+    @RequestMapping("queryAbnormalWarning")
+    public void queryAbnormalWarning(HttpServletResponse response, String page) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        int pageNo = page == null ? 1 : Integer.parseInt(page);
+        List<negativenewsWithBLOBs> queryNegNews = searchService.queryNegativenews(pageNo);
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("abnormalwarning", queryNegNews);
+        out.print(json);
     }
 
     /**

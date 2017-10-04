@@ -81,7 +81,7 @@ public interface SearchService {
     /*
     queryNegativenews
      */
-    public List<negativenewsWithBLOBs> queryNegativenews();
+    public List<negativenewsWithBLOBs> queryNegativenews(int page);
 
     /*
     queryCurrentnews

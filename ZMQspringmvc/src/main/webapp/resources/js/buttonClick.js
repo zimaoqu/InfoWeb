@@ -1,5 +1,6 @@
 //为所有按钮动态添加事件
 function IniButtonEvent() {
+	console.log("button     asdas")
 	var Items = document.getElementsByTagName("input");
 	for (var i = 0; i < Items.length; i++) {
 		var objTmp = Items[i];

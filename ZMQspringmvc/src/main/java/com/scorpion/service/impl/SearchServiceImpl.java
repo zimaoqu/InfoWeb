@@ -62,6 +62,7 @@ public class SearchServiceImpl implements SearchService {
     The size of a page.
      */
     final static int pageSize = 10;
+    final static int pageSizeOfAbnormal = 20;
 
     /**
      * 获取所有重点企业新闻
@@ -432,8 +433,12 @@ public class SearchServiceImpl implements SearchService {
      * @return
      */
     @Override
-    public List<negativenewsWithBLOBs> queryNegativenews() {
-        return negativenewsMapper.queryNegativenews();
+    public List<negativenewsWithBLOBs> queryNegativenews(int page) {
+        Map map = new HashMap();
+        int start = (page - 1) * pageSizeOfAbnormal;
+        map.put("start", start);
+        map.put("size", pageSizeOfAbnormal);
+        return negativenewsMapper.queryNegativenews(map);
     }
 
     /**

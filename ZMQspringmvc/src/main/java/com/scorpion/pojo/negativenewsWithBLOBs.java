@@ -7,6 +7,37 @@ public class negativenewsWithBLOBs extends negativenews {
      *
      * @mbggenerated
      */
+
+    private Integer id;
+    private String date;
+    private  String oreitationvalue;
+
+
+    public Integer getId() {
+        return id;
+    }
+
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getOreitationvalue() {
+        return oreitationvalue;
+    }
+
+    public void setOreitationvalue(String oreitationvalue) {
+        this.oreitationvalue = oreitationvalue;
+    }
+
     private String title;
 
     /**
