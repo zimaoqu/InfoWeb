@@ -334,9 +334,11 @@ public class controller {
         response.setContentType("application/json");
         int pageNo = page == null ? 1 : Integer.parseInt(page);
         List<negativenewsWithBLOBs> queryNegNews = searchService.queryNegativenews(pageNo);
+        List<TopKeyAttentionWithBLOBs> attentionKey = searchService.queryNewsOfAttKey(pageNo);
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("abnormalwarning", queryNegNews);
+        json.put("attentionKey", attentionKey);
         out.print(json);
     }
 

@@ -20,19 +20,33 @@ function queryForPages() {
         async: true,
         success: function (data) {
             var result = data.abnormalwarning;
+            var result_key = data.attentionKey;
             var tbody_content = "";
+            var tbody_content2 = "";
+            for (var i = 0; i < result_key.length; i++) {
+                tbody_content2 += '<tr>'
+                    + '<td>' + result_key[i].id + '</td>'
+                    + '<td style="width: 320px"><a href=" + result_key[i].url + "target="_blank">' + result_key[i].title + '</a></td>'
+                    + '<td style="width: 91px;height: 34px">' + result_key[i].date + '</td>'
+                    + '<td>' + result_key[i].name + '</td>'
+                    + '<td><font color="red">' + result_key[i].word + '</font></td>'
+                    + '<td><input type="submit" value="发送"/></td>'
+                    + '<td><input type="button" value="未读"/></td>'
+                    + '</tr>'
+            }
             for (var i = 0; i < result.length; i++) {
                 tbody_content += '<tr>'
-                + '<td>' + result[i].id + '</td>'
-                + '<td style="width: 320px"><a href=" + result[i].url + "target="_blank">' + result[i].title + '</a></td>'
-                + '<td style="width: 91px;height: 34px">' + result[i].date + '</td>'
-                + '<td>' + result[i].relcompany + '</td>'
-                + '<td>' + result[i].oreitationvalue + '</td>'
-                + '<td><input type="submit" value="发送"/></td>'
-                + '<td><input type="button" value="未读"/></td>'
-                + '</tr>'
+                    + '<td>' + result[i].id + '</td>'
+                    + '<td style="width: 320px"><a href=" + result[i].url + "target="_blank">' + result[i].title + '</a></td>'
+                    + '<td style="width: 91px;height: 34px">' + result[i].date + '</td>'
+                    + '<td>' + result[i].relcompany + '</td>'
+                    + '<td>' + result[i].oreitationvalue + '</td>'
+                    + '<td><input type="submit" value="发送"/></td>'
+                    + '<td><input type="button" value="未读"/></td>'
+                    + '</tr>'
             }
             $("#tablelsw").html(tbody_content);
+            $("#tablelsw2").html(tbody_content2);
             IniButtonEvent();
         }
     });

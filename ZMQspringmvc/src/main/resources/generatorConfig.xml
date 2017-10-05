@@ -50,6 +50,6 @@
         <!--<table tableName="companyinformation" domainObjectName="companyinformation" ></table>-->
         <!--<table tableName="currentnews" domainObjectName="currentnews" ></table>-->
         <!--<table tableName="admin" domainObjectName="adminInfo"></table>-->
-        <table tableName="top_info" domainObjectName="TopCompanyInfo"></table>
+        <table tableName="toptest" domainObjectName="TopKeyAttention"></table>
     </context>
 </generatorConfiguration>

@@ -58,11 +58,13 @@ public class SearchServiceImpl implements SearchService {
     private NewsOfIndustryMapper newsOfIndustryMapper;
     @Autowired
     private TopCompanyInfoMapper topCompanyInfoMapper;
+    @Autowired
+    private TopKeyAttentionMapper topKeyAttentionMapper;
     /*
     The size of a page.
      */
     final static int pageSize = 10;
-    final static int pageSizeOfAbnormal = 20;
+    final static int pageSizeOfAbnormal = 10;
 
     /**
      * 获取所有重点企业新闻
@@ -439,6 +441,15 @@ public class SearchServiceImpl implements SearchService {
         map.put("start", start);
         map.put("size", pageSizeOfAbnormal);
         return negativenewsMapper.queryNegativenews(map);
+    }
+
+    @Override
+    public List<TopKeyAttentionWithBLOBs> queryNewsOfAttKey(int page) {
+        Map map = new HashMap();
+        int start = (page - 1) * pageSizeOfAbnormal;
+        map.put("start", start);
+        map.put("size", pageSizeOfAbnormal);
+        return topKeyAttentionMapper.queryNewsOfAttKey(map);
     }
 
     /**

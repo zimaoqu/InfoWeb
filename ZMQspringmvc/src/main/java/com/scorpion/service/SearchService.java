@@ -282,4 +282,9 @@ public interface SearchService {
 
      */
     public List<IndustryCount> TopNewsIndustryCount();
+
+    /*
+    （垄断、合并等关键词匹配的新闻）
+     */
+    List<TopKeyAttentionWithBLOBs> queryNewsOfAttKey(int pageNo);
 }
