@@ -32,8 +32,8 @@
           List<String> warningName = (List<String>)request.getAttribute("warningName");
           String comName = (String)request.getAttribute("mainCom");
     %>
-
-    <div class="row-fluid" style="background-color: #e9f0f5;">
+        <div class="row-fluid">
+            <div id="left" class="col-xs-9 span9" style="background-color: #e9f0f5;">
             <span style="font-size:20px;">
                 选择企业
                 <select name="selectcompany" id="selectcompany" style="width:350px;">
@@ -43,92 +43,97 @@
 
                 <button id="subcom">提交</button>
             </span>
-        <script type="text/javascript">
-            $("#subcom").click(function () {
-                tmp = $("#selectcompany option:selected").text();
-                flag = $("#cla option:selected").text();
-                req = "${pageContext.request.contextPath}/zmq/showAbnomalComWarning?com=" + tmp
-                $.post(req,
-                    {
-                        //companyname:tmp
-                    },
-                    function () {
-                        location.href = "${pageContext.request.contextPath}/zmq/showAbnomalComWarning?com=" + tmp
-                    });
-            });
-        </script>
-        <h3><%=comName%>：预警</h3>
-        <h5>预测值与实际值方差大于实际值平均值，预警注意！</h5>
-        <script language="javascript">alert("预测值与实际值方差大于实际值平均值，企业出现异常，预警注意！");</script>
-        <div class="row" id ="main" style="width: 900px;height: 500px;margin-left:50px; margin-top:30px"></div>
-        <script type="text/javascript">
+            <script type="text/javascript">
+                $("#subcom").click(function () {
+                    tmp = $("#selectcompany option:selected").text();
+                    flag = $("#cla option:selected").text();
+                    req = "${pageContext.request.contextPath}/zmq/showAbnomalComWarning?com=" + tmp
+                    $.post(req,
+                        {
+                            //companyname:tmp
+                        },
+                        function () {
+                            location.href = "${pageContext.request.contextPath}/zmq/showAbnomalComWarning?com=" + tmp
+                        });
+                });
+            </script>
+            <h3><%=comName%>：预警</h3>
+            <h5>预测值与实际值方差大于实际值平均值，预警注意！</h5>
+            <%--<script language="javascript">alert("预测值与实际值方差大于实际值平均值，企业出现异常，预警注意！");</script>--%>
+            <div class="row" id ="main" style="width: 900px;height: 500px;margin-left:50px; margin-top:30px"></div>
+            <script type="text/javascript">
 
-        var namelist1=[];
-        var namelist2=[];
-        <%for(int i=0;i<predicted.size();i++){
-            double pre=predicted.get(i);
-        %>namelist1.push(<%=pre%>)
-        <%}%>
-        <%for(int i=0;i<realistic.size();i++){
-            double rea=realistic.get(i);
-            %>namelist2.push(<%=rea%>)
-        <%}%>
-        console.log(namelist1);
-        console.log(namelist2);
-            var myChart = echarts.init(document.getElementById('main'));
-            option = {
-                title : {
-                    text: '预警变化趋势图',
-                    subtext: '预测数据和实际数据'
-                },
-                tooltip : {
-                    trigger: 'axis'
-                },
-                legend: {
-                    data:['预测数据','实际数据']
-                },
-                calculable : true,
-                xAxis : [
-                    {
-                        type : 'category',
-                        boundaryGap : false,
-                        data : ['十三月前','十二月前','十一月前','十月前','九月前','八月前','七月前','六月前','五月前','四月前','三月前','两月前','一月前']
-                    }
-                ],
-                yAxis : [
-                    {
-                        type : 'value',
-                        axisLabel : {
-                            formatter: '{value} '
-                        }
-                    }
-                ],
-                series : [
-                    {
-                        name:'预测数据',
-                        type:'line',
-                        data:namelist1,
-                        markLine : {
-                            data : [
-                                {type : 'average', name : '平均值'}
-                            ]
-                        }
+                var namelist1=[];
+                var namelist2=[];
+                <%for(int i=0;i<predicted.size();i++){
+                    double pre=predicted.get(i);
+                %>namelist1.push(<%=pre%>)
+                <%}%>
+                <%for(int i=0;i<realistic.size();i++){
+                    double rea=realistic.get(i);
+                    %>namelist2.push(<%=rea%>)
+                <%}%>
+                console.log(namelist1);
+                console.log(namelist2);
+                var myChart = echarts.init(document.getElementById('main'));
+                option = {
+                    title : {
+                        text: '预警变化趋势图',
+                        subtext: '预测数据和实际数据'
                     },
-                    {
-                        name:'实际数据',
-                        type:'line',
-                        data:namelist2,
-                        markLine : {
-                            data : [
-                                {type : 'average', name : '平均值'}
-                            ]
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data:['预测数据','实际数据']
+                    },
+                    calculable : true,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            boundaryGap : false,
+                            data : ['十三月前','十二月前','十一月前','十月前','九月前','八月前','七月前','六月前','五月前','四月前','三月前','两月前','一月前']
                         }
-                    }
-                ]
-            };
-            myChart.setOption(option);   //参数设置方法
-        </script>
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            axisLabel : {
+                                formatter: '{value} '
+                            }
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'预测数据',
+                            type:'line',
+                            data:namelist1,
+                            markLine : {
+                                data : [
+                                    {type : 'average', name : '平均值'}
+                                ]
+                            }
+                        },
+                        {
+                            name:'实际数据',
+                            type:'line',
+                            data:namelist2,
+                            markLine : {
+                                data : [
+                                    {type : 'average', name : '平均值'}
+                                ]
+                            }
+                        }
+                    ]
+                };
+                myChart.setOption(option);   //参数设置方法
+            </script>
+            </div>
+            <div id="right" class="col-xs-3 span3 " style="height: 500px;background-color: #e9f0f5;" >
+                <h4> 该企业近期内新闻量数据实际值和通过往年数据得到的预测值差距过大，超过预警阈值</h4>
+            </div>
     </div>
+
 
 
 </body>
