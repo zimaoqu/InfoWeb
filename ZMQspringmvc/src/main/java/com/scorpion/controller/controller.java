@@ -18,11 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 /**
@@ -1141,6 +1137,270 @@ public class controller {
         json.put("numList", numList);
         out.print(json);
     }
+
+    @RequestMapping("queryKeyIndicatesPMI")
+    public void queryKeyIndicatesPMI(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        List<Pmi> PMICount = searchService.queryAllPmi();//查询全国PMI数据
+        List<Date> nameList = new ArrayList<>();
+        List<Float> numList = new ArrayList<>();
+        for (Pmi instance : PMICount) {
+            nameList.add(instance.getDate());
+            numList.add(instance.getPmivalues());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        out.print(json);
+    }
+
+    @RequestMapping("queryKeyIndicatescopper")
+    public void queryKeyIndicatescopper(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        List<copper> copperCount = searchService.queryAllcopper();//查询全国PMI数据
+        List<Date> nameList = new ArrayList<>();
+        List<Float> numList = new ArrayList<>();
+        for (copper instance : copperCount) {
+            nameList.add(instance.getDate());
+            numList.add(instance.getSettlement());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        out.print(json);
+    }
+    @RequestMapping("queryKeyIndicatedder")
+    public void queryKeyIndicatedder(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        List<dollar_exchange_rate_of_rmb> derrCount = searchService.queryAlldollar_exchange_rate_of_rmb();//查询全国PMI数据
+        List<Date> nameList = new ArrayList<>();
+        List<Float> numList = new ArrayList<>();
+        for (dollar_exchange_rate_of_rmb instance : derrCount) {
+            nameList.add(instance.getDate());
+            numList.add(instance.getSettlement());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        out.print(json);
+    }
+    @RequestMapping("queryKeyIndicatesTaxCountry")
+    public void queryKeyIndicatesTaxCountry(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        List<TaxCountry> TaxCoutry = searchService.queryAllTaxCountry();//查询全国PMI数据
+        ArrayList<String> nameList = new ArrayList<>();
+        List<Float> numList = new ArrayList<>();
+        for (TaxCountry instance : TaxCoutry) {
+            nameList.add(instance.getDate());
+            numList.add(instance.getValues());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        out.print(json);
+    }
+    @RequestMapping("queryKeyIndicatesTRSCG")
+    public void queryKeyIndicatesTRSCG(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        List<TotalRetailSalesOfConsumerGoods> TRSCG = searchService.queryAllTRSC();//查询全国PMI数据
+        ArrayList<String> nameList = new ArrayList<>();
+        List<String> numList = new ArrayList<>();
+        for (TotalRetailSalesOfConsumerGoods instance : TRSCG
+                ) {
+            nameList.add(instance.getYear());
+            numList.add(instance.getValue());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numList", numList);
+        out.print(json);
+    }
+
+    @RequestMapping("queryKeyIndicatesCrude")
+    public void queryKeyIndicatesCrude(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        List<crude_btl> crudebtlCount = searchService.queryAllcrude_btl();//查询全国PMI数据
+        List<String> nameList = new ArrayList<>();
+        List<String> numListbtl = new ArrayList<>();
+        List<String> numListwti=new ArrayList<>();
+        for (crude_btl instance : crudebtlCount) {
+            nameList.add(instance.getDate());
+            numListbtl.add(instance.getPrice());
+        }
+        List<crude_wti> crudewtiCount=searchService.queryAllcrude_wti();
+        for (crude_wti instance : crudewtiCount){
+            numListwti.add(instance.getPrice());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("numListbtl", numListbtl);
+        json.put("numListwti",numListwti);
+        out.print(json);
+    }
+
+    @RequestMapping("queryKeyIndicatesIMF")
+    public void queryKeyIndicatesIMF(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        List<String> nameList = new ArrayList<>();
+        List<Float> China = new ArrayList<>();
+        List<Float> developing =new ArrayList<>();
+        List<Float> Advanced = new ArrayList<>();
+        List<Float> world = new ArrayList<>();
+        List<imf> imfCount = searchService.querryAllimf();//查询全国PPI数据
+        for (imf instance : imfCount) {
+            nameList.add(instance.getYear());
+            China.add(instance.getChina());
+            developing.add(instance.getEmergingMarketAndDevelopingEconomies());
+            Advanced.add(instance.getAdvancedEconomies());
+            world.add(instance.getWorld());
+        }
+
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("nameList", nameList);
+        json.put("China", China);
+        json.put("developing", developing);
+        json.put("Advanced", Advanced);
+        json.put("world", world);
+        out.print(json);
+    }
+
+
+    /**
+     * 跳到关键指标监控页面gdp页面
+     *
+     * @return
+     */
+    @RequestMapping("keyIndicateInit")
+    public ModelAndView keyIndicateInit() {
+        return new ModelAndView("keyIndicateInit");
+    }
+
+    /**
+     * 跳到关键指标监控页面GDP页面
+     *
+     * @return
+     */
+    @RequestMapping("IndicateGDP")
+    public ModelAndView IndicateGDP() {
+        return new ModelAndView("IndicateGDP");
+    }
+
+    /**
+     * 跳到关键指标监控页面PPI&CPI页面
+     *
+     * @return
+     */
+    @RequestMapping("IndicatepcPage")
+    public ModelAndView IndicatepcPage() {
+        return new ModelAndView("IndicatepcPage");
+    }
+    /**
+     * 跳到关键指标监控页面ExportImport页面
+     *
+     * @return
+     */
+    @RequestMapping("IndicateExportImport")
+    public ModelAndView IndicateExportImport() {
+        return new ModelAndView("IndicateExportImport");
+    }
+
+    /**
+     * 跳到关键指标监控页面油价页面
+     *
+     * @return
+     */
+    @RequestMapping("IndicateBDI")
+    public ModelAndView IndicateBDI() {
+        return new ModelAndView("IndicateBDI");
+    }
+
+    /**
+     * 跳到关键指标监控页面TaxCountry页面
+     *
+     * @return
+     */
+    @RequestMapping("IndicateTaxCountry")
+    public ModelAndView IndicateTaxCountry() {
+        return new ModelAndView("IndicateTaxCountry");
+    }
+
+
+
+    /**
+     * 跳到关键指标监控页面社会消费品零售总额页面
+     *
+     * @return
+     */
+    @RequestMapping("IndicateTRSCG")
+    public ModelAndView IndicateTRSCG() {
+        return new ModelAndView("IndicateTRSCG");
+    }
+
+    /**
+     * 跳到关键指标监控页面PMI页面
+     *
+     * @return
+     */
+    @RequestMapping("IndicatePMI")
+    public ModelAndView IndicatePMI() {
+        return new ModelAndView("IndicatePMI");
+    }
+
+    /**
+     * 跳到关键指标监控页面铜价页面
+     *
+     * @return
+     */
+    @RequestMapping("Indicatecopper")
+    public ModelAndView Indicatecopper() {
+        return new ModelAndView("Indicatecopper");
+    }
+
+    /**
+     * 跳到关键指标监控页面油价页面
+     *
+     * @return
+     */
+    @RequestMapping("IndicateCrude")
+    public ModelAndView IndicateCrude() {
+        return new ModelAndView("IndicateCrude");
+    }
+
+    /**
+     * 跳到关键指标监控页面油价页面
+     *
+     * @return
+     */
+    @RequestMapping("IndicateIMF")
+    public ModelAndView IndicateIMF() {
+        return new ModelAndView("IndicateIMF");
+    }
+
+    /**
+     * 跳到关键指标监控页面油价页面
+     *
+     * @return
+     */
+    @RequestMapping("Indicatedder")
+    public ModelAndView Indicatedder() {
+        return new ModelAndView("Indicatedder");
+    }
+
+
 }
 
 

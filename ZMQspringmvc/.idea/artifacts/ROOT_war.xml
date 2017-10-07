@@ -1,8 +1,9 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="ZMQspringmvc:war">
+  <artifact type="war" name="ROOT:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="ZMQspringmvc.war">
       <element id="artifact" artifact-name="ZMQspringmvc:war exploded" />
+      <element id="module-output" name="ZMQspringmvc" />
     </root>
   </artifact>
 </component>

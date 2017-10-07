@@ -266,6 +266,45 @@ public interface SearchService {
     获取中国BDI数据
      */
     public List<IndicateOfBDI> queryAllBDI();
+    /*
+   获取PMI数据
+* */
+    public List<Pmi> queryAllPmi();
+
+    /*
+        获取全国税收Pmi数据
+    * */
+    public  List<TaxCountry> queryAllTaxCountry();
+
+    /*
+       获取铜价格数据
+   * */
+    public List<copper> queryAllcopper();
+
+    /*
+      获取布伦特原油价格数据
+  * */
+    public List<crude_btl> queryAllcrude_btl();
+
+    /*
+     获取WTI原油价格数据
+ * */
+    public List<crude_wti> queryAllcrude_wti();
+    /*
+   获取美元人民币汇率
+* */
+    public List<dollar_exchange_rate_of_rmb> queryAlldollar_exchange_rate_of_rmb();
+
+    /**
+     * @return
+     * 获取imf预测数据
+     */
+    public List<imf> querryAllimf();
+
+    /*
+            获区社会消费品零售总额
+     */
+    public List<TotalRetailSalesOfConsumerGoods> queryAllTRSC();
 
 
     /*

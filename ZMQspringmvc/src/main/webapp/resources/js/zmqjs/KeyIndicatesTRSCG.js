@@ -7,7 +7,7 @@ var numList=[];//柱状图的numList
 
     $.ajax({
         cache: false,
-        url: "/zmq/queryKeyIndicatesExportImport",
+        url: "/zmq/queryKeyIndicatesTRSCG",
         type: "GET",
         dataType: "json",
         data: {},
@@ -15,16 +15,16 @@ var numList=[];//柱状图的numList
         success: function (data) {
             numList = data.numList;
             nameList = data.nameList;
-            graphicExportImport();
-            graphicTable();
+            graphicTRSCG();
+            graphicTable2();
 
         }
 
     })
 })();
-function graphicTable(){
+function graphicTable2(){
     var str1="<table  border='1' cellspacing='0' cellpadding='0'><tr><td>日期</td>"
-    var str2="<tr ><td width='50'>进出口总额</td>"
+    var str2="<tr ><td width='50'>社会消费品零售总额</td>"
     numList=eval(numList);
     nameList=eval(nameList);
     for(var i=0; i<numList.length;i++){
@@ -35,11 +35,12 @@ function graphicTable(){
     str2=str2+"</tr>"
     document.getElementById("tbl").innerHTML=str1+str2+"</table>";
 }
-function graphicExportImport(){
-    var myChart = echarts.init(document.getElementById("graphicExportImport"));
+
+function graphicTRSCG(){
+    var myChart = echarts.init(document.getElementById("graphicTRSCG"));
     option = {
         title: {
-            text: '进出口总额',
+            text: '社会消费品零售总额',
             subtext: '（上年=100）'
         },
         tooltip: {
@@ -53,7 +54,7 @@ function graphicExportImport(){
         },
         legend: {
             left:'center',
-            data: ['月份值']
+            data: ['年']
         },
         calculable: true,
         xAxis: [
@@ -74,7 +75,7 @@ function graphicExportImport(){
         ],
         series: [
             {
-                name: '进出口总额',
+                name: '社会消费品零售总额',
                 type: 'line',
                 data: numList,
                 itemStyle: {

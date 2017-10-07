@@ -55,6 +55,23 @@ public class SearchServiceImpl implements SearchService {
     @Autowired
     private IndicateOfBDIMapper indicateOfBDIMapper;
     @Autowired
+    private PmiMapper PmiMapper;
+    @Autowired
+    private TaxCountryMapper TaxCountryMapper;
+    @Autowired
+    private  TotalRetailSalesOfConsumerGoodsMapper TotalRetailSalesOfConsumerGoodsMapper;
+    @Autowired
+    private  copperMapper copperMapper;
+    @Autowired
+    private  crude_btlMapper crude_btlMapper;
+    @Autowired
+    private  crude_wtiMapper crude_wtiMapper;
+    @Autowired
+    private  dollar_exchange_rate_of_rmbMapper dollar_exchange_rate_of_rmbMapper;
+
+    @Autowired
+    private  imfMapper imfMapper;
+    @Autowired
     private NewsOfIndustryMapper newsOfIndustryMapper;
     @Autowired
     private TopCompanyInfoMapper topCompanyInfoMapper;
@@ -1079,6 +1096,71 @@ public class SearchServiceImpl implements SearchService {
         List<IndicateOfBDI> BDIList = indicateOfBDIMapper.selectAllBDI();
         return BDIList;
     }
+    /*
+ 获取pmi
+ * */
+    public List<Pmi> queryAllPmi(){
+        List<Pmi> pmiList=PmiMapper.selectAllPMI();
+        return pmiList;
+    }
+    /*
+     获取全国税收Pmi数据
+ * */
+    public  List<TaxCountry> queryAllTaxCountry(){
+        List<TaxCountry> taxCountrieyList=TaxCountryMapper.selectAllTaxCountry();
+        return taxCountrieyList;
+    }
+
+    /*
+            获区社会消费品零售总额
+     */
+    public List<TotalRetailSalesOfConsumerGoods> queryAllTRSC(){
+        List<TotalRetailSalesOfConsumerGoods> trsc=TotalRetailSalesOfConsumerGoodsMapper.selectAllTRSC();
+        return  trsc;
+    }
+
+
+    /*
+      获取铜价格数据
+  * */
+    public List<copper> queryAllcopper(){
+        List<copper> coppers = copperMapper.selectAllCopper();
+        return  coppers;
+    }
+
+    /*
+      获取布伦特原油价格数据
+  * */
+    public List<crude_btl> queryAllcrude_btl(){
+        List<crude_btl> crude_btls= crude_btlMapper.selectAllCrude_btl();
+        return  crude_btls;
+    }
+
+    /*
+     获取WTI原油价格数据
+ * */
+    public List<crude_wti> queryAllcrude_wti(){
+        List<crude_wti> crude_wtis=crude_wtiMapper.selectAllCrude_wti();
+        return  crude_wtis;
+    }
+    /*
+   获取美元人民币汇率
+* */
+    public List<dollar_exchange_rate_of_rmb> queryAlldollar_exchange_rate_of_rmb(){
+        List<dollar_exchange_rate_of_rmb> dollar_exchange_rate_of_rmbs=dollar_exchange_rate_of_rmbMapper.selectAllPdollar_exchange_rate_of_rmb();
+        return  dollar_exchange_rate_of_rmbs;
+    }
+
+    /**
+     * @return
+     * 获取imf预测数据
+     */
+    public List<imf> querryAllimf(){
+        List<imf> imfs=imfMapper.selectAllimf();
+        return  imfs;
+    }
+
+    /*
 
     /**
      * 处理keywords函数  分割之类的

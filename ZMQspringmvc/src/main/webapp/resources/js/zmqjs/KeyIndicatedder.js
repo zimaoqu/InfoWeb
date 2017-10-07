@@ -2,29 +2,30 @@
  * Created by Vikun on 2017/7/6.
  */
 var nameList=[];//柱状图的nameList
-var numList=[];//柱状图的numList
+var numListPPI=[];//柱状图的numList
+var numListCPI=[];//柱状图的numList
 (function () {
 
     $.ajax({
         cache: false,
-        url: "/zmq/queryKeyIndicatesExportImport",
+        url: "/zmq/queryKeyIndicatedder",
         type: "GET",
         dataType: "json",
         data: {},
         async: true,
         success: function (data) {
-            numList = data.numList;
             nameList = data.nameList;
-            graphicExportImport();
-            graphicTable();
+            numList = data.numList;
+            graphicdder();
+            graphicTable3()
 
         }
 
     })
 })();
-function graphicTable(){
+function graphicTable3(){
     var str1="<table  border='1' cellspacing='0' cellpadding='0'><tr><td>日期</td>"
-    var str2="<tr ><td width='50'>进出口总额</td>"
+    var str2="<tr ><td width='50'>收盘汇率</td>"
     numList=eval(numList);
     nameList=eval(nameList);
     for(var i=0; i<numList.length;i++){
@@ -35,30 +36,24 @@ function graphicTable(){
     str2=str2+"</tr>"
     document.getElementById("tbl").innerHTML=str1+str2+"</table>";
 }
-function graphicExportImport(){
-    var myChart = echarts.init(document.getElementById("graphicExportImport"));
+function graphicdder(){
+    var myChart = echarts.init(document.getElementById("graphicdder"));
     option = {
         title: {
-            text: '进出口总额',
-            subtext: '（上年=100）'
+            text: '美元兑人民币汇率',
+            subtext: '（上年同月=100）'
         },
         tooltip: {
             trigger: 'axis',
-            // axisPointer: {    //横线
-            //     type: 'cross',
-            //     label: {
-            //         backgroundColor: '#6a7985'
-            //     }
-            // }
+
         },
         legend: {
-            left:'center',
-            data: ['月份值']
+            left:"center",
+            data: ['美元兑人民币汇率']
         },
         calculable: true,
         xAxis: [
             {
-                type: 'category',
                 boundaryGap : false,
                 data:nameList,
                 show: true,           //横坐标显示
@@ -66,31 +61,29 @@ function graphicExportImport(){
         ],
         yAxis: [
             {
-                // type: 'value',
-
-                // data:nameList,
-                //  show: true,           //纵坐标显示
             }
         ],
         series: [
             {
-                name: '进出口总额',
+                name: '美元兑人民币汇率',
                 type: 'line',
                 data: numList,
                 itemStyle: {
                     normal: {
-                        color:'#0db2c3'
+                        color:'#468cc3'
                     },
-                    // label: {
-                    //         show: false,
-                    //         position: 'on',
-                    //         formatter: '{b}{c}',
-                    //         textStyle: {
-                    //             color: '#000000'
-                    //         }
-                    // }
+                    label: {
+                        show: false,
+                        position: 'on',
+                        formatter: '{b}{c}',
+                        textStyle: {
+                            color: '#000000'
+                        }
+                    }
                 }
-            }]
+            }
+
+        ]
     }
     myChart.setOption(option);
 }

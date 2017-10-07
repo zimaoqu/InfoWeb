@@ -156,7 +156,8 @@
                 </a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showPolicyNews">政策新闻推送</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/queryKeyByFlag?flag=1">关键指标监控</a></li>
+                        <%--<li><a href="${pageContext.request.contextPath}/zmq/queryKeyByFlag?flag=1">关键指标监控</a></li>--%>
+                        <li><a href="${pageContext.request.contextPath}/zmq/keyIndicateInit">关键指标监控</a></li>
                         <li><a href="#">指标关联分析</a></li>
                     </ul>
                 </li>
