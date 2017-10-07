@@ -223,7 +223,7 @@ public class controller {
      */
     @RequestMapping("showHistoricalEvolution")
     public ModelAndView showHistoricalEvolution(ModelMap modelMap, HttpServletRequest request) {
-        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "日立建机";
+        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "捷豹路虎（中国）投资有限公司";
         String selectdiscomsstr = "";
         List<bignews> eventsHis = searchService.getHisEvents(companyName);
         //企业选择下拉列表

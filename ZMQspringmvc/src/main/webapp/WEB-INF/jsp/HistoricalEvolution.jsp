@@ -12,10 +12,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
-    <link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
-
+    <link href="${pageContext.request.contextPath}/resources/css/historyBignews.css" rel="stylesheet">
 </head>
 
 
@@ -30,15 +27,17 @@
         List<bignews> eventnews=(ArrayList<bignews>)request.getAttribute("eventnews");
         int flag = 1;
     %>
-    <div class="row-fluid" style="background-color: #e9f0f5;">
+    <div class="row-fluid" >
             <span style="font-size:20px;">
                 重点企业：
                 <select name="selectcompany" id="selectcompany" style="width:200px;">
                     "<%=selectdiscomsstr%>"
                 </select>
+                </select>
 
                 <button id="subcom">提交</button>
             </span>
+        <script language="JavaScript" src="../js/HistoryBigNews.js" charset="UTF-8"> </script>
         <script type="text/javascript">
             $("#subcom").click(function () {
                 tmp = $("#selectcompany option:selected").text();
@@ -53,35 +52,64 @@
                     });
             });
         </script>
-        <section id="cd-timeline" class="cd-container">
-        <% for (int i = 0; i < eventnews.size(); i++) {%>
-        <div class="cd-timeline-block" >
-            <% if (flag == 1) {%>
-            <div class="cd-timeline-img cd-picture">
-                <img src="${pageContext.request.contextPath}/resources/images/cd-icon-location.svg" alt="Picture">
-            </div>
-            <% flag = 0; %>
-            <%} else {%>
-            <div class="cd-timeline-img cd-movie">
-                <img src="${pageContext.request.contextPath}/resources/images/cd-icon-location.svg" alt="Movie">
-            </div>
-            <% flag = 1; %>
-            <% }%>
-            <div class="cd-timeline-content" >
-                <h2>
-                    <a href='<%= eventnews.get(i).getUrl() %>' target="_blank">
-                        <strong style="font-size: 20px"><%= eventnews.get(i).getTitle()%></strong>
-                    </a>
-                </h2>
-                <p style="font-size: 15px">关键词：<%= eventnews.get(i).getKeywords()%>
-                </p>
-                <span class="cd-date" style="font-size: 15px"><%= eventnews.get(i).getDate()%></span>
+        <div class="head-warp">
+            <div class="head">
+                <div class="nav-box">
+                    <ul>
+                        <li class="cur">企业热点事件链</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <%}%>
-        </section>
-    </div>
+        <div class="main">
+            <div class="history">
+                <div class="history-date">
+                    <ul>
+                        <h2 class="first"><a href="#nogo"><%= eventnews.get(0).getDate().split("-")[0]%>年</a></h2>
+                        <%  int i;
+                            String dateYearFlag = eventnews.get(0).getDate().split("-")[0];
+                            for (i = 0;i < eventnews.size();i++){
+                            if (!dateYearFlag.equals(eventnews.get(i).getDate().split("-")[0])){break;}
+                        %>
+                        <li>
+                            <h3><%= eventnews.get(i).getDate().split("-")[1]%>.<%= eventnews.get(i).getDate().split("-")[2]%><span><%= eventnews.get(i).getDate().split("-")[0]%></span></h3>
+                            <dl>
+                                <dt> <a href="<%= eventnews.get(i).getUrl() %>" target="_blank"> <%= eventnews.get(i).getTitle()%></a>
+                                    <span>关键词：<%= eventnews.get(i).getKeywords()%></span>
+                                </dt>
+                            </dl>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+                <%  while (i < eventnews.size()){
+                    dateYearFlag = eventnews.get(i).getDate().split("-")[0];
+                %>
+                <div class="history-date">
+                    <ul>
+                        <h2 class="date02"><a href="#nogo"><%= dateYearFlag%></a></h2>
+                        <% for (;i<eventnews.size();i++){
+                        if (!dateYearFlag.equals(eventnews.get(i).getDate().split("-")[0])){
+                            dateYearFlag = eventnews.get(i).getDate().split("-")[0];
+                            break;
+                        }%>
+                        <li>
+                            <h3><%= eventnews.get(i).getDate().split("-")[1]%>.<%= eventnews.get(i).getDate().split("-")[2]%><span><%= eventnews.get(i).getDate().split("-")[0]%></span></h3>
+                            <dl>
+                                <dt><a href="<%= eventnews.get(i).getUrl() %>" target="_blank" > <%= eventnews.get(i).getTitle()%></a>
+                                    <span>关键词：<%= eventnews.get(i).getKeywords()%></span>
+                                </dt>
+                            </dl>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+                <%}%>
+            </div>
+        </div>
 
+        <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/js/HistoryBigNews.js"></script>
 
 </body>
 </html>

@@ -46,6 +46,7 @@
     <url-pattern>*.jpg</url-pattern>
     <url-pattern>*.png</url-pattern>
     <url-pattern>*.svg</url-pattern>
+    <url-pattern>*.gif</url-pattern>
     <url-pattern>*.ico</url-pattern>
     <url-pattern>*.ttf</url-pattern>
     <url-pattern>*.woff</url-pattern>
