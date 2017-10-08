@@ -37,7 +37,6 @@
 
                 <button id="subcom">提交</button>
             </span>
-        <script language="JavaScript" src="../js/HistoryBigNews.js" charset="UTF-8"> </script>
         <script type="text/javascript">
             $("#subcom").click(function () {
                 tmp = $("#selectcompany option:selected").text();
@@ -96,7 +95,7 @@
                         <li>
                             <h3><%= eventnews.get(i).getDate().split("-")[1]%>.<%= eventnews.get(i).getDate().split("-")[2]%><span><%= eventnews.get(i).getDate().split("-")[0]%></span></h3>
                             <dl>
-                                <dt><a href="<%= eventnews.get(i).getUrl() %>" target="_blank" > <%= eventnews.get(i).getTitle()%></a>
+                                <dt><a onclick="test()" class="btn btn-default" href="<%= eventnews.get(i).getUrl() %>" target="_blank" > <%= eventnews.get(i).getTitle()%></a>
                                     <span>关键词：<%= eventnews.get(i).getKeywords()%></span>
                                 </dt>
                             </dl>
@@ -110,6 +109,7 @@
 
         <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
         <script src="${pageContext.request.contextPath}/resources/js/HistoryBigNews.js"></script>
+    </div>
 
 </body>
 </html>

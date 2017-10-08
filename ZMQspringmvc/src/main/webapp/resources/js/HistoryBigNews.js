@@ -6,14 +6,14 @@
     sideSlider();
     helpToggle();
     systole();
-    slideImg();
-    downM();
-    ExtMutual();
-    slides("#slides", ".slides");
-    skinMutual();
-    srollList("#dialog01", "11");
-    srollList("#dialog02", "6");
-    anchorLink();
+    // slideImg();
+    // downM();
+    // ExtMutual();
+    // slides("#slides", ".slides");
+    // skinMutual();
+    // srollList("#dialog01", "11");
+    // srollList("#dialog02", "6");
+    // anchorLink();
 
     var img = document.createElement("img");
     img.onload = function() {

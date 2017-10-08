@@ -82,12 +82,16 @@
     -->
     company_name, curreputation
   </sql>
+
+
   <select id="getCurreputation" parameterType="Map" resultType="java.lang.Double">
     SELECT curreputation from democompany where company_name = #{companyName}
   </select>
   <select id="getComList" resultType="java.lang.String">
     SELECT DISTINCT company_name from democompany
   </select>
+
+
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.scorpion.pojo.democompanyExample" >
     <!--
       WARNING - @mbggenerated

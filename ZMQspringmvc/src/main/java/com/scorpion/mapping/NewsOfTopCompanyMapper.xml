@@ -142,6 +142,10 @@
     <select id="countMatchNews" parameterType="Map" resultType="java.lang.Integer">
     SELECT count(*) from topcompany where name like CONCAT('%',#{name},'%' ) and industry Like CONCAT('%',#{industry},'%' ) and DATE BETWEEN #{startDate} and #{endDate}
   </select>
+
+    <select id="getTopComList" resultType="java.lang.String">
+        SELECT DISTINCT name from tb_content
+    </select>
     <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs"
             parameterType="com.scorpion.pojo.NewsOfTopCompanyExample">
         <!--

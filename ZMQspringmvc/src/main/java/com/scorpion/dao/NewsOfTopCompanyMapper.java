@@ -153,4 +153,6 @@ public interface NewsOfTopCompanyMapper {
     List<ComNameNewsCount> TopNewsCount();
 
     List<IndustryCount> TopNewsIndustryCount();
+
+    List<String> getTopComList();
 }

@@ -7,15 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49099cca-dd90-46b9-a8d2-2a643e8b8a02" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon01.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon02.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/icon03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/line01.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfTopCompanyMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfTopCompanyMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/democompanyMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/democompanyMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/HistoryBigNews.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/HistoryBigNews.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +36,103 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="556" column="66" lean-forward="false" selection-start-line="556" selection-start-column="66" selection-end-line="556" selection-end-column="66" />
+              <folding>
+                <marker date="1507459293881" expanded="false" signature="42:783" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="596">
+              <caret line="338" column="39" lean-forward="false" selection-start-line="338" selection-start-column="39" selection-end-line="338" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComReputationAnalysis.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComReputationAnalysis.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1452">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1507256030967" expanded="true" signature="3373:3474" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComHealthValueExample.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ComHealthValueExample.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="28" column="41" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComHealthValueMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ComHealthValueMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="146" column="58" lean-forward="false" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
+              <folding>
+                <marker date="1507452329366" expanded="true" signature="5121:5196" ph="SELECT negnu... comhealth" />
+                <marker date="1507452329366" expanded="true" signature="5301:5377" ph="SELECT negnu... comhealth" />
+                <marker date="1507452329366" expanded="true" signature="5481:5556" ph="SELECT posnu... comhealth" />
+                <marker date="1507452329366" expanded="true" signature="5661:5737" ph="SELECT posnu... comhealth" />
+                <marker date="1507452329366" expanded="true" signature="5846:5926" ph="SELECT healt... comhealth" />
+                <marker date="1507452329366" expanded="true" signature="6036:6117" ph="SELECT healt... comhealth" />
+                <marker date="1507452329366" expanded="true" signature="6216:6271" ph="SELECT healt... comhealth" />
+                <marker date="1507452329366" expanded="true" signature="7072:7224" ph="select , fro... " />
+                <marker date="1507452329366" expanded="true" signature="7441:7500" ph="delete from " />
+                <marker date="1507452329366" expanded="true" signature="7736:7757" ph="delete from " />
+                <marker date="1507452329366" expanded="true" signature="8070:8504" ph="insert into comhealth... " />
+                <marker date="1507452329366" expanded="true" signature="10469:10499" ph="select count... comhealth" />
+                <marker date="1507452329366" expanded="true" signature="12112:12613" ph="update comhe... " />
+                <marker date="1507452329366" expanded="true" signature="12916:13367" ph="update comhe... " />
+                <marker date="1507452329366" expanded="true" signature="13711:14557" ph="update comhe... " />
+                <marker date="1507452329366" expanded="true" signature="14798:15246" ph="update comhe... " />
+                <marker date="1507452329366" expanded="true" signature="15478:15883" ph="update comhe... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="currentnewsMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/currentnewsMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="667" column="50" lean-forward="false" selection-start-line="667" selection-start-column="36" selection-end-line="667" selection-end-column="50" />
+              <folding>
+                <element signature="e#19937#19938#0" expanded="true" />
+                <element signature="e#19998#19999#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,14 +152,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>showKeyIndicates</find>
-      <find>queryKeyByFlag</find>
       <find>showAbnomalComWarning</find>
       <find>CompanyPredictWarning</find>
       <find>system.out</find>
-      <find>getComList</find>
       <find>getQuartervalue</find>
-      <find>getCurreputation</find>
       <find>企业舆情</find>
       <find>getKeywords</find>
       <find>getComlist</find>
@@ -84,6 +176,12 @@
       <find>pageSizeOfAbnormal</find>
       <find>queryNeg</find>
       <find>query</find>
+      <find>showComHe</find>
+      <find>getDemoComList</find>
+      <find>getQ</find>
+      <find>getComList</find>
+      <find>getCurreputation</find>
+      <find>getCom</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -100,12 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/loginreset.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/loginStructure.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/interceptor/LoginInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/LoginService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/loginServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/adminInfoMapper.xml" />
@@ -118,8 +210,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnomalComWarning.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfTopCompanyWithBLOBs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndustryCount.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfTopCompanyMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/TopCompanyNews.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TopCompanyNews.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/TopMatchResult.js" />
@@ -133,7 +223,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/negativenewsMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/buttonClick.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalWarningTest.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopKeyAttention.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopKeyAttentionWithBLOBs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/TopKeyAttentionMapper.java" />
@@ -141,15 +230,24 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalWarning.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/AbnormalWarning.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/crude_wtiMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPPI.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesExportImport.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPMI.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicatePMI.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/HistoryBigNews.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/democompanyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfTopCompanyMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ComHealthValue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/ComHealthValueMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ComHealthValueMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
       </list>
     </option>
@@ -379,7 +477,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zmqjs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -458,6 +560,198 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scorpion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scorpion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scorpion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchServiceImpl.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scorpion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scorpion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pojo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scorpion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapping" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZMQspringmvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scorpion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1092,16 +1386,18 @@
       <workItem from="1507188973631" duration="6084000" />
       <workItem from="1507256105552" duration="4529000" />
       <workItem from="1507360558846" duration="258000" />
-      <workItem from="1507363122044" duration="589000" />
+      <workItem from="1507363122044" duration="768000" />
+      <workItem from="1507365057331" duration="1951000" />
+      <workItem from="1507426472880" duration="14698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76896000" />
+    <option name="totallyTimeSpent" value="93724000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1125,10 +1421,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2921466" sideWeight="0.35833332" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41256544" sideWeight="0.35833332" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.196875" sideWeight="0.49421966" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19583334" sideWeight="0.49421966" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.190625" sideWeight="0.50578034" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1156,45 +1452,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/AbnormalWarning.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/npm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalWarning.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="89" column="48" lean-forward="false" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/currentnewsMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/bignewsMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/crude_btlMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/PmiMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/TotalRetailSalesOfConsumerGoodsMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfPPIMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfSHZmqMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/companyinformationMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/crude_wtiMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/crude_wtiMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/dollar_exchange_rate_of_rmbMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/crude_btlMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1314,31 +1571,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="329" column="0" lean-forward="true" selection-start-line="329" selection-start-column="0" selection-end-line="329" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateBDI.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="155" column="20" lean-forward="true" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="1449" column="0" lean-forward="false" selection-start-line="1449" selection-start-column="0" selection-end-line="1449" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1415,38 +1651,262 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/HistoryBigNews.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="3244">
+          <caret line="158" column="122" lean-forward="true" selection-start-line="158" selection-start-column="122" selection-end-line="158" selection-end-column="122" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/CompanyNews.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/historyBignews.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-132">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1507363289835" expanded="true" signature="683:707" ph="{...}" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/HistoryBigNews.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="663">
+          <caret line="111" column="10" lean-forward="false" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="53" column="69" lean-forward="false" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/CompanyInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/TopCompanyInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="145" column="29" lean-forward="false" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="29" />
+          <folding>
+            <marker date="1507450411659" expanded="true" signature="6486:6552" ph="SELECT * fro... topcompany" />
+            <marker date="1507450411659" expanded="true" signature="6658:6857" ph="SELECT * fro... topcompany" />
+            <marker date="1507450411659" expanded="true" signature="6938:6969" ph="SELECT count... topcompany" />
+            <marker date="1507450411659" expanded="true" signature="7046:7132" ph="SELECT name,... topcompany" />
+            <marker date="1507450411659" expanded="true" signature="7223:7356" ph="SELECT name,... topcompany" />
+            <marker date="1507450411659" expanded="true" signature="7444:7542" ph="SELECT indus... " />
+            <marker date="1507450411659" expanded="true" signature="7645:7809" ph="SELECT count... topcompany" />
+            <marker date="1507450411659" expanded="true" signature="7893:7929" ph="SELECT DISTI... tb_content" />
+            <marker date="1507450411659" expanded="true" signature="9528:9698" ph="select , fro... " />
+            <marker date="1507450411659" expanded="true" signature="9938:10002" ph="delete from " />
+            <marker date="1507450411659" expanded="true" signature="10263:10285" ph="delete from " />
+            <marker date="1507450411659" expanded="true" signature="10644:11377" ph="insert into topcompany... " />
+            <marker date="1507450411659" expanded="true" signature="15084:15115" ph="select count... topcompany" />
+            <marker date="1507450411659" expanded="true" signature="17875:18765" ph="update topco... " />
+            <marker date="1507450411659" expanded="true" signature="19103:19595" ph="update topco... " />
+            <marker date="1507450411659" expanded="true" signature="19985:21781" ph="update topco... " />
+            <marker date="1507450411659" expanded="true" signature="22056:22839" ph="update topco... " />
+            <marker date="1507450411659" expanded="true" signature="23096:23530" ph="update topco... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfTopCompanyMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="156" column="33" lean-forward="false" selection-start-line="156" selection-start-column="33" selection-end-line="156" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfCompanyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="132" column="20" lean-forward="false" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="20" />
+          <folding>
+            <marker date="1507256030772" expanded="true" signature="6334:6400" ph="SELECT * fro... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="6506:6658" ph="SELECT * fro... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="6743:6774" ph="SELECT count... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="6881:6998" ph="SELECT count... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="7105:7210" ph="SELECT oreit... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="7312:7447" ph="SELECT count... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="7549:7684" ph="SELECT count... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="7786:7922" ph="SELECT count... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="8035:8131" ph="SELECT count... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="8243:8339" ph="SELECT count... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="8451:8548" ph="SELECT count... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="8656:8764" ph="SELECT * fro... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="8870:8978" ph="SELECT * fro... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="9084:9193" ph="SELECT * fro... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="9273:9359" ph="SELECT name,... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="9447:9580" ph="SELECT name,... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="9689:9774" ph="SELECT name tb_content" />
+            <marker date="1507256030772" expanded="true" signature="9856:9892" ph="SELECT DISTI... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="10000:10073" ph="SELECT keywo... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="11667:11837" ph="select , fro... " />
+            <marker date="1507256030772" expanded="true" signature="12077:12141" ph="delete from " />
+            <marker date="1507256030772" expanded="true" signature="12399:12421" ph="delete from " />
+            <marker date="1507256030772" expanded="true" signature="12777:13510" ph="insert into tb_content... " />
+            <marker date="1507256030772" expanded="true" signature="17199:17230" ph="select count... tb_content" />
+            <marker date="1507256030772" expanded="true" signature="19990:20880" ph="update tb_co... " />
+            <marker date="1507256030772" expanded="true" signature="21218:21710" ph="update tb_co... " />
+            <marker date="1507256030772" expanded="true" signature="22097:23893" ph="update tb_co... " />
+            <marker date="1507256030772" expanded="true" signature="24165:24948" ph="update tb_co... " />
+            <marker date="1507256030772" expanded="true" signature="25202:25636" ph="update tb_co... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComReputationAnalysis.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1452">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1507256030967" expanded="true" signature="3373:3474" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ComHealthValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="30" />
+          <folding>
+            <element signature="e#1775#1776#0" expanded="true" />
+            <element signature="e#1810#1811#0" expanded="true" />
+            <element signature="e#1865#1866#0" expanded="true" />
+            <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ComHealthValueExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="28" column="41" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/currentnewsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="338" column="39" lean-forward="false" selection-start-line="338" selection-start-column="39" selection-end-line="338" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/ComHealthValueMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="135" column="25" lean-forward="false" selection-start-line="135" selection-start-column="11" selection-end-line="135" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="667" column="50" lean-forward="false" selection-start-line="667" selection-start-column="36" selection-end-line="667" selection-end-column="50" />
+          <folding>
+            <element signature="e#19937#19938#0" expanded="true" />
+            <element signature="e#19998#19999#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/democompanyMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="73" column="27" lean-forward="false" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/democompanyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="87" column="77" lean-forward="false" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="77" />
+          <folding>
+            <marker date="1507444629747" expanded="true" signature="3451:3524" ph="SELECT curre... democompany" />
+            <marker date="1507444629747" expanded="true" signature="3598:3643" ph="SELECT DISTI... democompany" />
+            <marker date="1507444629747" expanded="true" signature="4430:4453" ph="delete from " />
+            <marker date="1507444629747" expanded="true" signature="4763:4893" ph="insert into democompany... " />
+            <marker date="1507444629747" expanded="true" signature="5878:5910" ph="select count... democompany" />
+            <marker date="1507444629747" expanded="true" signature="6799:6940" ph="update democ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ComHealthValueMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="146" column="58" lean-forward="false" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
+          <folding>
+            <marker date="1507452329366" expanded="true" signature="5121:5196" ph="SELECT negnu... comhealth" />
+            <marker date="1507452329366" expanded="true" signature="5301:5377" ph="SELECT negnu... comhealth" />
+            <marker date="1507452329366" expanded="true" signature="5481:5556" ph="SELECT posnu... comhealth" />
+            <marker date="1507452329366" expanded="true" signature="5661:5737" ph="SELECT posnu... comhealth" />
+            <marker date="1507452329366" expanded="true" signature="5846:5926" ph="SELECT healt... comhealth" />
+            <marker date="1507452329366" expanded="true" signature="6036:6117" ph="SELECT healt... comhealth" />
+            <marker date="1507452329366" expanded="true" signature="6216:6271" ph="SELECT healt... comhealth" />
+            <marker date="1507452329366" expanded="true" signature="7072:7224" ph="select , fro... " />
+            <marker date="1507452329366" expanded="true" signature="7441:7500" ph="delete from " />
+            <marker date="1507452329366" expanded="true" signature="7736:7757" ph="delete from " />
+            <marker date="1507452329366" expanded="true" signature="8070:8504" ph="insert into comhealth... " />
+            <marker date="1507452329366" expanded="true" signature="10469:10499" ph="select count... comhealth" />
+            <marker date="1507452329366" expanded="true" signature="12112:12613" ph="update comhe... " />
+            <marker date="1507452329366" expanded="true" signature="12916:13367" ph="update comhe... " />
+            <marker date="1507452329366" expanded="true" signature="13711:14557" ph="update comhe... " />
+            <marker date="1507452329366" expanded="true" signature="14798:15246" ph="update comhe... " />
+            <marker date="1507452329366" expanded="true" signature="15478:15883" ph="update comhe... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="223" column="44" lean-forward="false" selection-start-line="223" selection-start-column="21" selection-end-line="223" selection-end-column="44" />
+        <state relative-caret-position="302">
+          <caret line="556" column="66" lean-forward="false" selection-start-line="556" selection-start-column="66" selection-end-line="556" selection-end-column="66" />
           <folding>
-            <marker date="1507363245663" expanded="false" signature="42:746" ph="..." />
+            <marker date="1507459293881" expanded="false" signature="42:783" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1454,7 +1914,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>

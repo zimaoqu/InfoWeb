@@ -59,24 +59,26 @@ public class SearchServiceImpl implements SearchService {
     @Autowired
     private TaxCountryMapper TaxCountryMapper;
     @Autowired
-    private  TotalRetailSalesOfConsumerGoodsMapper TotalRetailSalesOfConsumerGoodsMapper;
+    private TotalRetailSalesOfConsumerGoodsMapper TotalRetailSalesOfConsumerGoodsMapper;
     @Autowired
-    private  copperMapper copperMapper;
+    private copperMapper copperMapper;
     @Autowired
-    private  crude_btlMapper crude_btlMapper;
+    private crude_btlMapper crude_btlMapper;
     @Autowired
-    private  crude_wtiMapper crude_wtiMapper;
+    private crude_wtiMapper crude_wtiMapper;
     @Autowired
-    private  dollar_exchange_rate_of_rmbMapper dollar_exchange_rate_of_rmbMapper;
+    private dollar_exchange_rate_of_rmbMapper dollar_exchange_rate_of_rmbMapper;
 
     @Autowired
-    private  imfMapper imfMapper;
+    private imfMapper imfMapper;
     @Autowired
     private NewsOfIndustryMapper newsOfIndustryMapper;
     @Autowired
     private TopCompanyInfoMapper topCompanyInfoMapper;
     @Autowired
     private TopKeyAttentionMapper topKeyAttentionMapper;
+    @Autowired
+    private ComHealthValueMapper comHealthValueMapper;
     /*
     The size of a page.
      */
@@ -170,7 +172,7 @@ public class SearchServiceImpl implements SearchService {
      * @return
      */
     @Override
-    public Page<NewsOfCompanyWithBLOBs> queryMatchTopNews(int page, String startDate, String endDate, String key,String industry) {
+    public Page<NewsOfCompanyWithBLOBs> queryMatchTopNews(int page, String startDate, String endDate, String key, String industry) {
         Map map = new HashMap<>();
         int start = (page - 1) * pageSize;
         map.put("name", key);
@@ -242,7 +244,6 @@ public class SearchServiceImpl implements SearchService {
         Page<NewsOfCompanyWithBLOBs> resultPage = new Page(dateList, countOfNews, pageSize);
         return resultPage;
     }
-
 
 
     /**
@@ -655,6 +656,18 @@ public class SearchServiceImpl implements SearchService {
         return democompanyMapper.getComList();
     }
 
+    @Override
+    public List<String> getTopComList() {
+        return newsOfTopCompanyMapper.getTopComList();
+    }
+
+    @Override
+    public double getHealthValue(String name) {
+        Map map = new HashMap();
+        map.put("name",name);
+        return comHealthValueMapper.getHealthValue(map);
+    }
+
     /**
      * 获取普通新闻对应的关键字
      *
@@ -938,7 +951,7 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
-    public Page<NewsOfIndustryWithBLOBs> queryMatchIndustryNews(int page, String startDate, String endDate,String key) {
+    public Page<NewsOfIndustryWithBLOBs> queryMatchIndustryNews(int page, String startDate, String endDate, String key) {
         Map map = new HashMap<>();
         int start = (page - 1) * pageSize;
         map.put("name", key);
@@ -989,7 +1002,7 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
-    public List getMatchIndustryKeywords(int page, String startDate, String endDate,String key) {
+    public List getMatchIndustryKeywords(int page, String startDate, String endDate, String key) {
         Map map = new HashMap<>();
         List keyList = new ArrayList();
         int start = (page - 1) * pageSize;
@@ -1021,15 +1034,8 @@ public class SearchServiceImpl implements SearchService {
     }
 
 
-
-
-
-
     /**
-     *
      * 获取全国GDP指标
-     *
-     *
      */
     @Override
     public List<IndicateOfGDPCountry> queryAllGDPCountry() {
@@ -1038,10 +1044,7 @@ public class SearchServiceImpl implements SearchService {
     }
 
     /**
-     *
      * 获取上海地区GDP指标
-     *
-     *
      */
     @Override
     public List<IndicateOfGDPSH> queryAllGDPSH() {
@@ -1050,10 +1053,7 @@ public class SearchServiceImpl implements SearchService {
     }
 
     /**
-     *
      * 获取全国PPI指标
-     *
-     *
      */
     @Override
     public List<IndicateOfPPI> queryAllPPI() {
@@ -1062,10 +1062,7 @@ public class SearchServiceImpl implements SearchService {
     }
 
     /**
-     *
      * 获取全国CPI指标
-     *
-     *
      */
     @Override
     public List<IndicateOfCPI> queryAllCPI() {
@@ -1074,10 +1071,7 @@ public class SearchServiceImpl implements SearchService {
     }
 
     /**
-     *
      * 获取全国进出口总额指标
-     *
-     *
      */
     @Override
     public List<IndicateOfExportImport> queryAllExportImport() {
@@ -1086,78 +1080,77 @@ public class SearchServiceImpl implements SearchService {
     }
 
     /**
-     *
      * 获取中国BDI指标
-     *
-     *
      */
     @Override
     public List<IndicateOfBDI> queryAllBDI() {
         List<IndicateOfBDI> BDIList = indicateOfBDIMapper.selectAllBDI();
         return BDIList;
     }
+
     /*
  获取pmi
  * */
-    public List<Pmi> queryAllPmi(){
-        List<Pmi> pmiList=PmiMapper.selectAllPMI();
+    public List<Pmi> queryAllPmi() {
+        List<Pmi> pmiList = PmiMapper.selectAllPMI();
         return pmiList;
     }
+
     /*
      获取全国税收Pmi数据
  * */
-    public  List<TaxCountry> queryAllTaxCountry(){
-        List<TaxCountry> taxCountrieyList=TaxCountryMapper.selectAllTaxCountry();
+    public List<TaxCountry> queryAllTaxCountry() {
+        List<TaxCountry> taxCountrieyList = TaxCountryMapper.selectAllTaxCountry();
         return taxCountrieyList;
     }
 
     /*
             获区社会消费品零售总额
      */
-    public List<TotalRetailSalesOfConsumerGoods> queryAllTRSC(){
-        List<TotalRetailSalesOfConsumerGoods> trsc=TotalRetailSalesOfConsumerGoodsMapper.selectAllTRSC();
-        return  trsc;
+    public List<TotalRetailSalesOfConsumerGoods> queryAllTRSC() {
+        List<TotalRetailSalesOfConsumerGoods> trsc = TotalRetailSalesOfConsumerGoodsMapper.selectAllTRSC();
+        return trsc;
     }
 
 
     /*
       获取铜价格数据
   * */
-    public List<copper> queryAllcopper(){
+    public List<copper> queryAllcopper() {
         List<copper> coppers = copperMapper.selectAllCopper();
-        return  coppers;
+        return coppers;
     }
 
     /*
       获取布伦特原油价格数据
   * */
-    public List<crude_btl> queryAllcrude_btl(){
-        List<crude_btl> crude_btls= crude_btlMapper.selectAllCrude_btl();
-        return  crude_btls;
+    public List<crude_btl> queryAllcrude_btl() {
+        List<crude_btl> crude_btls = crude_btlMapper.selectAllCrude_btl();
+        return crude_btls;
     }
 
     /*
      获取WTI原油价格数据
  * */
-    public List<crude_wti> queryAllcrude_wti(){
-        List<crude_wti> crude_wtis=crude_wtiMapper.selectAllCrude_wti();
-        return  crude_wtis;
+    public List<crude_wti> queryAllcrude_wti() {
+        List<crude_wti> crude_wtis = crude_wtiMapper.selectAllCrude_wti();
+        return crude_wtis;
     }
+
     /*
    获取美元人民币汇率
 * */
-    public List<dollar_exchange_rate_of_rmb> queryAlldollar_exchange_rate_of_rmb(){
-        List<dollar_exchange_rate_of_rmb> dollar_exchange_rate_of_rmbs=dollar_exchange_rate_of_rmbMapper.selectAllPdollar_exchange_rate_of_rmb();
-        return  dollar_exchange_rate_of_rmbs;
+    public List<dollar_exchange_rate_of_rmb> queryAlldollar_exchange_rate_of_rmb() {
+        List<dollar_exchange_rate_of_rmb> dollar_exchange_rate_of_rmbs = dollar_exchange_rate_of_rmbMapper.selectAllPdollar_exchange_rate_of_rmb();
+        return dollar_exchange_rate_of_rmbs;
     }
 
     /**
-     * @return
-     * 获取imf预测数据
+     * @return 获取imf预测数据
      */
-    public List<imf> querryAllimf(){
-        List<imf> imfs=imfMapper.selectAllimf();
-        return  imfs;
+    public List<imf> querryAllimf() {
+        List<imf> imfs = imfMapper.selectAllimf();
+        return imfs;
     }
 
     /*
@@ -1312,13 +1305,14 @@ public class SearchServiceImpl implements SearchService {
     public List<ComNameNewsCount> CompanyWarningBeforeCount() {
         return negativenewsMapper.ComMonthBeforeNewsCount();
     }
+
     public List<PredictedandRealistic> CompanyPredictWarning() {
         List<PredictedandRealistic> predicteddata = negativenewsMapper.PredictedRealisticString();
-        List<PredictedandRealistic> Warningname  = new ArrayList<>();
+        List<PredictedandRealistic> Warningname = new ArrayList<>();
         //List<Integer> WarningName = new ArrayList<>();
         //for(int i = 0;i<predicteddata.size();i++)WarningName.set(i,0);
-        for(int i = 0;i<predicteddata.size();i++) {
-            String predict ="";
+        for (int i = 0; i < predicteddata.size(); i++) {
+            String predict = "";
 //            System.out.print(i+","+predicteddata.size());
 //            String arrp3 = predicteddata.get(i).getPredicted();
 //            System.out.print(i+","+predicteddata.get(i).getPredicted());
@@ -1328,29 +1322,30 @@ public class SearchServiceImpl implements SearchService {
             name = name.split("}")[0];
 //            for(int p=0;p<arrp.length;p++)
 //            System.out.println(arrp[p]);
-            double sump=0,sumr=0,avgp=0,avgr=0,variance=0;
-            double[] arrp2 =new double[arrp.length];
-            double[] arrr2 =new double[arrr.length];
+            double sump = 0, sumr = 0, avgp = 0, avgr = 0, variance = 0;
+            double[] arrp2 = new double[arrp.length];
+            double[] arrr2 = new double[arrr.length];
             int j = 0;
-            for(j = 0;j<arrp.length;j++) {//平均值
+            for (j = 0; j < arrp.length; j++) {//平均值
                 arrp2[j] = Double.valueOf(arrp[j]);
                 arrr2[j] = Double.valueOf(arrr[j]);
                 sump += arrp2[j];
                 sumr += arrr2[j];
             }
-            avgp=sump/arrp.length;avgr=sumr/arrr.length;
-            for(j = 0;j<arrp.length;j++){
-                arrp2[j] = arrp2[j]*avgr/avgp;//只对趋势评估
+            avgp = sump / arrp.length;
+            avgr = sumr / arrr.length;
+            for (j = 0; j < arrp.length; j++) {
+                arrp2[j] = arrp2[j] * avgr / avgp;//只对趋势评估
                 predict += arrp2[j];
                 predict += ";";
             }
-            for(j = 0;j<arrp.length;j++) {
-                variance += (arrp2[j]-arrr2[j])*(arrp2[j]-arrr2[j])*((j+1)/2/arrp.length+1/2);//带权方差
+            for (j = 0; j < arrp.length; j++) {
+                variance += (arrp2[j] - arrr2[j]) * (arrp2[j] - arrr2[j]) * ((j + 1) / 2 / arrp.length + 1 / 2);//带权方差
             }
-            if(variance/avgp>avgp){
+            if (variance / avgp > avgp) {
                 Warningname.add(predicteddata.get(i));
-                Warningname.get(Warningname.size()-1).setPredicted(predict);
-                Warningname.get(Warningname.size()-1).setName(name);
+                Warningname.get(Warningname.size() - 1).setPredicted(predict);
+                Warningname.get(Warningname.size() - 1).setName(name);
             }
         }
         return Warningname;
@@ -1370,11 +1365,40 @@ public class SearchServiceImpl implements SearchService {
 
     /**
      * 重中之重行业新闻统计
+     *
      * @return
      */
     @Override
     public List<IndustryCount> TopNewsIndustryCount() {
         return newsOfTopCompanyMapper.TopNewsIndustryCount();
+    }
+
+    @Override
+    public String getNegNumString(String name, String gap) {
+
+        Map map = new HashMap();
+        map.put("name", name);
+        if (gap.equals("month"))
+            return comHealthValueMapper.getNegNumStringMonth(map);
+        return comHealthValueMapper.getNegNumStringSeason(map);
+    }
+
+    @Override
+    public String getPosNumString(String name, String gap) {
+        Map map = new HashMap();
+        map.put("name", name);
+        if (gap.equals("month"))
+            return comHealthValueMapper.getPosNumStringMonth(map);
+        return comHealthValueMapper.getPosNumStringSeason(map);
+    }
+
+    @Override
+    public String getHealthValueString(String name, String gap) {
+        Map map = new HashMap();
+        map.put("name", name);
+        if (gap.equals("month"))
+            return comHealthValueMapper.getHealthValueStringMonth(map);
+        return comHealthValueMapper.getHealthValueStringSeason(map);
     }
 }
 

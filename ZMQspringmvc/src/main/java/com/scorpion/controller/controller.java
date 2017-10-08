@@ -7,6 +7,7 @@ import com.scorpion.util.data.Page;
 import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -319,9 +320,9 @@ public class controller {
 
     /**
      * ajax获取abnormalwarning
+     *
      * @param response
-     * @param page
-     * ZCH edit at 2017.10.04
+     * @param page     ZCH edit at 2017.10.04
      */
     @ResponseBody
     @RequestMapping("queryAbnormalWarning")
@@ -398,8 +399,9 @@ public class controller {
      * @param request
      * @return
      */
-    @RequestMapping("showComHealthTendency")
-    public ModelAndView showComHealthTendency(ModelMap modelMap, HttpServletRequest request) {
+    //之前的取法，很慢，下面的新方法暂时性解决这个问题
+    /*@RequestMapping("showComHealthTendencyTest")
+    public ModelAndView showComHealthTendencyTest(ModelMap modelMap, HttpServletRequest request) {
         String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "上海三星半导体有限公司";
         String timeGap = (request.getParameter("by") != null) ? request.getParameter("by") : "month";
         int[] posnum = new int[100];
@@ -435,6 +437,42 @@ public class controller {
         for (int i = 0; i < companyList.size(); i++) {
             selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
         }
+        modelMap.put("maincompany", companyName);
+        modelMap.put("mainby", timeGap);
+        modelMap.put("healthvalue", healthvalue);
+        modelMap.put("maincompany", companyName);
+        modelMap.put("posnum", posnum);
+        modelMap.put("negnum", negnum);
+        modelMap.put("selectdiscomsstr", selectdiscomsstr);
+        return new ModelAndView("ComHealthTendency", modelMap);
+    }*/
+
+    //改进企业健康态势
+    @RequestMapping("showComHealthTendency")
+    public ModelAndView showComHealthTendency(ModelMap modelMap, HttpServletRequest request) {
+        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : "上海三星半导体有限公司";
+        String timeGap = (request.getParameter("by") != null) ? request.getParameter("by") : "month";
+        int[] posnum = new int[100];
+        int[] negnum = new int[100];
+        double[] healthvalue = new double[100];
+        String selectdiscomsstr = "";
+        //企业选择下拉列表
+        List<String> companyList = searchService.getComList();
+        for (int i = 0; i < companyList.size(); i++) {
+            selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
+        }
+        String posString = searchService.getPosNumString(companyName, timeGap);
+        String negString = searchService.getNegNumString(companyName, timeGap);
+        String healthString = searchService.getHealthValueString(companyName, timeGap);
+        String[] a = posString.split(",");
+        String[] b = negString.split(",");
+        String[] c = healthString.split(",");
+        for (int i = 0; i < a.length; i++)
+            posnum[i] = new Integer(a[i]);
+        for (int i = 0; i < b.length; i++)
+            negnum[i] = new Integer(b[i]);
+        for (int i = 0; i < c.length; i++)
+            healthvalue[i] = new Double(c[i]);
         modelMap.put("maincompany", companyName);
         modelMap.put("mainby", timeGap);
         modelMap.put("healthvalue", healthvalue);
@@ -501,7 +539,7 @@ public class controller {
     @RequestMapping("showComReputationAnalysis")
     public ModelAndView showComReputationAnalysis(ModelMap modelMap) {
         List<CompanyInfo> comInfo = new ArrayList();
-        List<String> companyList = searchService.getComList();
+        List<String> companyList = searchService.getTopComList();
         for (String companyName : companyList) {
             double sumreputation = 0.0;
             double sumhealth = 0.0;
@@ -511,11 +549,12 @@ public class controller {
             if (demolist.contains(companyName)) {
                 sumreputation = searchService.getCurreputation(companyName);
             }
-            List<Double> quartervalue = searchService.getQuartervalue(companyName, "2016-11-1", "2016-12-1");
+            /*List<Double> quartervalue = searchService.getQuartervalue(companyName, "2016-11-1", "2016-12-1");
             for (int j = 0; j < quartervalue.size(); j++) {
                 if (quartervalue.get(j) != null)
                     sumhealth += quartervalue.get(j);
-            }
+            }*/
+            sumhealth = searchService.getHealthValue(companyName);
             c.setReputation(sumreputation);
             c.setHealth(sumhealth);
             comInfo.add(c);
@@ -545,7 +584,7 @@ public class controller {
         List<IndustryCount> topIndustryCounts = searchService.TopNewsIndustryCount();//行业新闻量
         List<String> industryList = new ArrayList<>();
         List<Integer> countList = new ArrayList<>();
-        for(IndustryCount industryCount:topIndustryCounts){
+        for (IndustryCount industryCount : topIndustryCounts) {
             industryList.add(industryCount.getIndustry());
             countList.add(industryCount.getCount());
         }
@@ -596,7 +635,7 @@ public class controller {
         List<IndustryCount> topIndustryCounts = searchService.TopNewsIndustryCount();//行业新闻量
         List<String> industryList = new ArrayList<>();
         List<Integer> countList = new ArrayList<>();
-        for(IndustryCount industryCount:topIndustryCounts){
+        for (IndustryCount industryCount : topIndustryCounts) {
             industryList.add(industryCount.getIndustry());
             countList.add(industryCount.getCount());
         }
@@ -1173,6 +1212,7 @@ public class controller {
         json.put("numList", numList);
         out.print(json);
     }
+
     @RequestMapping("queryKeyIndicatedder")
     public void queryKeyIndicatedder(HttpServletResponse response) throws IOException {
         response.setCharacterEncoding("UTF-8");
@@ -1190,6 +1230,7 @@ public class controller {
         json.put("numList", numList);
         out.print(json);
     }
+
     @RequestMapping("queryKeyIndicatesTaxCountry")
     public void queryKeyIndicatesTaxCountry(HttpServletResponse response) throws IOException {
         response.setCharacterEncoding("UTF-8");
@@ -1207,6 +1248,7 @@ public class controller {
         json.put("numList", numList);
         out.print(json);
     }
+
     @RequestMapping("queryKeyIndicatesTRSCG")
     public void queryKeyIndicatesTRSCG(HttpServletResponse response) throws IOException {
         response.setCharacterEncoding("UTF-8");
@@ -1233,20 +1275,20 @@ public class controller {
         List<crude_btl> crudebtlCount = searchService.queryAllcrude_btl();//查询全国PMI数据
         List<String> nameList = new ArrayList<>();
         List<String> numListbtl = new ArrayList<>();
-        List<String> numListwti=new ArrayList<>();
+        List<String> numListwti = new ArrayList<>();
         for (crude_btl instance : crudebtlCount) {
             nameList.add(instance.getDate());
             numListbtl.add(instance.getPrice());
         }
-        List<crude_wti> crudewtiCount=searchService.queryAllcrude_wti();
-        for (crude_wti instance : crudewtiCount){
+        List<crude_wti> crudewtiCount = searchService.queryAllcrude_wti();
+        for (crude_wti instance : crudewtiCount) {
             numListwti.add(instance.getPrice());
         }
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("nameList", nameList);
         json.put("numListbtl", numListbtl);
-        json.put("numListwti",numListwti);
+        json.put("numListwti", numListwti);
         out.print(json);
     }
 
@@ -1256,7 +1298,7 @@ public class controller {
         response.setContentType("application/json");
         List<String> nameList = new ArrayList<>();
         List<Float> China = new ArrayList<>();
-        List<Float> developing =new ArrayList<>();
+        List<Float> developing = new ArrayList<>();
         List<Float> Advanced = new ArrayList<>();
         List<Float> world = new ArrayList<>();
         List<imf> imfCount = searchService.querryAllimf();//查询全国PPI数据
@@ -1308,6 +1350,7 @@ public class controller {
     public ModelAndView IndicatepcPage() {
         return new ModelAndView("IndicatepcPage");
     }
+
     /**
      * 跳到关键指标监控页面ExportImport页面
      *
@@ -1337,7 +1380,6 @@ public class controller {
     public ModelAndView IndicateTaxCountry() {
         return new ModelAndView("IndicateTaxCountry");
     }
-
 
 
     /**

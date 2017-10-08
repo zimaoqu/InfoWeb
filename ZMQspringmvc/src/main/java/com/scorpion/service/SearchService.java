@@ -266,6 +266,7 @@ public interface SearchService {
     获取中国BDI数据
      */
     public List<IndicateOfBDI> queryAllBDI();
+
     /*
    获取PMI数据
 * */
@@ -274,7 +275,7 @@ public interface SearchService {
     /*
         获取全国税收Pmi数据
     * */
-    public  List<TaxCountry> queryAllTaxCountry();
+    public List<TaxCountry> queryAllTaxCountry();
 
     /*
        获取铜价格数据
@@ -290,14 +291,14 @@ public interface SearchService {
      获取WTI原油价格数据
  * */
     public List<crude_wti> queryAllcrude_wti();
+
     /*
    获取美元人民币汇率
 * */
     public List<dollar_exchange_rate_of_rmb> queryAlldollar_exchange_rate_of_rmb();
 
     /**
-     * @return
-     * 获取imf预测数据
+     * @return 获取imf预测数据
      */
     public List<imf> querryAllimf();
 
@@ -326,4 +327,14 @@ public interface SearchService {
     （垄断、合并等关键词匹配的新闻）
      */
     List<TopKeyAttentionWithBLOBs> queryNewsOfAttKey(int pageNo);
+
+    String getPosNumString(String name, String gap);
+
+    String getNegNumString(String name, String gap);
+
+    String getHealthValueString(String name, String gap);
+
+    List<String> getTopComList();
+
+    double getHealthValue(String name);
 }
