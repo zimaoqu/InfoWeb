@@ -546,18 +546,22 @@ public class controller {
             CompanyInfo c = new CompanyInfo();
             c.setName(companyName);
             List<String> demolist = searchService.getDemoComList();
-            if (demolist.contains(companyName)) {
+            if (demolist.contains(companyName) && searchService.getComHealthList().contains(companyName)) {
                 sumreputation = searchService.getCurreputation(companyName);
+                sumhealth = searchService.getHealthValue(companyName);
+                if ((sumreputation != 0) || (sumhealth != 0)){
+                    c.setReputation(sumreputation);
+                    c.setHealth(sumhealth);
+                    comInfo.add(c);
+                }
+
             }
             /*List<Double> quartervalue = searchService.getQuartervalue(companyName, "2016-11-1", "2016-12-1");
             for (int j = 0; j < quartervalue.size(); j++) {
                 if (quartervalue.get(j) != null)
                     sumhealth += quartervalue.get(j);
             }*/
-            sumhealth = searchService.getHealthValue(companyName);
-            c.setReputation(sumreputation);
-            c.setHealth(sumhealth);
-            comInfo.add(c);
+
         }
         modelMap.put("comInfo", comInfo);
         return new ModelAndView("ComReputationAnalysis", modelMap);

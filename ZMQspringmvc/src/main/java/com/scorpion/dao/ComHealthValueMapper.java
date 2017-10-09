@@ -135,4 +135,6 @@ public interface ComHealthValueMapper {
 
     double getHealthValue(Map map);
 
+    List<String> getComList();
+
 }

@@ -146,6 +146,9 @@
   <select id="getHealthValue" parameterType="Map" resultType="java.lang.Double">
     SELECT health_value from comhealth where name = #{name}
   </select>
+  <select id="getComList" resultType="java.lang.String">
+    SELECT DISTINCT name from comhealth
+  </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.scorpion.pojo.ComHealthValueExample" >
     <!--
       WARNING - @mbggenerated

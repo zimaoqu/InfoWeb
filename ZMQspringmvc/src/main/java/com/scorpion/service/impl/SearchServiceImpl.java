@@ -668,6 +668,11 @@ public class SearchServiceImpl implements SearchService {
         return comHealthValueMapper.getHealthValue(map);
     }
 
+    @Override
+    public List<String> getComHealthList() {
+        return comHealthValueMapper.getComList();
+    }
+
     /**
      * 获取普通新闻对应的关键字
      *

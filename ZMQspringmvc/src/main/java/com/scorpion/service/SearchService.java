@@ -337,4 +337,6 @@ public interface SearchService {
     List<String> getTopComList();
 
     double getHealthValue(String name);
+
+    List<String> getComHealthList();
 }
