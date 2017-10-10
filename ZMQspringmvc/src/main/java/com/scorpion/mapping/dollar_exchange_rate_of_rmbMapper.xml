@@ -11,7 +11,7 @@
     <result column="peak" property="peak" jdbcType="REAL" />
     <result column="lowest" property="lowest" jdbcType="REAL" />
     <result column="settlement" property="settlement" jdbcType="REAL" />
-    <result column="date" property="date" jdbcType="DATE" />
+    <result column="date" property="date" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <!--

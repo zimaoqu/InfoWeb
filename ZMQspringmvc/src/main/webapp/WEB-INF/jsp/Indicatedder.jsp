@@ -39,6 +39,33 @@
 
 </head>
 <style>
+
+    table.gridtable {
+        font-family: verdana, arial, sans-serif;
+        font-size: 11px;
+        text-align: center;
+        color: #333333;
+        border-width: 1px;
+        border-color: #666666;
+        border-collapse: collapse;
+    }
+
+    table.gridtable th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+        text-align: center;
+    }
+
+    table.gridtable td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #ffffff;
+    }
     .menu{
         height: 500px;
         /*position: absolute;*/
@@ -103,11 +130,7 @@
         width: 250px;
 
     }
-    TD {
-        FONT-SIZE: 11px;
-        COLOR: #003366;
-        FONT-FAMILY: Verdana
-    }
+
     A.style2:link {
         PADDING-LEFT: 4px;
         COLOR: #0055bb;

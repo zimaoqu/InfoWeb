@@ -1222,7 +1222,7 @@ public class controller {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         List<dollar_exchange_rate_of_rmb> derrCount = searchService.queryAlldollar_exchange_rate_of_rmb();//查询全国PMI数据
-        List<Date> nameList = new ArrayList<>();
+        List<String> nameList = new ArrayList<>();
         List<Float> numList = new ArrayList<>();
         for (dollar_exchange_rate_of_rmb instance : derrCount) {
             nameList.add(instance.getDate());

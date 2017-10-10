@@ -155,7 +155,7 @@
                 <TABLE id=table_1 style="DISPLAY: none" cellSpacing=0 cellPadding=2 width=200 align=center border=0>
                     <TBODY>
                     <TR>
-                        <TD class=menuSmall><A class=style2   href="${pageContext.request.contextPath}/zmq/IndicateGDP"
+                        <TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/zmq/IndicateGDP"
                         ><span>&nbsp;&nbsp;&nbsp;&nbsp;国内(GDP)&&上海(GDP)</span></A></TD>
                     </TR>
                     <TR><TD  height=1></TD></TR>
