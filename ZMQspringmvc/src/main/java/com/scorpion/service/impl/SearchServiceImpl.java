@@ -83,7 +83,7 @@ public class SearchServiceImpl implements SearchService {
     The size of a page.
      */
     final static int pageSize = 10;
-    final static int pageSizeOfAbnormal = 10;
+    final static int pageSizeOfAbnormal = 15;
 
     /**
      * 获取所有重点企业新闻

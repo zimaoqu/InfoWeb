@@ -318,6 +318,11 @@ public class controller {
         return new ModelAndView("AbnormalWarning", modelMap);
     }
 
+    @RequestMapping("showComKeyEvents")
+    public ModelAndView showComKeyEvents(){
+        return new ModelAndView("ComKeyEvents");
+    }
+
     /**
      * ajax获取abnormalwarning
      *

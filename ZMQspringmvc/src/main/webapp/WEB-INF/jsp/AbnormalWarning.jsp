@@ -60,25 +60,44 @@
     <%@include file="title.jsp" %>
     <br/>
     <div style="margin-left: 250px">
-        <div id="main" style="width: 900px; height: 600px; float: left; display: inline">
-            <a href ='javascript:GoToFirstPage();'>首页</a>
-            <a href = 'javascript:GoToPrePage();'>上一页</a>
-            <a href = 'javascript:GoToNextPage();'>下一页</a>
-            <a href = 'javascript:GoToEndPage();'>最后一页</a>
-            <table class="gridtable">
-                <tr>
-                    <th>序号</th>
-                    <th>预警标题</th>
-                    <th>发布时间</th>
-                    <th>相关企业</th>
-                    <th>关键词</th>
-                    <th>通知</th>
-                    <th>状态</th>
-                </tr>
-                <tbody id="tablelsw2">
-                </tbody>
-            </table>
-        </div>
+        <%--<div id="main" style="width: 900px; height: 600px; float: left; display: inline">--%>
+            <%--<a href ='javascript:GoToFirstPage();'>首页</a>--%>
+            <%--<a href = 'javascript:GoToPrePage();'>上一页</a>--%>
+            <%--<a href = 'javascript:GoToNextPage();'>下一页</a>--%>
+            <%--<a href = 'javascript:GoToEndPage();'>最后一页</a>--%>
+            <%--<table class="gridtable">--%>
+                <%--<tr>--%>
+                    <%--<th>序号</th>--%>
+                    <%--<th>预警标题</th>--%>
+                    <%--<th>发布时间</th>--%>
+                    <%--<th>相关企业</th>--%>
+                    <%--<th>关键词</th>--%>
+                    <%--<th>通知</th>--%>
+                    <%--<th>状态</th>--%>
+                <%--</tr>--%>
+                <%--<tbody id="tablelsw2">--%>
+                <%--</tbody>--%>
+            <%--</table>--%>
+        <%--</div>--%>
+            <div id="main1" style="width: 900px; height: 600px; float: left; display: inline">
+                <a href ='javascript:GoToFirstPage();'>首页</a>
+                <a href = 'javascript:GoToPrePage();'>上一页</a>
+                <a href = 'javascript:GoToNextPage();'>下一页</a>
+                <a href = 'javascript:GoToEndPage();'>最后一页</a>
+                <table class="gridtable">
+                    <tr>
+                        <th>序号</th>
+                        <th>预警标题</th>
+                        <th>发布时间</th>
+                        <th>相关企业</th>
+                        <th>指数</th>
+                        <th>通知</th>
+                        <th>状态</th>
+                    </tr>
+                    <tbody id="tablelsw">
+                    </tbody>
+                </table>
+            </div>
         <div id="main2" style="width: 400px; height: 600px;float: left; display: inline;margin-left: 10px;">
             <span id="clock"></span>
             <script src="${pageContext.request.contextPath}/resources/js/Clock.js"></script>
@@ -100,25 +119,7 @@
                 %>
             </marquee>
         </div>
-        <div id="main1" style="width: 900px; height: 600px; float: left; display: inline">
-            <a href ='javascript:GoToFirstPage();'>首页</a>
-            <a href = 'javascript:GoToPrePage();'>上一页</a>
-            <a href = 'javascript:GoToNextPage();'>下一页</a>
-            <a href = 'javascript:GoToEndPage();'>最后一页</a>
-            <table class="gridtable">
-                <tr>
-                    <th>序号</th>
-                    <th>预警标题</th>
-                    <th>发布时间</th>
-                    <th>相关企业</th>
-                    <th>指数</th>
-                    <th>通知</th>
-                    <th>状态</th>
-                </tr>
-                <tbody id="tablelsw">
-                </tbody>
-            </table>
-        </div>
+
 
 
 

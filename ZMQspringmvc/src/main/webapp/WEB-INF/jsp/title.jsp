@@ -93,15 +93,16 @@
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showTopCompanyNews">重中之重企业新闻</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showCompanyNews">重点企业新闻推送</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalWarning">企业异常预警</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnomalComWarning">企业预警</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnomalComWarning">企业信用评分</a></li>
                     </ul></li>
 
                 <li class="dropdown"><a href="/InfoWeb/relTendency" class="dropdown-toggle"
                                         data-toggle="dropdown"> 企业态势分析 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
+                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalWarning">企业异常预警</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnomalComWarning">企业预警</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showComKeyEvents">企业重点事件预警</a></li>
+                        <%--<li><a href="${pageContext.request.contextPath}/zmq/showAbnomalComWarning">企业信用评分</a></li>--%>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComPublicOpinionEvaluation">企业舆情评价</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComHealthTendency">企业健康态势</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComReputationAnalysis">企业声誉分析</a></li>
