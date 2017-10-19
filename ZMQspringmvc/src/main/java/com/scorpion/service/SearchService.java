@@ -227,7 +227,7 @@ public interface SearchService {
 
     public List<ComNameNewsCount> CompanyWarningBeforeCount();
 
-    public List<PredictedandRealistic> CompanyPredictWarning();
+    public List<PredictedandRealistic> CompanyPredictWarning(String CompanyNumberflag);
 
     public List<ComNameNewsCount> OtherZmqNewsCount();
 
@@ -327,6 +327,10 @@ public interface SearchService {
     （垄断、合并等关键词匹配的新闻）
      */
     List<TopKeyAttentionWithBLOBs> queryNewsOfAttKey(int pageNo);
+    /*
+    通过id获取新闻信息
+     */
+    public bignews GetBignewsbyid(String bignewsid);
 
     String getPosNumString(String name, String gap);
 
@@ -339,4 +343,5 @@ public interface SearchService {
     double getHealthValue(String name);
 
     List<String> getComHealthList();
+
 }

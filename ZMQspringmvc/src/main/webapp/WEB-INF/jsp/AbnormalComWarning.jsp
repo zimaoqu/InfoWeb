@@ -12,8 +12,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <%--<link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet">--%>
-    <%--<link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">--%>
+    <style type="text/css">
+        table.gridtable {
+            font-family: verdana, arial, sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+            text-align: center;
+        }
+
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+    </style>
 </head>
 
 
@@ -30,10 +55,12 @@
           List<Double> predicted = (List<Double>)request.getAttribute("predictedData");
           List<Double> realistic = (List<Double>)request.getAttribute("realisticData");
           List<String> warningName = (List<String>)request.getAttribute("warningName");
+          List<bignews> Bignewsdisplay = (List<bignews>)request.getAttribute("Bignews");
+          String[] similarcount = (String[])request.getAttribute("Similarcount");
           String comName = (String)request.getAttribute("mainCom");
     %>
-        <div class="row-fluid">
-            <div id="left" class="col-xs-9 span9" style="background-color: #e9f0f5;">
+    <div class="row-fluid">
+        <div id="left" class="col-xs-9 span9" style="background-color: #e9f0f5;">
             <span style="font-size:20px;">
                 选择企业
                 <select name="selectcompany" id="selectcompany" style="width:350px;">
@@ -47,13 +74,13 @@
                 $("#subcom").click(function () {
                     tmp = $("#selectcompany option:selected").text();
                     flag = $("#cla option:selected").text();
-                    req = "${pageContext.request.contextPath}/zmq/showAbnomalComWarning?com=" + tmp
+                    req = "${pageContext.request.contextPath}/zmq/showAbnormalComWarning?com=" + tmp
                     $.post(req,
                         {
                             //companyname:tmp
                         },
                         function () {
-                            location.href = "${pageContext.request.contextPath}/zmq/showAbnomalComWarning?com=" + tmp
+                            location.href = "${pageContext.request.contextPath}/zmq/showAbnormalComWarning?com=" + tmp
                         });
                 });
             </script>
@@ -128,10 +155,38 @@
                 };
                 myChart.setOption(option);   //参数设置方法
             </script>
-            </div>
-            <div id="right" class="col-xs-3 span3 " style="height: 500px;background-color: #e9f0f5;" >
-                <h4> 该企业近期内新闻量数据实际值和通过往年数据得到的预测值差距过大，超过预警阈值</h4>
-            </div>
+        </div>
+        <div id="right" class="col-xs-9 span9 " style="height: 300px;background-color: #e9f0f5;" >
+            <b>预警大事件</b><br><br>
+            <table class="gridtable">
+                <tr>
+                    <th>序号</th>
+                    <th>预警标题</th>
+                    <th>相似新闻数</th>
+                    <th>发布时间</th>
+                    <th>关键字</th>
+                    <th>链接</th>
+                </tr>
+                <%
+                    for (int i = 0; i < Bignewsdisplay.size(); i++) {
+                        bignews c = Bignewsdisplay.get(i);
+                        Integer _id = c.getId();
+                        String title = c.getTitle();
+                        String Scount = similarcount[i];
+                        String date = c.getDate();
+                        String keywors = c.getKeywords();
+                        String url = c.getUrl();
+                %>
+                <td><%=_id%></td>
+                <td><%=title%></td>
+                <td><%=Scount%></td>
+                <td><%=date%></td>
+                <td><%=keywors%></td>
+                <td><a href=<%=url%>><%=url%></a></td>
+                </tr>
+                <%}%>
+            </table>
+        </div>
     </div>
 
 

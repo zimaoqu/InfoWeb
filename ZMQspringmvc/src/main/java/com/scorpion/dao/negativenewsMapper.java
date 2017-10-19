@@ -130,5 +130,7 @@ public interface negativenewsMapper {
 
     List<ComNameNewsCount> ComMonthNewsCount();
     List<ComNameNewsCount> ComMonthBeforeNewsCount();
-    List<PredictedandRealistic> PredictedRealisticString();
+    List<PredictedandRealistic> MostPredictedRealisticString();
+    List<PredictedandRealistic> TopPredictedRealisticString();
+    bignews GetBigNewsById(Map map);
 }

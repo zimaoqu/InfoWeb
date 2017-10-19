@@ -319,7 +319,7 @@ public class controller {
     }
 
     @RequestMapping("showComKeyEvents")
-    public ModelAndView showComKeyEvents(){
+    public ModelAndView showComKeyEvents() {
         return new ModelAndView("ComKeyEvents");
     }
 
@@ -345,57 +345,97 @@ public class controller {
     }
 
     /**
-     * 企业预警（张翔）
+     * 企业预警870家（张翔）
      *
      * @param modelMap
      * @param request
      * @return
      */
-    @RequestMapping("showAbnomalComWarning")
+    @RequestMapping("showAbnormalComWarning")
     public ModelAndView AbnomalComWarnin(ModelMap modelMap, HttpServletRequest request) {
-
-//        String selectdiscomsstr = "";
-//        List<bignews> eventsHis = searchService.getHisEvents(companyName);
-//        //企业选择下拉列表
-//        List<String> companyList = searchService.getComListHis();
-
-        List<PredictedandRealistic> WarningCom = searchService.CompanyPredictWarning();
+        List<PredictedandRealistic> WarningCom = searchService.CompanyPredictWarning("MostCompany");
         List<Double> pre = new ArrayList<>();
         List<Double> rea = new ArrayList<>();
-        List<List<Double>> predicteddata = new ArrayList<>();
-        List<List<Double>> realisticdata = new ArrayList<>();
+        List<bignews> Big = new ArrayList<>();
         List<String> WarningName = new ArrayList<>();
-        String companyName = (request.getParameter("com") != null) ? request.getParameter("com") : WarningCom.get(0).getName();
-//        System.out.println(companyName);
+        String[] bignewsid = new String[3];
+        String[] similarcount = new String[3];
+        String companyName = "无预警企业！";
+        if (!WarningCom.isEmpty()) {
+            companyName = (request.getParameter("com") != null) ? request.getParameter("com") : WarningCom.get(0).getName();
+        }
         for (int i = 0; i < WarningCom.size(); i++) {
-            String[] arrp = WarningCom.get(i).getPredicted().split(";");
-            String[] arrr = WarningCom.get(i).getRealistic().split(";");
-            pre = new ArrayList<>();
-            rea = new ArrayList<>();
-            for (int j = 0; j < arrp.length; j++) {
-                pre.add(Double.valueOf(arrp[j]));
-                rea.add(Double.valueOf(arrr[j]));
-            }
-            predicteddata.add(pre);
-            realisticdata.add(rea);
-            WarningName.add(WarningCom.get(i).getName());
-            for (int j = 0; j < WarningName.size(); j++) {
-                if (WarningName.get(j).equals(companyName)) {
-                    pre = predicteddata.get(j);
-                    rea = realisticdata.get(j);
+            if (WarningCom.get(i).getName().equals(companyName)) {
+                String[] arrp = WarningCom.get(i).getPredicted().split(";");
+                String[] arrr = WarningCom.get(i).getRealistic().split(";");
+                bignewsid = WarningCom.get(i).getBignewsid().split(";");
+                similarcount = WarningCom.get(i).getSimilarcount().split(";");
+                pre = new ArrayList<>();
+                rea = new ArrayList<>();
+                for (int j = 0; j < arrp.length; j++) {
+                    pre.add(Double.valueOf(arrp[j]));
+                    rea.add(Double.valueOf(arrr[j]));
+                }
+                for (int j = 0; j < bignewsid.length; j++) {
+                    Big.add(searchService.GetBignewsbyid(bignewsid[j]));
                 }
             }
+            WarningName.add(WarningCom.get(i).getName());
         }
-
         modelMap.put("predictedData", pre);
         modelMap.put("realisticData", rea);
         modelMap.put("warningName", WarningName);
         modelMap.put("mainCom", companyName);
+        modelMap.put("Bignews", Big);
+        modelMap.put("Similarcount", similarcount);
+        return new ModelAndView("AbnormalComWarning", modelMap);
+    }
 
-//        modelMap.put("maincom", companyName);
-//        modelMap.put("eventnews", eventsHis);
-//        modelMap.put("selectdiscomsstr", selectdiscomsstr);
-        return new ModelAndView("AbnomalComWarning", modelMap);
+    /**
+     * 企业预警88家（张翔）
+     *
+     * @param modelMap
+     * @param request
+     * @return
+     */
+    @RequestMapping("showTopAbnormalComWarning")
+    public ModelAndView AbnomalComWarnin_top(ModelMap modelMap, HttpServletRequest request) {
+        List<PredictedandRealistic> WarningCom = searchService.CompanyPredictWarning("TopCompany");
+        List<Double> pre = new ArrayList<>();
+        List<Double> rea = new ArrayList<>();
+        List<bignews> Big = new ArrayList<>();
+        List<String> WarningName = new ArrayList<>();
+        String[] bignewsid = new String[3];
+        String[] similarcount = new String[3];
+        String companyName = "无预警企业！";
+        if (!WarningCom.isEmpty()) {
+            companyName = (request.getParameter("com") != null) ? request.getParameter("com") : WarningCom.get(0).getName();
+        }
+        for (int i = 0; i < WarningCom.size(); i++) {
+            if (WarningCom.get(i).getName().equals(companyName)) {
+                String[] arrp = WarningCom.get(i).getPredicted().split(";");
+                String[] arrr = WarningCom.get(i).getRealistic().split(";");
+                bignewsid = WarningCom.get(i).getBignewsid().split(";");
+                similarcount = WarningCom.get(i).getSimilarcount().split(";");
+                pre = new ArrayList<>();
+                rea = new ArrayList<>();
+                for (int j = 0; j < arrp.length; j++) {
+                    pre.add(Double.valueOf(arrp[j]));
+                    rea.add(Double.valueOf(arrr[j]));
+                }
+                for (int j = 0; j < bignewsid.length; j++) {
+                    Big.add(searchService.GetBignewsbyid(bignewsid[j]));
+                }
+            }
+            WarningName.add(WarningCom.get(i).getName());
+        }
+        modelMap.put("predictedData", pre);
+        modelMap.put("realisticData", rea);
+        modelMap.put("warningName", WarningName);
+        modelMap.put("mainCom", companyName);
+        modelMap.put("Bignews", Big);
+        modelMap.put("Similarcount", similarcount);
+        return new ModelAndView("AbnormalComWarning_Top", modelMap);
     }
 
     /**
@@ -554,7 +594,7 @@ public class controller {
             if (demolist.contains(companyName) && searchService.getComHealthList().contains(companyName)) {
                 sumreputation = searchService.getCurreputation(companyName);
                 sumhealth = searchService.getHealthValue(companyName);
-                if ((sumreputation != 0) || (sumhealth != 0)){
+                if ((sumreputation != 0) || (sumhealth != 0)) {
                     c.setReputation(sumreputation);
                     c.setHealth(sumhealth);
                     comInfo.add(c);

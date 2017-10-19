@@ -100,7 +100,8 @@
                 </a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalWarning">企业异常预警</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnomalComWarning">企业预警</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalComWarning">企业预警</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showTopAbnormalComWarning">重点企业预警</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComKeyEvents">企业重点事件预警</a></li>
                         <%--<li><a href="${pageContext.request.contextPath}/zmq/showAbnomalComWarning">企业信用评分</a></li>--%>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComPublicOpinionEvaluation">企业舆情评价</a></li>

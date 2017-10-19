@@ -1311,46 +1311,56 @@ public class SearchServiceImpl implements SearchService {
         return negativenewsMapper.ComMonthBeforeNewsCount();
     }
 
-    public List<PredictedandRealistic> CompanyPredictWarning() {
-        List<PredictedandRealistic> predicteddata = negativenewsMapper.PredictedRealisticString();
-        List<PredictedandRealistic> Warningname = new ArrayList<>();
+    public bignews GetBignewsbyid(String bignewsid) {
+        Map map = new HashMap();
+        map.put("bignewsid",bignewsid);
+        return negativenewsMapper.GetBigNewsById(map);
+    }
+
+    public List<PredictedandRealistic> CompanyPredictWarning(String CompanyNumberflag) {
+        List<PredictedandRealistic> predicteddata = new ArrayList<>();;
+        if (CompanyNumberflag.equals("MostCompany"))
+            predicteddata = negativenewsMapper.MostPredictedRealisticString();
+        if (CompanyNumberflag.equals("TopCompany"))
+            predicteddata = negativenewsMapper.TopPredictedRealisticString();
+        List<PredictedandRealistic> Warningname  = new ArrayList<>();
         //List<Integer> WarningName = new ArrayList<>();
         //for(int i = 0;i<predicteddata.size();i++)WarningName.set(i,0);
-        for (int i = 0; i < predicteddata.size(); i++) {
-            String predict = "";
-//            System.out.print(i+","+predicteddata.size());
-//            String arrp3 = predicteddata.get(i).getPredicted();
-//            System.out.print(i+","+predicteddata.get(i).getPredicted());
+        for(int i = 0;i<predicteddata.size();i++) {
+            String predict ="";
             String[] arrp = predicteddata.get(i).getPredicted().split(";");
             String[] arrr = predicteddata.get(i).getRealistic().split(";");
             String name = predicteddata.get(i).getName().split("=")[1];
             name = name.split("}")[0];
-//            for(int p=0;p<arrp.length;p++)
-//            System.out.println(arrp[p]);
-            double sump = 0, sumr = 0, avgp = 0, avgr = 0, variance = 0;
-            double[] arrp2 = new double[arrp.length];
-            double[] arrr2 = new double[arrr.length];
+            double sump=0,sumr=0,avgp=0,avgr=0,variance=0;
+            double[] arrp2 =new double[arrp.length];
+            double[] arrr2 =new double[arrr.length];
             int j = 0;
-            for (j = 0; j < arrp.length; j++) {//平均值
+            for(j = 0;j<arrp.length;j++) {//平均值
                 arrp2[j] = Double.valueOf(arrp[j]);
                 arrr2[j] = Double.valueOf(arrr[j]);
                 sump += arrp2[j];
                 sumr += arrr2[j];
             }
-            avgp = sump / arrp.length;
-            avgr = sumr / arrr.length;
-            for (j = 0; j < arrp.length; j++) {
-                arrp2[j] = arrp2[j] * avgr / avgp;//只对趋势评估
+            double max = arrr2[0];
+            for(j = 0;j<arrr2.length;j++) {
+                if (arrr2[j]>max){
+                    max = arrr2[j];
+                }
+            }
+            avgp=sump/arrp.length;avgr=sumr/arrr.length;
+            for(j = 0;j<arrp.length;j++){
+                arrp2[j] = arrp2[j]*avgr/avgp;//只对趋势评估
                 predict += arrp2[j];
                 predict += ";";
             }
-            for (j = 0; j < arrp.length; j++) {
-                variance += (arrp2[j] - arrr2[j]) * (arrp2[j] - arrr2[j]) * ((j + 1) / 2 / arrp.length + 1 / 2);//带权方差
+            for(j = 0;j<arrp.length;j++) {
+                variance += (arrp2[j]-avgr)*(arrr2[j]-avgr)*((j+1)/arrp.length);//带权相关系数
             }
-            if (variance / avgp > avgp) {
+            if((variance/(arrp.length-1)+avgr)<0&&max>2){
                 Warningname.add(predicteddata.get(i));
-                Warningname.get(Warningname.size() - 1).setPredicted(predict);
-                Warningname.get(Warningname.size() - 1).setName(name);
+                Warningname.get(Warningname.size()-1).setPredicted(predict);
+                Warningname.get(Warningname.size()-1).setName(name);
             }
         }
         return Warningname;
