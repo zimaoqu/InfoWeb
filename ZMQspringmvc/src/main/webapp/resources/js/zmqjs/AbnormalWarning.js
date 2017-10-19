@@ -26,7 +26,7 @@ function queryForPages() {
             for (var i = 0; i < result_key.length; i++) {
                 tbody_content2 += '<tr>'
                     + '<td>' + result_key[i].id + '</td>'
-                    + '<td style="width: 320px"><a href=" + result_key[i].url + "target="_blank">' + result_key[i].title + '</a></td>'
+                    + '<td style="width: 320px"><a href="' + result_key[i].url + ' target="_blank">' + result_key[i].title + '</a></td>'
                     + '<td style="width: 91px;height: 34px">' + result_key[i].date + '</td>'
                     + '<td>' + result_key[i].name + '</td>'
                     + '<td><font color="red">' + result_key[i].word + '</font></td>'
