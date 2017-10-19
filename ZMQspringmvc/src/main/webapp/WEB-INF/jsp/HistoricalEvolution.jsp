@@ -73,7 +73,7 @@
                         <li>
                             <h3><%= eventnews.get(i).getDate().split("-")[1]%>.<%= eventnews.get(i).getDate().split("-")[2]%><span><%= eventnews.get(i).getDate().split("-")[0]%></span></h3>
                             <dl>
-                                <dt> <a href="<%= eventnews.get(i).getUrl() %>" target="_blank"> <%= eventnews.get(i).getTitle()%></a>
+                                <dt> <a onclick="window.open('<%= eventnews.get(i).getUrl() %> ')" > <%= eventnews.get(i).getTitle()%></a>
                                     <span>关键词：<%= eventnews.get(i).getKeywords()%></span>
                                 </dt>
                             </dl>
@@ -86,7 +86,7 @@
                 %>
                 <div class="history-date">
                     <ul>
-                        <h2 class="date02"><a href="#nogo"><%= dateYearFlag%></a></h2>
+                        <h2 class="date02"><a href="#nogo"><%= dateYearFlag%>年</a></h2>
                         <% for (;i<eventnews.size();i++){
                         if (!dateYearFlag.equals(eventnews.get(i).getDate().split("-")[0])){
                             dateYearFlag = eventnews.get(i).getDate().split("-")[0];
@@ -95,7 +95,7 @@
                         <li>
                             <h3><%= eventnews.get(i).getDate().split("-")[1]%>.<%= eventnews.get(i).getDate().split("-")[2]%><span><%= eventnews.get(i).getDate().split("-")[0]%></span></h3>
                             <dl>
-                                <dt><a href="<%= eventnews.get(i).getUrl() %>" target="_blank" > <%= eventnews.get(i).getTitle()%></a>
+                                <dt><a onclick="window.open('<%= eventnews.get(i).getUrl() %> ')"> <%= eventnews.get(i).getTitle()%></a>
                                     <span>关键词：<%= eventnews.get(i).getKeywords()%></span>
                                 </dt>
                             </dl>

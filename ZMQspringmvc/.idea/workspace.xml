@@ -7,18 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49099cca-dd90-46b9-a8d2-2a643e8b8a02" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning_Top.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webContexts.xml" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/negativenewsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/negativenewsMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/negativenewsMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/negativenewsMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PredictedandRealistic.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PredictedandRealistic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnomalComWarning.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +27,18 @@
       <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            <state relative-caret-position="132">
+              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HistoricalEvolution.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="566">
+              <caret line="88" column="82" lean-forward="false" selection-start-line="88" selection-start-column="82" selection-end-line="88" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -212,7 +212,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/ComHealthValueMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ComHealthValueMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateBDI.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicatepcPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPPI.js" />
@@ -227,6 +226,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/AbnormalWarning.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
       </list>
     </option>
@@ -1301,15 +1301,15 @@
       <workItem from="1507616049755" duration="7853000" />
       <workItem from="1507894253855" duration="756000" />
       <workItem from="1508378007217" duration="125000" />
-      <workItem from="1508412357679" duration="2512000" />
+      <workItem from="1508412357679" duration="3507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107111000" />
+    <option name="totallyTimeSpent" value="108106000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1500,14 +1500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1684">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2134">
-          <caret line="97" column="38" lean-forward="false" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1760,10 +1752,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="88" column="82" lean-forward="false" selection-start-line="88" selection-start-column="82" selection-end-line="88" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        <state relative-caret-position="132">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>
