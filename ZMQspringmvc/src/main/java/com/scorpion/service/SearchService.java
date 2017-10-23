@@ -344,4 +344,9 @@ public interface SearchService {
 
     List<String> getComHealthList();
 
+    List<List<Integer>> queryZmqIndex(int flag,String startDate,String endDate);
+
+    List<CreditScore> getCreditScore();
+    List<String> getDateList();
+
 }

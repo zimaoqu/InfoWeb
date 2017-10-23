@@ -79,6 +79,10 @@ public class SearchServiceImpl implements SearchService {
     private TopKeyAttentionMapper topKeyAttentionMapper;
     @Autowired
     private ComHealthValueMapper comHealthValueMapper;
+    @Autowired
+    private ZmqIndexMapper zmqIndexMapper;
+    @Autowired
+    private CreditScoreMapper creditScoreMapper;
     /*
     The size of a page.
      */
@@ -187,6 +191,8 @@ public class SearchServiceImpl implements SearchService {
         for (NewsOfTopCompanyWithBLOBs news : dateList) {
             String html = news.getHtml();
             String name = news.getName();
+            if (html == null || name == null)
+                continue;
             Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
             String res_abs = cut.cut_sentence(html, name);
             if (res_abs == null) {
@@ -271,6 +277,8 @@ public class SearchServiceImpl implements SearchService {
             String html = news.getHtml();
             String name = news.getName();
             Abstract_Cut cut = new Abstract_Cut();//class在后面定义了
+            if (html == null || name == null)
+                continue;
             String res_abs = cut.cut_sentence(html, name);
             if (res_abs == null) {
                 news.setDescription(news.getDescription());
@@ -664,7 +672,7 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public double getHealthValue(String name) {
         Map map = new HashMap();
-        map.put("name",name);
+        map.put("name", name);
         return comHealthValueMapper.getHealthValue(map);
     }
 
@@ -1313,54 +1321,56 @@ public class SearchServiceImpl implements SearchService {
 
     public bignews GetBignewsbyid(String bignewsid) {
         Map map = new HashMap();
-        map.put("bignewsid",bignewsid);
+        map.put("bignewsid", bignewsid);
         return negativenewsMapper.GetBigNewsById(map);
     }
 
     public List<PredictedandRealistic> CompanyPredictWarning(String CompanyNumberflag) {
-        List<PredictedandRealistic> predicteddata = new ArrayList<>();;
+        List<PredictedandRealistic> predicteddata = new ArrayList<>();
+        ;
         if (CompanyNumberflag.equals("MostCompany"))
             predicteddata = negativenewsMapper.MostPredictedRealisticString();
         if (CompanyNumberflag.equals("TopCompany"))
             predicteddata = negativenewsMapper.TopPredictedRealisticString();
-        List<PredictedandRealistic> Warningname  = new ArrayList<>();
+        List<PredictedandRealistic> Warningname = new ArrayList<>();
         //List<Integer> WarningName = new ArrayList<>();
         //for(int i = 0;i<predicteddata.size();i++)WarningName.set(i,0);
-        for(int i = 0;i<predicteddata.size();i++) {
-            String predict ="";
+        for (int i = 0; i < predicteddata.size(); i++) {
+            String predict = "";
             String[] arrp = predicteddata.get(i).getPredicted().split(";");
             String[] arrr = predicteddata.get(i).getRealistic().split(";");
             String name = predicteddata.get(i).getName().split("=")[1];
             name = name.split("}")[0];
-            double sump=0,sumr=0,avgp=0,avgr=0,variance=0;
-            double[] arrp2 =new double[arrp.length];
-            double[] arrr2 =new double[arrr.length];
+            double sump = 0, sumr = 0, avgp = 0, avgr = 0, variance = 0;
+            double[] arrp2 = new double[arrp.length];
+            double[] arrr2 = new double[arrr.length];
             int j = 0;
-            for(j = 0;j<arrp.length;j++) {//平均值
+            for (j = 0; j < arrp.length; j++) {//平均值
                 arrp2[j] = Double.valueOf(arrp[j]);
                 arrr2[j] = Double.valueOf(arrr[j]);
                 sump += arrp2[j];
                 sumr += arrr2[j];
             }
             double max = arrr2[0];
-            for(j = 0;j<arrr2.length;j++) {
-                if (arrr2[j]>max){
+            for (j = 0; j < arrr2.length; j++) {
+                if (arrr2[j] > max) {
                     max = arrr2[j];
                 }
             }
-            avgp=sump/arrp.length;avgr=sumr/arrr.length;
-            for(j = 0;j<arrp.length;j++){
-                arrp2[j] = arrp2[j]*avgr/avgp;//只对趋势评估
+            avgp = sump / arrp.length;
+            avgr = sumr / arrr.length;
+            for (j = 0; j < arrp.length; j++) {
+                arrp2[j] = arrp2[j] * avgr / avgp;//只对趋势评估
                 predict += arrp2[j];
                 predict += ";";
             }
-            for(j = 0;j<arrp.length;j++) {
-                variance += (arrp2[j]-avgr)*(arrr2[j]-avgr)*((j+1)/arrp.length);//带权相关系数
+            for (j = 0; j < arrp.length; j++) {
+                variance += (arrp2[j] - avgr) * (arrr2[j] - avgr) * ((j + 1) / arrp.length);//带权相关系数
             }
-            if((variance/(arrp.length-1)+avgr)<0&&max>2){
+            if ((variance / (arrp.length - 1) + avgr) < 0 && max > 2) {
                 Warningname.add(predicteddata.get(i));
-                Warningname.get(Warningname.size()-1).setPredicted(predict);
-                Warningname.get(Warningname.size()-1).setName(name);
+                Warningname.get(Warningname.size() - 1).setPredicted(predict);
+                Warningname.get(Warningname.size() - 1).setName(name);
             }
         }
         return Warningname;
@@ -1414,6 +1424,43 @@ public class SearchServiceImpl implements SearchService {
         if (gap.equals("month"))
             return comHealthValueMapper.getHealthValueStringMonth(map);
         return comHealthValueMapper.getHealthValueStringSeason(map);
+    }
+
+    @Override
+    public List<List<Integer>> queryZmqIndex(int flag, String startDate, String endDate) {
+        Map map = new HashMap();
+        String type = "";
+        String keyword = "";
+        if (flag == 1) {
+            type = "整体";
+        } else if (flag == 2) {
+            type = "PC";
+        } else {
+            type = "移动";
+        }
+        map.put("type", type);
+        map.put("startDate", startDate);
+        map.put("endDate", endDate);
+        List<String> nameList = zmqIndexMapper.getNameList();
+        List<List<Integer>> list = new ArrayList<>();
+        for (String name : nameList) {
+            keyword = name;
+            map.put("keyword", keyword);
+            list.add(zmqIndexMapper.getIndexList(map));
+        }
+        return list;
+    }
+
+    @Override
+    public List<String> getDateList() {
+        Map map = new HashMap();
+        map.put("keyword", "上海自贸区");
+        return zmqIndexMapper.getDateList(map);
+    }
+
+    @Override
+    public List<CreditScore> getCreditScore() {
+        return creditScoreMapper.getCreditScore();
     }
 }
 

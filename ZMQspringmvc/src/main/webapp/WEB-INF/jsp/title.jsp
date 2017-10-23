@@ -103,7 +103,7 @@
                         <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalComWarning">企业预警</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showTopAbnormalComWarning">重点企业预警</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComKeyEvents">企业重点事件预警</a></li>
-                        <%--<li><a href="${pageContext.request.contextPath}/zmq/showAbnomalComWarning">企业信用评分</a></li>--%>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showComCreditScore">企业信用评分</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComPublicOpinionEvaluation">企业舆情评价</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComHealthTendency">企业健康态势</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComReputationAnalysis">企业声誉分析</a></li>
@@ -115,6 +115,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showEventRelationship">企业事件分析</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showHistoricalEvolution">企业热点事件链</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showDeduplicationNews">企业新闻链</a></li>
                     </ul>
                 </li>
 
@@ -140,6 +141,7 @@
                         <li><a href="${pageContext.request.contextPath}/zmq/showSHZmqHealthTendency">上海自贸区健康态势</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showZmqCompare">自贸区对比</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showThirdPartyData">第三方数据</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showZmqIndex">自贸区指数趋势</a></li>
                     </ul>
                 </li>
 

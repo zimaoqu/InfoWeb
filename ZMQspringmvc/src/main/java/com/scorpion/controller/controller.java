@@ -240,6 +240,21 @@ public class controller {
         return new ModelAndView("HistoricalEvolution", modelMap);
     }
 
+    /**
+     * 去重新闻展示（孙鑫）
+     *
+     * @return
+     */
+    @RequestMapping("showDeduplicationNews")
+    public ModelAndView showDeduplicationNews(ModelMap modelMap) {
+        String selectdiscomsstr = "";
+        List<String> companyList = searchService.getComList();
+        for (int i = 0; i < companyList.size(); i++) {
+            selectdiscomsstr = selectdiscomsstr + "<option>" + companyList.get(i) + "</option>";
+        }
+        modelMap.put("companyList", selectdiscomsstr);
+        return new ModelAndView("DeduplicationNewsDisplay", modelMap);
+    }
 
     /**
      * 第三方数据
@@ -249,6 +264,16 @@ public class controller {
     @RequestMapping("showThirdPartyData")
     public ModelAndView showThirdPartyData() {
         return new ModelAndView("ThirdPartyData");
+    }
+
+    /**
+     * 自贸区指数
+     *
+     * @return
+     */
+    @RequestMapping("showZmqIndex")
+    public ModelAndView showZmqIndex() {
+        return new ModelAndView("ZmqIndex");
     }
 
     /**
@@ -526,6 +551,11 @@ public class controller {
         modelMap.put("negnum", negnum);
         modelMap.put("selectdiscomsstr", selectdiscomsstr);
         return new ModelAndView("ComHealthTendency", modelMap);
+    }
+
+    @RequestMapping("showComCreditScore")
+    public ModelAndView showComCreditScore() {
+        return new ModelAndView("ComCreditScore");
     }
 
     /**
@@ -920,6 +950,34 @@ public class controller {
         json.put("numList", numList);
         out.print(json);
     }
+
+
+    @ResponseBody
+    @RequestMapping("queryZmqIndex")
+    public void queryZmqIndex(HttpServletResponse response, String queryflag, String startDate, String endDate) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        int flag = queryflag == null ? 1 : Integer.parseInt(queryflag);
+        List<List<Integer>> zmqIndexList = searchService.queryZmqIndex(flag,startDate,endDate);
+        List<String> dateList = searchService.getDateList();
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("indexList",zmqIndexList);
+        json.put("dateList",dateList);
+        out.print(json);
+    }
+    @ResponseBody
+    @RequestMapping("queryComCreditScore")
+    public void queryComCreditScore(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        List<CreditScore> creditScoreList = searchService.getCreditScore();
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("result",creditScoreList);
+        out.print(json);
+    }
+
 
 
     /**
