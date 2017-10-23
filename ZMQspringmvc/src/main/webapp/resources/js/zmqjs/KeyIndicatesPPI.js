@@ -29,17 +29,6 @@ function graphicTable1() {
     var str1 = "<table class='gridtable' border='1' cellspacing='0' cellpadding='0'><tr><td>日期</td>"
     var str2 = "<tr><td>PPI</td>"
     var str3 = "<tr><td>CPI</td>"
-
-    var str4 = "<tr><td>日期</td>"
-    var str5 = "<tr><td>PPI</td>"
-    var str6 = "<tr><td>CPI</td>"
-
-    var str7 = "<tr><td>日期</td>"
-    var str8 = "<tr><td>PPI</td>"
-    var str9 = "<tr><td>CPI</td>"
-    var str10 = "<tr><td>日期</td>"
-    var str11 = "<tr><td>PPI</td>"
-    var str12 = "<tr><td>CPI</td>"
     nList = eval(nameList)
     ListPPI = eval(numListPPI)
     ListCPI = eval(numListCPI)

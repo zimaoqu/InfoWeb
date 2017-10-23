@@ -16,12 +16,41 @@ var numList=[];//柱状图的numList
             numList = data.numList;
             nameList = data.nameList;
             graphicGDPCountry();
-
+            graphicTable6();
         }
 
     })
 })();
+function graphicTable6(){
+    var str1 = "<table class='gridtable' border='1' cellspacing='0' cellpadding='0'><tr><td width='60'>日期</td>"
+    var str2 = "<tr><td width='60'>国内GDP</td>"
+    nList = eval(nameList)
+    ListGDP = eval(numList)
+    aList = []
+    bList = []
+    var count = 0
+    for (var i = 0; i < nList.length; i++) {
+        if ((i+1) % 15 == 0 && i > 0) {
+            str1 = str1 + "<td width='60'>" + nList[i] + "</td>" + "</tr>"
+            str2 = str2 + "<td width='60'>" + ListGDP[i] + "</td>" + "</tr>"
+            aList[count] = str1
+            bList[count] = str2
+            count += 1
+            str1 = "<tr><td width='60'>日期</td>"
+            str2 = "<tr><td width='60'>国内GDP</td>"
+        } else {
+            str1 = str1 + "<td width='60'>" + nList[i] + "</td>"
+            str2 = str2 + "<td width='60'>" + ListGDP[i] + "</td>"
+        }
+    }
+    var a = ""
 
+    for (var i = 0; i < aList.length; i++) {
+        a += aList[i]
+        a += bList[i]
+    }
+    document.getElementById("tbl").innerHTML = a + "</table>";
+}
 function graphicGDPCountry(){
     var myChart = echarts.init(document.getElementById("graphicGDPCountry"));
     option = {
@@ -40,6 +69,9 @@ function graphicGDPCountry(){
         calculable: true,
         xAxis: [
             {
+                axisLabel:{
+                    rotate:25,
+                },
                 data:nameList,
                 show: true,           //横坐标显示
             }

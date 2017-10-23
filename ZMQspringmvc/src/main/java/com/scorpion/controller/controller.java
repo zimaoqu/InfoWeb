@@ -1107,7 +1107,7 @@ public class controller {
         List<String> nameList = new ArrayList<>();
         List<String> numList = new ArrayList<>();
         for (IndicateOfGDPCountry instance : GDPCountryCount) {
-            nameList.add(instance.getSeasonName());
+            nameList.add(instance.getSeason());
             numList.add(instance.getData());
         }
         PrintWriter out = response.getWriter();
@@ -1132,7 +1132,7 @@ public class controller {
         List<String> nameList = new ArrayList<>();
         List<String> numList = new ArrayList<>();
         for (IndicateOfGDPSH instance : GDPSHCount) {
-            nameList.add(instance.getSeasonName());
+            nameList.add(instance.getSeason());
             numList.add(instance.getData());
         }
         PrintWriter out = response.getWriter();

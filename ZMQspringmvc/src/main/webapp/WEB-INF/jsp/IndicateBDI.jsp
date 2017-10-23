@@ -233,6 +233,12 @@
         <div id="graphicBDI" class="echart_container3" ></div>
 
     </div>
+    <div id="tbl">
+
+    </div>
+    <div id="tb2" style="height: 10px">
+
+    </div>
 </div>
 <script src="${pageContext.request.contextPath}/resources/js/zmqjs/KeyIndicatesBDI.js" type="text/javascript"></script>
 </body>

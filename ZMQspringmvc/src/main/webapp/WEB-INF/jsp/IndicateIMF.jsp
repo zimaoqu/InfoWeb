@@ -234,6 +234,14 @@
 
     </div>
 </div>
+<div id="tbl">
+</div>
+<div id="tb2" style="height: 10px">
+
+</div>
+<div id="tb3" style="height: 10px">
+
+</div>
 <script src="${pageContext.request.contextPath}/resources/js/zmqjs/KeyIndicatesIMF.js" type="text/javascript"></script>
 </body>
 </html>

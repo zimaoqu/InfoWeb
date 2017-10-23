@@ -234,6 +234,15 @@
         <div id="graphicGDPSH" class="echart_container2" ></div>
 
     </div>
+    <div id="tbl">
+
+    </div>
+    <div id="tb2">
+
+    </div>
+    <div id="tb3" style="height: 10px">
+
+    </div>
 </div>
 <script src="${pageContext.request.contextPath}/resources/js/zmqjs/KeyIndicatesTaxCountry.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/js/zmqjs/KeyIndicatesTRSCG.js" type="text/javascript"></script>
