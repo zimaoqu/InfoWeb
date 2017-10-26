@@ -1,4 +1,4 @@
-<%@ page import="com.scorpion.pojo.bignews" %>
+﻿<%@ page import="com.scorpion.pojo.bignews" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
@@ -45,13 +45,9 @@
 <body>
 <div class="container-fluid">
     <br/>
-    <%@include file="title.jsp" %>
+    <%@include file="title.jsp"%>
     <br/>
         <%
-//        String maincom = request.getAttribute("maincom").toString();
-//        String selectdiscomsstr=request.getAttribute("selectdiscomsstr").toString();
-//        List<bignews> eventnews=(ArrayList<bignews>)request.getAttribute("eventnews");
-//        int flag = 1;
           List<Double> predicted = (List<Double>)request.getAttribute("predictedData");
           List<Double> realistic = (List<Double>)request.getAttribute("realisticData");
           List<String> warningName = (List<String>)request.getAttribute("warningName");

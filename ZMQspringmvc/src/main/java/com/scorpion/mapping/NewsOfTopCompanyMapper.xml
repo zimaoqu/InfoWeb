@@ -137,7 +137,7 @@
         SELECT name,count(*) as num from topcompany WHERE DATE BETWEEN #{startDate} and #{endDate} GROUP BY name ORDER BY num DESC LIMIT 1,10
     </select>
     <select id="TopNewsIndustryCount" resultMap="IndustryCount">
-        SELECT industry,count(*) as count from topcompany GROUP BY industry ORDER BY count DESC LIMIT 1,10 where industry is NOT NULL
+        SELECT industry,count(*) as count from topcompany where industry is NOT NULL GROUP BY industry ORDER BY count DESC LIMIT 1,10
     </select>
     <select id="countMatchNews" parameterType="Map" resultType="java.lang.Integer">
     SELECT count(*) from topcompany where name like CONCAT('%',#{name},'%' ) and industry Like CONCAT('%',#{industry},'%' ) and DATE BETWEEN #{startDate} and #{endDate}

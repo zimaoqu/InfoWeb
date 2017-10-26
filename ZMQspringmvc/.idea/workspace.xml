@@ -7,33 +7,386 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49099cca-dd90-46b9-a8d2-2a643e8b8a02" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/DeduplicationNews.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ZMQspringmvc.iml" afterPath="$PROJECT_DIR$/.idea/ZMQspringmvc.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ROOT_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ROOT_war.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ZMQspringmvc_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ZMQspringmvc_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_1_37.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_1_37.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_7_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_7_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_7_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_7_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_7_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_7_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_15_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_15_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_0_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_0_8_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_2_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_1_3_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_1_3_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_api_7_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_api_7_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_30.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_30.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_1_1_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_1_5_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_1_5_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_8_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_8_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_2_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_2_5.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_7.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_2_5_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_2_5_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_2_5_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_2_5_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_2_5_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_2_5_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_2_5_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_2_5_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_2_5_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_2_5_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_2_5_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__us_codecraft_webmagic_core_0_5_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__us_codecraft_webmagic_core_0_5_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__us_codecraft_webmagic_extension_0_5_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__us_codecraft_webmagic_extension_0_5_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__us_codecraft_xsoup_0_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__us_codecraft_xsoup_0_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webContexts.xml" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/.jsdtscope" afterPath="$PROJECT_DIR$/.settings/.jsdtscope" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/WebContent/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZMQspringmvc.iml" afterPath="$PROJECT_DIR$/ZMQspringmvc.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/controller/LoginController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/ComHealthValueMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/ComHealthValueMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/CreditScoreMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/CreditScoreMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfBDIMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfBDIMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfCPIMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfCPIMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfExportImportMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfExportImportMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfGDPCountryMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfGDPCountryMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfGDPSHMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfGDPSHMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfPPIMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/IndicateOfPPIMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfCompanyMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfCompanyMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfIndustryMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfIndustryMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfOtherZmqMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfOtherZmqMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfSHZmqMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfSHZmqMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfTopCompanyMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/NewsOfTopCompanyMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/PmiMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/PmiMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/PolicyMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/PolicyMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/PolicyOfZmqMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/PolicyOfZmqMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/TaxCountryMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/TaxCountryMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/TopCompanyInfoMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/TopCompanyInfoMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/TopKeyAttentionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/TopKeyAttentionMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/TotalRetailSalesOfConsumerGoodsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/TotalRetailSalesOfConsumerGoodsMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/ZmqIndexMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/ZmqIndexMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/adminInfoMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/adminInfoMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/bignewsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/bignewsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/companyinformationMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/companyinformationMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/copperMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/copperMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/crude_btlMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/crude_btlMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/crude_wtiMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/crude_wtiMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/currentnewsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/currentnewsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/democompanyMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/democompanyMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/dollar_exchange_rate_of_rmbMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/dollar_exchange_rate_of_rmbMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/eventnewsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/eventnewsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/imfMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/imfMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/negativenewsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/dao/negativenewsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/interceptor/LoginInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/interceptor/LoginInterceptor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ComHealthValueMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ComHealthValueMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/CreditScoreMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/CreditScoreMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfBDIMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfBDIMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfCPIMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfCPIMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfExportImportMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfExportImportMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfGDPCountryMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfGDPCountryMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfGDPSHMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfGDPSHMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfPPIMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/IndicateOfPPIMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfCompanyMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfCompanyMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfIndustryMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfIndustryMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfOtherZmqMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfOtherZmqMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfSHZmqMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfSHZmqMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/PmiMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/PmiMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/PolicyMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/PolicyMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/PolicyOfZmqMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/PolicyOfZmqMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/TaxCountryMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/TaxCountryMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/TopCompanyInfoMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/TopCompanyInfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/TopKeyAttentionMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/TopKeyAttentionMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/TotalRetailSalesOfConsumerGoodsMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/TotalRetailSalesOfConsumerGoodsMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ZmqIndexMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ZmqIndexMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/adminInfoMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/adminInfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/bignewsMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/bignewsMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/companyinformationMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/companyinformationMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/copperMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/copperMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/crude_btlMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/crude_btlMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/crude_wtiMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/crude_wtiMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/currentnewsMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/currentnewsMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/democompanyMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/democompanyMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/dollar_exchange_rate_of_rmbMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/dollar_exchange_rate_of_rmbMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/eventnewsMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/eventnewsMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/imfMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/imfMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/negativenewsMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/negativenewsMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ComHealthValue.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ComHealthValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ComHealthValueExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ComHealthValueExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ComNameNewsCount.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ComNameNewsCount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/CompanyInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/CompanyInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/CreditScore.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/CreditScore.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/CreditScoreExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/CreditScoreExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfBDI.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfBDI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfBDIExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfBDIExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfCPI.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfCPI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfCPIExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfCPIExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfExportImport.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfExportImport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfExportImportExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfExportImportExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPCountry.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPCountry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPCountryExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPCountryExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPSH.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPSH.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPSHExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfGDPSHExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfPPI.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfPPI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfPPIExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndicateOfPPIExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndustryCount.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/IndustryCount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfCompany.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfCompany.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfCompanyExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfCompanyExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfCompanyWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfCompanyWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfIndustry.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfIndustry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfIndustryExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfIndustryExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfIndustryKey.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfIndustryKey.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfIndustryWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfIndustryWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfOtherZmq.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfOtherZmq.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfOtherZmqExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfOtherZmqExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfOtherZmqKey.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfOtherZmqKey.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfOtherZmqWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfOtherZmqWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfSHZmq.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfSHZmq.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfSHZmqExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfSHZmqExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfSHZmqKey.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfSHZmqKey.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfSHZmqWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfSHZmqWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfTopCompany.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfTopCompany.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfTopCompanyExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfTopCompanyExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfTopCompanyWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/NewsOfTopCompanyWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/Pmi.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/Pmi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PmiExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PmiExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/Policy.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/Policy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyOfZmq.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyOfZmq.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyOfZmqExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyOfZmqExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyOfZmqKey.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyOfZmqKey.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyOfZmqWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyOfZmqWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PolicyWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PredictedandRealistic.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/PredictedandRealistic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/SourceOfNews.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/SourceOfNews.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TaxCountry.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TaxCountry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TaxCountryExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TaxCountryExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopCompanyInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopCompanyInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopCompanyInfoExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopCompanyInfoExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopKeyAttention.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopKeyAttention.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopKeyAttentionExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopKeyAttentionExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopKeyAttentionWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TopKeyAttentionWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TotalRetailSalesOfConsumerGoods.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TotalRetailSalesOfConsumerGoods.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TotalRetailSalesOfConsumerGoodsExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/TotalRetailSalesOfConsumerGoodsExample.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ZmqIndex.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ZmqIndex.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ZmqIndexExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ZmqIndexExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/adminInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/adminInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/adminInfoExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/adminInfoExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/bignews.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/bignews.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/bignewsExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/bignewsExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/companyinformation.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/companyinformation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/companyinformationExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/companyinformationExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/copper.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/copper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/copperExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/copperExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/crude_btl.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/crude_btl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/crude_btlExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/crude_btlExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/crude_btlKey.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/crude_btlKey.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/crude_wti.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/crude_wti.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/crude_wtiExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/crude_wtiExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/currentnews.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/currentnews.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/currentnewsExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/currentnewsExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/currentnewsWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/currentnewsWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/democompany.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/democompany.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/democompanyExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/democompanyExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/dollar_exchange_rate_of_rmb.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/dollar_exchange_rate_of_rmb.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/dollar_exchange_rate_of_rmbExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/dollar_exchange_rate_of_rmbExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/eventnews.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/eventnews.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/eventnewsExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/eventnewsExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/eventnewsWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/eventnewsWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/imf.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/imf.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/imfExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/imfExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/negativenews.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/negativenews.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/negativenewsExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/negativenewsExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/negativenewsWithBLOBs.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/negativenewsWithBLOBs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/service/LoginService.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/service/LoginService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/LoginServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/LoginServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scorpion/util/data/Page.java" afterPath="$PROJECT_DIR$/src/main/java/com/scorpion/util/data/Page.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-mybatis.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-mybatis.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning_Top.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning_Top.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalWarning.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalWarning.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComCreditScore.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComCreditScore.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComHealthTendency.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComHealthTendency.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComKeyEvents.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComKeyEvents.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComPublicOpinionEvaluation.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComPublicOpinionEvaluation.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComReputationAnalysis.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComReputationAnalysis.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyNews.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyNews.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyRelationship.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyRelationship.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyRelationship_last_half_year.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyRelationship_last_half_year.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyRelationship_last_month.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyRelationship_last_month.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyRelationship_last_season.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyRelationship_last_season.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DeduplicationNewsDisplay.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/DeduplicationNewsDisplay.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/EventRelationship.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/EventRelationship.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateBDI.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateBDI.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateCrude.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateCrude.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateExportImport.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateExportImport.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateGDP.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateGDP.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateIMF.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateIMF.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicatePMI.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicatePMI.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateTRSCG.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateTRSCG.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateTaxCountry.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateTaxCountry.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Indicatecopper.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Indicatecopper.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Indicatedder.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Indicatedder.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicatepcPage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicatepcPage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndustryNews.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndustryNews.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/KeyIndicates.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/KeyIndicates.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/MatchIndustryNews.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/MatchIndustryNews.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/MatchOtherZmqResult.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/MatchOtherZmqResult.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/MatchResult.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/MatchResult.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/MatchSHZmqResult.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/MatchSHZmqResult.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/OtherZmqNews.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/OtherZmqNews.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/PolicyNews.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/PolicyNews.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/PotentialRelationship.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/PotentialRelationship.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SHZmqHealthTendency.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SHZmqHealthTendency.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SHZmqNews.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SHZmqNews.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SHZmqPublicOpinionEvaluation.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/SHZmqPublicOpinionEvaluation.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ThirdPartyData.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ThirdPartyData.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TopCompanyNews.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TopCompanyNews.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TopMatchResult.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TopMatchResult.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqCompare.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqCompare.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqIndex.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqIndex.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqPolicy.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqPolicy.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/keyIndicateInit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/keyIndicateInit.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/ComCreditScore.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/ComCreditScore.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/News.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/News.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/Stock.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/Stock.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-datetimepicker.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-datetimepicker.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/chinaz.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/chinaz.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/deduplicationNews.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/deduplicationNews.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/history.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/history.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/historyBignews.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/historyBignews.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/jquery-ui.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/jquery-ui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/loginReset.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/loginReset.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/loginStructure.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/loginStructure.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/pagination.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/dict/all.txt" afterPath="$PROJECT_DIR$/src/main/webapp/resources/dict/all.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/dict/half_year.txt" afterPath="$PROJECT_DIR$/src/main/webapp/resources/dict/half_year.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/dict/month.txt" afterPath="$PROJECT_DIR$/src/main/webapp/resources/dict/month.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/dict/real_data/all(162).txt" afterPath="$PROJECT_DIR$/src/main/webapp/resources/dict/real_data/all(162).txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/dict/real_data/half_year(100).txt" afterPath="$PROJECT_DIR$/src/main/webapp/resources/dict/real_data/half_year(100).txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/dict/real_data/month(10).txt" afterPath="$PROJECT_DIR$/src/main/webapp/resources/dict/real_data/month(10).txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/dict/real_data/season(50).txt" afterPath="$PROJECT_DIR$/src/main/webapp/resources/dict/real_data/season(50).txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/dict/season.txt" afterPath="$PROJECT_DIR$/src/main/webapp/resources/dict/season.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/cd-icon-location.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/cd-icon-location.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/Clock.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/Clock.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/HistoryBigNews.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/HistoryBigNews.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-datetimepicker.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap-datetimepicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/buttonClick.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/buttonClick.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/china.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/china.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/cycle.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/cycle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/d3.v3.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/d3.v3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/d3pie.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/d3pie.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/demo.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/demo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/echarts.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/echarts.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/feedback.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/feedback.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/feedback_keycorp.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/feedback_keycorp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/history.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/history.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-1.2.6.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-1.2.6.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-1.8.3.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-1.8.3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-1.9.1.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-1.9.1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-2.2.0.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-2.2.0.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-ui.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-ui.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.daterangepicker.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.daterangepicker.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.easing.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.easing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.mousewheel.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.mousewheel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.slidy.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.slidy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/json2.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/json2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/json_parse.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/json_parse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/json_parse_state.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/json_parse_state.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/npm.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/npm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/pageresponse.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/pageresponse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/pagination.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/pagination.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/paging.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/paging.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/AbnormalWarning.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/AbnormalWarning.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/ComCreditScore.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/ComCreditScore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/CompanyNews.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/CompanyNews.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/IndustryNews.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/IndustryNews.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatedder.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatedder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesBDI.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesBDI.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesCPI.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesCPI.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesCrude.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesCrude.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesExportImport.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesExportImport.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesGDPCountry.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesGDPCountry.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesGDPSH.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesGDPSH.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesIMF.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesIMF.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPMI.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPMI.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPPI.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPPI.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesTRSCG.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesTRSCG.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesTaxCountry.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesTaxCountry.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatescopper.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatescopper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/MatchIndustryNews.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/MatchIndustryNews.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/MatchOtherZmq.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/MatchOtherZmq.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/MatchResult.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/MatchResult.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/MatchSHZmqResult.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/MatchSHZmqResult.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/OtherZmqNews.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/OtherZmqNews.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/Paging.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/Paging.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/PolicyNews.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/PolicyNews.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/PolicyNewsByCat.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/PolicyNewsByCat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/PolicyNewsByCon.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/PolicyNewsByCon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/SHZmqNews.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/SHZmqNews.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/TopCompanyNews.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/TopCompanyNews.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/TopMatchResult.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/TopMatchResult.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/ZmqIndex.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/ZmqIndex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/ZmqPolicy.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/ZmqPolicy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/plugins/livesearch/jquery.livesearch.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/plugins/livesearch/jquery.livesearch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/plugins/template/template-debug.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/plugins/template/template-debug.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/plugins/template/template-native-debug.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/plugins/template/template-native-debug.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/plugins/template/template-native.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/plugins/template/template-native.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/plugins/template/template.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/plugins/template/template.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,105 +402,78 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ZmqIndex.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqIndex.jsp">
+      <file leaf-file-name="AbnormalComWarning.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2339">
-              <caret line="186" column="43" lean-forward="false" selection-start-line="186" selection-start-column="43" selection-end-line="186" selection-end-column="43" />
-              <folding />
+            <state relative-caret-position="528">
+              <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="1028" column="59" lean-forward="false" selection-start-line="1028" selection-start-column="59" selection-end-line="1028" selection-end-column="59" />
+            <state relative-caret-position="418">
+              <caret line="453" column="5" lean-forward="true" selection-start-line="453" selection-start-column="5" selection-end-line="453" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZmqIndex.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/ZmqIndex.js">
+      <file leaf-file-name="KeyIndicatesPPI.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPPI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="774" column="5" lean-forward="false" selection-start-line="774" selection-start-column="5" selection-end-line="774" selection-end-column="5" />
+            <state relative-caret-position="176">
+              <caret line="80" column="24" lean-forward="false" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="title.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1782">
+              <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbnormalComWarning_Top.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning_Top.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1342">
+              <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyRelationship.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyRelationship.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="n#!!block;n#queryZmqIndex#0" expanded="false" />
-                <element signature="n#!!block;n#queryMediaIndex#0" expanded="false" />
-                <element signature="n#!!block;n#graphic#0" expanded="false" />
-                <element signature="e#3920#16064#0" expanded="false" />
-                <element signature="e#3951#7958#0" expanded="false" />
-                <element signature="e#7989#11996#0" expanded="false" />
-                <element signature="n#!!block;n#graphic2#0" expanded="false" />
+                <marker date="1509010453989" expanded="true" signature="8161:8178" ph="..." />
+                <marker date="1509010453989" expanded="true" signature="8343:8360" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="1401" column="56" lean-forward="false" selection-start-line="1401" selection-start-column="48" selection-end-line="1401" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZmqIndexMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ZmqIndexMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="93" column="96" lean-forward="false" selection-start-line="93" selection-start-column="96" selection-end-line="93" selection-end-column="96" />
-              <folding>
-                <marker date="1509004136716" expanded="true" signature="3531:3569" ph="SELECT DISTI... zmq_index" />
-                <marker date="1509004136716" expanded="true" signature="3666:3780" ph="SELECT index... zmq_index" />
-                <marker date="1509004136716" expanded="true" signature="3883:4042" ph="SELECT index... zmq_index" />
-                <marker date="1509004136716" expanded="true" signature="4137:4209" ph="SELECT date " />
-                <marker date="1509004136716" expanded="true" signature="4986:5007" ph="delete from " />
-                <marker date="1509004136716" expanded="true" signature="5314:5500" ph="insert into zmq_index... " />
-                <marker date="1509004136716" expanded="true" signature="6705:6735" ph="select count... zmq_index" />
-                <marker date="1509004136716" expanded="true" signature="7788:7999" ph="update zmq_i... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="361" column="67" lean-forward="false" selection-start-line="361" selection-start-column="67" selection-end-line="361" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MediaIndexMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/MediaIndexMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="85" column="53" lean-forward="false" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
-              <folding>
-                <marker date="1508982140271" expanded="true" signature="3495:3572" ph="SELECT index... mediaindex" />
-                <marker date="1508982140271" expanded="true" signature="4354:4376" ph="delete from " />
-                <marker date="1508982140271" expanded="true" signature="4685:4846" ph="insert into mediaindex... " />
-                <marker date="1508982140271" expanded="true" signature="5932:5963" ph="select count... mediaindex" />
-                <marker date="1508982140271" expanded="true" signature="6927:7099" ph="update media... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZmqIndexMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/ZmqIndexMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="71" column="46" lean-forward="false" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -167,14 +493,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getQ</find>
-      <find>getComList</find>
       <find>getCurreputation</find>
       <find>getCom</find>
       <find>getHealth</find>
       <find>showComR</find>
       <find>onclick</find>
-      <find>queryKeyIndicatedder</find>
       <find>showAb</find>
       <find>queryNeg</find>
       <find>BDI</find>
@@ -197,6 +520,9 @@
       <find>query</find>
       <find>queryCalResult</find>
       <find>孙鑫</find>
+      <find>queryKeyIndicatedder</find>
+      <find>system.</find>
+      <find>similarcount</find>
     </findStrings>
     <replaceStrings>
       <replace>国内GDP</replace>
@@ -225,7 +551,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ComHealthValueMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicatepcPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/dollar_exchange_rate_of_rmb.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/dollar_exchange_rate_of_rmbMapper.xml" />
@@ -233,13 +558,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComKeyEvents.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalWarning.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/AbnormalWarning.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/HistoricalEvolution.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesBDI.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesGDPSH.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesGDPCountry.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesTaxCountry.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPPI.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesCrude.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPMI.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateBDI.jsp" />
@@ -252,14 +575,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateIMF.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesIMF.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatedder.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatescopper.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/pojo/ZmqIndex.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/CreditScoreMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/CreditScoreMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/ComCreditScore.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ComCreditScore.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/MediaIndexMapper.xml" />
@@ -272,9 +592,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ZmqIndexMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/ZmqIndexMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqIndex.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/ZmqIndex.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/dao/dollar_exchange_rate_of_rmbMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatescopper.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPPI.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java" />
       </list>
     </option>
@@ -313,6 +639,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -490,36 +819,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="zmqjs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ZMQspringmvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ZMQspringmvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -795,9 +1094,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -808,22 +1104,25 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/InfoWeb-master/ZMQspringmvc/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\DEMO\Java\InfoWeb-master\ZMQspringmvc\src\main\webapp\resources\js\zmqjs" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hasee\Desktop\zmq\InfoWeb\ZMQspringmvc\src\main\webapp\resources\js\zmqjs" />
+      <recent name="C:\Users\hasee\Desktop\zmq\InfoWeb\ZMQspringmvc\src\main\java\com\scorpion\pojo" />
+      <recent name="C:\Users\hasee\Desktop\zmq\InfoWeb\ZMQspringmvc\src\main\java\com\scorpion\mapping" />
       <recent name="F:\DEMO\Java\InfoWeb-master\ZMQspringmvc\src\main\webapp\resources\js\zmqjs" />
       <recent name="F:\DEMO\Java\InfoWeb-master\ZMQspringmvc\src\main\webapp\WEB-INF\jsp" />
-      <recent name="F:\DEMO\Java\InfoWeb-master\ZMQspringmvc\src\main\webapp\resources\js" />
-      <recent name="F:\DEMO\Java\InfoWeb-master\ZMQspringmvc\src\main\webapp\resources\css" />
-      <recent name="D:\InfoWeb\ZMQspringmvc\src\main\webapp\WEB-INF\jsp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.scorpion.dao" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\DEMO\Java\InfoWeb-master\ZMQspringmvc\src\main\webapp\resources\js\zmqjs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1277,8 +1576,8 @@
       </MavenSettings>
       <method />
     </configuration>
-    <configuration default="false" name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M26" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="C:\Program Files\Java\jdk1.8.0_101\jre">
-      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+    <configuration default="false" name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.39" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:\Program Files\Java\jdk1.8.0_101\jre">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -1421,11 +1720,16 @@
       <workItem from="1508943825171" duration="4398000" />
       <workItem from="1508981926577" duration="7040000" />
       <workItem from="1508998013156" duration="6691000" />
+      <workItem from="1509010660886" duration="785000" />
+      <workItem from="1509013059245" duration="68000" />
+      <workItem from="1509013144547" duration="4507000" />
+      <workItem from="1509022341852" duration="293000" />
+      <workItem from="1509023808473" duration="2666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179076000" />
+    <option name="totallyTimeSpent" value="187395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1447,16 +1751,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34012875" sideWeight="0.35833332" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3390558" sideWeight="0.35833332" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23081024" sideWeight="0.488178" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18496802" sideWeight="0.488178" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19583334" sideWeight="0.511822" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1477,7 +1781,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1486,61 +1790,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesCrude.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateBDI.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="240" column="10" lean-forward="false" selection-start-line="240" selection-start-column="10" selection-end-line="240" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Indicatecopper.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="240" column="10" lean-forward="false" selection-start-line="240" selection-start-column="10" selection-end-line="240" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicatePMI.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1028">
-          <caret line="237" column="16" lean-forward="false" selection-start-line="237" selection-start-column="16" selection-end-line="237" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateGDP.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="243" column="10" lean-forward="false" selection-start-line="243" selection-start-column="10" selection-end-line="243" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/keyIndicateInit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="242" column="4" lean-forward="true" selection-start-line="242" selection-start-column="4" selection-end-line="244" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/IndicateTaxCountry.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="239" column="10" lean-forward="false" selection-start-line="239" selection-start-column="10" selection-end-line="239" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesGDPCountry.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -1559,7 +1808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8120">
           <caret line="241" column="12" lean-forward="false" selection-start-line="241" selection-start-column="12" selection-end-line="241" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1567,7 +1815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="240" column="10" lean-forward="false" selection-start-line="240" selection-start-column="10" selection-end-line="240" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1589,28 +1836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatedder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatescopper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning_Top.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1640,7 +1865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1474">
           <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1670,7 +1894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="55" column="12" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1688,21 +1911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="74" column="69" lean-forward="true" selection-start-line="74" selection-start-column="69" selection-end-line="74" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/CompanyNews.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1714,33 +1922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-924">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3058">
-          <caret line="139" column="133" lean-forward="false" selection-start-line="139" selection-start-column="133" selection-end-line="139" selection-end-column="133" />
-          <folding>
-            <marker date="1508941257112" expanded="true" signature="6486:6552" ph="SELECT * fro... topcompany" />
-            <marker date="1508941257112" expanded="true" signature="6658:6857" ph="SELECT * fro... topcompany" />
-            <marker date="1508941257112" expanded="true" signature="6938:6969" ph="SELECT count... topcompany" />
-            <marker date="1508941257112" expanded="true" signature="7046:7132" ph="SELECT name,... topcompany" />
-            <marker date="1508941257112" expanded="true" signature="7223:7356" ph="SELECT name,... topcompany" />
-            <marker date="1508941257112" expanded="true" signature="7444:7569" ph="SELECT indus... " />
-            <marker date="1508941257112" expanded="true" signature="7672:7836" ph="SELECT count... topcompany" />
-            <marker date="1508941257112" expanded="true" signature="7920:7956" ph="SELECT DISTI... tb_content" />
-            <marker date="1508941257112" expanded="true" signature="9555:9725" ph="select , fro... " />
-            <marker date="1508941257112" expanded="true" signature="9965:10029" ph="delete from " />
-            <marker date="1508941257112" expanded="true" signature="10290:10312" ph="delete from " />
-            <marker date="1508941257112" expanded="true" signature="10671:11404" ph="insert into topcompany... " />
-            <marker date="1508941257112" expanded="true" signature="15111:15142" ph="select count... topcompany" />
-            <marker date="1508941257112" expanded="true" signature="17902:18792" ph="update topco... " />
-            <marker date="1508941257112" expanded="true" signature="19130:19622" ph="update topco... " />
-            <marker date="1508941257112" expanded="true" signature="20012:21808" ph="update topco... " />
-            <marker date="1508941257112" expanded="true" signature="22083:22866" ph="update topco... " />
-            <marker date="1508941257112" expanded="true" signature="23123:23557" ph="update topco... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1760,19 +1941,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2992">
-          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/deduplicationNews.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
           <caret line="106" column="23" lean-forward="true" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1780,21 +1952,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/MediaIndexMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
+        <state relative-caret-position="2975">
           <caret line="85" column="53" lean-forward="false" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
-          <folding>
-            <marker date="1508982140271" expanded="true" signature="3495:3572" ph="SELECT index... mediaindex" />
-            <marker date="1508982140271" expanded="true" signature="4354:4376" ph="delete from " />
-            <marker date="1508982140271" expanded="true" signature="4685:4846" ph="insert into mediaindex... " />
-            <marker date="1508982140271" expanded="true" signature="5932:5963" ph="select count... mediaindex" />
-            <marker date="1508982140271" expanded="true" signature="6927:7099" ph="update media... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1802,38 +1967,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1694">
           <caret line="119" column="10" lean-forward="true" selection-start-line="119" selection-start-column="10" selection-end-line="119" selection-end-column="10" />
-          <folding>
-            <marker date="1508998296615" expanded="true" signature="6334:6400" ph="SELECT * fro... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="6519:6602" ph="SELECT * FRO... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="6711:6863" ph="SELECT * fro... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="6948:6979" ph="SELECT count... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="7086:7203" ph="SELECT count... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="7310:7415" ph="SELECT oreit... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="7517:7652" ph="SELECT count... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="7754:7889" ph="SELECT count... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="7991:8127" ph="SELECT count... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="8240:8336" ph="SELECT count... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="8448:8544" ph="SELECT count... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="8656:8753" ph="SELECT count... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="8861:8969" ph="SELECT * fro... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="9075:9183" ph="SELECT * fro... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="9289:9398" ph="SELECT * fro... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="9478:9564" ph="SELECT name,... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="9652:9785" ph="SELECT name,... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="9894:9979" ph="SELECT name tb_content" />
-            <marker date="1508998296615" expanded="true" signature="10061:10097" ph="SELECT DISTI... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="10205:10278" ph="SELECT keywo... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="11872:12042" ph="select , fro... " />
-            <marker date="1508998296615" expanded="true" signature="12282:12346" ph="delete from " />
-            <marker date="1508998296615" expanded="true" signature="12604:12626" ph="delete from " />
-            <marker date="1508998296615" expanded="true" signature="12982:13715" ph="insert into tb_content... " />
-            <marker date="1508998296615" expanded="true" signature="17404:17435" ph="select count... tb_content" />
-            <marker date="1508998296615" expanded="true" signature="20195:21085" ph="update tb_co... " />
-            <marker date="1508998296615" expanded="true" signature="21423:21915" ph="update tb_co... " />
-            <marker date="1508998296615" expanded="true" signature="22302:24098" ph="update tb_co... " />
-            <marker date="1508998296615" expanded="true" signature="24370:25153" ph="update tb_co... " />
-            <marker date="1508998296615" expanded="true" signature="25407:25841" ph="update tb_co... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1841,7 +1975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="135" column="86" lean-forward="false" selection-start-line="135" selection-start-column="86" selection-end-line="135" selection-end-column="86" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1849,9 +1982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1859,32 +1989,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="610">
           <caret line="49" column="27" lean-forward="false" selection-start-line="47" selection-start-column="10" selection-end-line="52" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/ZmqIndexMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="3255">
           <caret line="93" column="96" lean-forward="false" selection-start-line="93" selection-start-column="96" selection-end-line="93" selection-end-column="96" />
-          <folding>
-            <marker date="1509004136716" expanded="true" signature="3531:3569" ph="SELECT DISTI... zmq_index" />
-            <marker date="1509004136716" expanded="true" signature="3666:3780" ph="SELECT index... zmq_index" />
-            <marker date="1509004136716" expanded="true" signature="3883:4042" ph="SELECT index... zmq_index" />
-            <marker date="1509004136716" expanded="true" signature="4137:4209" ph="SELECT date " />
-            <marker date="1509004136716" expanded="true" signature="4986:5007" ph="delete from " />
-            <marker date="1509004136716" expanded="true" signature="5314:5500" ph="insert into zmq_index... " />
-            <marker date="1509004136716" expanded="true" signature="6705:6735" ph="select count... zmq_index" />
-            <marker date="1509004136716" expanded="true" signature="7788:7999" ph="update zmq_i... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/ZmqIndexMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
+        <state relative-caret-position="2310">
           <caret line="71" column="46" lean-forward="false" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
           <folding />
         </state>
@@ -1892,48 +2010,185 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/SearchService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
+        <state relative-caret-position="7788">
           <caret line="361" column="67" lean-forward="false" selection-start-line="361" selection-start-column="67" selection-end-line="361" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2339">
-          <caret line="186" column="43" lean-forward="false" selection-start-line="186" selection-start-column="43" selection-end-line="186" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/ZmqIndex.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
+        <state relative-caret-position="3454">
           <caret line="774" column="5" lean-forward="false" selection-start-line="774" selection-start-column="5" selection-end-line="774" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/dollar_exchange_rate_of_rmbMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#queryZmqIndex#0" expanded="false" />
-            <element signature="n#!!block;n#queryMediaIndex#0" expanded="false" />
-            <element signature="n#!!block;n#graphic#0" expanded="false" />
-            <element signature="e#3920#16064#0" expanded="false" />
-            <element signature="e#3951#7958#0" expanded="false" />
-            <element signature="e#7989#11996#0" expanded="false" />
-            <element signature="n#!!block;n#graphic2#0" expanded="false" />
+            <marker date="1508944972067" expanded="true" signature="16216:16288" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/dollar_exchange_rate_of_rmbExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1508943819217" expanded="true" signature="61723:61772" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/pojo/dollar_exchange_rate_of_rmb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#22404#22405#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatedder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/dao/dollar_exchange_rate_of_rmbMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/mapping/NewsOfTopCompanyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3058">
+          <caret line="139" column="133" lean-forward="false" selection-start-line="139" selection-start-column="133" selection-end-line="139" selection-end-column="133" />
+          <folding>
+            <marker date="1509013109964" expanded="true" signature="6486:6552" ph="SELECT * fro... topcompany" />
+            <marker date="1509013109964" expanded="true" signature="6658:6857" ph="SELECT * fro... topcompany" />
+            <marker date="1509013109964" expanded="true" signature="6938:6969" ph="SELECT count... topcompany" />
+            <marker date="1509013109964" expanded="true" signature="7046:7132" ph="SELECT name,... topcompany" />
+            <marker date="1509013109964" expanded="true" signature="7223:7356" ph="SELECT name,... topcompany" />
+            <marker date="1509013109964" expanded="true" signature="7444:7569" ph="SELECT indus... " />
+            <marker date="1509013109964" expanded="true" signature="7672:7836" ph="SELECT count... topcompany" />
+            <marker date="1509013109964" expanded="true" signature="7920:7956" ph="SELECT DISTI... tb_content" />
+            <marker date="1509013109964" expanded="true" signature="9555:9725" ph="select , fro... " />
+            <marker date="1509013109964" expanded="true" signature="9965:10029" ph="delete from " />
+            <marker date="1509013109964" expanded="true" signature="10290:10312" ph="delete from " />
+            <marker date="1509013109964" expanded="true" signature="10671:11404" ph="insert into topcompany... " />
+            <marker date="1509013109964" expanded="true" signature="15111:15142" ph="select count... topcompany" />
+            <marker date="1509013109964" expanded="true" signature="17902:18792" ph="update topco... " />
+            <marker date="1509013109964" expanded="true" signature="19130:19622" ph="update topco... " />
+            <marker date="1509013109964" expanded="true" signature="20012:21808" ph="update topco... " />
+            <marker date="1509013109964" expanded="true" signature="22083:22866" ph="update topco... " />
+            <marker date="1509013109964" expanded="true" signature="23123:23557" ph="update topco... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="831">
+          <caret line="1414" column="22" lean-forward="false" selection-start-line="1414" selection-start-column="22" selection-end-line="1414" selection-end-column="22" />
+          <folding>
+            <element signature="e#43993#43994#0" expanded="false" />
+            <element signature="e#44061#44062#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatescopper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="80" column="22" lean-forward="false" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ZmqIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4092">
+          <caret line="186" column="43" lean-forward="false" selection-start-line="186" selection-start-column="43" selection-end-line="186" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalWarning.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="61" column="16" lean-forward="true" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/CompanyRelationship.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1509010453989" expanded="true" signature="8161:8178" ph="..." />
+            <marker date="1509010453989" expanded="true" signature="8343:8360" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning_Top.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1342">
+          <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/title.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/zmqjs/KeyIndicatesPPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="80" column="24" lean-forward="false" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AbnormalComWarning.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/controller/controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="1028" column="59" lean-forward="false" selection-start-line="1028" selection-start-column="59" selection-end-line="1028" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/scorpion/service/impl/SearchServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="1401" column="56" lean-forward="false" selection-start-line="1401" selection-start-column="48" selection-end-line="1401" selection-end-column="56" />
+        <state relative-caret-position="418">
+          <caret line="453" column="5" lean-forward="true" selection-start-line="453" selection-start-column="5" selection-end-line="453" selection-end-column="5" />
           <folding />
         </state>
       </provider>

@@ -78,7 +78,7 @@ function graphicPPIandCPI() {
 
         },
         legend: {
-            left: "center",
+            left: "right",
             data: ['PPI', 'CPI']
         },
         calculable: true,

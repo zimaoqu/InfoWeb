@@ -1246,14 +1246,17 @@ public class controller {
         List<IndicateOfGDPCountry> GDPCountryCount = searchService.queryAllGDPCountry();//查询GDP数据
         List<String> nameList = new ArrayList<>();
         List<String> numList = new ArrayList<>();
+        List<String> num1List = new ArrayList<>();
         for (IndicateOfGDPCountry instance : GDPCountryCount) {
             nameList.add(instance.getSeason());
             numList.add(instance.getData());
+            num1List.add(instance.getSeasonName());
         }
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("nameList", nameList);
         json.put("numList", numList);
+        json.put("num1List", num1List);
         out.print(json);
     }
 
@@ -1271,14 +1274,17 @@ public class controller {
         List<IndicateOfGDPSH> GDPSHCount = searchService.queryAllGDPSH();//查询上海地区GDP数据
         List<String> nameList = new ArrayList<>();
         List<String> numList = new ArrayList<>();
+        List<String> num1List = new ArrayList<>();
         for (IndicateOfGDPSH instance : GDPSHCount) {
             nameList.add(instance.getSeason());
             numList.add(instance.getData());
+            num1List.add(instance.getSeasonName());
         }
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("nameList", nameList);
         json.put("numList", numList);
+        json.put("num1List",num1List);
         out.print(json);
     }
 
@@ -1408,15 +1414,20 @@ public class controller {
         response.setContentType("application/json");
         List<dollar_exchange_rate_of_rmb> derrCount = searchService.queryAlldollar_exchange_rate_of_rmb();//查询全国PMI数据
         List<String> nameList = new ArrayList<>();
-        List<Float> numList = new ArrayList<>();
+        List<String> numList = new ArrayList<>();
+        List<String> num1List = new ArrayList<>();
+
         for (dollar_exchange_rate_of_rmb instance : derrCount) {
             nameList.add(instance.getDate());
-            numList.add(instance.getSettlement());
+            numList.add(instance.getDollar());
+            num1List.add(instance.getEuro());
+
         }
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         json.put("nameList", nameList);
         json.put("numList", numList);
+        json.put("num1List",num1List);
         out.print(json);
     }
 

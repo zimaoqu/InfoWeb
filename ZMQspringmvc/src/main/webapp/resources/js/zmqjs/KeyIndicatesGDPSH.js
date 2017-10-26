@@ -15,6 +15,8 @@ var numList=[];//柱状图的numList
         success: function (data) {
             numList = data.numList;
             nameList = data.nameList;
+            num1List=data.num1List;
+            console.log("dsfdsfs"+num1List)
             graphicGDPSH();
             graphicTable7()
         }
@@ -70,9 +72,9 @@ function graphicGDPSH(){
 
             {
                 axisLabel:{
-                    rotate:25
+                    rotate:75
                 },
-                data:nameList,
+                data:num1List,
                 show: true,           //横坐标显示
             }
         ],
