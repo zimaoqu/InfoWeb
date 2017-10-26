@@ -129,6 +129,13 @@ public interface NewsOfCompanyMapper {
     List<NewsOfCompanyWithBLOBs> selectAllNews(Map<String,Integer> map);
 
     /**
+     * 根据公司名称和page获取20条新闻
+     * @param map
+     * @return
+     */
+    List<NewsOfCompanyWithBLOBs> selectCompanyNewsSizeTwenty(Map<String,Integer> map);
+
+    /**
      * 获取所有新闻的条数
      */
     int countAllNews();

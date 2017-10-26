@@ -68,4 +68,6 @@ public interface ZmqIndexMapper {
     List<Integer> getIndexList(Map map);
 
     List<String> getDateList(Map map);
+
+    List<Integer> getIndexListByDate(Map map);
 }

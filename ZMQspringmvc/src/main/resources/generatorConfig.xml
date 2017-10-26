@@ -52,7 +52,7 @@
         <!--<table tableName="admin" domainObjectName="adminInfo"></table>-->
         <!--<table tableName="toptest" domainObjectName="TopKeyAttention"></table>-->
         <!--<table tableName="comhealth" domainObjectName="ComHealthValue"></table>-->
-        <table tableName="zmq_index" domainObjectName="ZmqIndex"></table>
+        <table tableName="mediaindex" domainObjectName="MediaIndex"></table>
         <!--<table tableName="credit_score" domainObjectName="CreditScore"></table>-->
     </context>
 </generatorConfiguration>

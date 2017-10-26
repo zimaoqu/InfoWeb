@@ -34,6 +34,12 @@ public interface SearchService {
     public Page<NewsOfCompanyWithBLOBs> queryAllNews(int page);
 
     /*
+   根据企业名称和page获取20个数据
+   */
+    public List<NewsOfCompanyWithBLOBs> queryCompanyNewsSizeTwenty(String name,int page);
+    /*
+
+    /*
     根据条件匹配企业新闻
      */
     public Page<NewsOfCompanyWithBLOBs> queryMatchNews(int page, String startDate, String endDate, String key);
@@ -344,9 +350,15 @@ public interface SearchService {
 
     List<String> getComHealthList();
 
-    List<List<Integer>> queryZmqIndex(int flag,String startDate,String endDate);
+    List<List<Integer>> queryZmqIndex(int flag);
 
     List<CreditScore> getCreditScore();
     List<String> getDateList();
+
+    List<List<Integer>> queryZmqMediaIndex();
+
+    int getIndexAll(String tmp,String startDate,String endDate);
+
+    int getIndexMobile(String tmp,String startDate,String endDate);
 
 }

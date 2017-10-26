@@ -12,14 +12,16 @@
 <head>
     <title>企业新闻链</title>
     <link href="${pageContext.request.contextPath}/resources/css/deduplicationNews.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/resources/css/pagination.css" rel="stylesheet">
+    <script src="${pageContext.request.contextPath}/resources/js/jquery.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/zmqjs/DeduplicationNews.js" type="text/javascript"></script>
+
 </head>
 <body>
 <div class="container-fluid">
     <br/>
     <%@include file="title.jsp" %>
     <br/>
-        <%
+    <%
         String selectdiscomsstr=request.getAttribute("companyList").toString();
     %>
     <div class="row-fluid" >
@@ -33,24 +35,21 @@
             </span>
         <script>
             var key = $("#selectcompany option:selected").text();
+            queryData(key,1);
             $("#subcom").click(function () {
                 key = $("#selectcompany option:selected").text();
-                queryData(1, startDate, endDate, key);
+                $("#news section").remove();
+                queryData(key,1);
             });
         </script>
-        <div class="top">
-            <div class="headline">
-                <h1>新闻链展示</h1>
-            </div>
-        </div>
-        <div class="main">
-            <div id="resultNews" class="news-display"></div>
-            <div id="page" class="pagination"></div>
-        </div>
     </div>
+    <div class="titleName">
+        <p style="margin: 30px auto; font-size: 40px; text-align: center;">企业新闻链</p>
+    </div>
+    <div  class="content">
+        <article id="news">
+        </article>
+    </div>
+</div>
 </body>
-
-<script src="${pageContext.request.contextPath}/resources/js/pagination.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/resources/js/zmqjs/Paging.js" type="text/javascript"></script>
-
 </html>

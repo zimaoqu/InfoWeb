@@ -121,6 +121,11 @@
     <select id="selectAllNews" parameterType="Map" resultMap="ResultMapWithBLOBs">
     SELECT * from tb_content ORDER BY date DESC limit #{start},#{size}
   </select>
+
+    <select id="selectCompanyNewsSizeTwenty" parameterType="Map" resultMap="ResultMapWithBLOBs">
+        SELECT * FROM  tb_content WHERE name = #{name} ORDER BY date DESC limit #{start},20
+    </select>
+
     <select id="selectMatchNews" parameterType="Map" resultMap="ResultMapWithBLOBs">
         SELECT * from tb_content where name LIKE CONCAT('%',#{name},'%' ) and DATE BETWEEN #{startDate} and #{endDate} ORDER BY date DESC limit #{start},#{size}
     </select>

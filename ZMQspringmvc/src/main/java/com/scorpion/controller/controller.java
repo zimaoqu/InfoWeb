@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -254,6 +257,40 @@ public class controller {
         }
         modelMap.put("companyList", selectdiscomsstr);
         return new ModelAndView("DeduplicationNewsDisplay", modelMap);
+    }
+
+    /**
+     * 根据公司名称和page获取新闻的title，date和url(孙鑫)
+     *
+     * @param response
+     * @param key
+     * @param page
+     * @throws IOException
+     */
+    @RequestMapping("queryNewsTitleDateAndUrl")
+    public void queryNewsTitleAndDate(HttpServletResponse response, String key, String page) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        int pageNo = page == null ? 1 : Integer.parseInt(page);
+        if (key == null)
+            key = "上海三星半导体有限公司";
+        List<NewsOfCompanyWithBLOBs> resultList = searchService.queryCompanyNewsSizeTwenty(key, pageNo);
+        int size = resultList.size();
+        List<String> titleList = new ArrayList<>();
+        List<String> dateList = new ArrayList<>();
+        List<String> urlList = new ArrayList<>();
+        for (NewsOfCompanyWithBLOBs instance : resultList) {
+            titleList.add(instance.getTitle());
+            dateList.add(instance.getDate());
+            urlList.add(instance.getUrl());
+        }
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("size", size);
+        json.put("titleList", titleList);
+        json.put("dateList", dateList);
+        json.put("urlList", urlList);
+        out.print(json);
     }
 
     /**
@@ -954,18 +991,64 @@ public class controller {
 
     @ResponseBody
     @RequestMapping("queryZmqIndex")
-    public void queryZmqIndex(HttpServletResponse response, String queryflag, String startDate, String endDate) throws IOException {
+    public void queryZmqIndex(HttpServletResponse response, String queryflag) throws IOException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         int flag = queryflag == null ? 1 : Integer.parseInt(queryflag);
-        List<List<Integer>> zmqIndexList = searchService.queryZmqIndex(flag,startDate,endDate);
+        List<List<Integer>> zmqIndexList = searchService.queryZmqIndex(flag);
         List<String> dateList = searchService.getDateList();
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
-        json.put("indexList",zmqIndexList);
-        json.put("dateList",dateList);
+        json.put("indexList", zmqIndexList);
+        json.put("dateList", dateList);
         out.print(json);
     }
+
+    @ResponseBody
+    @RequestMapping("queryZmqMediaIndex")
+    public void queryZmqMediaIndex(HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        List<List<Integer>> zmqMediaIndexList = searchService.queryZmqMediaIndex();
+        List<String> dateList = searchService.getDateList();
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("mediaIndexList", zmqMediaIndexList);
+        json.put("dateList", dateList);
+        out.print(json);
+    }
+
+    @ResponseBody
+    @RequestMapping("queryCalResult")
+    public void queryCalResult(HttpServletResponse response, String tmp, Date startDate, Date endDate,int gap) throws IOException, ParseException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        int innerDays = (int) ((endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24)); //相差的天数
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        DecimalFormat df = new DecimalFormat("######0.00");
+        int indexAll = searchService.getIndexAll(tmp, sdf.format(startDate), sdf.format(endDate));
+        int indexAllPast = searchService.getIndexAll(tmp, sdf.format(startDate.getTime() - 365 * 24 * 3600 * 1000), sdf.format(endDate.getTime() - 365 * 24 * 3600 * 1000));
+        int indexAllCircle = searchService.getIndexAll(tmp, sdf.format(startDate.getTime() - gap * 24 * 3600 * 1000), sdf.format(startDate));
+        int indexMobilePast = searchService.getIndexMobile(tmp, sdf.format(startDate.getTime() - 365 * 24 * 3600 * 1000), sdf.format(endDate.getTime() - 365 * 24 * 3600 * 1000));
+        int indexMobileCircle = searchService.getIndexMobile(tmp, sdf.format(startDate.getTime() - gap * 24 * 3600 * 1000), sdf.format(startDate));
+        int indexMobile = searchService.getIndexMobile(tmp, sdf.format(startDate), sdf.format(endDate));
+        String overYear = df.format((indexAll - indexAllPast)*1.0 / indexAllPast * 100.0);//整体同比
+        String allCircle = df.format((indexAll - indexAllCircle)*1.0 / indexAllCircle * 100.0);//整体环比
+        String mobileYear = df.format((indexMobile - indexMobilePast)*1.0 / indexMobilePast* 100);//移动同比
+        String mobileCircle = df.format((indexMobile - indexMobileCircle)*1.0 / indexMobileCircle* 100);//移动环比
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("indexAll", indexAll);
+        json.put("indexMobile", indexMobile);
+        json.put("overYear",overYear);
+        json.put("allCircle",allCircle);
+        json.put("mobileYear",mobileYear);
+        json.put("mobileCircle",mobileCircle);
+        out.print(json);
+    }
+
+
     @ResponseBody
     @RequestMapping("queryComCreditScore")
     public void queryComCreditScore(HttpServletResponse response) throws IOException {
@@ -974,10 +1057,9 @@ public class controller {
         List<CreditScore> creditScoreList = searchService.getCreditScore();
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
-        json.put("result",creditScoreList);
+        json.put("result", creditScoreList);
         out.print(json);
     }
-
 
 
     /**

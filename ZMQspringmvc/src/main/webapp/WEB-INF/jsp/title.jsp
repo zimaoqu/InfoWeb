@@ -100,10 +100,10 @@
                 </a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalWarning">企业异常预警</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalComWarning">企业预警</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showTopAbnormalComWarning">重点企业预警</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalComWarning">企业异动预警</a></li>
+                        <%--<li><a href="${pageContext.request.contextPath}/zmq/showTopAbnormalComWarning">重点企业预警</a></li>--%>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComKeyEvents">企业重点事件预警</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showComCreditScore">企业信用评分</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showComCreditScore">企业信用评估</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComPublicOpinionEvaluation">企业舆情评价</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComHealthTendency">企业健康态势</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComReputationAnalysis">企业声誉分析</a></li>
@@ -134,6 +134,7 @@
                                         data-toggle="dropdown"> 自贸区数据与分析 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
+                        <li><a href="${pageContext.request.contextPath}/zmq/showZmqIndex">自贸区热度趋势</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showZmqPolicy">自贸区政策推送</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showSHZmqNews">上海自贸区新闻</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showOtherZmqNews">其他自贸区新闻</a></li>
@@ -141,7 +142,7 @@
                         <li><a href="${pageContext.request.contextPath}/zmq/showSHZmqHealthTendency">上海自贸区健康态势</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showZmqCompare">自贸区对比</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showThirdPartyData">第三方数据</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showZmqIndex">自贸区指数趋势</a></li>
+
                     </ul>
                 </li>
 

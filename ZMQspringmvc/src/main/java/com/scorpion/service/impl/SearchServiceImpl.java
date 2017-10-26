@@ -83,6 +83,8 @@ public class SearchServiceImpl implements SearchService {
     private ZmqIndexMapper zmqIndexMapper;
     @Autowired
     private CreditScoreMapper creditScoreMapper;
+    @Autowired
+    private MediaIndexMapper mediaIndexMapper;
     /*
     The size of a page.
      */
@@ -251,6 +253,22 @@ public class SearchServiceImpl implements SearchService {
         return resultPage;
     }
 
+    /**
+     * 根据企业名称和page获取20个数据
+     *
+     * @param page
+     * @return
+     */
+    @Override
+    public List<NewsOfCompanyWithBLOBs> queryCompanyNewsSizeTwenty(String name, int page) {
+        int pageSize = 20;
+        Map map = new HashMap<>();
+        int start = (page - 1) * pageSize;
+        map.put("name", name);
+        map.put("start",start);
+        List<NewsOfCompanyWithBLOBs> dateList = newsOfCompanyMapper.selectCompanyNewsSizeTwenty(map);
+        return dateList;
+    }
 
     /**
      * 获取匹配得到的企业新闻
@@ -1339,8 +1357,7 @@ public class SearchServiceImpl implements SearchService {
             String predict = "";
             String[] arrp = predicteddata.get(i).getPredicted().split(";");
             String[] arrr = predicteddata.get(i).getRealistic().split(";");
-            String name = predicteddata.get(i).getName().split("=")[1];
-            name = name.split("}")[0];
+            String name = predicteddata.get(i).getName();
             double sump = 0, sumr = 0, avgp = 0, avgr = 0, variance = 0;
             double[] arrp2 = new double[arrp.length];
             double[] arrr2 = new double[arrr.length];
@@ -1365,7 +1382,7 @@ public class SearchServiceImpl implements SearchService {
                 predict += ";";
             }
             for (j = 0; j < arrp.length; j++) {
-                variance += (arrp2[j] - avgr) * (arrr2[j] - avgr) * ((j + 1) / arrp.length);//带权相关系数
+                variance += (arrp2[j] - avgr) * (arrr2[j] - avgr) * ((j + 1) / arrp.length + 0.5);//带权相关系数
             }
             if ((variance / (arrp.length - 1) + avgr) < 0 && max > 2) {
                 Warningname.add(predicteddata.get(i));
@@ -1427,7 +1444,7 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
-    public List<List<Integer>> queryZmqIndex(int flag, String startDate, String endDate) {
+    public List<List<Integer>> queryZmqIndex(int flag) {
         Map map = new HashMap();
         String type = "";
         String keyword = "";
@@ -1439,8 +1456,6 @@ public class SearchServiceImpl implements SearchService {
             type = "移动";
         }
         map.put("type", type);
-        map.put("startDate", startDate);
-        map.put("endDate", endDate);
         List<String> nameList = zmqIndexMapper.getNameList();
         List<List<Integer>> list = new ArrayList<>();
         for (String name : nameList) {
@@ -1452,10 +1467,50 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
+    public List<List<Integer>> queryZmqMediaIndex() {
+        List<String> nameList = zmqIndexMapper.getNameList();
+        List<List<Integer>> list = new ArrayList<>();
+        Map map = new HashMap();
+        for (String name : nameList) {
+            map.put("keyword",name);
+            list.add(mediaIndexMapper.getMediaIndexList(map));
+        }
+        return list;
+    }
+
+    @Override
     public List<String> getDateList() {
         Map map = new HashMap();
         map.put("keyword", "上海自贸区");
         return zmqIndexMapper.getDateList(map);
+    }
+
+    @Override
+    public int getIndexAll(String tmp, String startDate, String endDate) {
+        Map map = new HashMap();
+        map.put("keyword",tmp);
+        map.put("startDate",startDate);
+        map.put("endDate",endDate);
+        map.put("type","整体");
+        int num = 0;
+        List<Integer> allIndexList = zmqIndexMapper.getIndexListByDate(map);
+        for(Integer integer:allIndexList)
+            num += integer;
+        return num;
+    }
+
+    @Override
+    public int getIndexMobile(String tmp, String startDate, String endDate) {
+        Map map = new HashMap();
+        map.put("keyword",tmp);
+        map.put("startDate",startDate);
+        map.put("endDate",endDate);
+        map.put("type","移动");
+        int num = 0;
+        List<Integer> allIndexList = zmqIndexMapper.getIndexListByDate(map);
+        for(Integer integer:allIndexList)
+            num += integer;
+        return num;
     }
 
     @Override
