@@ -1532,6 +1532,15 @@ public class controller {
     }
 
     /**
+     *跳转到指标关联分析页面
+     * @return
+     */
+    @RequestMapping("IndexCorrelationAnalysis")
+    public ModelAndView IndexCorrelationAnalysis(){
+        return new ModelAndView("IndexCorrelationAnalysis");
+    }
+
+    /**
      * 跳到关键指标监控页面GDP页面
      *
      * @return

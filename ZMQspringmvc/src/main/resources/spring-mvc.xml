@@ -39,11 +39,12 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <!-- 拦截所有URL中包含/user/的请求 -->
-            <mvc:mapping path="/zmq/**"/>
-            <bean class="com.scorpion.interceptor.LoginInterceptor"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--拦截器，负责拦截未登入的url请求-->
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--&lt;!&ndash; 拦截所有URL中包含/user/的请求 &ndash;&gt;-->
+            <!--<mvc:mapping path="/zmq/**"/>-->
+            <!--<bean class="com.scorpion.interceptor.LoginInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 </beans>

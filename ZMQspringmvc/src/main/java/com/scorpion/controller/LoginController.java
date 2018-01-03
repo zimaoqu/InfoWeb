@@ -13,6 +13,7 @@ import java.io.IOException;
 
 /**
  * Created by Scorpion on 2017/8/18.
+ * 进行登入验证
  */
 @Controller
 @RequestMapping("/Login")

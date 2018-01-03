@@ -163,7 +163,7 @@
                         <li><a href="${pageContext.request.contextPath}/zmq/showPolicyNews">政策新闻推送</a></li>
                         <%--<li><a href="${pageContext.request.contextPath}/zmq/queryKeyByFlag?flag=1">关键指标监控</a></li>--%>
                         <li><a href="${pageContext.request.contextPath}/zmq/keyIndicateInit">关键指标监控</a></li>
-                        <li><a href="#">指标关联分析</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/IndexCorrelationAnalysis">指标关联分析</a></li>
                     </ul>
                 </li>
 
@@ -172,5 +172,24 @@
     </nav>
 </div>
 
+<%--<script type="text/javascript">--%>
+    <%--window.onload = function(){--%>
+        <%--var config = {--%>
+            <%--vx: 4,--%>
+            <%--vy:  4,--%>
+            <%--height: 2,--%>
+            <%--width: 2,--%>
+            <%--count: 100,--%>
+            <%--color: "121, 162, 185",--%>
+            <%--stroke: "100,200,180",--%>
+            <%--dist: 6000,--%>
+            <%--e_dist: 20000,--%>
+            <%--max_conn: 10--%>
+        <%--}--%>
+        <%--CanvasParticle(config);--%>
+    <%--}--%>
+<%--</script>--%>
+<%--<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/canvas-particle.js"></script>--%>
 </body>
+
 </html>
