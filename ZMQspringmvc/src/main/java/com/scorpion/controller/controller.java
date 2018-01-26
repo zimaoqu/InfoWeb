@@ -1541,6 +1541,34 @@ public class controller {
     }
 
     /**
+     * 跳转到自贸区大事记页面
+     */
+    @RequestMapping("showZmqEvent")
+    public ModelAndView showZmqEvent(){
+        return new ModelAndView("ZmqEvent");
+    }
+
+    /**
+     * 跳转到11家自贸区比较页面
+     */
+    @RequestMapping("showZmqContrast")
+    public ModelAndView showZmqContrast(){return new ModelAndView("ZmqContrast");}
+
+    @ResponseBody
+    @RequestMapping("queryZmqEvent")
+    public void queryZmqEvent(HttpServletResponse response, String zname) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        System.out.println(zname);
+        List eventList = searchService.queryZmqEvent(zname);
+        PrintWriter out = response.getWriter();
+        JSONObject json = new JSONObject();
+        json.put("resultList", eventList);
+        out.print(json);
+    }
+
+
+    /**
      * 跳到关键指标监控页面GDP页面
      *
      * @return

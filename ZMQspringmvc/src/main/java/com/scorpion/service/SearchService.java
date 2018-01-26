@@ -361,4 +361,6 @@ public interface SearchService {
 
     int getIndexMobile(String tmp,String startDate,String endDate);
 
+    List<ZmqEvent> queryZmqEvent(String name);
+
 }

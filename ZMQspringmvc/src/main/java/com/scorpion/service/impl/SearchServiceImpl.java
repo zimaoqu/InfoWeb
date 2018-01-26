@@ -85,6 +85,8 @@ public class SearchServiceImpl implements SearchService {
     private CreditScoreMapper creditScoreMapper;
     @Autowired
     private MediaIndexMapper mediaIndexMapper;
+    @Autowired
+    private ZmqEventMapper zmqEventMapper;
     /*
     The size of a page.
      */
@@ -1403,6 +1405,16 @@ public class SearchServiceImpl implements SearchService {
         Map map = new HashMap();
         map.put("hy", industry.trim());
         return topCompanyInfoMapper.getComOfIndustry(map);
+    }
+
+    /**
+     * 根据自贸区的名字获取自贸区的大事记
+     * @param name
+     * @return
+     */
+    @Override
+    public List<ZmqEvent> queryZmqEvent(String name) {
+        return zmqEventMapper.queryZmqEvent(name);
     }
 
     /**

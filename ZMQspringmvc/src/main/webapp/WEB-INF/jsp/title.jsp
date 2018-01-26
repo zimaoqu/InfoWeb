@@ -126,7 +126,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showPotentialRelationship">潜在关系</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showCompanyRelationship">企业关系网</a></li>
-                        <li><a href="http://139.224.199.170:7474" target="Blank">关系图数据库</a></li>
+                        <li><a href="http://10.60.150.127:7474" target="Blank">关系图数据库</a></li>
                     </ul>
                 </li>
 
@@ -134,6 +134,8 @@
                                         data-toggle="dropdown"> 自贸区数据与分析 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
+                        <li><a href="${pageContext.request.contextPath}/zmq/showZmqEvent">自贸区大事记</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showZmqContrast">自贸区一览</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showZmqIndex">自贸区热度趋势</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showZmqPolicy">自贸区政策推送</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showSHZmqNews">上海自贸区新闻</a></li>

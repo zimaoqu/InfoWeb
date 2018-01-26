@@ -40,6 +40,7 @@
 <div id="graph" class="echart_container1"></div>
 &nbsp;
 <div id="map" class="echart_container2"></div>
+
 <script type="text/javascript">
     var myChart1 = echarts.init(document.getElementById("graph"));
     var myChart2 = echarts.init(document.getElementById("map"));

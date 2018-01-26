@@ -1,0 +1,150 @@
+@CHARSET "UTF-8";
+/* new clearfix
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+/*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+/*.hidden{display:none;}
+.last{border-bottom:none }
+blockquote{background:#f9f9f9;padding:8px 20px;border:1px solid #ccc;}
+*/
+.wrap {
+    /*min-width: 100%;*/
+    position: relative;
+    left:20%; top:20%; bottom:20%;
+    overflow: hidden;
+    min-height:720px;
+}
+.left{
+    margin-left:0px;
+    position: absolute;
+    box-sizing: border-box;
+    width: 200px;
+    height: 100%;
+    background: #4d5e70 bottom;
+}
+.logoDiv{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 70px;
+    background-color: #354457;
+    font-size: 17px;
+    color: #fff;
+    vertical-align: bottom;
+}
+.logoTitle{
+    margin-left:15px;
+    line-height: 1.7;
+}
+.menu-title {
+    margin-left:15px;
+    color: #828e9a;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.menu-item {
+    padding-left:15px;
+    line-height: 40px;
+    height: 40px;
+    color: #aab1b7;
+    cursor: pointer;
+}
+.menu-item-active {
+    background-color: #3d4e60;
+    border-right: 4px solid #647f9d;
+    color: #fff;
+}
+.right{
+    height: 100%;
+    float: left;
+    padding-left: 200px;
+    color: #717592;
+    margin-left: 20px;
+    background:#F0F0F0 repeat-x;
+}
+
+
+.eventBox {
+    width:940px;
+    margin:18px auto 0 auto; }
+
+.event_year {
+     width:60px;
+     border-bottom:2px solid #DDD;
+     text-align:center;
+     float:left;
+     margin-top:10px; }
+
+.event_year li {
+    width: 70px;
+    height:40px;
+    line-height:40px;
+    background:#FFF;
+    margin-bottom:1px;
+    font-size:18px;
+    color:#828282;
+    cursor:pointer;
+    list-style-type:none}
+
+.event_year li.current {
+    width: 80px;
+    background:#0066ff url('/resources/images/jian.png') 70px 0 no-repeat;
+    color:#FFF;
+ }
+
+.event_list {
+    overflow-y: auto;
+    height: 100%;
+    width:850px;
+    float:right;
+    background:url('/resources/images/dian3.png') 100px 0 repeat-y;
+    margin:10px 0 20px 0; }
+
+.event_list h3 {
+    margin:0 0 10px 54px;
+    font-size:24px;
+    font-family:Georgia;
+    color:#0066ff;
+    padding-left:50px;
+    background:url('/resources/images/jian.png') -1px -47px no-repeat;
+    height:38px;
+    line-height:30px;
+    font-style:italic; }
+
+.event_list li {
+    background:url('/resources/images/jian.png') 57px -80px no-repeat;
+    list-style-type:none;
+}
+
+.event_list li span {
+    width:50px;
+    text-align:right;
+    display:block;
+    float:left;
+    margin-top:10px; }
+
+.event_list li p {
+    width:680px;
+    margin-left:30px;
+    display:inline-block;
+    padding-left:10px;
+    background:url('/resources/images/jian.png') -21px 0 no-repeat;
+    line-height:25px;
+    _float:left; }
+
+.event_list li p span {
+    width:650px;
+    text-align:left;
+    border-bottom:2px solid #DDD;
+    padding:10px 15px;
+    background:#FFF;
+    margin:0; }
+

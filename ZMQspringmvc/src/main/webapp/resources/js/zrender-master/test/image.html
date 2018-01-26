@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Image</title>
+    <script src="../dist/zrender.js"></script>
+</head>
+<body>
+    <style>
+        html, body, #main {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <div id="main"></div>
+    <script type="text/javascript">
+        var zr = zrender.init(document.getElementById('main'));
+
+        for (var i = 0; i < 200; i++) {
+            for (var j = 0; j < 200; j++) {
+                var image = new zrender.Image({
+                    position: [i * 20, j * 20],
+                    scale: [1, 1],
+                    style: {
+                        x: 0,
+                        y: 0,
+                        image: 'test.png',
+                        width: 20,
+                        height: 20
+                    },
+                    draggable: true
+                });
+                zr.add(image);
+            }
+        }
+    </script>
+</body>
+</html>
