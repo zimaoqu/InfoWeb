@@ -61,6 +61,42 @@
         margin-left: 10%;
         margin-right: 10%;
     }
+    .echart_container4 {
+        display: block;
+        height: 500px;
+        /*position: absolute;*/
+        width: 80%;
+        margin-bottom: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .echart_container5 {
+        display: block;
+        height: 500px;
+        /*position: absolute;*/
+        width: 80%;
+        margin-bottom: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .echart_container6 {
+        display: block;
+        height: 500px;
+        /*position: absolute;*/
+        width: 80%;
+        margin-bottom: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .echart_container7 {
+        display: block;
+        height: 500px;
+        /*position: absolute;*/
+        width: 80%;
+        margin-bottom: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 
 
 
@@ -80,6 +116,18 @@
     </div>
     <div id="l2" style="display: block">
         <div id="graphicPPI" class="echart_container2" ></div>
+    </div>
+    <div id="l4" style="display: block">
+        <div id="graphicZMQJYPMI" class="echart_container4" ></div>
+    </div>
+    <div id="l5" style="display: block">
+        <div id="graphicZMQJYPPI" class="echart_container5" ></div>
+    </div>
+    <div id="l6" style="display: block">
+        <div id="graphicZMQJCKPMI" class="echart_container6" ></div>
+    </div>
+    <div id="l7" style="display: block">
+        <div id="graphicZMQJCKPPI" class="echart_container7" ></div>
     </div>
     <div id="l3" style="display: block">
         <div id="graphic" class="echart_container3" ></div>

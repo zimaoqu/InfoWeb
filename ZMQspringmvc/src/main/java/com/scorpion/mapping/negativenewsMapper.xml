@@ -130,7 +130,7 @@
     SELECT name,predicted,realistic,bignewsid,similarcount from timecount_top ORDER BY id
   </select>
   <select id="GetBigNewsById" resultMap="bignews">
-    SELECT id,name,title,date,url,keywords,html from tb_content where id = #{bignewsid}
+    SELECT id,name,title,date,url,keywords,html from timecount_copy where id = #{bignewsid}
   </select>
   <sql id="Blob_Column_List" >
     <!--

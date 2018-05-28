@@ -1,6 +1,10 @@
 (function () {
     graphicPMI();
     graphicPPI();
+    graphicZMQJYPMI();
+    graphicZMQJYPPI();
+    graphicZMQJCKPMI();
+    graphicZMQJCKPPI();
     graphic();
 })();
 
@@ -98,6 +102,197 @@ function graphicPPI() {
                     0.27687287649088627, 0.48809812975873368, 0.26943987242174822,
                     0.067548516590997421, -0.28786644274216189, -0.1729533434021589,
                     -0.33342972094820189, -0.32351623132830459],
+            },
+        ]
+    };
+    myChart.setOption(option);
+}
+function graphicZMQJYPMI() {
+    var myChart = echarts.init(document.getElementById("graphicZMQJYPMI"));
+    option = {
+        title : {
+            text: '自贸区经营总收入（亿元）与PMI之间的时差相关系数值',
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['','']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : ['-6','-5','-4','-3','-2','-1','0','1','2','3','4','5','6']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+            }
+        ],
+        series : [
+            {
+                name:'PMI',
+                type:'line',
+                data:[-0.05774887748892372, -0.008814737555805944, -0.020561144293388397,
+                    0.09042910714306307, 0.021461945924681553, 0.28442800899123133,
+                    0.14314928668410354, -0.195346303629256, -0.2041968097263504,
+                    -0.2202412952022017, -0.18428636713186403],
+            },
+        ]
+    };
+    myChart.setOption(option);
+}
+function graphicZMQJYPPI() {
+    var myChart = echarts.init(document.getElementById("graphicZMQJYPPI"));
+    option = {
+        title : {
+            text: '自贸区经营总收入（亿元）与PPI之间的时差相关系数值',
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['','']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : ['-6','-5','-4','-3','-2','-1','0','1','2','3','4','5','6']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+            }
+        ],
+        series : [
+            {
+                name:'PPI',
+                type:'line',
+                data:[0.11668072742834491, 0.14886307571394644, 0.1272128236592018,
+                    0.03339790607604686, 0.017322663595328112, 0.2325773371636141,
+                    0.09122751849628594, 0.12111708676575073, 0.1324189011761638,
+                    0.12180985409076442, 0.09209268236890206],
+            },
+        ]
+    };
+    myChart.setOption(option);
+}
+function graphicZMQJCKPMI() {
+    var myChart = echarts.init(document.getElementById("graphicZMQJCKPMI"));
+    option = {
+        title : {
+            text: '自贸区进出口贸易收入（亿元）与PMI之间的时差相关系数值',
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['','']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : ['-6','-5','-4','-3','-2','-1','0','1','2','3','4','5','6']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+            }
+        ],
+        series : [
+            {
+                name:'PMI',
+                type:'line',
+                data:[-0.10854341507545584, 0.05781381627450166, 0.05883206340534906,
+                    0.2001694580468081, 0.22958639468052647,
+                    0.46, 0.3322103491515386, 0.003293673532805262, -0.17417916016396362,
+                    -0.1224442719657253, -0.28234973544585706],
+            },
+        ]
+    };
+    myChart.setOption(option);
+}
+function graphicZMQJCKPPI() {
+    var myChart = echarts.init(document.getElementById("graphicZMQJCKPPI"));
+    option = {
+        title : {
+            text: '自贸区进出口贸易收入（亿元）与PPI之间的时差相关系数值',
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['','']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : ['-6','-5','-4','-3','-2','-1','0','1','2','3','4','5','6']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+            }
+        ],
+        series : [
+            {
+                name:'PPI',
+                type:'line',
+                data:[0.06679259453978809, 0.026017246900964647, -0.005900971460260481, 0.05455238784090766, -0.19929816210268453,
+                    0.46, -0.17587522199200362, -0.16285651994655692, -0.11075110446006663,
+                    0.03399228065914372, 0.04095056911093915],
             },
         ]
     };

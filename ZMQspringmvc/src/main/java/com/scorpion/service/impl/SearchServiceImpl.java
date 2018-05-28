@@ -1364,6 +1364,7 @@ public class SearchServiceImpl implements SearchService {
             double[] arrp2 = new double[arrp.length];
             double[] arrr2 = new double[arrr.length];
             int j = 0;
+            double Sp = 0,Sr = 0,Rpr = 0;
             for (j = 0; j < arrp.length; j++) {//平均值
                 arrp2[j] = Double.valueOf(arrp[j]);
                 arrr2[j] = Double.valueOf(arrr[j]);
@@ -1385,11 +1386,19 @@ public class SearchServiceImpl implements SearchService {
             }
             for (j = 0; j < arrp.length; j++) {
                 variance += (arrp2[j] - avgr) * (arrr2[j] - avgr) * ((j + 1) / arrp.length + 0.5);//带权相关系数
+                Sp = Math.pow((arrp2[j] - avgp),2)+Sp;
+                Sr = Math.pow((arrp2[j] - avgr),2)+Sr;
             }
-            if ((variance / (arrp.length - 1) + avgr) < 0 && max > 2) {
-                Warningname.add(predicteddata.get(i));
-                Warningname.get(Warningname.size() - 1).setPredicted(predict);
-                Warningname.get(Warningname.size() - 1).setName(name);
+//            Sp = Math.sqrt(Sp/(arrp2.length-1));
+//            Sr = Math.sqrt(Sr/(arrr2.length-1));
+            if(Sp!=0&&Sr!=0) {
+//                Rpr = variance / (Sp * Sr);
+                Rpr = variance/(arrp.length - 1);
+                if ((Rpr + avgr) < 0 && max > 2) {
+                    Warningname.add(predicteddata.get(i));
+                    Warningname.get(Warningname.size() - 1).setPredicted(predict);
+                    Warningname.get(Warningname.size() - 1).setName(name);
+                }
             }
         }
         return Warningname;

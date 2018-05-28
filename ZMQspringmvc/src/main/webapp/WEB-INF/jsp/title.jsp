@@ -88,11 +88,11 @@
             <ul class="nav navbar-nav">
 
                 <li class="dropdown"><a href="#" class="dropdown-toggle"
-                                        data-toggle="dropdown"> 企业新闻推送 <b class="caret"></b>
+                                        data-toggle="dropdown"> 企业新闻舆情检索 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a href="${pageContext.request.contextPath}/zmq/showTopCompanyNews">重中之重企业新闻</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showCompanyNews">重点企业新闻推送</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showTopCompanyNews">重中之重企业新闻舆情检索</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showCompanyNews">重点企业新闻舆情检索</a></li>
                     </ul></li>
 
                 <li class="dropdown"><a href="/InfoWeb/relTendency" class="dropdown-toggle"
@@ -100,7 +100,7 @@
                 </a>
                     <ul class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalWarning">企业异常预警</a></li>
-                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalComWarning">企业异动预警</a></li>
+                        <li><a href="${pageContext.request.contextPath}/zmq/showAbnormalComWarning">企业风险异动预警</a></li>
                         <%--<li><a href="${pageContext.request.contextPath}/zmq/showTopAbnormalComWarning">重点企业预警</a></li>--%>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComKeyEvents">企业重点事件预警</a></li>
                         <li><a href="${pageContext.request.contextPath}/zmq/showComCreditScore">企业信用评估</a></li>
